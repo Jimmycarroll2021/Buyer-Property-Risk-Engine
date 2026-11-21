@@ -1,0 +1,831 @@
+{
+  "artifact_sha256": {
+    "src/riskengine/buyer_storms.py": "aa71a5d46ce4fc1c45ac35d79e208ff768e153d220c8d22eb13ceb1fa436a6a5",
+    "src/riskengine/buyer_storm_bid.py": "ec43d7bb8b799ebd4148bd4e799dbb0993bb3e8a3ad173e7335a31a949e09dab",
+    "src/riskengine/finance.py": "ac099e853ab6427233d27a42d66fb3dcfcecc9b56558a387d8978a1339f3829a"
+  },
+  "total": 131,
+  "failures": 0,
+  "checks": [
+    {
+      "name": "zero.principal",
+      "passed": true,
+      "observed": "120000.00",
+      "expected": 120000
+    },
+    {
+      "name": "zero.payment",
+      "passed": true,
+      "observed": "1000.00",
+      "expected": 1000
+    },
+    {
+      "name": "zero.lean_burn",
+      "passed": true,
+      "observed": "2700.00",
+      "expected": 2700
+    },
+    {
+      "name": "zero.normal_burn",
+      "passed": true,
+      "observed": "3300.00",
+      "expected": 3300
+    },
+    {
+      "name": "zero.cash_after_settlement",
+      "passed": true,
+      "observed": "76000.00",
+      "expected": 76000
+    },
+    {
+      "name": "A-ordinary.stressed_payment",
+      "passed": true,
+      "observed": "1077.50",
+      "expected": "1077.4979975403583460856108427193240931936942"
+    },
+    {
+      "name": "A-ordinary.incremental_premium_monthly",
+      "passed": true,
+      "observed": "20.00",
+      "expected": 20
+    },
+    {
+      "name": "A-ordinary.works_month3",
+      "passed": true,
+      "observed": "20000.00",
+      "expected": 20000
+    },
+    {
+      "name": "A-ordinary.lean_surplus",
+      "passed": true,
+      "observed": "4202.50",
+      "expected": "4202.502002459641653914389157"
+    },
+    {
+      "name": "A-ordinary.normal_surplus",
+      "passed": true,
+      "observed": "3602.50",
+      "expected": "3602.502002459641653914389157"
+    },
+    {
+      "name": "A-ordinary.cash_month3",
+      "passed": true,
+      "observed": "68607.51",
+      "expected": "68607.50600737892496174316748"
+    },
+    {
+      "name": "A-ordinary.cash_month12",
+      "passed": true,
+      "observed": "106430.02",
+      "expected": "106430.0240295156998469726700"
+    },
+    {
+      "name": "A-before-M3-shock",
+      "passed": true,
+      "observed": "84405.00799754035834608561084",
+      "expected": "84405.00400491928330782877832"
+    },
+    {
+      "name": "A-works-floor",
+      "passed": true,
+      "observed": "15000.00",
+      "expected": 15000
+    },
+    {
+      "name": "C-.10.balance_month24",
+      "passed": true,
+      "observed": "96000.00",
+      "expected": "96000"
+    },
+    {
+      "name": "C-.10.net_sale_equity",
+      "passed": true,
+      "observed": "76000.00",
+      "expected": "76000.00000"
+    },
+    {
+      "name": "C-.10.cash_month24",
+      "passed": true,
+      "observed": "148800.00",
+      "expected": "148800"
+    },
+    {
+      "name": "C-.10.cash_after_sale",
+      "passed": true,
+      "observed": "224800.00",
+      "expected": "224800.00000"
+    },
+    {
+      "name": "C-.10.sale_price",
+      "passed": true,
+      "observed": "180000.00",
+      "expected": "180000.00"
+    },
+    {
+      "name": "C-.10.selling_costs",
+      "passed": true,
+      "observed": "8000.00",
+      "expected": "8000.00000"
+    },
+    {
+      "name": "C-ratio-.10.lvr_decimal",
+      "passed": true,
+      "observed": "0.53333333",
+      "expected": "0.5333333333333333333333333333"
+    },
+    {
+      "name": "C-ratio-.10.wealth_loss_fraction",
+      "passed": true,
+      "observed": "0.05000000",
+      "expected": "0.05000"
+    },
+    {
+      "name": "C-.15.balance_month24",
+      "passed": true,
+      "observed": "96000.00",
+      "expected": "96000"
+    },
+    {
+      "name": "C-.15.net_sale_equity",
+      "passed": true,
+      "observed": "66250.00",
+      "expected": "66250.00000"
+    },
+    {
+      "name": "C-.15.cash_month24",
+      "passed": true,
+      "observed": "148800.00",
+      "expected": "148800"
+    },
+    {
+      "name": "C-.15.cash_after_sale",
+      "passed": true,
+      "observed": "215050.00",
+      "expected": "215050.00000"
+    },
+    {
+      "name": "C-.15.sale_price",
+      "passed": true,
+      "observed": "170000.00",
+      "expected": "170000.00"
+    },
+    {
+      "name": "C-.15.selling_costs",
+      "passed": true,
+      "observed": "7750.00",
+      "expected": "7750.00000"
+    },
+    {
+      "name": "C-ratio-.15.lvr_decimal",
+      "passed": true,
+      "observed": "0.56470588",
+      "expected": "0.5647058823529411764705882353"
+    },
+    {
+      "name": "C-ratio-.15.wealth_loss_fraction",
+      "passed": true,
+      "observed": "0.11093750",
+      "expected": "0.1109375"
+    },
+    {
+      "name": "negative-cash-at-12",
+      "passed": true,
+      "observed": 12,
+      "expected": 12
+    },
+    {
+      "name": "recovered-cash-at-24",
+      "passed": true,
+      "observed": "7560.00",
+      "expected": 7560
+    },
+    {
+      "name": "presale-insolvency-red",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "loan-matures-month2",
+      "passed": true,
+      "observed": "0.00",
+      "expected": 0
+    },
+    {
+      "name": "no-payments-after-month2",
+      "passed": true,
+      "observed": "52800.00",
+      "expected": 52800
+    },
+    {
+      "name": "A-three-month-equal",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "A-three-month-below",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "A-one-month-equal",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "A-one-month-below",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "A-c3-zero",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "A-c3-negative",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "B-duration-3-runway-2.99999",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "B-runway-3-2.99999",
+      "passed": true,
+      "observed": "2.99999000",
+      "expected": "2.99999"
+    },
+    {
+      "name": "B-duration-3-runway-3",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-runway-3-3",
+      "passed": true,
+      "observed": "3.00000000",
+      "expected": "3"
+    },
+    {
+      "name": "B-duration-3-runway-4.99999",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-runway-3-4.99999",
+      "passed": true,
+      "observed": "4.99999000",
+      "expected": "4.99999"
+    },
+    {
+      "name": "B-duration-3-runway-5",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "B-runway-3-5",
+      "passed": true,
+      "observed": "5.00000000",
+      "expected": "5"
+    },
+    {
+      "name": "B-duration-4-runway-3.99999",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "B-runway-4-3.99999",
+      "passed": true,
+      "observed": "3.99999000",
+      "expected": "3.99999"
+    },
+    {
+      "name": "B-duration-4-runway-4",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-runway-4-4",
+      "passed": true,
+      "observed": "4.00000000",
+      "expected": "4"
+    },
+    {
+      "name": "B-duration-4-runway-5.99999",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-runway-4-5.99999",
+      "passed": true,
+      "observed": "5.99999000",
+      "expected": "5.99999"
+    },
+    {
+      "name": "B-duration-4-runway-6",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "B-runway-4-6",
+      "passed": true,
+      "observed": "6.00000000",
+      "expected": "6"
+    },
+    {
+      "name": "B-duration-6-runway-5.99999",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "B-runway-6-5.99999",
+      "passed": true,
+      "observed": "5.99999000",
+      "expected": "5.99999"
+    },
+    {
+      "name": "B-duration-6-runway-6",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-runway-6-6",
+      "passed": true,
+      "observed": "6.00000000",
+      "expected": "6"
+    },
+    {
+      "name": "B-duration-6-runway-7.99999",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-runway-6-7.99999",
+      "passed": true,
+      "observed": "7.99999000",
+      "expected": "7.99999"
+    },
+    {
+      "name": "B-duration-6-runway-8",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "B-runway-6-8",
+      "passed": true,
+      "observed": "8.00000000",
+      "expected": "8"
+    },
+    {
+      "name": "top-earner-removed",
+      "passed": true,
+      "observed": "1000.00",
+      "expected": 1000
+    },
+    {
+      "name": "severance-available-to-job-loss",
+      "passed": true,
+      "observed": "11.00000000",
+      "expected": 11
+    },
+    {
+      "name": "severance-excluded-from-illness",
+      "passed": true,
+      "observed": "1000.00",
+      "expected": 1000
+    },
+    {
+      "name": "illness-alone-amber",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-80pct-death",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "B-just-under-80pct-death",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "B-80pct-tpd",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "B-just-under-80pct-tpd",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "C-loss-75-equal",
+      "passed": true,
+      "observed": "0.75000000",
+      "expected": ".75"
+    },
+    {
+      "name": "C-loss-75-equal-grade",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "C-loss-75-above-grade",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "C-loss40-170000",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "C-loss40-170000.01",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "C-lvr80-20000",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "C-lvr80-19999.99",
+      "passed": true,
+      "observed": "amber",
+      "expected": "amber"
+    },
+    {
+      "name": "veto-equalities-(104000, 2000, 2000)",
+      "passed": true,
+      "observed": [
+        "green",
+        "green",
+        "green"
+      ],
+      "expected": [
+        "green",
+        "green",
+        "green"
+      ]
+    },
+    {
+      "name": "veto-equalities-(103999.99, 2000, 2000)",
+      "passed": true,
+      "observed": [
+        "red",
+        "red",
+        "green"
+      ],
+      "expected": [
+        "red",
+        "red",
+        "green"
+      ]
+    },
+    {
+      "name": "veto-equalities-(104000, 2000.01, 1999.99)",
+      "passed": true,
+      "observed": [
+        "green",
+        "red",
+        "red"
+      ],
+      "expected": [
+        "green",
+        "red",
+        "red"
+      ]
+    },
+    {
+      "name": "decisive-missing-conflicting-insurable",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-primary_works_approved",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-structural_clear",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-cash_before_settlement",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-lean_living_monthly",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-first_year_works",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-illiquid",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-earner_incomes_monthly",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-principal",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "decisive-missing-conflicting-cash_after_settlement",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "proved-physical-red-beats-remaining-unknown",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "uncertain-vs-physical-red",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "nonmonotone-grid",
+      "passed": true,
+      "observed": [
+        "green",
+        "red",
+        "amber",
+        "red"
+      ],
+      "expected": [
+        "green",
+        "red",
+        "amber",
+        "red"
+      ]
+    },
+    {
+      "name": "solver-nonmonotonic-status",
+      "passed": true,
+      "observed": "qualified",
+      "expected": "qualified"
+    },
+    {
+      "name": "solver-nonmonotonic-max",
+      "passed": true,
+      "observed": "220000.00",
+      "expected": "220000.00"
+    },
+    {
+      "name": "next-failing-price",
+      "passed": true,
+      "observed": "230000.00",
+      "expected": "230000.00"
+    },
+    {
+      "name": "solver-unknown-above-status",
+      "passed": true,
+      "observed": "unknown",
+      "expected": "unknown"
+    },
+    {
+      "name": "solver-unknown-above-max",
+      "passed": true,
+      "observed": null,
+      "expected": null
+    },
+    {
+      "name": "known-lower-pass-preserved",
+      "passed": true,
+      "observed": "220000.00",
+      "expected": "220000.00"
+    },
+    {
+      "name": "solver-max-grid-not-bound-status",
+      "passed": true,
+      "observed": "range_ceiling",
+      "expected": "range_ceiling"
+    },
+    {
+      "name": "solver-max-grid-not-bound-max",
+      "passed": true,
+      "observed": "220000.00",
+      "expected": "220000.00"
+    },
+    {
+      "name": "solver-singleton-status",
+      "passed": true,
+      "observed": "range_ceiling",
+      "expected": "range_ceiling"
+    },
+    {
+      "name": "solver-singleton-max",
+      "passed": true,
+      "observed": "200000.00",
+      "expected": "200000.00"
+    },
+    {
+      "name": "solver-all-red-status",
+      "passed": true,
+      "observed": "no_qualifying_bid",
+      "expected": "no_qualifying_bid"
+    },
+    {
+      "name": "solver-all-red-max",
+      "passed": true,
+      "observed": null,
+      "expected": null
+    },
+    {
+      "name": "solver-known-red-intrinsic-even-if-cost-uncovered-status",
+      "passed": true,
+      "observed": "no_qualifying_bid",
+      "expected": "no_qualifying_bid"
+    },
+    {
+      "name": "solver-known-red-intrinsic-even-if-cost-uncovered-max",
+      "passed": true,
+      "observed": null,
+      "expected": null
+    },
+    {
+      "name": "raw-model-conflict",
+      "passed": true,
+      "observed": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "name": "solver-conflicting-current-principal-status",
+      "passed": true,
+      "observed": "unknown",
+      "expected": "unknown"
+    },
+    {
+      "name": "solver-conflicting-current-principal-max",
+      "passed": true,
+      "observed": null,
+      "expected": null
+    },
+    {
+      "name": "proved-existing-negative-opening-cash-with-unknown-flow",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "proved-month1-deficit-even-when-later-works-missing",
+      "passed": true,
+      "observed": "red",
+      "expected": "red"
+    },
+    {
+      "name": "first-known-presale-month",
+      "passed": true,
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "month0-shortfall-reported",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "lowest-grid-price-only",
+      "passed": true,
+      "observed": "200000.00",
+      "expected": "200000.00"
+    },
+    {
+      "name": "highest-earner-tie-deterministic",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "job-self-funds",
+      "passed": true,
+      "observed": "self_funding",
+      "expected": "self_funding"
+    },
+    {
+      "name": "job-self-funds-no-infinite-JSON-value",
+      "passed": true,
+      "observed": null,
+      "expected": null
+    },
+    {
+      "name": "solver-conflicting-day2-status",
+      "passed": true,
+      "observed": "unknown",
+      "expected": "unknown"
+    },
+    {
+      "name": "solver-conflicting-day2-max",
+      "passed": true,
+      "observed": null,
+      "expected": null
+    },
+    {
+      "name": "cent-rounded-policy-deposit",
+      "passed": true,
+      "observed": "108755.01",
+      "expected": "108755.01"
+    },
+    {
+      "name": "cent-rounded-policy-acquisition_costs",
+      "passed": true,
+      "observed": "7007.11",
+      "expected": "7007.11"
+    },
+    {
+      "name": "cent-rounded-policy-capitalized_lmi",
+      "passed": true,
+      "observed": "3591.92",
+      "expected": "3591.92"
+    },
+    {
+      "name": "break-even-is-zero-rate",
+      "passed": true,
+      "observed": "0.00000000",
+      "expected": 0
+    },
+    {
+      "name": "exactly-at-shock-affordability-threshold",
+      "passed": true,
+      "observed": "green",
+      "expected": "green"
+    },
+    {
+      "name": "A-direct-month2-cash",
+      "passed": true,
+      "observed": "84405.00",
+      "expected": "84405.00400491928330782877832"
+    },
+    {
+      "name": "C-direct-month11-before-K1",
+      "passed": true,
+      "observed": "116700.00",
+      "expected": 116700
+    },
+    {
+      "name": "C-direct-month12-K1-deducted",
+      "passed": true,
+      "observed": "104400.00",
+      "expected": 104400
+    }
+  ]
+}

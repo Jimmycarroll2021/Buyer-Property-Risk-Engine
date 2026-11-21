@@ -1,0 +1,10 @@
+{
+  "case_id":"replace-case-id", "property_id":"replace-confirmed-property-id",
+  "owner_tenant_id":"replace-with-your-tenant", "as_of":"2026-11-21T00:00:00Z",
+  "assessment_mode":"buyer_assessment",
+  "property":{"label":"Enter full address including unit","jurisdiction":"ACT","property_type":"house","identity_confirmed":false},
+  "finance":{"principal":null,"annual_rate_decimal":null,"term_months":null,"income_monthly":null,"living_monthly":null,"other_debt_monthly":null,"property_costs_monthly":null,"cash_after_settlement":null,"protected_reserve":null,"purchase_price":null,"loan_funds":null,"cash_allocated":null,"acquisition_costs":null,"immediate_works":null,"funding_confirmed":false},
+  "scenarios":[],"requirements":[],
+  "input_note":"Null means unknown. Explicit zero requires an actual known zero. Confirm identity, as-of date and assumptions before assessing."
+}
+

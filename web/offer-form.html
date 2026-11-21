@@ -1,0 +1,38 @@
+<header class="offer-intro"><p class="eyebrow">First-home buyer</p><h1>Before you make an offer</h1><p>See the cash you need, how long your household could hold on and what to check about the home.</p></header>
+<nav class="brief-tools" aria-label="Buyer options"><button type="button" class="secondary" id="choose-property">Check another home</button><a href="/weekend">Weekend buyer stress test</a><a id="jardine-demo" href="?example=jardine">Worked example</a><a id="jardine-public" href="?example=jardine-address">Jardine public evidence</a><button type="button" id="privacy-route" class="offer-text-button">Use my household figures</button></nav>
+<div id="private-launch" class="notice" hidden>Open the project’s <strong>start-windows.cmd</strong> launcher to enter your household and policy figures in your private local workspace. This shared preview uses fictional household figures.</div>
+<div id="offer-editor">
+<form id="offer-form" class="offer-form">
+<fieldset id="offer-controls"><legend class="visually-hidden">Property and offer</legend>
+<div class="offer-start">
+<div class="offer-address"><label for="offer-street">Street address</label><input id="offer-street" name="street" placeholder="11/14 Currie Crescent" required maxlength="120" autocomplete="off"></div>
+<div><label for="offer-suburb">ACT suburb</label><input id="offer-suburb" name="suburb" placeholder="Kingston" required maxlength="80" autocomplete="off"></div>
+<div><label for="offer-price">Price (A$, optional)</label><input id="offer-price" name="offer_price" type="number" min="1" step=".01" placeholder="If known"></div>
+<div><label for="offer-basis">Price type</label><select id="offer-basis" name="price_basis"><option value="proposed_offer">Proposed offer</option><option value="asking">Asking price</option></select></div>
+</div>
+<div id="offer-examples" class="offer-examples"></div>
+<label class="check compare-toggle"><input type="checkbox" id="compare-homes">Compare a second home at the same price</label>
+<div id="compare-fields" hidden><div class="offer-start second"><div><label for="second-street">Second street address</label><input id="second-street" name="second_street" maxlength="120" autocomplete="off"></div><div><label for="second-suburb">Second ACT suburb</label><input id="second-suburb" name="second_suburb" maxlength="80" autocomplete="off"></div></div><div id="second-examples" class="offer-examples"></div></div>
+<details class="offer-options"><summary>Adjust priorities, holding period and costs</summary>
+<div class="offer-option-grid">
+<input type="hidden" name="intended_use" value="owner_occupier">
+<label>How will you use the home?<select name="planned_works"><option value="as_is">Live in it as it is</option><option value="extension">Live in it and extend</option></select></label>
+<label>Buyer priority<select name="priority"><option value="">No specific preference</option><option value="rail">Light rail access</option><option value="activity">Nearby activity</option><option value="access">Access during construction</option><option value="step_free">Step-free access</option></select></label>
+<label>Holding period (months)<input type="number" name="horizon_months" min="1" max="360" value="60" required></label>
+<label>Alternative offer (A$)<input type="number" name="alternative_offer_price" min="1" step=".01" placeholder="Optional"></label>
+<label>Assumed selling costs (A$)<input type="number" name="selling_costs" min="0" step=".01" placeholder="Unknown"></label>
+<label>Rate rise (percentage points)<input type="number" name="rate_rise" min="0" max="20" step=".01" value="2" required></label>
+<label>Income loss (%)<input type="number" name="income_loss" min="0" max="100" step=".1" value="20" required></label>
+<label>Increase in monthly property costs (%)<input type="number" name="cost_rise" min="0" max="1000" step=".1" value="20" required></label>
+<label>One-off levy (A$)<input type="number" name="special_levy" min="0" step=".01" value="10000" required></label>
+<label>Levy due in month<input type="number" name="levy_month" min="1" value="1" required></label>
+</div>
+<label class="check"><input type="checkbox" name="sample_finance">Use a fictional household to explore this price</label>
+<p class="muted">An address is enough to start. Leave the price and household figures blank for a public-evidence brief.</p>
+</details>
+<div id="private-inputs"></div>
+<div class="offer-submit"><button id="make-brief" type="submit">Build offer brief</button><span id="offer-mode-note" class="muted"></span></div>
+</fieldset></form></div>
+<div id="offer-status" role="status" aria-live="polite"></div><div id="offer-matches"></div>
+<section id="offer-results" hidden aria-label="Saved offer brief"><div id="offer-comparison"></div><div id="offer-summary"></div><div id="offer-detail"></div></section>
+

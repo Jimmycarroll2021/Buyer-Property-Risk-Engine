@@ -1,0 +1,20 @@
+{
+  "assessment_id": "assessment:66f69a2d7232e24484b42eccfaba39bd100d4ce6ebf8ef80e37f61d68c306431",
+  "exact_match": true,
+  "saved_result_hash": "sha256:2d050e989673996b254239a56497badb43c2370048988c2cf3b13e42ed0e77ea",
+  "replayed_result_hash": "sha256:2d050e989673996b254239a56497badb43c2370048988c2cf3b13e42ed0e77ea",
+  "required_checks": 65,
+  "completed_checks": 14,
+  "known_priority": 3,
+  "gap_priority": 3,
+  "opportunities": 1,
+  "input_observations": 9,
+  "runtime_versions": {
+    "geos": "3.13.1",
+    "proj": "9.5.1",
+    "pyproj": "3.7.2",
+    "python": "3.12.14",
+    "shapely": "2.1.2"
+  },
+  "next_action_on_every_gap": true
+}

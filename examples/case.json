@@ -1,0 +1,20 @@
+{
+  "case_id": "demo-house", "property_id": "synthetic-property-001", "owner_tenant_id": "demo",
+  "as_of": "2026-11-21T00:00:00Z", "assessment_mode": "buyer_assessment",
+  "property": {"label": "Synthetic ACT demonstration house", "jurisdiction": "ACT", "property_type": "house", "identity_confirmed": true, "parcel_geometry": {"type":"Polygon","coordinates":[[[690000,6080000],[690020,6080000],[690020,6080020],[690000,6080020],[690000,6080000]]]}, "crs":"EPSG:7855"},
+  "finance": {
+    "principal":"720000", "annual_rate_decimal":"0.06", "term_months":360,
+    "income_monthly":"11000", "living_monthly":"4800", "other_debt_monthly":"0",
+    "property_costs_monthly":"900", "cash_after_settlement":"45000", "protected_reserve":"15000",
+    "purchase_price":"900000", "loan_funds":"720000", "cash_allocated":"215000",
+    "acquisition_costs":"25000", "immediate_works":"10000", "funding_confirmed":true
+  },
+  "scenarios": [
+    {"scenario_id":"combined_6m","duration_months":6,"rate_delta_bps":200,"income_factor":"0.70","property_cost_factor":"1.0","required_review":true},
+    {"scenario_id":"combined_12m","duration_months":12,"rate_delta_bps":200,"income_factor":"0.70","property_cost_factor":"1.0","required_review":true}
+  ],
+  "requirements": [{"requirement_id":"reserve","essential":false,"description":"Review the reserve under the selected stress scenarios"}],
+  "demonstration":true,
+  "input_note":"All property and buyer values in this case are synthetic. No actual property is being assessed."
+}
+

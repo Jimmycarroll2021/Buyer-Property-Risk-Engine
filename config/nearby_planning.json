@@ -1,0 +1,92 @@
+{
+  "snapshot_date": "2026-11-21",
+  "coverage": "Selected ACT development applications within 1,000 m and selected Light Rail to Woden stop sites or reference junctions within 2,000 m. Returns the nearest included location per rail stage. Other proposals, stages and routes may exist.",
+  "da": {
+    "file": "application_blocks.geojson",
+    "as_of": "2026-11-21",
+    "geometry_as_of": "2026-11-20",
+    "source_url": "https://www.planning.act.gov.au/applications-and-assessments/development-applications/browse-das/development-application-details?da-number=",
+    "spatial_source": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_ACTIVE_DEVELOPMENT_APPLICATIONS/FeatureServer/0",
+    "status_source": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_DAFINDER_LIST_VIEW/FeatureServer/0",
+    "attribution": "Active Development Applications from ACTmapi, copyright Australian Capital Territory. CC BY 4.0. Selected block polygons reprojected and merged by application; proposal facts summarised from the ACT DA register.",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+    "selection": "Twelve selected public applications on the ACTmapi active list covering parts of Barton, Braddon, City, Dickson, Forrest, Griffith, Kingston and Phillip. The DA status describes the original application record at the source date. Check amendments and decisions in the linked register.",
+    "geometry_query": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_ACTIVE_DEVELOPMENT_APPLICATIONS/FeatureServer/0/query?f=geojson&objectIds=3441%2C6364%2C8652%2C9694%2C9770%2C9859%2C9939%2C10172%2C10304%2C10324%2C10504%2C10505%2C10512&outFields=DA_NUMBER%2CDIVISION%2CSECTION%2CBLOCK%2CLODGEMENT_DATE&outSR=4326&returnGeometry=true",
+    "source_last_edit_utc": "2026-11-20T13:42:56Z",
+    "distance_method": "Shortest distance from address point to the mapped application block or blocks. This may differ from the work footprint."
+  },
+  "stage_2a": {
+    "file": "stage_2a_stops.geojson",
+    "as_of": "2026-11-19",
+    "geometry_as_of": "2026-08-04",
+    "source_url": "https://www.act.gov.au/our-canberra/latest-news/2026/november/city-projects-reach-key-milestones",
+    "geometry_source": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/LightRailStops2/FeatureServer/0/query?f=geojson&where=OBJECTID+IN+%282%2C3%2C4%29&outFields=OBJECTID%2CStopName&outSR=4326&returnGeometry=true",
+    "terms_url": "https://www.arcgis.com/home/item.html?id=c628a46cf7bd4ca9b3582274c38c75ae",
+    "attribution": "LR2A Light Rail Stops, Infrastructure Canberra. Approved for public use. The original service response for the three future stops is stored unedited. Distance is a derived measurement; changes to the source require project director clearance.",
+    "distance_method": "Shortest straight-line distance to an included mapped stop polygon."
+  },
+  "stage_2b": {
+    "as_of": "2026-10-07",
+    "geometry_as_of": "2026-11-17",
+    "source_url": "https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/infrastructure-canberra/2026/final-environmental-impact-statement-released-for-light-rail-stage-2b",
+    "design_url": "https://www.act.gov.au/builtforcbr/browse-all-projects/transport/light-rail-to-woden",
+    "junctions_source_url": "https://yoursayconversations.act.gov.au/light-rail-to-woden/have-your-say-parliament-house-precinct",
+    "woden_source_url": "https://www.transport.act.gov.au/news/news-and-events-items/march-2026/new-woden-interchange",
+    "geometry_source": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_ROAD_CENTRELINES/FeatureServer/0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+    "attribution": "ACT Road Centrelines from ACTmapi, copyright Australian Capital Territory. CC BY 4.0. Reference junction coordinates calculated from intersecting named road centreline segments and rounded to 6 decimal places.",
+    "distance_method": "Approximate straight-line distance to a named reference junction near a proposed stop. The point is not a surveyed stop or entrance.",
+    "locations": [
+      {
+        "name": "Sydney Avenue",
+        "reference": "State Circle and Sydney Avenue",
+        "coordinates": [
+          149.128625,
+          -35.310602
+        ],
+        "road_ids": [
+          59262,
+          59191
+        ]
+      },
+      {
+        "name": "Kings Avenue",
+        "reference": "State Circle and Kings Avenue",
+        "coordinates": [
+          149.12914,
+          -35.306266
+        ],
+        "road_ids": [
+          59160,
+          59161
+        ]
+      },
+      {
+        "name": "Melbourne Avenue",
+        "reference": "State Circle and Melbourne Avenue",
+        "coordinates": [
+          149.121465,
+          -35.311688
+        ],
+        "road_ids": [
+          59215,
+          71681
+        ]
+      },
+      {
+        "name": "Woden Interchange",
+        "reference": "Callam Street and Bradley Street, by Woden Interchange",
+        "coordinates": [
+          149.088226,
+          -35.344831
+        ],
+        "road_ids": [
+          55614,
+          55701
+        ]
+      }
+    ]
+  }
+}

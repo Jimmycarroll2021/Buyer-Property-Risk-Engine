@@ -1,0 +1,135 @@
+{
+  "case_id": "synthetic-full-coverage",
+  "property_id": "synthetic-paperbark-lot7",
+  "as_of": "2026-11-21T00:00:00Z",
+  "assessment_mode": "buyer_assessment",
+  "demonstration": true,
+  "finance_is_illustrative": true,
+  "input_note": "Fictional owner-occupier purchase of Unit 7 at Paperbark Court. All records, professional opinions, quotes, geometry, buyer funds and reviews are invented exercise inputs. No real address or person has been assessed.",
+  "property": {
+    "label": "Paperbark Court · Unit 7 (synthetic)",
+    "jurisdiction": "ACT",
+    "property_type": "townhouse",
+    "ownership_form": "unit_title",
+    "identity_confirmed": true,
+    "unit_required": true,
+    "unit_id": "7",
+    "parcel_id": "SYN-PLAN-8",
+    "parcel_geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            691000,
+            6081000
+          ],
+          [
+            691080,
+            6081000
+          ],
+          [
+            691080,
+            6081060
+          ],
+          [
+            691000,
+            6081060
+          ],
+          [
+            691000,
+            6081000
+          ]
+        ]
+      ]
+    },
+    "footprint_geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            691020,
+            6081015
+          ],
+          [
+            691035,
+            6081015
+          ],
+          [
+            691035,
+            6081025
+          ],
+          [
+            691020,
+            6081025
+          ],
+          [
+            691020,
+            6081015
+          ]
+        ]
+      ]
+    },
+    "crs": "EPSG:7855"
+  },
+  "requirements": [
+    {
+      "requirement_id": "owner-occupy",
+      "essential": true,
+      "description": "Occupy the townhouse as a principal residence for five years."
+    },
+    {
+      "requirement_id": "reserve",
+      "essential": true,
+      "description": "Protect $20,000 in accessible cash through the six-month stress scenario."
+    },
+    {
+      "requirement_id": "bus",
+      "essential": false,
+      "description": "Reach the fictional campus before 08:30 on weekdays."
+    }
+  ],
+  "finance": {
+    "received_at": "2026-11-20T12:00:00Z",
+    "source_refs": [
+      "synthetic-paperbark-household"
+    ],
+    "principal": "640000",
+    "annual_rate_decimal": "0.06",
+    "term_months": 360,
+    "income_monthly": "9800",
+    "living_monthly": "3900",
+    "other_debt_monthly": "250",
+    "property_costs_monthly": "800",
+    "cash_after_settlement": "29000",
+    "protected_reserve": "20000",
+    "buffer_requirement_id": "reserve",
+    "purchase_price": "800000",
+    "loan_funds": "640000",
+    "cash_allocated": "190000",
+    "total_liquid_cash": "219000",
+    "acquisition_costs": "23000",
+    "immediate_works": "7000",
+    "funding_confirmed": true,
+    "exit": {
+      "sale_month": 24,
+      "sale_price": "720000",
+      "selling_costs": "18000",
+      "tax_treatment": "before_personal_tax"
+    }
+  },
+  "scenarios": [
+    {
+      "scenario_id": "rate-rise",
+      "duration_months": 12,
+      "rate_delta_bps": 200,
+      "required_review": true
+    },
+    {
+      "scenario_id": "six-month-income-interruption",
+      "duration_months": 6,
+      "income_factor": "0.65",
+      "requirement_id": "reserve",
+      "required_review": true
+    }
+  ]
+}

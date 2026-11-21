@@ -1,0 +1,83 @@
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
+const url = new URL(process.env.RISK_SMOKE_URL || "http://127.0.0.1:8131/");
+const output = path.resolve("runtime/buyer-preview");
+const evidence = {url:url.href, checks:[], requests:[], errors:[]};
+assert.equal(url.hostname, "127.0.0.1");
+const write = () => fs.writeFileSync(path.join(output,"offer-ui-evidence.json"),JSON.stringify(evidence,null,2));
+function passed(check) { evidence.checks.push(check); write(); }
+(async () => {
+  const browser = await chromium.launch({headless:true, executablePath:process.env.CHROMIUM_PATH || undefined});
+  try {
+    const page = await browser.newPage({viewport:{width:1360,height:950}});
+    page.on("pageerror",e=>{evidence.errors.push(e.message);write();});
+    page.on("response",response=>{if (response.url().includes("/v1/")) evidence.requests.push([response.request().method(),new URL(response.url()).pathname,response.status()]);});
+    await page.goto(url.href);
+    await page.locator("#offer-form").waitFor();
+    assert.equal(await page.locator("html").getAttribute("data-access"),"preview");
+    assert.equal(await page.locator('input[type="password"]').count(),0);
+    passed("Clean preview opens directly at the address form without a key.");
+    await page.locator("#offer-street").fill("11/14 Currie Crescent");
+    await page.locator("#offer-suburb").fill("Kingston");
+    await page.locator("#offer-price").fill("800000");
+    await page.locator("#compare-homes").check();
+    await page.locator("#second-examples").getByRole("button",{name:/Ringrose/}).click();
+    await page.screenshot({path:path.join(output,"offer-form.png")});
+    async function run() {
+      await page.locator("#make-brief").click();
+      await page.waitForFunction(()=>document.querySelector("#offer-status").textContent.startsWith("Saved.") || document.querySelector("#offer-status").dataset.error==="true",{},{timeout:65000});
+      assert.equal(await page.locator("#offer-status").getAttribute("data-error"),"false",await page.locator("#offer-status").innerText());
+      await page.locator("#offer-results").waitFor();
+    }
+    await run();
+    const common = page.locator("#offer-side-by-side");
+    assert.match(await common.innerText(),/800,000/);
+    assert.match(await common.innerText(),/RZ5/);
+    assert.match(await common.innerText(),/RZ1|RZ2/);
+    assert.equal(await page.locator("#offer-issues li > h4").count(),3);
+    assert.match(await page.locator("#offer-costs").innerText(),/Break-even resale price/);
+    assert.match(await page.locator("#offer-sales").innerText(),/ACTLIS|redistribution|settled/i);
+    assert.equal(await page.locator("#offer-coverage tbody tr").count(),65);
+    evidence.bookmark = page.url(); passed("At A$800,000 both homes have pinned briefs, distinct zoning, 3 issues, price evidence, costs and all 65 checks.");
+    await common.scrollIntoViewIfNeeded();
+    await page.screenshot({path:path.join(output,"offer-comparison.png")});
+    await common.getByRole("button",{name:/Ringrose/}).click();
+    assert.match(await page.locator("#offer-summary").innerText(),/Ringrose/);
+    assert.match(await page.locator("#offer-area").textContent(),/bushfire/i);
+    const fresh = await browser.newPage();
+    await fresh.goto(evidence.bookmark);
+    await fresh.locator("#offer-side-by-side").waitFor();
+    assert.equal(await fresh.locator("#offer-price").inputValue(),"800000");
+    assert.match(await fresh.locator("#offer-side-by-side").innerText(),/Isaacs/);
+    await fresh.close();
+    passed("Second-home detail and exact two-home bookmark work in a new browser context.");
+    await page.locator(".offer-options > summary").click();
+    await page.locator("#offer-price").fill("760000");
+    await page.locator('[name="priority"]').selectOption("step_free");
+    await page.locator('[name="planned_works"]').selectOption("extension");
+    assert.equal(await page.locator('[name="intended_use"]').inputValue(),"owner_occupier");
+    await page.locator('[name="horizon_months"]').fill("24");
+    await page.locator('[name="special_levy"]').fill("25000");
+    await page.locator('[name="cost_rise"]').fill("50");
+    await run();
+    assert.match(await page.locator("#offer-costs").innerText(),/24 months/);
+    assert.match(await page.locator("#offer-costs").innerText(),/25,000/);
+    assert.match(await page.locator("#offer-issues").innerText(),/extension|step.free/i);
+    passed("Repricing, intended use, priorities, horizon and monthly and once-off stress can be changed from the form.");
+    await page.locator("#compare-homes").uncheck();
+    await page.locator('[name="sample_finance"]').uncheck();
+    await run();
+    assert.match(await page.locator("#offer-costs").innerText(),/Unknown/);
+    assert.match(await page.locator("#offer-costs").innerText(),/Needed to complete/);
+    passed("Address and offer alone produce a brief with missing buyer costs marked unknown.");
+    await page.setViewportSize({width:390,height:844});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),390);
+    assert.deepEqual(evidence.errors,[]);
+    passed("Mobile width 390px without document overflow or uncaught browser errors.");
+    evidence.completed_at=new Date().toISOString();write();
+    console.log(JSON.stringify({checks:evidence.checks,bookmark:evidence.bookmark}));
+  } catch(e) { evidence.failure=String(e);write();throw e; }
+  finally { await browser.close(); }
+})().catch(e=>{console.error(e);process.exitCode=1;});

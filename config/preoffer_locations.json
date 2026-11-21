@@ -1,0 +1,158 @@
+{
+  "sources": {
+    "act_addresses": {
+      "layer_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_ADDRESSES/FeatureServer/0",
+      "licence_metadata_url": "https://www.arcgis.com/sharing/rest/content/items/13427dc77da340a29dd6601af4d7484d/info/metadata/metadata.xml",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+      "attribution": "ACTGOV_ADDRESSES, ACTmapi, copyright Australian Capital Territory, CC BY 4.0."
+    },
+    "act_unit": {
+      "layer_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_UNIT/FeatureServer/0",
+      "licence_metadata_url": "https://www.arcgis.com/sharing/rest/content/items/43760387906d4a3dbc63f98f3bd3c9eb/info/metadata/metadata.xml",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+      "attribution": "ACTGOV_UNIT, ACTmapi, copyright Australian Capital Territory, CC BY 4.0."
+    },
+    "act_blocks": {
+      "layer_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_BLOCKS/FeatureServer/0",
+      "licence_metadata_url": "https://www.arcgis.com/sharing/rest/content/items/802b1fe9b1bc480ba41d6a653ec40b62/info/metadata/metadata.xml",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+      "attribution": "ACTGOV_BLOCKS, ACTmapi, copyright Australian Capital Territory, CC BY 4.0."
+    },
+    "act_tp_zoning": {
+      "layer_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1",
+      "licence_metadata_url": "https://www.arcgis.com/sharing/rest/content/items/25c5e16b3efd41cfbc4e1a5ba13d17f2/info/metadata/metadata.xml",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+      "attribution": "ACTGOV_TP_LAND_USE_ZONE, ACTmapi, copyright Australian Capital Territory, CC BY 4.0."
+    },
+    "act_bushfire_2026": {
+      "layer_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/Bushfire_Prone_Area_Details_2026/FeatureServer/0",
+      "licence_metadata_url": "https://www.arcgis.com/sharing/rest/content/items/d1d8726b6f3c461b82729180b0991b41/info/metadata/metadata.xml",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+      "attribution": "Bushfire_Prone_Area_Details_2026, ACTmapi, copyright Australian Capital Territory, CC BY 4.0."
+    }
+  },
+  "homes": {
+    "793201": {
+      "address": {
+        "source_id": "act_addresses",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_ADDRESSES/FeatureServer/0/query?f=json&returnGeometry=false&where=DOOR_NO%3D%2711%27+AND+STREET_NUMBER%3D%2714%27+AND+STREET_NAME%3D%27CURRIE%27+AND+STREET_TYPE%3D%27CRESCENT%27+AND+DIVISION%3D%27KINGSTON%27&outFields=ADDRESS_ID%2CDOOR_NO%2CSTREET_NUMBER%2CSTREET_NAME%2CSTREET_TYPE%2CDIVISION%2CBLOCK_KEY%2CUNIT_TITLE%2CUNIT_CLASS%2CUNITPLAN_NO%2CLONG%2CLAT%2CASSIGNED%2CSUBADDTYPE",
+        "retrieved_at": "2026-11-21T11:37:13+00:00",
+        "response_sha256": "4db72a245c58163cc7f631493f98db8be24cdb1a9e4955bcd7d4301171c5eba5",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"GlobalID\",\"geometryType\":\"esriGeometryPoint\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"ADDRESS_ID\",\"type\":\"esriFieldTypeInteger\",\"alias\":\"ADDRESS_ID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"DOOR_NO\",\"type\":\"esriFieldTypeString\",\"alias\":\"DOOR_NO\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"STREET_NUMBER\",\"type\":\"esriFieldTypeString\",\"alias\":\"STREET_NUMBER\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"STREET_NAME\",\"type\":\"esriFieldTypeString\",\"alias\":\"STREET_NAME\",\"sqlType\":\"sqlTypeOther\",\"length\":100,\"domain\":null,\"defaultValue\":null},{\"name\":\"STREET_TYPE\",\"type\":\"esriFieldTypeString\",\"alias\":\"STREET_TYPE\",\"sqlType\":\"sqlTypeOther\",\"length\":100,\"domain\":null,\"defaultValue\":null},{\"name\":\"DIVISION\",\"type\":\"esriFieldTypeString\",\"alias\":\"DIVISION\",\"sqlType\":\"sqlTypeOther\",\"length\":100,\"domain\":null,\"defaultValue\":null},{\"name\":\"BLOCK_KEY\",\"type\":\"esriFieldTypeDouble\",\"alias\":\"BLOCK_KEY\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_TITLE\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_TITLE\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_CLASS\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_CLASS\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNITPLAN_NO\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNITPLAN_NO\",\"sqlType\":\"sqlTypeOther\",\"length\":200,\"domain\":null,\"defaultValue\":null},{\"name\":\"LONG\",\"type\":\"esriFieldTypeString\",\"alias\":\"LONG\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"LAT\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAT\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"ASSIGNED\",\"type\":\"esriFieldTypeString\",\"alias\":\"ASSIGNED\",\"sqlType\":\"sqlTypeOther\",\"length\":30,\"domain\":null,\"defaultValue\":null},{\"name\":\"SUBADDTYPE\",\"type\":\"esriFieldTypeString\",\"alias\":\"SUBADDTYPE\",\"sqlType\":\"sqlTypeOther\",\"length\":10,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"ADDRESS_ID\":793201,\"DOOR_NO\":\"11\",\"STREET_NUMBER\":\"14\",\"STREET_NAME\":\"CURRIE\",\"STREET_TYPE\":\"CRESCENT\",\"DIVISION\":\"KINGSTON\",\"BLOCK_KEY\":12170240009,\"UNIT_TITLE\":\"11\",\"UNIT_CLASS\":\"B\",\"UNITPLAN_NO\":\"212\",\"LONG\":\"149.13901106665423\",\"LAT\":\"-35.315392351357914\",\"ASSIGNED\":\"ASSIGNED\",\"SUBADDTYPE\":\"Unit\"}}]}"
+      },
+      "unit": {
+        "source_id": "act_unit",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_UNIT/FeatureServer/0/query?f=json&returnGeometry=false&where=BLOCK_KEY%3D12170240009+AND+UNIT_NUMBER%3D%2711%27&outFields=ID%2CBLOCK_KEY%2CUNIT_NUMBER%2CUNIT_PLAN_NO%2CUNIT_CLASS%2CCURRENT_LIFECYCLE_STAGE",
+        "retrieved_at": "2026-11-21T11:37:12+00:00",
+        "response_sha256": "3e463bb67dcf07e469d89fbbd65b03d7b4cc0a47e7bbb45b0d6c6f6c566ed17e",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"ID\",\"type\":\"esriFieldTypeInteger\",\"alias\":\"ID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"BLOCK_KEY\",\"type\":\"esriFieldTypeDouble\",\"alias\":\"BLOCK_KEY\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_NUMBER\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_NUMBER\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_PLAN_NO\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_PLAN_NO\",\"sqlType\":\"sqlTypeOther\",\"length\":200,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_CLASS\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_CLASS\",\"sqlType\":\"sqlTypeOther\",\"length\":1,\"domain\":null,\"defaultValue\":null},{\"name\":\"CURRENT_LIFECYCLE_STAGE\",\"type\":\"esriFieldTypeString\",\"alias\":\"CURRENT_LIFECYCLE_STAGE\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"ID\":19672,\"BLOCK_KEY\":12170240009,\"UNIT_NUMBER\":\"11\",\"UNIT_PLAN_NO\":\"212\",\"UNIT_CLASS\":\"B\",\"CURRENT_LIFECYCLE_STAGE\":\"REGISTERED\"}},{\"attributes\":{\"ID\":19672,\"BLOCK_KEY\":12170240009,\"UNIT_NUMBER\":\"11\",\"UNIT_PLAN_NO\":\"212\",\"UNIT_CLASS\":\"B\",\"CURRENT_LIFECYCLE_STAGE\":\"REGISTERED\"}}]}"
+      },
+      "block": {
+        "source_id": "act_blocks",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_BLOCKS/FeatureServer/0/query?f=geojson&returnGeometry=true&where=BLOCK_KEY%3D12170240009&outFields=BLOCK_KEY%2CBLOCK_NUMBER%2CSECTION_NUMBER%2CDIVISION_NAME%2CCURRENT_LIFECYCLE_STAGE&outSR=7855",
+        "retrieved_at": "2026-11-21T11:37:12+00:00",
+        "response_sha256": "d8abc599b5a5becdc2c8ee25bb0ec99012a89e3e5d9bbfefa581656dca89fde6",
+        "response_text": "{\"type\":\"FeatureCollection\",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"EPSG:7855\"}},\"features\":[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[694498.9663,6089889.4679],[694513.511,6089878.383],[694476.5613,6089829.9005],[694458.5855,6089827.9804],[694457.26510631,6089837.30070215],[694455.308504846,6089846.50848052],[694452.724912568,6089855.56036002],[694449.5265,6089864.4137],[694498.9663,6089889.4679]]]},\"properties\":{\"BLOCK_KEY\":12170240009,\"BLOCK_NUMBER\":9,\"SECTION_NUMBER\":24,\"DIVISION_NAME\":\"KINGSTON\",\"CURRENT_LIFECYCLE_STAGE\":\"REGISTERED\"}}]}"
+      },
+      "address_zone": {
+        "source_id": "act_tp_zoning",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1/query?f=json&returnGeometry=false&where=CURRENT_LIFECYCLE_STAGE%3D%27GAZETTED%27&outFields=OBJECTID%2CLAND_USE_ZONE_CODE_ID%2CLAND_USE_POLICY_DESC&geometry=149.13901106665423%2C-35.315392351357914&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "f3afe2132783bac298c3f7fe33b417354c88c82d61270a9914219c00bea97ac7",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"OBJECTID\",\"type\":\"esriFieldTypeOID\",\"alias\":\"OBJECTID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_ZONE_CODE_ID\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_ZONE_CODE_ID\",\"sqlType\":\"sqlTypeOther\",\"length\":10,\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_POLICY_DESC\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_POLICY_DESC\",\"sqlType\":\"sqlTypeOther\",\"length\":255,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"OBJECTID\":4781,\"LAND_USE_ZONE_CODE_ID\":\"RZ5\",\"LAND_USE_POLICY_DESC\":\"HIGH DENSITY RESIDENTIAL\"}}]}"
+      },
+      "block_interior_zone": {
+        "source_id": "act_tp_zoning",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1/query?f=json&returnGeometry=false&where=CURRENT_LIFECYCLE_STAGE%3D%27GAZETTED%27&outFields=OBJECTID%2CLAND_USE_ZONE_CODE_ID%2CLAND_USE_POLICY_DESC&geometry=694475.3083436299%2C6089859.987030011&geometryType=esriGeometryPoint&inSR=7855&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "f3afe2132783bac298c3f7fe33b417354c88c82d61270a9914219c00bea97ac7",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"OBJECTID\",\"type\":\"esriFieldTypeOID\",\"alias\":\"OBJECTID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_ZONE_CODE_ID\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_ZONE_CODE_ID\",\"sqlType\":\"sqlTypeOther\",\"length\":10,\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_POLICY_DESC\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_POLICY_DESC\",\"sqlType\":\"sqlTypeOther\",\"length\":255,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"OBJECTID\":4781,\"LAND_USE_ZONE_CODE_ID\":\"RZ5\",\"LAND_USE_POLICY_DESC\":\"HIGH DENSITY RESIDENTIAL\"}}]}"
+      },
+      "fire_200": {
+        "source_id": "act_bushfire_2026",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/Bushfire_Prone_Area_Details_2026/FeatureServer/0/query?f=json&returnGeometry=false&geometry=149.13901106665423%2C-35.315392351357914&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&where=1%3D1&distance=200&units=esriSRUnit_Meter&returnIdsOnly=true",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "21ec53fa8985c7a0f54feb7429d996f7b1fbc5d513d014bd895ccdf082960211",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"objectIds\":[]}"
+      },
+      "fire_500": {
+        "source_id": "act_bushfire_2026",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/Bushfire_Prone_Area_Details_2026/FeatureServer/0/query?f=json&returnGeometry=false&geometry=149.13901106665423%2C-35.315392351357914&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&where=1%3D1&distance=500&units=esriSRUnit_Meter&returnIdsOnly=true",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "21ec53fa8985c7a0f54feb7429d996f7b1fbc5d513d014bd895ccdf082960211",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"objectIds\":[]}"
+      }
+    },
+    "165259": {
+      "address": {
+        "source_id": "act_addresses",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_ADDRESSES/FeatureServer/0/query?f=json&returnGeometry=false&where=DOOR_NO%3D%2721%27+AND+STREET_NUMBER%3D%2728%27+AND+STREET_NAME%3D%27RINGROSE%27+AND+STREET_TYPE%3D%27CRESCENT%27+AND+DIVISION%3D%27ISAACS%27&outFields=ADDRESS_ID%2CDOOR_NO%2CSTREET_NUMBER%2CSTREET_NAME%2CSTREET_TYPE%2CDIVISION%2CBLOCK_KEY%2CUNIT_TITLE%2CUNIT_CLASS%2CUNITPLAN_NO%2CLONG%2CLAT%2CASSIGNED%2CSUBADDTYPE",
+        "retrieved_at": "2026-11-21T11:37:12+00:00",
+        "response_sha256": "aef2ec0684c6062639d2f648e00406cb74637705c6d88f2cb62f5eea778e447d",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"GlobalID\",\"geometryType\":\"esriGeometryPoint\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"ADDRESS_ID\",\"type\":\"esriFieldTypeInteger\",\"alias\":\"ADDRESS_ID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"DOOR_NO\",\"type\":\"esriFieldTypeString\",\"alias\":\"DOOR_NO\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"STREET_NUMBER\",\"type\":\"esriFieldTypeString\",\"alias\":\"STREET_NUMBER\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"STREET_NAME\",\"type\":\"esriFieldTypeString\",\"alias\":\"STREET_NAME\",\"sqlType\":\"sqlTypeOther\",\"length\":100,\"domain\":null,\"defaultValue\":null},{\"name\":\"STREET_TYPE\",\"type\":\"esriFieldTypeString\",\"alias\":\"STREET_TYPE\",\"sqlType\":\"sqlTypeOther\",\"length\":100,\"domain\":null,\"defaultValue\":null},{\"name\":\"DIVISION\",\"type\":\"esriFieldTypeString\",\"alias\":\"DIVISION\",\"sqlType\":\"sqlTypeOther\",\"length\":100,\"domain\":null,\"defaultValue\":null},{\"name\":\"BLOCK_KEY\",\"type\":\"esriFieldTypeDouble\",\"alias\":\"BLOCK_KEY\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_TITLE\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_TITLE\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_CLASS\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_CLASS\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNITPLAN_NO\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNITPLAN_NO\",\"sqlType\":\"sqlTypeOther\",\"length\":200,\"domain\":null,\"defaultValue\":null},{\"name\":\"LONG\",\"type\":\"esriFieldTypeString\",\"alias\":\"LONG\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"LAT\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAT\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"ASSIGNED\",\"type\":\"esriFieldTypeString\",\"alias\":\"ASSIGNED\",\"sqlType\":\"sqlTypeOther\",\"length\":30,\"domain\":null,\"defaultValue\":null},{\"name\":\"SUBADDTYPE\",\"type\":\"esriFieldTypeString\",\"alias\":\"SUBADDTYPE\",\"sqlType\":\"sqlTypeOther\",\"length\":10,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"ADDRESS_ID\":165259,\"DOOR_NO\":\"21\",\"STREET_NUMBER\":\"28\",\"STREET_NAME\":\"RINGROSE\",\"STREET_TYPE\":\"CRESCENT\",\"DIVISION\":\"ISAACS\",\"BLOCK_KEY\":33365240003,\"UNIT_TITLE\":\"21\",\"UNIT_CLASS\":\"B\",\"UNITPLAN_NO\":\"633\",\"LONG\":\"149.10967791624108\",\"LAT\":\"-35.366697888394704\",\"ASSIGNED\":\"ASSIGNED\",\"SUBADDTYPE\":\"Unit\"}}]}"
+      },
+      "unit": {
+        "source_id": "act_unit",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_UNIT/FeatureServer/0/query?f=json&returnGeometry=false&where=BLOCK_KEY%3D33365240003+AND+UNIT_NUMBER%3D%2721%27&outFields=ID%2CBLOCK_KEY%2CUNIT_NUMBER%2CUNIT_PLAN_NO%2CUNIT_CLASS%2CCURRENT_LIFECYCLE_STAGE",
+        "retrieved_at": "2026-11-21T11:37:13+00:00",
+        "response_sha256": "6ec53b641fdb44c625862d921b2688138115eca87dfe72883cf8f757ccf186a6",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"ID\",\"type\":\"esriFieldTypeInteger\",\"alias\":\"ID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"BLOCK_KEY\",\"type\":\"esriFieldTypeDouble\",\"alias\":\"BLOCK_KEY\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_NUMBER\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_NUMBER\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_PLAN_NO\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_PLAN_NO\",\"sqlType\":\"sqlTypeOther\",\"length\":200,\"domain\":null,\"defaultValue\":null},{\"name\":\"UNIT_CLASS\",\"type\":\"esriFieldTypeString\",\"alias\":\"UNIT_CLASS\",\"sqlType\":\"sqlTypeOther\",\"length\":1,\"domain\":null,\"defaultValue\":null},{\"name\":\"CURRENT_LIFECYCLE_STAGE\",\"type\":\"esriFieldTypeString\",\"alias\":\"CURRENT_LIFECYCLE_STAGE\",\"sqlType\":\"sqlTypeOther\",\"length\":20,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"ID\":18730,\"BLOCK_KEY\":33365240003,\"UNIT_NUMBER\":\"21\",\"UNIT_PLAN_NO\":\"633\",\"UNIT_CLASS\":\"B\",\"CURRENT_LIFECYCLE_STAGE\":\"REGISTERED\"}}]}"
+      },
+      "block": {
+        "source_id": "act_blocks",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_BLOCKS/FeatureServer/0/query?f=geojson&returnGeometry=true&where=BLOCK_KEY%3D33365240003&outFields=BLOCK_KEY%2CBLOCK_NUMBER%2CSECTION_NUMBER%2CDIVISION_NAME%2CCURRENT_LIFECYCLE_STAGE&outSR=7855",
+        "retrieved_at": "2026-11-21T11:37:13+00:00",
+        "response_sha256": "1fe34492c37e9cec447967cbaee45765297cc84ba494903204a9b989e7cfc79e",
+        "response_text": "{\"type\":\"FeatureCollection\",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"EPSG:7855\"}},\"features\":[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[691776.1779,6084282.2949],[691789.8806,6084200.4367],[691763.7724,6084196.0663],[691692.6878,6084114.7633],[691651.4344,6084112.7196],[691609.6068,6084172.8204],[691651.0299,6084251.8413],[691686.9516,6084270.5433],[691776.1779,6084282.2949]]]},\"properties\":{\"BLOCK_KEY\":33365240003,\"BLOCK_NUMBER\":3,\"SECTION_NUMBER\":524,\"DIVISION_NAME\":\"ISAACS\",\"CURRENT_LIFECYCLE_STAGE\":\"REGISTERED\"}}]}"
+      },
+      "address_zone": {
+        "source_id": "act_tp_zoning",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1/query?f=json&returnGeometry=false&where=CURRENT_LIFECYCLE_STAGE%3D%27GAZETTED%27&outFields=OBJECTID%2CLAND_USE_ZONE_CODE_ID%2CLAND_USE_POLICY_DESC&geometry=149.10967791624108%2C-35.366697888394704&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "d220fd951594fd1603dc5223f98a8302a22c5c456b9939bdf64b66f25116f9be",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"OBJECTID\",\"type\":\"esriFieldTypeOID\",\"alias\":\"OBJECTID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_ZONE_CODE_ID\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_ZONE_CODE_ID\",\"sqlType\":\"sqlTypeOther\",\"length\":10,\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_POLICY_DESC\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_POLICY_DESC\",\"sqlType\":\"sqlTypeOther\",\"length\":255,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"OBJECTID\":3220,\"LAND_USE_ZONE_CODE_ID\":\"RZ2\",\"LAND_USE_POLICY_DESC\":\"SUBURBAN CORE\"}}]}"
+      },
+      "block_interior_zone": {
+        "source_id": "act_tp_zoning",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1/query?f=json&returnGeometry=false&where=CURRENT_LIFECYCLE_STAGE%3D%27GAZETTED%27&outFields=OBJECTID%2CLAND_USE_ZONE_CODE_ID%2CLAND_USE_POLICY_DESC&geometry=691699.8821966997%2C6084198.2515&geometryType=esriGeometryPoint&inSR=7855&spatialRel=esriSpatialRelIntersects",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "d220fd951594fd1603dc5223f98a8302a22c5c456b9939bdf64b66f25116f9be",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"uniqueIdField\":{\"name\":\"OBJECTID\",\"isSystemMaintained\":true},\"globalIdFieldName\":\"\",\"geometryType\":\"esriGeometryPolygon\",\"spatialReference\":{\"wkid\":7855,\"latestWkid\":7855},\"fields\":[{\"name\":\"OBJECTID\",\"type\":\"esriFieldTypeOID\",\"alias\":\"OBJECTID\",\"sqlType\":\"sqlTypeOther\",\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_ZONE_CODE_ID\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_ZONE_CODE_ID\",\"sqlType\":\"sqlTypeOther\",\"length\":10,\"domain\":null,\"defaultValue\":null},{\"name\":\"LAND_USE_POLICY_DESC\",\"type\":\"esriFieldTypeString\",\"alias\":\"LAND_USE_POLICY_DESC\",\"sqlType\":\"sqlTypeOther\",\"length\":255,\"domain\":null,\"defaultValue\":null}],\"features\":[{\"attributes\":{\"OBJECTID\":3220,\"LAND_USE_ZONE_CODE_ID\":\"RZ2\",\"LAND_USE_POLICY_DESC\":\"SUBURBAN CORE\"}}]}"
+      },
+      "fire_200": {
+        "source_id": "act_bushfire_2026",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/Bushfire_Prone_Area_Details_2026/FeatureServer/0/query?f=json&returnGeometry=false&geometry=149.10967791624108%2C-35.366697888394704&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&where=1%3D1&distance=200&units=esriSRUnit_Meter&returnIdsOnly=true",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "21ec53fa8985c7a0f54feb7429d996f7b1fbc5d513d014bd895ccdf082960211",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"objectIds\":[]}"
+      },
+      "fire_500": {
+        "source_id": "act_bushfire_2026",
+        "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/Bushfire_Prone_Area_Details_2026/FeatureServer/0/query?f=json&returnGeometry=false&geometry=149.10967791624108%2C-35.366697888394704&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&where=1%3D1&distance=500&units=esriSRUnit_Meter&returnIdsOnly=true",
+        "retrieved_at": "2026-11-21T11:37:14+00:00",
+        "response_sha256": "78b99aa5353d88e915e901783b75f7e1080cc6a017fc66b0c73b41cbde675bf8",
+        "response_text": "{\"objectIdFieldName\":\"OBJECTID\",\"objectIds\":[4878,4772,604,490,2460]}"
+      }
+    }
+  },
+  "dwelling_descriptions": {
+    "793201": {
+      "property_type": "townhouse",
+      "bedrooms": 3,
+      "source_url": "https://www.domain.com.au/11-14-currie-crescent-kingston-act-2604-2020693879",
+      "source": "Purnell agent listing, published on Domain"
+    },
+    "165259": {
+      "property_type": "townhouse",
+      "bedrooms": 3,
+      "source_url": "https://www.domain.com.au/21-28-ringrose-crescent-isaacs-act-2607-2020801367",
+      "source": "Blackshaw agent listing, published on Domain"
+    }
+  },
+  "dwelling_description_scope": "Dwelling form and bedroom count are agent-reported attributes. Official address and unit registers establish the cadastral identity. Only the descriptive facts and source links above are retained from the agent listings."
+}

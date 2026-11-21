@@ -1,0 +1,162 @@
+[
+  {
+    "test_id": "PR-AT-001",
+    "area": "Property identity",
+    "fixture": "SYNTHETIC: two units share an address coordinate; only one has the uploaded inspection and a recorded title restriction.",
+    "expected_result": "Return distinct candidates and require unit confirmation. No inspection, title or building consequence is silently transferred to the other unit. Dependent findings have null substantive priority and an identity gap task.",
+    "gate": "Required before Stage 1 completion",
+    "phase": "Stage 1 \u2014 Identity and canonical evidence"
+  },
+  {
+    "test_id": "PR-AT-002",
+    "area": "Coverage and empty results",
+    "fixture": "SYNTHETIC: run the same hazard query against (a) a successful source with verified geographic and period coverage and no matches, (b) an HTTP failure, and (c) a source that excludes the property area.",
+    "expected_result": "Only (a) can produce no exposure identified within the tested scope. (b) and (c) are NOT_ASSESSED with explicit reasons; neither produces priority 0. A stale last-good snapshot remains dated and cannot masquerade as a current successful query.",
+    "gate": "Required before Stage 1 completion",
+    "phase": "Stage 1 \u2014 Identity and canonical evidence"
+  },
+  {
+    "test_id": "PR-AT-003",
+    "area": "Critical missingness and priority",
+    "fixture": "SYNTHETIC: 99 required checks are sufficiently assessed and one critical required check has no usable evidence.",
+    "expected_result": "Coverage is 99/100, but completeness is INCOMPLETE. The missing check has null substantive priority, a visible critical gap and workflow priority at least 3. No overall safe/cleared conclusion is produced.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Scoring and report"
+  },
+  {
+    "test_id": "PR-AT-004",
+    "area": "Required-check completion and denominator",
+    "fixture": "SYNTHETIC: one required non-critical check is unassessed; separately assess a scope with zero required applicable checks.",
+    "expected_result": "The first case remains INCOMPLETE despite all critical checks being assessed. Zero-denominator coverage is null with a reason, not 0 percent or 100 percent. Removing evidence cannot improve assessed completeness.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Scoring and report"
+  },
+  {
+    "test_id": "PR-AT-005",
+    "area": "Assessment mode and applicability",
+    "fixture": "SYNTHETIC: a public-screen mode cannot access title, building inspection or insurance evidence; the same property is then assessed in buyer mode with those documents.",
+    "expected_result": "Unavailable evidence is not labelled NOT_APPLICABLE merely because of the mode. Public-screen scope completion is distinguishable from full-profile due-diligence coverage. Every exclusion has an applicability reason, and percentages from different check catalogues cannot be compared without their scope labels.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Scoring and report"
+  },
+  {
+    "test_id": "PR-AT-006",
+    "area": "Spatial boundary, units and datum",
+    "fixture": "SYNTHETIC: a parcel touches a hazard boundary while its house footprint lies outside; positional uncertainty overlaps the boundary. A second source uses a different coordinate or vertical datum.",
+    "expected_result": "Parcel, dwelling and access findings remain separate. Boundary uncertainty is explicit; a centroid or strict-containment predicate cannot falsely clear the parcel. Distance units and coordinate transformations are recorded; incompatible elevation datums prevent a numerical floor-versus-water comparison.",
+    "gate": "Required before Stage 2 completion",
+    "phase": "Stage 2 \u2014 Spatial and local-change signals"
+  },
+  {
+    "test_id": "PR-AT-007",
+    "area": "Point-in-time evidence and geometry",
+    "fixture": "SYNTHETIC: a project was announced before the assessment cutoff but is expected to open afterwards; its approval and a parcel subdivision are published after the cutoff. Another relevant record has unknown first-publication time.",
+    "expected_result": "The known future proposal is included as a future event, while later approval and later parcel geometry do not leak into the historical assessment. Unknown publication time is excluded from faithful historical replay or visibly limits the replay claim. Event time, public availability and system retrieval remain distinct.",
+    "gate": "Required before Stage 2 completion",
+    "phase": "Stage 2 \u2014 Spatial and temporal signals"
+  },
+  {
+    "test_id": "PR-AT-008",
+    "area": "Source conflicts and supersession",
+    "fixture": "SYNTHETIC: two suitable sources conflict on a material project condition; a recent marketing statement also conflicts with an older authoritative instrument.",
+    "expected_result": "Both source observations are preserved. Authority, applicability and explicit supersession determine any resolution. The newest text does not automatically win. An unresolved conflict cannot support high confidence or a priority-0 substantive finding.",
+    "gate": "Required before Stage 2 completion",
+    "phase": "Stage 2 \u2014 Validation and reconciliation"
+  },
+  {
+    "test_id": "PR-AT-009",
+    "area": "Project stages and supply deduplication",
+    "fixture": "SYNTHETIC: one 40-dwelling project appears in a land release, DA, approval and construction record; funding occurs before final approval and the completion date is revised.",
+    "expected_result": "One canonical project links all records. The pipeline does not count 160 dwellings. Milestones, revisions and dependencies remain separate; funding does not imply approval or commencement. No invented completion probability or automatic value uplift is emitted.",
+    "gate": "Required before Stage 2 completion",
+    "phase": "Stage 2 \u2014 Development and supply signals"
+  },
+  {
+    "test_id": "PR-AT-010",
+    "area": "Priority aggregation and opportunities",
+    "fixture": "SYNTHETIC: an assessed priority-3 major defect is accompanied by several strong amenity opportunities and many priority-0 checks.",
+    "expected_result": "The domain and overall highest assessed finding remain 3. Opportunities appear separately and never subtract from risk or investigation priority. A numeric score is labelled as action policy, not an empirical loss probability.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Scoring and report"
+  },
+  {
+    "test_id": "PR-AT-011",
+    "area": "Correlation and scenario dependencies",
+    "fixture": "SYNTHETIC: vacancy, asking-rent reductions and longer letting time share the same demand source; a transit delay both prolongs construction and defers service benefits.",
+    "expected_result": "Related observations are grouped under their underlying factor without creating independent corroboration or summed risk. The delay scenario defers the benefit consistently. Mutually exclusive scenarios and overlapping consequences are not summed into a purported expected loss.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Scoring and scenario assembly"
+  },
+  {
+    "test_id": "PR-AT-012",
+    "area": "Loan arithmetic, rate units and missing inputs",
+    "fixture": "SYNTHETIC: A$720,000 principal, 360 monthly payments, annual nominal rates 0.06 and 0.08; include a zero-rate branch and a case with missing income. Source rates are separately supplied as 6 percent and decimal 0.06 with explicit units.",
+    "expected_result": "Monthly payments are A$4,316.76 and A$5,283.10; the zero-rate result is A$2,000.00. Unit normalisation gives equivalent calculations. Missing income permits repayment output but prevents an affordability conclusion. Unsupported offset/split/interest-only structures are not silently treated as a standard amortising loan.",
+    "gate": "Required before Stage 3 completion",
+    "phase": "Stage 3 \u2014 Financial scenarios"
+  },
+  {
+    "test_id": "PR-AT-013",
+    "area": "Protected cash and stress duration",
+    "fixture": "SYNTHETIC: use the 8 percent loan above, income A$7,700/month, other living and property costs A$5,700/month, cash after settlement A$45,000 and protected reserve A$15,000. Compare six-month and twelve-month stress durations.",
+    "expected_result": "The monthly deficit is A$3,283.10 after presentation rounding. The protected reserve is reached after approximately 9.14 months under constant assumptions. It is not breached in six months but is breached in twelve. Calculating without intermediate rounding gives twelve-month cash of A$5,602.74. Deposit and committed settlement/repair costs are not counted again as available buffer.",
+    "gate": "Required before Stage 3 completion",
+    "phase": "Stage 3 \u2014 Financial scenarios"
+  },
+  {
+    "test_id": "PR-AT-014",
+    "area": "Rental cash flow and exit equity",
+    "fixture": "SYNTHETIC: rental management fees and vacancy are supplied together with annual property expenses; an optional exit scenario sells after 36 payments on the A$720,000, 6 percent, 360-month loan.",
+    "expected_result": "Each rental deduction is applied once and tax treatment is stated. If exit modelling is enabled, outstanding principal after 36 payments is A$691,805.30 and net sale equity uses this balance plus stated selling/exit costs, not the original A$720,000 principal. If exit modelling is deferred, the API explicitly returns unsupported rather than a partial misleading return estimate.",
+    "gate": "Required before Stage 3 completion for enabled calculations",
+    "phase": "Stage 3 \u2014 Financial scenarios"
+  },
+  {
+    "test_id": "PR-AT-015",
+    "area": "Private evidence and tenant boundaries",
+    "fixture": "SYNTHETIC: two users assess the same property; only one uploaded an inspection, private finances and an insurance quote. A different case attempts direct access and a cache hit.",
+    "expected_result": "Unauthorised access is rejected. Shared property caches do not expose private source documents, finances or buyer-derived findings. Case/report/download access is checked independently of knowing a property or assessment ID.",
+    "gate": "Required before Stage 3 completion and buyer trial",
+    "phase": "Stage 3 \u2014 Buyer documents and access control"
+  },
+  {
+    "test_id": "PR-AT-016",
+    "area": "Licence enforcement and reproducibility limits",
+    "fixture": "SYNTHETIC: source A permits internal analysis but restricts raw display; source B does not permit storing a full replayable snapshot; a licence then expires.",
+    "expected_result": "The renderer enforces raw and derived display permissions separately. The assessment exposes the permitted replay level and does not claim full reproducibility for metadata-only evidence. Current access/retention rights are enforced on retrieval and refresh; historical ingestion does not confer perpetual rights.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Evidence delivery and rights"
+  },
+  {
+    "test_id": "PR-AT-017",
+    "area": "Document extraction and untrusted content",
+    "fixture": "SYNTHETIC: a document contains a misleading embedded instruction, an ambiguous amount and a negative finding; an LLM draft invents a cost estimate and a source reference.",
+    "expected_result": "Document text cannot modify rules or issue tool actions. Ambiguous/negated facts require correct structured extraction or review. Unsupported costs and references are rejected. Every published material statement resolves to authorised evidence and a validated calculation or rule.",
+    "gate": "Required before Stage 3 completion",
+    "phase": "Stage 3 \u2014 Document extraction"
+  },
+  {
+    "test_id": "PR-AT-018",
+    "area": "Durable job recovery and coherent snapshots",
+    "fixture": "SYNTHETIC: a worker crashes after storing evidence but before assessment completion; a retry starts while a source refresh publishes a new version.",
+    "expected_result": "Lease/retry logic recovers the job without duplicate evidence or findings. The original assessment retains its pinned snapshot set and cannot mix old/new inputs mid-run. A later assessment explicitly uses the new source version. Failed source steps preserve unrelated valid results and their gaps.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Durable assessment workflow"
+  },
+  {
+    "test_id": "PR-AT-019",
+    "area": "Review overrides and deterministic replay",
+    "fixture": "SYNTHETIC: a reviewer accepts an unresolved issue without adding evidence; later new evidence resolves it. Replay the original fixed snapshots, buyer inputs and rule versions.",
+    "expected_result": "Acceptance/waiver does not transform NOT_ASSESSED into ASSESSED. A subsequent evidenced resolution creates a new assessment revision and preserves the original. Deterministic core results match on replay; generation timestamps are excluded from the core result hash. Stored validated model extraction is reused rather than assumed deterministic when regenerated.",
+    "gate": "Required before Stage 4 completion",
+    "phase": "Stage 4 \u2014 Reviews and auditability"
+  },
+  {
+    "test_id": "PR-AT-020",
+    "area": "Independent proof and buyer-value evaluation",
+    "fixture": "DESIGN FIXTURE: freeze independent reference findings for the 30-property diagnostic cohort before revealing engine results. For the buyer-agent study, freeze baseline research before assisted review and record allocation/order.",
+    "expected_result": "Report missed material issues, false alerts, additional verified actionable findings and research time with denominators and limitations. Synthetic cases remain separate from real cases. Diagnostic correctness and useful task findings do not become claims of calibrated price or hazard prediction. Predeclared release/value thresholds govern the decision.",
+    "gate": "Required before Stage 5 completion or broader release",
+    "phase": "Stage 5 \u2014 Technical proof and buyer-value trial"
+  }
+]

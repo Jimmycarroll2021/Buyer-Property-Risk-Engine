@@ -1,0 +1,170 @@
+{
+  "source_id": "act_crime_statistics",
+  "status": "SUCCESS",
+  "retrieved_at": "2026-11-21T05:29:53.526038+00:00",
+  "snapshot_id": "sha256:40d8e0dc792265160533c41feed9a6b873fd21b9d66fcfea736515ba5fd9c9d1",
+  "source_urls": [
+    "https://www.data.act.gov.au/api/views/2egm-dieb.json",
+    "https://www.data.act.gov.au/api/views/2egm-dieb/files/13e57c74-edc3-44e9-8c88-93938ea4cc4d?download=true&filename=Website_Qtrly_Jun25.xlsx"
+  ],
+  "licence_evidence_url": "https://www.data.act.gov.au/api/views/2egm-dieb.json",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "ACT Policing — ACT Crime Statistics, data.act.gov.au/d/2egm-dieb. Licensed under Creative Commons Attribution 4.0 International. Original workbook unchanged; parsed representations are derived.",
+  "requested_scope": {
+    "area": "KINGSTON",
+    "max_records": 1000,
+    "max_bytes": 5000000
+  },
+  "completeness": {
+    "status": "COMPLETE",
+    "expected_count": 874,
+    "returned_count": 874,
+    "limit_reached": false,
+    "query_scope": {
+      "area": "KINGSTON"
+    }
+  },
+  "coverage": {
+    "status": "NOT_ESTABLISHED",
+    "scope": {
+      "area": "KINGSTON"
+    },
+    "reason": "Collection does not prove geographic or mechanism coverage"
+  },
+  "errors": [],
+  "asset_evidence": [
+    {
+      "kind": "catalogue_metadata",
+      "sha256": "a3d3ce8bf790278037e41898e959186b7aea5e7db7e29dbbf3c17c02486290cc",
+      "bytes": 4705,
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "kind": "published_file",
+      "sha256": "0302bade00e4158f7cad1413412c167eea9d6b13b6a4eaf02ed7dac40af011df",
+      "bytes": 536366,
+      "content_type": "application/octet-stream"
+    }
+  ],
+  "counts": {
+    "records": 874,
+    "reported_offence": 644,
+    "infringement_activity": 230,
+    "categories": 19,
+    "periods": 46
+  },
+  "first_period": "2014-Q1",
+  "last_period": "2025-Q2",
+  "source_publication_date_established": false,
+  "faithful_historical_replay": false,
+  "network_resolution": [
+    {
+      "host": "www.data.act.gov.au",
+      "mode": "REGISTERED_HTTPS_CONNECT_PROXY_DNS"
+    },
+    {
+      "host": "sa-core-blob-storage-us-east-1-fedramp-prod.s3-fips.us-east-1.amazonaws.com",
+      "mode": "REGISTERED_HTTPS_CONNECT_PROXY_DNS"
+    }
+  ],
+  "currency_note": "Live catalogue checked on 2026-11-21 still identifies a workbook covering 2014 Q1 through 2025 Q2. Fresh retrieval does not make the observations current. Counts are reporting-area context, not property crime probabilities.",
+  "not_a_property_risk_assessment": true,
+  "earlier_attempts": [
+    {
+      "status": "UNAVAILABLE",
+      "retrieved_at": "2026-11-21T05:26:32.217007+00:00",
+      "snapshot_id": "sha256:7e8b441952c3354c8a2882e72445f8ad9a8a82e4f76f9d5b7a9abe9d6ea6bfdd",
+      "errors": [
+        {
+          "code": "NETWORK_ERROR",
+          "message": "Source transport failed after bounded retries",
+          "http_status": null
+        }
+      ],
+      "counts": {
+        "records": 0,
+        "reported_offence": 0,
+        "infringement_activity": 0,
+        "categories": 0,
+        "periods": 0
+      },
+      "network_resolution": [
+        {
+          "host": "www.data.act.gov.au",
+          "mode": "REGISTERED_HTTPS_SOCKS_REMOTE_DNS"
+        }
+      ]
+    },
+    {
+      "status": "UNAVAILABLE",
+      "retrieved_at": "2026-11-21T05:23:56.151190+00:00",
+      "snapshot_id": "sha256:7e8b441952c3354c8a2882e72445f8ad9a8a82e4f76f9d5b7a9abe9d6ea6bfdd",
+      "errors": [
+        {
+          "code": "DNS_FAILED",
+          "http_status": null,
+          "message": "Could not resolve source host www.data.act.gov.au"
+        }
+      ],
+      "network_resolution": null
+    },
+    {
+      "status": "UNAVAILABLE",
+      "retrieved_at": "2026-11-21T05:25:50.908672+00:00",
+      "snapshot_id": "sha256:7e8b441952c3354c8a2882e72445f8ad9a8a82e4f76f9d5b7a9abe9d6ea6bfdd",
+      "errors": [
+        {
+          "code": "DNS_FAILED",
+          "http_status": null,
+          "message": "Could not resolve source host www.data.act.gov.au"
+        }
+      ],
+      "network_resolution": []
+    },
+    {
+      "status": "UNAVAILABLE",
+      "retrieved_at": "2026-11-21T05:28:36.117684+00:00",
+      "snapshot_id": "sha256:5153de45f0121e05fb72c830b41ca6a78d29730c83bfb54036b709c14dce0383",
+      "errors": [
+        {
+          "code": "UNREGISTERED_HOST",
+          "message": "Request or redirect host is absent from the trusted source contract",
+          "http_status": null
+        }
+      ],
+      "counts": {
+        "records": 0,
+        "reported_offence": 0,
+        "infringement_activity": 0,
+        "categories": 0,
+        "periods": 0
+      },
+      "network_resolution": [
+        {
+          "host": "www.data.act.gov.au",
+          "mode": "REGISTERED_HTTPS_CONNECT_PROXY_DNS"
+        }
+      ]
+    }
+  ],
+  "registration_check": {
+    "source_contract_hash": "e1738452b819069243016189bc3bb6612faccbcca5b0d386beb5f4ffc394a05a",
+    "registry_entry_count": 83,
+    "canonical_source_id": "act_crime_statistics",
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "licence_status": "VERIFIED_CC_BY_4_0",
+    "reviewed_at": "2026-11-21",
+    "current_catalogue_id": "2egm-dieb",
+    "publisher_license_id": "CC_40_BY",
+    "publisher_attribution": "ACT Policing",
+    "asset_blob_id": "13e57c74-edc3-44e9-8c88-93938ea4cc4d",
+    "expected_fixture_sha256": "0302bade00e4158f7cad1413412c167eea9d6b13b6a4eaf02ed7dac40af011df",
+    "download_matches_retained_fixture": true
+  },
+  "proof_type": "FRESH_HTTP_CAPTURE"
+}

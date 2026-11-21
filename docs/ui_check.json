@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "method": "JSDOM executing actual dashboard JavaScript against live local FastAPI",
+  "checks_rendered": 65,
+  "registry_entries": 83,
+  "observations_rendered": 9,
+  "cash_chart": true,
+  "case_save": true,
+  "assessment_execution": true,
+  "report_request": true,
+  "architecture_links": 3,
+  "token_cleared": true,
+  "script_errors": 0,
+  "visual_layout_verified": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "method": "Fresh archive extraction into a path containing spaces; reused already installed pinned Linux dependencies",
+  "initialisation": true,
+  "synthetic_demo": true,
+  "same_assessment_id_as_packaged_example": true,
+  "exact_replay": true,
+  "api_and_static_assets": true,
+  "runtime_credentials_excluded": true,
+  "private_runtime_database_excluded": true,
+  "archive_integrity": true,
+  "dependency_install_on_new_machine_tested": false
+}

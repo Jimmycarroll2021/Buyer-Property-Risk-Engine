@@ -1,0 +1,40 @@
+digraph architecture {
+  graph [rankdir=TB, bgcolor="#f7f9fc", pad="0.45", nodesep="0.35", ranksep="0.45", fontname="DejaVu Sans", label="PROPERTY RISK ENGINE\nEnd-to-end evidence and assessment flow", labelloc=t, fontsize=25];
+  node [shape=box, style="rounded,filled", fillcolor="white", color="#b9c6d8", fontname="DejaVu Sans", fontsize=11, margin="0.16,0.11"];
+  edge [color="#566d88", arrowsize=0.7, fontname="DejaVu Sans", fontsize=9];
+  subgraph cluster_inputs {label="1  INPUTS"; color="#cfdae7"; style=rounded; fontname="DejaVu Sans";
+    api [label="Official APIs\nACT ArcGIS, Socrata\nABS and configured endpoints"];
+    files [label="Published files\nRBA CSV, crime XLSX\nGTFS and other downloads"];
+    reference [label="Reference material\nRisk library, capacity report\nPlanning and source guidance"];
+    buyer [label="Private buyer inputs\nPrice, loan, household budget\nInspections and title evidence",fillcolor="#fff4df"];
+    {rank=same;api;files;reference;buyer;}
+  }
+  registry [label="Versioned source registry\nEndpoint, adapter, source aliases, access\nUnits, dates, rights and completeness contract",fillcolor="#deebfc"];
+  ingest [label="2  INGESTION\nBounded requests, pagination, retries, schema checks\nContent hashes, explicit failures and durable job state",fillcolor="#deebfc"];
+  raw [label="Original source snapshots\nOriginal JSON / CSV / XLSX / document bytes\nQuery scope, retrieval time and source dates"];
+  private [label="Private case evidence\nTenant and case ownership\nRestricted documents and derived facts",fillcolor="#fff4df"];
+  validate [label="3  EVIDENCE VALIDATION\nIdentity + coverage + currency + units + permissions\nUnknown and failed checks remain explicit",fillcolor="#e0f0ed"];
+  property [label="Property relationships\nAddress / unit / parcel / building\nGeometry and lifecycle versions"];
+  projects [label="Project relationships\nApplication / activity / project\nSeparate dated milestones"];
+  series [label="Area and time observations\nGeography edition, period and measure\nRates, counts and source units"];
+  spatial [label="4A  SPATIAL CHECKS\nCoverage before overlap\nTouch / overlap / non-overlap\nCRS and precision handling",fillcolor="#e0f0ed"];
+  finance [label="4B  FINANCIAL SCENARIOS\nSettlement funding + repayments\nDated rate changes + cash balances\nReserve breach and exit equity",fillcolor="#e0f0ed"];
+  rules [label="4C  EVIDENCE RULES\nRequired checks + explicit prerequisites\nConcern, confidence and gaps separate\nOpportunities never offset concerns",fillcolor="#e0f0ed"];
+  assessment [label="5  IMMUTABLE ASSESSMENT\nPinned case + observation snapshot set\nAssessment date + engine/rule versions + input hash\nRepeatable structured result",fillcolor="#dce4f8"];
+  web [label="Buyer dashboard\nFindings, missing checks\nSource readiness and case review"];
+  rest [label="Authenticated API / CLI\nCases, evidence, jobs\nAssessments and review actions"];
+  report [label="HTML / JSON report\nFinancial scenarios, evidence links\nPriorities, coverage and limitations"];
+  note [label="SUPPORTED INTERPRETATION\nAction priorities are workflow policy, not loss probabilities.\nA completed download is not complete due diligence.\nA new input or rule version creates a new assessment.",shape=note,fillcolor="#f0f2f6",fontsize=10];
+  api->registry;files->registry;reference->registry;registry->ingest;
+  ingest->raw;buyer->private;raw->validate;private->validate;
+  validate->property;validate->projects;validate->series;
+  property->spatial;property->rules;projects->rules;series->rules;private->finance;
+  spatial->assessment;finance->assessment;rules->assessment;
+  assessment->web;assessment->rest;assessment->report;
+  report->note [style=invis];
+  {rank=same;raw;private;}
+  {rank=same;property;projects;series;}
+  {rank=same;spatial;finance;rules;}
+  {rank=same;web;rest;report;}
+}
+

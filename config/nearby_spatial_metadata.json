@@ -1,0 +1,26 @@
+{
+  "layer": "Territory Plan Land Use Zones",
+  "publisher": "City and Environment Directorate, ACT Government",
+  "attribution": "Copyright Australian Capital Territory (Territory Plan Land Use Zones), licensed under CC BY 4.0.",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "licence_metadata_url": "https://www.arcgis.com/sharing/rest/content/items/25c5e16b3efd41cfbc4e1a5ba13d17f2/info/metadata/metadata.xml?format=default&output=html",
+  "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions",
+  "source_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1",
+  "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1/query?geometry=149.132%2C-35.322%2C149.152%2C-35.305&inSR=4326&geometryType=esriGeometryEnvelope&spatialRel=esriSpatialRelIntersects&where=CURRENT_LIFECYCLE_STAGE+%3D+%27GAZETTED%27&f=geojson&outSR=4326&outFields=OBJECTID%2CLAND_USE_ZONE_CODE_ID%2CLAND_USE_POLICY_DESC&returnGeometry=true&geometryPrecision=8&orderByFields=OBJECTID+ASC",
+  "ids_query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_TP_LAND_USE_ZONE/FeatureServer/1/query?geometry=149.132%2C-35.322%2C149.152%2C-35.305&inSR=4326&geometryType=esriGeometryEnvelope&spatialRel=esriSpatialRelIntersects&where=CURRENT_LIFECYCLE_STAGE+%3D+%27GAZETTED%27&f=json&returnIdsOnly=true",
+  "source_crs": "EPSG:7855 (GDA2020 / MGA zone 55)",
+  "snapshot_crs": "OGC:CRS84 (WGS 84 longitude, latitude), requested outSR=4326",
+  "coverage": "Kingston / inner south Canberra; bounding rectangle in WGS 84 longitude, latitude order (west, south, east, north). Includes gazetted zones only. The returned polygons may extend beyond the query rectangle.",
+  "bbox": [
+    149.132,
+    -35.322,
+    149.152,
+    -35.305
+  ],
+  "layer_data_last_edit_utc": "2026-11-05T18:03:28Z",
+  "retrieved_at_utc": "2026-11-21T08:29:31Z",
+  "feature_count": 99,
+  "snapshot_file": "nearby_spatial_zones.json",
+  "snapshot_sha256": "5e5d9579ae192e42ad3acae3c72360401e1d0ce07fa9729e5ca11e36373f0223",
+  "derivation": "Unmodified ArcGIS GeoJSON query response. Server reprojected polygon vertices to WGS 84 with eight decimal places. Returned object IDs matched a separate bounded IDs query. Source layer data edit timestamp was unchanged across collection."
+}

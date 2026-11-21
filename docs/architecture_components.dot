@@ -1,0 +1,33 @@
+digraph components {
+ graph [rankdir=TB,bgcolor="#f7f9fc",pad="0.4",nodesep="0.45",ranksep="0.6",fontname="DejaVu Sans",label="PROPERTY RISK ENGINE\nRuntime components and deployment boundary",labelloc=t,fontsize=24];
+ node [shape=box,style="rounded,filled",fillcolor=white,color="#b9c6d8",fontname="DejaVu Sans",fontsize=11,margin="0.18,0.12"];
+ edge [color="#566d88",arrowsize=.7,fontname="DejaVu Sans",fontsize=9];
+ builder [label="Frontier AI / engineering team\nDesign, implement, inspect and test\nNo model call in assessment execution",fillcolor="#eee9f8"];
+ release [label="Versioned release\nSource contracts + rule manifest\nCode + pinned dependencies + tests",fillcolor="#eee9f8"];
+ browser [label="Local browser dashboard\nAPI key held in page memory"];
+ cli [label="CLI / scheduled invocation\nInit, import, collect, assess\nReplay and worker commands"];
+ subgraph cluster_runtime {
+ label="LOCAL APPLICATION\nPython process and private runtime, default 127.0.0.1";fontsize=16;color="#6a92be";style=rounded;fontname="DejaVu Sans";
+ auth [label="Authentication and scope\nServer-derived tenant\nCase and evidence permissions",fillcolor="#fff4df"];
+ api [label="FastAPI service\nValidated requests\nPrivate case/report/document routes",fillcolor="#deebfc"];
+ pipeline [label="Pipeline coordinator\nConfigured source selection\nPinned assessment inputs",fillcolor="#deebfc"];
+ adapters [label="Reusable ingestion adapters\nArcGIS, Socrata, files and series\nExplicit access/unsupported states"];
+ engine [label="Deterministic engine\nRules + geometry + Decimal finance\nNo network or current-clock decisions",fillcolor="#e0f0ed"];
+ store [label="SQLite storage\nVersioned cases, observations, assessments\nSnapshot metadata, reviews, jobs, audit"];
+ bytes [label="Private runtime directories\nOriginal source bytes and documents\nContent hashes and scoped paths",fillcolor="#fff4df"];
+ report [label="Report renderer\nEscaped HTML and structured JSON\nDisplay permissions enforced"];
+ {rank=same;adapters;engine;}
+ {rank=same;store;bytes;report;}
+ }
+ sources [label="External source systems\nPublic APIs / downloads\nCredentials for restricted feeds"];
+ future [label="LATER SCALE PATH — NOT EXECUTION-VERIFIED HERE\nPostgreSQL/PostGIS + object storage + managed identity\nDistributed jobs after equivalent behaviour and isolation tests",style="rounded,dashed,filled",fillcolor="#f0f2f6"];
+ builder->release;release->pipeline [label="deploy reviewed version"];
+ browser->auth [label="Bearer credential"];auth->api;cli->pipeline;
+ api->pipeline;pipeline->adapters;pipeline->engine;pipeline->store;
+ adapters->sources [label="bounded reads"];adapters->bytes;
+ engine->report;api->report;store->engine [label="frozen input bundle"];
+ api->store;bytes->store [label="hash / location metadata"];
+ store->future [style=dashed,label="migration after validation"];
+ {rank=same;browser;cli;}
+}
+

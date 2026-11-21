@@ -1,0 +1,509 @@
+{
+  "act_addresses": {
+    "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_ADDRESSES/FeatureServer/0/query?f=json&where=ADDRESS_ID%3D793201&outFields=ADDRESS_ID%2CDOOR_NO%2CSTREET_NUMBER%2CSTREET_NAME%2CSTREET_TYPE%2CDIVISION%2CBLOCK_KEY%2CUNIT_TITLE%2CUNIT_CLASS%2CUNITPLAN_NO%2CLONG%2CLAT%2CASSIGNED%2CSUBADDTYPE&returnGeometry=false",
+    "retrieved_at": "2026-11-21T11:11:49+00:00",
+    "response_sha256": "4db72a245c58163cc7f631493f98db8be24cdb1a9e4955bcd7d4301171c5eba5",
+    "data": {
+      "objectIdFieldName": "OBJECTID",
+      "uniqueIdField": {
+        "name": "OBJECTID",
+        "isSystemMaintained": true
+      },
+      "globalIdFieldName": "GlobalID",
+      "geometryType": "esriGeometryPoint",
+      "spatialReference": {
+        "wkid": 7855,
+        "latestWkid": 7855
+      },
+      "fields": [
+        {
+          "name": "ADDRESS_ID",
+          "type": "esriFieldTypeInteger",
+          "alias": "ADDRESS_ID",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "DOOR_NO",
+          "type": "esriFieldTypeString",
+          "alias": "DOOR_NO",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "STREET_NUMBER",
+          "type": "esriFieldTypeString",
+          "alias": "STREET_NUMBER",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "STREET_NAME",
+          "type": "esriFieldTypeString",
+          "alias": "STREET_NAME",
+          "sqlType": "sqlTypeOther",
+          "length": 100,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "STREET_TYPE",
+          "type": "esriFieldTypeString",
+          "alias": "STREET_TYPE",
+          "sqlType": "sqlTypeOther",
+          "length": 100,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "DIVISION",
+          "type": "esriFieldTypeString",
+          "alias": "DIVISION",
+          "sqlType": "sqlTypeOther",
+          "length": 100,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "BLOCK_KEY",
+          "type": "esriFieldTypeDouble",
+          "alias": "BLOCK_KEY",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "UNIT_TITLE",
+          "type": "esriFieldTypeString",
+          "alias": "UNIT_TITLE",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "UNIT_CLASS",
+          "type": "esriFieldTypeString",
+          "alias": "UNIT_CLASS",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "UNITPLAN_NO",
+          "type": "esriFieldTypeString",
+          "alias": "UNITPLAN_NO",
+          "sqlType": "sqlTypeOther",
+          "length": 200,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "LONG",
+          "type": "esriFieldTypeString",
+          "alias": "LONG",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "LAT",
+          "type": "esriFieldTypeString",
+          "alias": "LAT",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "ASSIGNED",
+          "type": "esriFieldTypeString",
+          "alias": "ASSIGNED",
+          "sqlType": "sqlTypeOther",
+          "length": 30,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "SUBADDTYPE",
+          "type": "esriFieldTypeString",
+          "alias": "SUBADDTYPE",
+          "sqlType": "sqlTypeOther",
+          "length": 10,
+          "domain": null,
+          "defaultValue": null
+        }
+      ],
+      "features": [
+        {
+          "attributes": {
+            "ADDRESS_ID": 793201,
+            "DOOR_NO": "11",
+            "STREET_NUMBER": "14",
+            "STREET_NAME": "CURRIE",
+            "STREET_TYPE": "CRESCENT",
+            "DIVISION": "KINGSTON",
+            "BLOCK_KEY": 12170240009,
+            "UNIT_TITLE": "11",
+            "UNIT_CLASS": "B",
+            "UNITPLAN_NO": "212",
+            "LONG": "149.13901106665423",
+            "LAT": "-35.315392351357914",
+            "ASSIGNED": "ASSIGNED",
+            "SUBADDTYPE": "Unit"
+          }
+        }
+      ]
+    },
+    "attribution": "ACTGOV Addresses from ACTmapi, ? Australian Capital Territory, CC BY 4.0.",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions"
+  },
+  "act_blocks": {
+    "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_BLOCKS/FeatureServer/0/query?f=geojson&where=BLOCK_KEY%3D12170240009&outFields=BLOCK_KEY%2CBLOCK_NUMBER%2CSECTION_NUMBER%2CDIVISION_NAME%2CCURRENT_LIFECYCLE_STAGE&outSR=7855&returnGeometry=true",
+    "retrieved_at": "2026-11-21T11:10:58+00:00",
+    "response_sha256": "d8abc599b5a5becdc2c8ee25bb0ec99012a89e3e5d9bbfefa581656dca89fde6",
+    "data": {
+      "type": "FeatureCollection",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:7855"
+        }
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  694498.9663,
+                  6089889.4679
+                ],
+                [
+                  694513.511,
+                  6089878.383
+                ],
+                [
+                  694476.5613,
+                  6089829.9005
+                ],
+                [
+                  694458.5855,
+                  6089827.9804
+                ],
+                [
+                  694457.26510631,
+                  6089837.30070215
+                ],
+                [
+                  694455.308504846,
+                  6089846.50848052
+                ],
+                [
+                  694452.724912568,
+                  6089855.56036002
+                ],
+                [
+                  694449.5265,
+                  6089864.4137
+                ],
+                [
+                  694498.9663,
+                  6089889.4679
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "BLOCK_KEY": 12170240009,
+            "BLOCK_NUMBER": 9,
+            "SECTION_NUMBER": 24,
+            "DIVISION_NAME": "KINGSTON",
+            "CURRENT_LIFECYCLE_STAGE": "REGISTERED"
+          }
+        }
+      ]
+    },
+    "attribution": "ACTGOV Cadastral Blocks from ACTmapi, ? Australian Capital Territory, CC BY 4.0.",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions"
+  },
+  "act_unit": {
+    "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_UNIT/FeatureServer/0/query?f=json&where=BLOCK_KEY%3D12170240009+AND+UNIT_NUMBER%3D%2711%27&outFields=ID%2CBLOCK_KEY%2CUNIT_NUMBER%2CUNIT_PLAN_NO%2CUNIT_CLASS%2CCURRENT_LIFECYCLE_STAGE&returnGeometry=false",
+    "retrieved_at": "2026-11-21T11:10:57+00:00",
+    "response_sha256": "3e463bb67dcf07e469d89fbbd65b03d7b4cc0a47e7bbb45b0d6c6f6c566ed17e",
+    "data": {
+      "objectIdFieldName": "OBJECTID",
+      "uniqueIdField": {
+        "name": "OBJECTID",
+        "isSystemMaintained": true
+      },
+      "globalIdFieldName": "",
+      "geometryType": "esriGeometryPolygon",
+      "spatialReference": {
+        "wkid": 7855,
+        "latestWkid": 7855
+      },
+      "fields": [
+        {
+          "name": "ID",
+          "type": "esriFieldTypeInteger",
+          "alias": "ID",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "BLOCK_KEY",
+          "type": "esriFieldTypeDouble",
+          "alias": "BLOCK_KEY",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "UNIT_NUMBER",
+          "type": "esriFieldTypeString",
+          "alias": "UNIT_NUMBER",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "UNIT_PLAN_NO",
+          "type": "esriFieldTypeString",
+          "alias": "UNIT_PLAN_NO",
+          "sqlType": "sqlTypeOther",
+          "length": 200,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "UNIT_CLASS",
+          "type": "esriFieldTypeString",
+          "alias": "UNIT_CLASS",
+          "sqlType": "sqlTypeOther",
+          "length": 1,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "CURRENT_LIFECYCLE_STAGE",
+          "type": "esriFieldTypeString",
+          "alias": "CURRENT_LIFECYCLE_STAGE",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        }
+      ],
+      "features": [
+        {
+          "attributes": {
+            "ID": 19672,
+            "BLOCK_KEY": 12170240009,
+            "UNIT_NUMBER": "11",
+            "UNIT_PLAN_NO": "212",
+            "UNIT_CLASS": "B",
+            "CURRENT_LIFECYCLE_STAGE": "REGISTERED"
+          }
+        },
+        {
+          "attributes": {
+            "ID": 19672,
+            "BLOCK_KEY": 12170240009,
+            "UNIT_NUMBER": "11",
+            "UNIT_PLAN_NO": "212",
+            "UNIT_CLASS": "B",
+            "CURRENT_LIFECYCLE_STAGE": "REGISTERED"
+          }
+        }
+      ]
+    },
+    "attribution": "ACTGOV Unit Polygons (Unit Title) from ACTmapi, ? Australian Capital Territory, CC BY 4.0.",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions"
+  },
+  "act_bushfire_2026": {
+    "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/Bushfire_Prone_Area_Details_2026/FeatureServer/0/query?f=json&where=1%3D1&geometry=694240%2C6089620%2C694725%2C6090100&inSR=7855&geometryType=esriGeometryEnvelope&spatialRel=esriSpatialRelIntersects&returnIdsOnly=true",
+    "retrieved_at": "2026-11-21T11:10:57+00:00",
+    "response_sha256": "21ec53fa8985c7a0f54feb7429d996f7b1fbc5d513d014bd895ccdf082960211",
+    "data": {
+      "objectIdFieldName": "OBJECTID",
+      "objectIds": []
+    },
+    "attribution": "Bushfire Prone Area Details 2026 from ACTmapi, ? Australian Capital Territory, CC BY 4.0.",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions"
+  },
+  "act_schools_2026": {
+    "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACTGOV_Priority_Enrolment_Areas_2026/FeatureServer/2/query?f=json&geometry=149.13901106665423%2C-35.315392351357914&inSR=4326&geometryType=esriGeometryPoint&spatialRel=esriSpatialRelIntersects&outFields=SCHOOL_NAME%2CTYPE%2CYEAR_LEVEL&returnGeometry=false",
+    "retrieved_at": "2026-11-21T11:10:57+00:00",
+    "response_sha256": "991785b48f3189870d6649866a4960d071d717e211b8e838fbd4013a7577081e",
+    "data": {
+      "objectIdFieldName": "id_0",
+      "uniqueIdField": {
+        "name": "id_0",
+        "isSystemMaintained": true
+      },
+      "globalIdFieldName": "",
+      "geometryType": "esriGeometryPolygon",
+      "spatialReference": {
+        "wkid": 7855,
+        "latestWkid": 7855
+      },
+      "fields": [
+        {
+          "name": "SCHOOL_NAME",
+          "type": "esriFieldTypeString",
+          "alias": "SCHOOL_NAME",
+          "sqlType": "sqlTypeOther",
+          "length": 100,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "TYPE",
+          "type": "esriFieldTypeString",
+          "alias": "TYPE",
+          "sqlType": "sqlTypeOther",
+          "length": 20,
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "YEAR_LEVEL",
+          "type": "esriFieldTypeString",
+          "alias": "YEAR_LEVEL",
+          "sqlType": "sqlTypeOther",
+          "length": 6,
+          "domain": null,
+          "defaultValue": null
+        }
+      ],
+      "features": [
+        {
+          "attributes": {
+            "SCHOOL_NAME": "Forrest Primary School",
+            "TYPE": "Primary",
+            "YEAR_LEVEL": "P-6"
+          }
+        },
+        {
+          "attributes": {
+            "SCHOOL_NAME": "Telopea Park School",
+            "TYPE": "High",
+            "YEAR_LEVEL": "7-10"
+          }
+        },
+        {
+          "attributes": {
+            "SCHOOL_NAME": "Narrabundah College",
+            "TYPE": "College",
+            "YEAR_LEVEL": "11-12"
+          }
+        },
+        {
+          "attributes": {
+            "SCHOOL_NAME": "Red Hill Primary School",
+            "TYPE": "Primary",
+            "YEAR_LEVEL": "P-6"
+          }
+        }
+      ]
+    },
+    "attribution": "ACTGOV Priority Enrolment Areas 2026 & Schools from ACTmapi, ? Australian Capital Territory, CC BY 4.0.",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions"
+  },
+  "act_canopy_2020": {
+    "query_url": "https://services1.arcgis.com/E5n4f1VY84i0xSjy/arcgis/rest/services/ACT_CANOPY_2020/FeatureServer/2/query?f=json&where=BLOCK_KEY%3D12170240009&outFields=BLOCK_KEY%2CBLOCK_AREA%2CF_2020_CANOPY_AREA%2CF_2020_CANOPY_COVER_PERCENTAGE&returnGeometry=false",
+    "retrieved_at": "2026-11-21T11:10:58+00:00",
+    "response_sha256": "f10ae485a3e14347ffbf270b6950e2436b3149e4525adc0c346e0c1713a6b395",
+    "data": {
+      "objectIdFieldName": "OBJECTID",
+      "uniqueIdField": {
+        "name": "OBJECTID",
+        "isSystemMaintained": true
+      },
+      "globalIdFieldName": "",
+      "geometryType": "esriGeometryPolygon",
+      "spatialReference": {
+        "wkid": 7855,
+        "latestWkid": 7855
+      },
+      "fields": [
+        {
+          "name": "BLOCK_KEY",
+          "type": "esriFieldTypeDouble",
+          "alias": "BLOCK KEY",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "BLOCK_AREA",
+          "type": "esriFieldTypeDouble",
+          "alias": "BLOCK AREA (m2)",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "F_2020_CANOPY_AREA",
+          "type": "esriFieldTypeDouble",
+          "alias": "2020 CANOPY AREA (m2)",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        },
+        {
+          "name": "F_2020_CANOPY_COVER_PERCENTAGE",
+          "type": "esriFieldTypeDouble",
+          "alias": "2020 CANOPY %",
+          "sqlType": "sqlTypeOther",
+          "domain": null,
+          "defaultValue": null
+        }
+      ],
+      "features": [
+        {
+          "attributes": {
+            "BLOCK_KEY": 12170240009,
+            "BLOCK_AREA": 2053.09,
+            "F_2020_CANOPY_AREA": 927.81,
+            "F_2020_CANOPY_COVER_PERCENTAGE": 45.19
+          }
+        }
+      ]
+    },
+    "attribution": "ACTGOV 2020 Canopy Cover (Blocks & Divisions) from ACTmapi, ? Australian Capital Territory, CC BY 4.0.",
+    "terms_url": "https://www.actmapi.act.gov.au/terms-and-conditions"
+  },
+  "abs_building_approvals": {
+    "query_url": "https://data.api.abs.gov.au/rest/data/ABS,BA_SA2/1.9.1.100.SA2.801061131.M",
+    "captured_file": "abs_ba_sa2_kingston.csv",
+    "retrieved_at": "2026-11-21T11:10:58+00:00",
+    "knowledge_date_basis": "Date the retained public response was verified for this extract.",
+    "response_sha256": "749df8564a46570199197d65085110428a15112a9c2d22b383a8073fad5472ed",
+    "csv": "DATAFLOW,MEASURE,SECTOR,WORK_TYPE,BUILDING_TYPE,REGION_TYPE,REGION,FREQ,TIME_PERIOD,OBS_VALUE,UNIT_MEASURE,UNIT_MULT,OBS_STATUS,OBS_COMMENT\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-08,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-09,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-10,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-04,16,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-05,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-06,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-01,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-02,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-03,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-11,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-12,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-01,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-02,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-03,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-04,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-05,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-06,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2024-10,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2024-11,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2024-12,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-07,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-08,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2026-09,0,NUM,0,,\r\nABS:BA_SA2(2.0.0),1,9,1,100,SA2,801061131,M,2025-07,0,NUM,0,,\r\n",
+    "attribution": "Australian Bureau of Statistics, CC BY 4.0.",
+    "terms_url": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer"
+  },
+  "abs_census_2021_dwellings": {
+    "query_url": "https://data.api.abs.gov.au/rest/data/ABS,C21_G36_SA2/.D.801061131.SA2.8",
+    "captured_file": "abs_c21_g36_kingston.csv",
+    "retrieved_at": "2026-11-21T11:10:58+00:00",
+    "knowledge_date_basis": "Date the retained public response was verified for this extract.",
+    "response_sha256": "9b22ecb4a6d3533178aa22b1e2b87f49e1a48a2af4f68c85f5cea8e49d949109",
+    "csv": "DATAFLOW,DWTSTRD,SUM,REGION,REGION_TYPE,STATE,TIME_PERIOD,OBS_VALUE\r\nABS:C21_G36_SA2(1.0.0),22,P,801061131,SA2,8,2021,417\r\nABS:C21_G36_SA2(1.0.0),2,P,801061131,SA2,8,2021,449\r\nABS:C21_G36_SA2(1.0.0),11,P,801061131,SA2,8,2021,265\r\nABS:C21_G36_SA2(1.0.0),OCC,P,801061131,SA2,8,2021,5834\r\nABS:C21_G36_SA2(1.0.0),_T,P,801061131,SA2,8,2021,5834\r\nABS:C21_G36_SA2(1.0.0),N_OCC,P,801061131,SA2,8,2021,\r\nABS:C21_G36_SA2(1.0.0),_N,P,801061131,SA2,8,2021,5\r\nABS:C21_G36_SA2(1.0.0),94,P,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),32,P,801061131,SA2,8,2021,1360\r\nABS:C21_G36_SA2(1.0.0),21,P,801061131,SA2,8,2021,38\r\nABS:C21_G36_SA2(1.0.0),93,P,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),92,P,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),91,P,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),9,P,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),35,P,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),34,P,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),33,P,801061131,SA2,8,2021,3642\r\nABS:C21_G36_SA2(1.0.0),31,P,801061131,SA2,8,2021,118\r\nABS:C21_G36_SA2(1.0.0),9,D,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),35,D,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),34,D,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),33,D,801061131,SA2,8,2021,2180\r\nABS:C21_G36_SA2(1.0.0),31,D,801061131,SA2,8,2021,64\r\nABS:C21_G36_SA2(1.0.0),3,D,801061131,SA2,8,2021,2980\r\nABS:C21_G36_SA2(1.0.0),22,D,801061131,SA2,8,2021,196\r\nABS:C21_G36_SA2(1.0.0),2,D,801061131,SA2,8,2021,212\r\nABS:C21_G36_SA2(1.0.0),11,D,801061131,SA2,8,2021,99\r\nABS:C21_G36_SA2(1.0.0),OCC,D,801061131,SA2,8,2021,3293\r\nABS:C21_G36_SA2(1.0.0),_T,D,801061131,SA2,8,2021,3724\r\nABS:C21_G36_SA2(1.0.0),N_OCC,D,801061131,SA2,8,2021,425\r\nABS:C21_G36_SA2(1.0.0),_N,D,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),94,D,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),32,D,801061131,SA2,8,2021,737\r\nABS:C21_G36_SA2(1.0.0),21,D,801061131,SA2,8,2021,16\r\nABS:C21_G36_SA2(1.0.0),93,D,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),92,D,801061131,SA2,8,2021,0\r\nABS:C21_G36_SA2(1.0.0),3,P,801061131,SA2,8,2021,5116\r\nABS:C21_G36_SA2(1.0.0),91,D,801061131,SA2,8,2021,0\r\n",
+    "attribution": "Australian Bureau of Statistics, CC BY 4.0.",
+    "terms_url": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer"
+  }
+}

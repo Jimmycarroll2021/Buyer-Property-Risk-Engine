@@ -1,0 +1,20 @@
+{
+  "executed_on": "2026-11-21",
+  "command": "python -m pytest --junitxml=runtime/test-results.xml",
+  "tests": 166,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 3.521,
+  "warning": "Starlette TestClient httpx integration deprecation; tests passed.",
+  "test_modules": [
+    "tests.test_api_reporting",
+    "tests.test_api_security",
+    "tests.test_engine",
+    "tests.test_finance",
+    "tests.test_ingestion",
+    "tests.test_pipeline_integration",
+    "tests.test_spatial",
+    "tests.test_storage_security"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "provenance": "Historical runtime/weekend-uat/final-pytest.log; raw local log excluded",
+  "passed": 349,
+  "warnings": 1,
+  "duration_seconds": 32.13,
+  "warning": "StarletteDeprecationWarning: httpx testclient deprecated"
+}

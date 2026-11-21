@@ -1,0 +1,433 @@
+{
+  "manifest_hash": "sha256:31b5020c0530664dea502568a1d1127f6b3b80acf7b96feb4f6af80120a806be",
+  "inputs": {
+    "S001": [
+      "Entered address",
+      "Address aliases",
+      "ADDRESS_ID",
+      "BLOCK_KEY",
+      "Parcel geometry"
+    ],
+    "S002": [
+      "Declared dwelling type",
+      "Unit class",
+      "Units-plan reference",
+      "Title/lease documents"
+    ],
+    "S003": [
+      "Parcel geometry",
+      "Building plans",
+      "Dated aerial image",
+      "Optional building polygon"
+    ],
+    "S004": [
+      "Mapped parcel",
+      "Deposited plan",
+      "Survey evidence",
+      "Coordinate reference systems"
+    ],
+    "S005": [
+      "Confirmed parcel",
+      "Verified footprint if available",
+      "Official flood polygon",
+      "Event/model metadata"
+    ],
+    "S006": [
+      "Parcel/building geometry",
+      "Flood extent",
+      "Documented positional uncertainty"
+    ],
+    "S007": [
+      "Numerical flood model or specialist report",
+      "Event definition",
+      "Model date",
+      "Ground/floor levels"
+    ],
+    "S008": [
+      "Drainage inspection",
+      "Gutter/downpipe condition",
+      "Surface grades",
+      "Past ingress evidence"
+    ],
+    "S009": [
+      "LiDAR/terrain product",
+      "Capture date",
+      "Resolution",
+      "CRS and vertical datum",
+      "Current earthworks evidence"
+    ],
+    "S010": [
+      "Surveyed finished-floor level",
+      "Applicable modelled water level",
+      "Matching event and vertical datum"
+    ],
+    "S011": [
+      "Parcel geometry",
+      "Current bushfire layer",
+      "Hazard category",
+      "Dataset year"
+    ],
+    "S012": [
+      "Bushfire assessment/BAL report",
+      "Vegetation and slope observations",
+      "Building details",
+      "Access/egress evidence"
+    ],
+    "S013": [
+      "Geotechnical report",
+      "Cracking/settlement observations",
+      "Retaining-wall condition",
+      "Relevant site history"
+    ],
+    "S014": [
+      "Register match",
+      "Formal contaminated-land search",
+      "Historic uses",
+      "Audit/remediation documents"
+    ],
+    "S015": [
+      "Current/historical affected-property records",
+      "Parcel aliases",
+      "Remediation documents",
+      "Asbestos inspection"
+    ],
+    "S016": [
+      "Climate ensemble",
+      "Scenario",
+      "Baseline/horizon",
+      "Grid resolution",
+      "Selected variable"
+    ],
+    "S017": [
+      "Current title/Crown lease",
+      "Permitted use",
+      "Lease conditions",
+      "Buyer renovation/rental intentions"
+    ],
+    "S018": [
+      "Current title instruments",
+      "Deposited plan",
+      "Easement description/geometry",
+      "Buyer plans"
+    ],
+    "S019": [
+      "Zoning polygon",
+      "Current legal policies",
+      "Applicable overlays",
+      "Effective dates",
+      "Buyer use"
+    ],
+    "S020": [
+      "Approved plans",
+      "Occupancy/completion evidence",
+      "Current inspection",
+      "Dated imagery",
+      "Declared alterations"
+    ],
+    "S021": [
+      "Qualified inspection",
+      "Defect location/severity",
+      "Scope/exclusions",
+      "Engineer findings if required"
+    ],
+    "S022": [
+      "Inspection observations",
+      "Leak history",
+      "Roof/wet-area condition",
+      "Remediation evidence"
+    ],
+    "S023": [
+      "Pest inspection",
+      "Affected areas",
+      "Treatment history",
+      "Inspection exclusions"
+    ],
+    "S024": [
+      "Defect reports",
+      "Scoped quotations",
+      "Asset age/service evidence",
+      "Buyer contingency budget"
+    ],
+    "S025": [
+      "Property-specific written quote",
+      "Declared insured inputs",
+      "Exclusions",
+      "Buyer required cover",
+      "Validity period"
+    ],
+    "S026": [
+      "Written premiums",
+      "Excesses",
+      "Coverage",
+      "Sum insured",
+      "Construction inputs",
+      "Quote date"
+    ],
+    "S027": [
+      "Policy sum insured",
+      "Independent rebuild estimate",
+      "Demolition/code/site costs",
+      "Temporary accommodation terms"
+    ],
+    "S028": [
+      "Units-plan records",
+      "Minutes",
+      "Defect reports",
+      "Proceedings",
+      "Unit liability share"
+    ],
+    "S029": [
+      "Accounts",
+      "Fund balances",
+      "Maintenance plan",
+      "Levy notices",
+      "Arrears",
+      "Unit entitlement"
+    ],
+    "S030": [
+      "Application record",
+      "Affected parcels",
+      "Plans/use/height",
+      "Amendments",
+      "Decisions and conditions"
+    ],
+    "S031": [
+      "Relevant proposed geometry",
+      "Property orientation/windows",
+      "Shadow/privacy plans",
+      "Existing obstructions"
+    ],
+    "S032": [
+      "Draft/final amendment",
+      "Consultation dates",
+      "Approval/commencement instruments",
+      "Affected site/policy"
+    ],
+    "S033": [
+      "District strategy",
+      "Indicative release site/yield/year",
+      "Servicing dependencies",
+      "Program vintages"
+    ],
+    "S034": [
+      "Project scope",
+      "Funding",
+      "Approvals",
+      "Procurement",
+      "Construction",
+      "Opening ranges",
+      "Dated milestones"
+    ],
+    "S035": [
+      "Verified project milestone",
+      "Stop/access geometry",
+      "Future service assumptions",
+      "Buyer destinations",
+      "Current travel baseline"
+    ],
+    "S036": [
+      "Official works schedule",
+      "Closures/access plan",
+      "Environmental/acoustic evidence",
+      "Buyer access requirements"
+    ],
+    "S037": [
+      "Canonical projects/stages",
+      "Dwelling mix",
+      "Gross additions",
+      "Demolitions",
+      "Completion evidence",
+      "Buyer substitution market"
+    ],
+    "S038": [
+      "Small-area approvals",
+      "Dwelling-type categories",
+      "Comparable stock denominator",
+      "Geography vintage"
+    ],
+    "S039": [
+      "Territory commencements/completions",
+      "Uncommenced pipeline",
+      "Duration/abandonment series",
+      "Release vintage"
+    ],
+    "S040": [
+      "Comparable stock",
+      "Zoning constraints",
+      "Future pipeline",
+      "Verified active listings/sales where supplied"
+    ],
+    "S041": [
+      "Annual resident population",
+      "Growth components",
+      "Geography/version",
+      "Publication vintage"
+    ],
+    "S042": [
+      "Household projections",
+      "Population scenario",
+      "Household-size assumptions",
+      "Baseline households",
+      "Horizon"
+    ],
+    "S043": [
+      "SALM unemployment",
+      "Current labour-force series",
+      "Census industry mix",
+      "Buyer employment exposure"
+    ],
+    "S044": [
+      "Verified transactions",
+      "Sale dates/prices",
+      "Dwelling attributes",
+      "Condition",
+      "Market geography",
+      "Licence scope"
+    ],
+    "S045": [
+      "Proposed purchase price",
+      "Verified comparables",
+      "Documented adjustments",
+      "Market date",
+      "Condition costs"
+    ],
+    "S046": [
+      "Comparable settled sales",
+      "Dated stock",
+      "Verified listing histories if supplied",
+      "Buyer exit horizon"
+    ],
+    "S047": [
+      "Property rent evidence",
+      "Lease/appraisal",
+      "ACT bond aggregates",
+      "Ongoing rental costs",
+      "Vacancy assumptions"
+    ],
+    "S048": [
+      "Validated offence counts",
+      "Period",
+      "Definitions",
+      "Population/appropriate denominator",
+      "Reporting caveats"
+    ],
+    "S049": [
+      "Exact address",
+      "School level/year",
+      "PEA boundaries/shared-zone guidance",
+      "Buyer requirement"
+    ],
+    "S050": [
+      "Current schedule/feed dates",
+      "Stops/routes",
+      "Service frequency/span",
+      "Buyer destinations",
+      "Verified walk route"
+    ],
+    "S051": [
+      "Validated reported crash points",
+      "Periods",
+      "Road/access route context",
+      "Data coverage"
+    ],
+    "S052": [
+      "Actual EER/NatHERS document",
+      "Method/scale",
+      "Assessor/date",
+      "Building changes",
+      "Buyer comfort requirements"
+    ],
+    "S053": [
+      "Canopy report/map",
+      "Survey year",
+      "Geography",
+      "Buyer site observations"
+    ],
+    "S054": [
+      "Authorised acoustic/air assessment if supplied",
+      "Measurement location/time",
+      "Methods",
+      "Buyer observations"
+    ],
+    "S055": [
+      "RBA cash target",
+      "RBA housing lending-rate series",
+      "Buyer loan offer",
+      "Fixed/variable periods"
+    ],
+    "S056": [
+      "Purchase/deposit/loan",
+      "Actual rate/term",
+      "Net income",
+      "Essential spending",
+      "Ownership costs",
+      "Other debts"
+    ],
+    "S057": [
+      "Loan structure",
+      "Fixed reset date",
+      "Base cash flow",
+      "Explicit rate-shock scenarios",
+      "Protected cash reserve",
+      "Scenario start and duration in months"
+    ],
+    "S058": [
+      "Accessible savings",
+      "Protected reserve",
+      "Income interruption scenarios",
+      "Essential costs",
+      "Loan payments"
+    ],
+    "S059": [
+      "Rates/water",
+      "Insurance",
+      "Maintenance allowance",
+      "Known repairs",
+      "Conditional levies",
+      "Rental expenses if relevant"
+    ],
+    "S060": [
+      "Purchase/loan balance",
+      "Buyer-declared price-fall scenarios",
+      "Sale costs",
+      "Holding horizon",
+      "Accessible reserve"
+    ],
+    "S061": [
+      "Observation period",
+      "Publication date",
+      "Retrieval time",
+      "Legal effective date",
+      "Expected source cadence"
+    ],
+    "S062": [
+      "Source footprint/coverage",
+      "Inspection scope",
+      "Missing fields",
+      "Competing assertions",
+      "Entity match confidence"
+    ],
+    "S063": [
+      "Prior/current evidence versions",
+      "Document hashes",
+      "Event/effective dates",
+      "Affected property links"
+    ],
+    "S064": [
+      "Owner-occupier/investor intention",
+      "Holding period",
+      "Renovation plans",
+      "Access needs",
+      "Required cover",
+      "Cost/reserve tolerances"
+    ],
+    "S065": [
+      "Proposed purchase price",
+      "Confirmed applicable loan funds, conditions and dates",
+      "Cash explicitly allocated to purchase",
+      "Acquisition costs",
+      "Committed immediate works",
+      "Cash allocated separately to reserves"
+    ]
+  }
+}

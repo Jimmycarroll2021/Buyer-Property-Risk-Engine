@@ -1,0 +1,31 @@
+{
+  "observation_id": "REPLACE-UNIQUE-OBSERVATION-ID",
+  "check_id": "S021",
+  "property_id": "REPLACE-PROPERTY-ID",
+  "source_id": "private-inspection",
+  "snapshot_id": "REPLACE-DOCUMENT-SNAPSHOT-ID",
+  "published_at": null,
+  "evidence_basis": "reviewed_document",
+  "confidence": "Medium",
+  "visibility_scope": "private",
+  "rights": {
+    "process": true,
+    "retain_raw": true,
+    "display_raw": true,
+    "display_derived": true
+  },
+  "quality": {
+    "retrieval_status": "SUCCESS",
+    "coverage_status": "UNKNOWN",
+    "complete": false,
+    "current": false,
+    "identity_match": false
+  },
+  "payload": {
+    "kind": "inspection",
+    "reviewed": false,
+    "material_defect": null,
+    "scope_complete": false,
+    "statement": "Replace with a reviewed, page-referenced observation."
+  }
+}

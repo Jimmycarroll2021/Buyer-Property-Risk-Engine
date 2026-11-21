@@ -1,0 +1,12 @@
+services:
+  property-risk:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./runtime:/app/runtime
+    environment:
+      RISK_DATA_DIR: /app/runtime
+      RISK_API_KEYS_JSON: ${RISK_API_KEYS_JSON:-}
+    restart: unless-stopped
+

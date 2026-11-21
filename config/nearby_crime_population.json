@@ -1,0 +1,709 @@
+{
+  "attribution": "Australian Bureau of Statistics, Regional population 2024-25 and Australian Statistical Geography Standard Edition 3. Derived extract under CC BY 4.0.",
+  "release_at": "2026-03-31T00:30:00Z",
+  "source_url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25",
+  "query_url": "https://geo.abs.gov.au/arcgis/rest/services/Hosted/SA2_Regional_Population_2025/FeatureServer/3/query?f=json&where=state_code_2021+%3D+%278%27&outFields=sa2_code_2021%2Csa2_name_2021%2Cerp_2023%2Cerp_2024%2Cerp_2025&returnGeometry=false",
+  "allocations_url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/allocation-files",
+  "allocation_hashes": {
+    "MB_2021_AUST.xlsx": "cbfe8b98ed17c3be994f5635bd5fd4cc721b6f798d14f583c41a32c6b6973884",
+    "SAL_2021_AUST.xlsx": "e6be7af2fc4670375d49dfd9d83c98d48eea5049d038327d8eea94b598c7c9a3"
+  },
+  "method": "ACT suburb and locality and SA2 must contain identical sets of 2021 ABS mesh blocks. Offences are matched to the like-named ACT Policing suburb. Population estimates are at 30 June. No approximate SA2 crosswalks.",
+  "areas": {
+    "AINSLIE": {
+      "sal": "80018",
+      "sa2": "801051050",
+      "mesh_blocks": 85,
+      "erp_2024": 5404,
+      "erp_2025": 5469
+    },
+    "AMAROO": {
+      "sal": "80019",
+      "sa2": "801041034",
+      "mesh_blocks": 92,
+      "erp_2024": 6000,
+      "erp_2025": 5985
+    },
+    "ARANDA": {
+      "sal": "80020",
+      "sa2": "801011001",
+      "mesh_blocks": 36,
+      "erp_2024": 2602,
+      "erp_2025": 2643
+    },
+    "BANKS": {
+      "sal": "80021",
+      "sa2": "801071071",
+      "mesh_blocks": 63,
+      "erp_2024": 5049,
+      "erp_2025": 5038
+    },
+    "BELCONNEN": {
+      "sal": "80024",
+      "sa2": "801011002",
+      "mesh_blocks": 118,
+      "erp_2024": 9480,
+      "erp_2025": 9592
+    },
+    "BONNER": {
+      "sal": "80025",
+      "sa2": "801041035",
+      "mesh_blocks": 76,
+      "erp_2024": 7407,
+      "erp_2025": 7448
+    },
+    "BONYTHON": {
+      "sal": "80026",
+      "sa2": "801071072",
+      "mesh_blocks": 48,
+      "erp_2024": 3743,
+      "erp_2025": 3740
+    },
+    "BRADDON": {
+      "sal": "80027",
+      "sa2": "801051051",
+      "mesh_blocks": 69,
+      "erp_2024": 7391,
+      "erp_2025": 7488
+    },
+    "CALWELL": {
+      "sal": "80029",
+      "sa2": "801071073",
+      "mesh_blocks": 80,
+      "erp_2024": 5588,
+      "erp_2025": 5520
+    },
+    "CASEY": {
+      "sal": "80033",
+      "sa2": "801041036",
+      "mesh_blocks": 80,
+      "erp_2024": 6700,
+      "erp_2025": 6731
+    },
+    "CHAPMAN": {
+      "sal": "80034",
+      "sa2": "801081091",
+      "mesh_blocks": 37,
+      "erp_2024": 2894,
+      "erp_2025": 2881
+    },
+    "CHARNWOOD": {
+      "sal": "80035",
+      "sa2": "801011004",
+      "mesh_blocks": 100,
+      "erp_2024": 3046,
+      "erp_2025": 3078
+    },
+    "CHIFLEY": {
+      "sal": "80036",
+      "sa2": "801091099",
+      "mesh_blocks": 40,
+      "erp_2024": 2736,
+      "erp_2025": 2785
+    },
+    "CHISHOLM": {
+      "sal": "80037",
+      "sa2": "801071074",
+      "mesh_blocks": 65,
+      "erp_2024": 5251,
+      "erp_2025": 5277
+    },
+    "CITY": {
+      "sal": "80038",
+      "sa2": "801051053",
+      "mesh_blocks": 67,
+      "erp_2024": 5364,
+      "erp_2025": 5361
+    },
+    "CONDER": {
+      "sal": "80039",
+      "sa2": "801071075",
+      "mesh_blocks": 69,
+      "erp_2024": 4946,
+      "erp_2025": 4914
+    },
+    "COOK": {
+      "sal": "80040",
+      "sa2": "801011005",
+      "mesh_blocks": 42,
+      "erp_2024": 2931,
+      "erp_2025": 2962
+    },
+    "COOMBS": {
+      "sal": "80041",
+      "sa2": "801101135",
+      "mesh_blocks": 34,
+      "erp_2024": 5914,
+      "erp_2025": 6159
+    },
+    "CRACE": {
+      "sal": "80042",
+      "sa2": "801041037",
+      "mesh_blocks": 61,
+      "erp_2024": 4834,
+      "erp_2025": 4821
+    },
+    "CURTIN": {
+      "sal": "80043",
+      "sa2": "801091100",
+      "mesh_blocks": 97,
+      "erp_2024": 5548,
+      "erp_2025": 5585
+    },
+    "DEAKIN": {
+      "sal": "80044",
+      "sa2": "801061062",
+      "mesh_blocks": 69,
+      "erp_2024": 3204,
+      "erp_2025": 3247
+    },
+    "DENMAN PROSPECT": {
+      "sal": "80045",
+      "sa2": "801101136",
+      "mesh_blocks": 26,
+      "erp_2024": 4939,
+      "erp_2025": 5503
+    },
+    "DICKSON": {
+      "sal": "80046",
+      "sa2": "801051054",
+      "mesh_blocks": 57,
+      "erp_2024": 4054,
+      "erp_2025": 4179
+    },
+    "DOWNER": {
+      "sal": "80047",
+      "sa2": "801051055",
+      "mesh_blocks": 51,
+      "erp_2024": 4547,
+      "erp_2025": 4556
+    },
+    "DUFFY": {
+      "sal": "80048",
+      "sa2": "801081092",
+      "mesh_blocks": 48,
+      "erp_2024": 3457,
+      "erp_2025": 3514
+    },
+    "DUNLOP": {
+      "sal": "80049",
+      "sa2": "801011006",
+      "mesh_blocks": 99,
+      "erp_2024": 7336,
+      "erp_2025": 7282
+    },
+    "EVATT": {
+      "sal": "80050",
+      "sa2": "801011007",
+      "mesh_blocks": 87,
+      "erp_2024": 5508,
+      "erp_2025": 5549
+    },
+    "FADDEN": {
+      "sal": "80051",
+      "sa2": "801071076",
+      "mesh_blocks": 65,
+      "erp_2024": 2995,
+      "erp_2025": 3014
+    },
+    "FARRER": {
+      "sal": "80052",
+      "sa2": "801091101",
+      "mesh_blocks": 46,
+      "erp_2024": 3775,
+      "erp_2025": 3816
+    },
+    "FISHER": {
+      "sal": "80053",
+      "sa2": "801081093",
+      "mesh_blocks": 54,
+      "erp_2024": 3338,
+      "erp_2025": 3334
+    },
+    "FLOREY": {
+      "sal": "80054",
+      "sa2": "801011008",
+      "mesh_blocks": 78,
+      "erp_2024": 4749,
+      "erp_2025": 4768
+    },
+    "FLYNN": {
+      "sal": "80055",
+      "sa2": "801011009",
+      "mesh_blocks": 59,
+      "erp_2024": 3705,
+      "erp_2025": 3710
+    },
+    "FORREST": {
+      "sal": "80057",
+      "sa2": "801061063",
+      "mesh_blocks": 30,
+      "erp_2024": 1914,
+      "erp_2025": 1944
+    },
+    "FRANKLIN": {
+      "sal": "80058",
+      "sa2": "801041039",
+      "mesh_blocks": 64,
+      "erp_2024": 7513,
+      "erp_2025": 7520
+    },
+    "FRASER": {
+      "sal": "80059",
+      "sa2": "801011010",
+      "mesh_blocks": 29,
+      "erp_2024": 2096,
+      "erp_2025": 2139
+    },
+    "FYSHWICK": {
+      "sal": "80060",
+      "sa2": "801061130",
+      "mesh_blocks": 67,
+      "erp_2024": 59,
+      "erp_2025": 59
+    },
+    "GARRAN": {
+      "sal": "80061",
+      "sa2": "801091102",
+      "mesh_blocks": 45,
+      "erp_2024": 3750,
+      "erp_2025": 3732
+    },
+    "GILMORE": {
+      "sal": "80062",
+      "sa2": "801071077",
+      "mesh_blocks": 34,
+      "erp_2024": 2684,
+      "erp_2025": 2722
+    },
+    "GIRALANG": {
+      "sal": "80063",
+      "sa2": "801011011",
+      "mesh_blocks": 57,
+      "erp_2024": 3372,
+      "erp_2025": 3456
+    },
+    "GORDON": {
+      "sal": "80064",
+      "sa2": "801071078",
+      "mesh_blocks": 125,
+      "erp_2024": 7834,
+      "erp_2025": 7783
+    },
+    "GOWRIE": {
+      "sal": "80065",
+      "sa2": "801071079",
+      "mesh_blocks": 38,
+      "erp_2024": 3120,
+      "erp_2025": 3100
+    },
+    "GREENWAY": {
+      "sal": "80066",
+      "sa2": "801071080",
+      "mesh_blocks": 87,
+      "erp_2024": 5453,
+      "erp_2025": 5565
+    },
+    "GRIFFITH": {
+      "sal": "80067",
+      "sa2": "801061064",
+      "mesh_blocks": 95,
+      "erp_2024": 5757,
+      "erp_2025": 5826
+    },
+    "GUNGAHLIN": {
+      "sal": "80068",
+      "sa2": "801041040",
+      "mesh_blocks": 92,
+      "erp_2024": 9259,
+      "erp_2025": 9555
+    },
+    "HACKETT": {
+      "sal": "80069",
+      "sa2": "801051056",
+      "mesh_blocks": 51,
+      "erp_2024": 3318,
+      "erp_2025": 3345
+    },
+    "HARRISON": {
+      "sal": "80071",
+      "sa2": "801041044",
+      "mesh_blocks": 82,
+      "erp_2024": 8123,
+      "erp_2025": 8023
+    },
+    "HAWKER": {
+      "sal": "80072",
+      "sa2": "801011013",
+      "mesh_blocks": 46,
+      "erp_2024": 3010,
+      "erp_2025": 3007
+    },
+    "HIGGINS": {
+      "sal": "80073",
+      "sa2": "801011014",
+      "mesh_blocks": 38,
+      "erp_2024": 3308,
+      "erp_2025": 3363
+    },
+    "HOLDER": {
+      "sal": "80074",
+      "sa2": "801081094",
+      "mesh_blocks": 36,
+      "erp_2024": 2886,
+      "erp_2025": 2895
+    },
+    "HOLT": {
+      "sal": "80075",
+      "sa2": "801011015",
+      "mesh_blocks": 83,
+      "erp_2024": 6024,
+      "erp_2025": 6047
+    },
+    "HUGHES": {
+      "sal": "80076",
+      "sa2": "801091103",
+      "mesh_blocks": 47,
+      "erp_2024": 3170,
+      "erp_2025": 3149
+    },
+    "HUME": {
+      "sal": "80077",
+      "sa2": "801031031",
+      "mesh_blocks": 13,
+      "erp_2024": 394,
+      "erp_2025": 394
+    },
+    "ISAACS": {
+      "sal": "80078",
+      "sa2": "801091104",
+      "mesh_blocks": 51,
+      "erp_2024": 2370,
+      "erp_2025": 2402
+    },
+    "ISABELLA PLAINS": {
+      "sal": "80079",
+      "sa2": "801071081",
+      "mesh_blocks": 67,
+      "erp_2024": 4320,
+      "erp_2025": 4324
+    },
+    "JACKA": {
+      "sal": "80080",
+      "sa2": "801041118",
+      "mesh_blocks": 7,
+      "erp_2024": 690,
+      "erp_2025": 733
+    },
+    "KALEEN": {
+      "sal": "80081",
+      "sa2": "801011016",
+      "mesh_blocks": 112,
+      "erp_2024": 7729,
+      "erp_2025": 7776
+    },
+    "KAMBAH": {
+      "sal": "80082",
+      "sa2": "801071082",
+      "mesh_blocks": 207,
+      "erp_2024": 15818,
+      "erp_2025": 15878
+    },
+    "KINGSTON": {
+      "sal": "80083",
+      "sa2": "801061131",
+      "mesh_blocks": 72,
+      "erp_2024": 7465,
+      "erp_2025": 7472
+    },
+    "LATHAM": {
+      "sal": "80084",
+      "sa2": "801011017",
+      "mesh_blocks": 71,
+      "erp_2024": 3765,
+      "erp_2025": 3763
+    },
+    "LAWSON": {
+      "sal": "80085",
+      "sa2": "801011018",
+      "mesh_blocks": 27,
+      "erp_2024": 2908,
+      "erp_2025": 2913
+    },
+    "LYNEHAM": {
+      "sal": "80086",
+      "sa2": "801051057",
+      "mesh_blocks": 85,
+      "erp_2024": 5957,
+      "erp_2025": 6013
+    },
+    "LYONS": {
+      "sal": "80087",
+      "sa2": "801091105",
+      "mesh_blocks": 59,
+      "erp_2024": 3309,
+      "erp_2025": 3310
+    },
+    "MACARTHUR": {
+      "sal": "80088",
+      "sa2": "801071083",
+      "mesh_blocks": 30,
+      "erp_2024": 1392,
+      "erp_2025": 1387
+    },
+    "MACGREGOR": {
+      "sal": "80089",
+      "sa2": "801011019",
+      "mesh_blocks": 94,
+      "erp_2024": 6990,
+      "erp_2025": 6975
+    },
+    "MACQUARIE": {
+      "sal": "80091",
+      "sa2": "801011020",
+      "mesh_blocks": 46,
+      "erp_2024": 3177,
+      "erp_2025": 3231
+    },
+    "MAWSON": {
+      "sal": "80092",
+      "sa2": "801091106",
+      "mesh_blocks": 53,
+      "erp_2024": 3511,
+      "erp_2025": 3526
+    },
+    "MCKELLAR": {
+      "sal": "80093",
+      "sa2": "801011021",
+      "mesh_blocks": 35,
+      "erp_2024": 2652,
+      "erp_2025": 2619
+    },
+    "MELBA": {
+      "sal": "80094",
+      "sa2": "801011022",
+      "mesh_blocks": 53,
+      "erp_2024": 3405,
+      "erp_2025": 3424
+    },
+    "MOLONGLO": {
+      "sal": "80096",
+      "sa2": "801101137",
+      "mesh_blocks": 1,
+      "erp_2024": 0,
+      "erp_2025": 0
+    },
+    "MONASH": {
+      "sal": "80097",
+      "sa2": "801071084",
+      "mesh_blocks": 97,
+      "erp_2024": 5612,
+      "erp_2025": 5657
+    },
+    "MONCRIEFF": {
+      "sal": "80098",
+      "sa2": "801041120",
+      "mesh_blocks": 40,
+      "erp_2024": 5972,
+      "erp_2025": 6031
+    },
+    "NARRABUNDAH": {
+      "sal": "80099",
+      "sa2": "801061067",
+      "mesh_blocks": 94,
+      "erp_2024": 6954,
+      "erp_2025": 7014
+    },
+    "NGUNNAWAL": {
+      "sal": "80100",
+      "sa2": "801041046",
+      "mesh_blocks": 155,
+      "erp_2024": 11144,
+      "erp_2025": 11188
+    },
+    "NICHOLLS": {
+      "sal": "80101",
+      "sa2": "801041047",
+      "mesh_blocks": 108,
+      "erp_2024": 6552,
+      "erp_2025": 6507
+    },
+    "O'MALLEY": {
+      "sal": "80103",
+      "sa2": "801091107",
+      "mesh_blocks": 19,
+      "erp_2024": 965,
+      "erp_2025": 977
+    },
+    "OXLEY": {
+      "sal": "80105",
+      "sa2": "801071086",
+      "mesh_blocks": 17,
+      "erp_2024": 1694,
+      "erp_2025": 1713
+    },
+    "PAGE": {
+      "sal": "80106",
+      "sa2": "801011023",
+      "mesh_blocks": 37,
+      "erp_2024": 3011,
+      "erp_2025": 2991
+    },
+    "PALMERSTON": {
+      "sal": "80107",
+      "sa2": "801041048",
+      "mesh_blocks": 76,
+      "erp_2024": 5529,
+      "erp_2025": 5537
+    },
+    "PEARCE": {
+      "sal": "80109",
+      "sa2": "801091108",
+      "mesh_blocks": 46,
+      "erp_2024": 2726,
+      "erp_2025": 2713
+    },
+    "PHILLIP": {
+      "sal": "80110",
+      "sa2": "801091109",
+      "mesh_blocks": 69,
+      "erp_2024": 6556,
+      "erp_2025": 7135
+    },
+    "RED HILL": {
+      "sal": "80112",
+      "sa2": "801061069",
+      "mesh_blocks": 55,
+      "erp_2024": 3581,
+      "erp_2025": 3619
+    },
+    "REID": {
+      "sal": "80113",
+      "sa2": "801051127",
+      "mesh_blocks": 29,
+      "erp_2024": 1981,
+      "erp_2025": 2013
+    },
+    "RICHARDSON": {
+      "sal": "80114",
+      "sa2": "801071087",
+      "mesh_blocks": 39,
+      "erp_2024": 3027,
+      "erp_2025": 3060
+    },
+    "RIVETT": {
+      "sal": "80115",
+      "sa2": "801081095",
+      "mesh_blocks": 56,
+      "erp_2024": 3409,
+      "erp_2025": 3431
+    },
+    "RUSSELL": {
+      "sal": "80116",
+      "sa2": "801051128",
+      "mesh_blocks": 3,
+      "erp_2024": 0,
+      "erp_2025": 0
+    },
+    "SCULLIN": {
+      "sal": "80117",
+      "sa2": "801011024",
+      "mesh_blocks": 49,
+      "erp_2024": 3065,
+      "erp_2025": 3052
+    },
+    "SPENCE": {
+      "sal": "80118",
+      "sa2": "801011025",
+      "mesh_blocks": 44,
+      "erp_2024": 2547,
+      "erp_2025": 2535
+    },
+    "STIRLING": {
+      "sal": "80119",
+      "sa2": "801081096",
+      "mesh_blocks": 26,
+      "erp_2024": 2169,
+      "erp_2025": 2167
+    },
+    "TAYLOR": {
+      "sal": "80122",
+      "sa2": "801041121",
+      "mesh_blocks": 66,
+      "erp_2024": 4809,
+      "erp_2025": 5512
+    },
+    "THEODORE": {
+      "sal": "80124",
+      "sa2": "801071088",
+      "mesh_blocks": 56,
+      "erp_2024": 3759,
+      "erp_2025": 3726
+    },
+    "THROSBY": {
+      "sal": "80125",
+      "sa2": "801041122",
+      "mesh_blocks": 41,
+      "erp_2024": 3608,
+      "erp_2025": 3765
+    },
+    "TORRENS": {
+      "sal": "80126",
+      "sa2": "801091110",
+      "mesh_blocks": 30,
+      "erp_2024": 2441,
+      "erp_2025": 2470
+    },
+    "TURNER": {
+      "sal": "80127",
+      "sa2": "801051060",
+      "mesh_blocks": 60,
+      "erp_2024": 4806,
+      "erp_2025": 4888
+    },
+    "WANNIASSA": {
+      "sal": "80129",
+      "sa2": "801071090",
+      "mesh_blocks": 124,
+      "erp_2024": 7772,
+      "erp_2025": 7731
+    },
+    "WARAMANGA": {
+      "sal": "80130",
+      "sa2": "801081097",
+      "mesh_blocks": 42,
+      "erp_2024": 2761,
+      "erp_2025": 2749
+    },
+    "WATSON": {
+      "sal": "80131",
+      "sa2": "801051061",
+      "mesh_blocks": 87,
+      "erp_2024": 7238,
+      "erp_2025": 7377
+    },
+    "WEETANGERA": {
+      "sal": "80132",
+      "sa2": "801011026",
+      "mesh_blocks": 33,
+      "erp_2024": 2869,
+      "erp_2025": 2848
+    },
+    "WESTON": {
+      "sal": "80133",
+      "sa2": "801081098",
+      "mesh_blocks": 98,
+      "erp_2024": 4003,
+      "erp_2025": 4027
+    },
+    "WRIGHT": {
+      "sal": "80135",
+      "sa2": "801101139",
+      "mesh_blocks": 25,
+      "erp_2024": 4423,
+      "erp_2025": 4757
+    }
+  },
+  "population_workbook_url": "https://www.abs.gov.au/statistics/people/population/regional-population/2024-25/32180DS0003_2001-25.xlsx",
+  "population_workbook_sha256": "f35d0ca0caaf70b0933871747210e62ac3ff5f7ab7fb4876c92bb1f6e1f6a0a8"
+}

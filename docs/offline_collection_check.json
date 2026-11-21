@@ -1,0 +1,54 @@
+{
+  "proof_type": "OFFLINE_IMPORT_OF_PREVIOUSLY_RETAINED_PUBLISHED_WORKBOOK",
+  "not_a_fresh_network_download": true,
+  "source_id": "act_crime_statistics",
+  "status": "SUCCESS",
+  "imported_at": "2026-11-21T05:27:39.661002+00:00",
+  "snapshot_id": "sha256:b47891e0507a26ca7a5bad9a68511ada6c1838fdd1ced3322f2e0d165a29ea5e",
+  "fixture_relative_path": "tests/fixtures/ingestion/act_crime_quarterly_2025q2.xlsx",
+  "publisher_metadata_url": "https://www.data.act.gov.au/api/views/2egm-dieb.json",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "ACT Policing — ACT Crime Statistics, data.act.gov.au/d/2egm-dieb. Licensed under Creative Commons Attribution 4.0 International. Original workbook unchanged; parsed representations are derived.",
+  "requested_scope": {
+    "area": "KINGSTON",
+    "max_records": 1000,
+    "max_bytes": 5000000
+  },
+  "completeness": {
+    "status": "COMPLETE",
+    "expected_count": 874,
+    "returned_count": 874,
+    "limit_reached": false,
+    "query_scope": {
+      "area": "KINGSTON"
+    }
+  },
+  "coverage": {
+    "status": "NOT_ESTABLISHED",
+    "scope": {
+      "area": "KINGSTON"
+    },
+    "reason": "Collection does not prove geographic or mechanism coverage"
+  },
+  "errors": [],
+  "asset_evidence": [
+    {
+      "kind": "local_file",
+      "sha256": "0302bade00e4158f7cad1413412c167eea9d6b13b6a4eaf02ed7dac40af011df",
+      "bytes": 536366
+    }
+  ],
+  "counts": {
+    "records": 874,
+    "reported_offence": 644,
+    "infringement_activity": 230,
+    "categories": 19,
+    "periods": 46
+  },
+  "first_period": "2014-Q1",
+  "last_period": "2025-Q2",
+  "http_request_count": 0,
+  "source_publication_date_established": false,
+  "faithful_historical_replay": false,
+  "not_a_property_risk_assessment": true
+}

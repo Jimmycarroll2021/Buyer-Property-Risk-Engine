@@ -1,0 +1,182 @@
+{
+  "sources": {
+    "act_crime_statistics": {
+      "source_id": "act_crime_statistics",
+      "title": "ACT Crime Statistics (Quarterly, 2014 Q1 - 2025 Q2)",
+      "adapter": "crime_xlsx",
+      "endpoint": "https://www.data.act.gov.au/api/views/2egm-dieb/files/13e57c74-edc3-44e9-8c88-93938ea4cc4d?download=true&filename=Website_Qtrly_Jun25.xlsx",
+      "jurisdiction": "ACT",
+      "category": "Crime & Safety",
+      "access_status": "PULLED_AND_LIVE",
+      "licence_status": "VERIFIED_CC_BY_4_0",
+      "enabled": true,
+      "rights": {
+        "process": true,
+        "retain_raw": true,
+        "display_raw": true,
+        "display_derived": true
+      },
+      "refresh_policy": "Check source release metadata; not a promise of source updates",
+      "source_aliases": [
+        "propertypeek:act_crime_statistics",
+        "canberra_crm01",
+        "canberra:CRM01"
+      ],
+      "source_claims": [
+        {
+          "catalogue": "propertypeek",
+          "source_record_id": "act_crime_statistics",
+          "canonical_id": "act_crime_statistics",
+          "source_file": "PropertyPeek_Data_Catalog_and_Schemas.xlsx",
+          "provenance_status": "UPLOADED_CATALOGUE_ASSERTION",
+          "record": {
+            "_sheet": "All_Datasets_Access",
+            "_row": 15,
+            "Dataset ID": "act_crime_statistics",
+            "Jurisdiction": "ACT",
+            "Category": "Crime & Safety",
+            "Title": "ACT Crime Statistics (Quarterly, 2014 Q1 - 2025 Q2)",
+            "Publisher / Custodian": "ACT Policing (Justice and Community Safety Directorate)",
+            "Operational Status": "PULLED_AND_LIVE",
+            "Live Lookup Supported": "TRUE",
+            "Access Protocol": "bulk_download",
+            "Endpoint / Portal URL": "https://www.data.act.gov.au/api/views/2egm-dieb/files/13e57c74-edc3-44e9-8c88-93938ea4cc4d?download=true&filename=Website_Qtrly_Jun25.xlsx",
+            "Auth / Query Pattern": "Direct HTTP file download (ZIP/XLSX); no point-lookup API",
+            "Local Extract / Sample File": "act_crime_statistics_jun25.xlsx",
+            "Observed Record Count": 9,
+            "Geometry / Format": "Multi-Sheet XLSX (Districts)",
+            "Observed Field Count": 4,
+            "Licence": "CC BY 4.0",
+            "Required Attribution": "\u00a9 ACT Policing (ACT Crime Statistics, data.act.gov.au/d/2egm-dieb), licensed under CC BY 4.0.",
+            "Verified Date": "2026-11-21",
+            "Notes & Caveats": null
+          },
+          "current_review_probe_source_id": "act_crime_statistics",
+          "current_review_evidence_status": "PROBE_EVIDENCE_RETAINED",
+          "production_enabled": false,
+          "activation_requirements": [
+            "source meaning and applicability",
+            "licence and permitted use",
+            "complete pagination/scope",
+            "dates and units",
+            "stable identity and deduplication",
+            "privacy and output permissions"
+          ]
+        }
+      ],
+      "parameters": {
+        "catalogue_id": "2egm-dieb",
+        "file_url": "https://www.data.act.gov.au/api/views/2egm-dieb/files/13e57c74-edc3-44e9-8c88-93938ea4cc4d?download=true&filename=Website_Qtrly_Jun25.xlsx",
+        "expected_vintage": "2025 Q2",
+        "discover_latest": true
+      },
+      "readiness_note": "Source-specific CC BY 4.0 licence verified from publisher metadata. Raw retention/processing/display approved with attribution. Latest asset discovery and bounded capture implemented; geographic joins, population denominators, interpretation, and feature assessment remain separate.",
+      "limits": {
+        "max_records": 1000,
+        "max_bytes": 20000000,
+        "timeout_seconds": 30
+      },
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "ACT Policing \u2014 ACT Crime Statistics, data.act.gov.au/d/2egm-dieb. Licensed under Creative Commons Attribution 4.0 International. Original workbook unchanged; parsed representations are derived.",
+      "reviewed_at": "2026-11-21",
+      "licence_evidence_url": "https://www.data.act.gov.au/api/views/2egm-dieb.json",
+      "currency_note": "Live catalogue checked on 2026-11-21 still identifies a workbook covering 2014 Q1 through 2025 Q2. Fresh retrieval does not make the observations current. Counts are reporting-area context, not property crime probabilities.",
+      "licence_review_scope": "ACT Crime Statistics catalogue 2egm-dieb and its attributed published workbook only; no blanket rights for other ACT sources.",
+      "allowed_hosts": [
+        "sa-core-blob-storage-us-east-1-fedramp-prod.s3-fips.us-east-1.amazonaws.com"
+      ],
+      "redirect_host_review": {
+        "reviewed_at": "2026-11-21",
+        "evidence_url": "https://www.data.act.gov.au/api/views/2egm-dieb/files/13e57c74-edc3-44e9-8c88-93938ea4cc4d",
+        "observed_status": 303,
+        "registered_https_host": "sa-core-blob-storage-us-east-1-fedramp-prod.s3-fips.us-east-1.amazonaws.com",
+        "scope": "Publisher-issued redirect for the licensed workbook; exact hostname only. Signed query credentials are never retained in audit URLs."
+      }
+    },
+    "canberra_crm01": {
+      "source_id": "canberra_crm01",
+      "title": "ACT Crime Statistics (2egm-dieb)",
+      "adapter": "crime_xlsx",
+      "endpoint": "https://www.data.act.gov.au/Justice-Safety-and-Emergency/ACT-Crime-Statistics/2egm-dieb/about_data",
+      "jurisdiction": "ACT/National",
+      "category": "Crime",
+      "access_status": "XLSX reported for this asset; SODA row endpoint unconfirmed",
+      "licence_status": "REVIEW_REQUIRED",
+      "enabled": false,
+      "rights": {
+        "process": false,
+        "retain_raw": false,
+        "display_raw": false,
+        "display_derived": false
+      },
+      "refresh_policy": "Quarterly; compare against police source",
+      "source_aliases": [
+        "canberra:CRM01"
+      ],
+      "source_claims": [
+        {
+          "catalogue": "canberra",
+          "source_record_id": "CRM01",
+          "canonical_id": "canberra_crm01",
+          "source_file": "Canberra_Property_Infrastructure_Data_Inputs.xlsx",
+          "provenance_status": "UPLOADED_CATALOGUE_ASSERTION",
+          "record": {
+            "_sheet": "Data Inputs",
+            "_row": 30,
+            "ID": "CRM01",
+            "Theme": "Crime",
+            "Dataset": "ACT Crime Statistics (2egm-dieb)",
+            "Publisher": "ACT Policing / ACT Open Data",
+            "Access mode": "XLSX via Socrata catalogue",
+            "Request or download URL": "https://www.data.act.gov.au/Justice-Safety-and-Emergency/ACT-Crime-Statistics/2egm-dieb/about_data",
+            "Publisher evidence": "https://www.data.act.gov.au/Justice-Safety-and-Emergency/ACT-Crime-Statistics/2egm-dieb",
+            "How to get access": "Open dataset listing; use attached workbook; do not assume SODA rows",
+            "Fields / data available": "Reported offence counts by suburb/area, offence type and quarter; check workbook headers and notes",
+            "Geographic grain": "Suburb / area",
+            "Refresh / vintage": "Quarterly; compare against police source",
+            "Verification status": "XLSX reported for this asset; SODA row endpoint unconfirmed",
+            "FairAs use and limitations": "Use counts with attribution and period. Suppression/missing cells stay missing. No address-level inference",
+            "Priority": "P1"
+          },
+          "current_review_probe_source_id": "act_crime_statistics",
+          "current_review_evidence_status": "PROBE_EVIDENCE_RETAINED",
+          "production_enabled": false,
+          "activation_requirements": [
+            "source meaning and applicability",
+            "licence and permitted use",
+            "complete pagination/scope",
+            "dates and units",
+            "stable identity and deduplication",
+            "privacy and output permissions"
+          ]
+        }
+      ],
+      "parameters": {
+        "catalogue_id": "2egm-dieb",
+        "file_url": "https://www.data.act.gov.au/api/views/2egm-dieb/files/13e57c74-edc3-44e9-8c88-93938ea4cc4d?download=true&filename=Website_Qtrly_Jun25.xlsx",
+        "expected_vintage": "2025 Q2",
+        "discover_latest": true
+      },
+      "readiness_note": "Confirmed alias of act_crime_statistics: both reference publisher catalogue 2egm-dieb. Entry retained for traceability of the original catalogue claim, with collection disabled. Use canonical source for approved collection; do not count these as independent evidence.",
+      "limits": {
+        "max_records": 1000,
+        "max_bytes": 20000000,
+        "timeout_seconds": 30
+      },
+      "alias_of": "act_crime_statistics",
+      "canonical_source_id": "act_crime_statistics",
+      "alias_reviewed_at": "2026-11-21",
+      "alias_evidence_url": "https://www.data.act.gov.au/api/views/2egm-dieb.json"
+    }
+  },
+  "resolved_alias_relations": [
+    {
+      "source_id": "canberra_crm01",
+      "alias_of": "act_crime_statistics",
+      "reviewed_at": "2026-11-21",
+      "evidence_url": "https://www.data.act.gov.au/api/views/2egm-dieb.json",
+      "reason": "Both retained entries refer to publisher catalogue 2egm-dieb and the same workbook asset."
+    }
+  ],
+  "unresolved_overlap_note": "The registry retains original catalogue identities for traceability. Eighty-three entries are not evidence of eighty-three distinct datasets. Confirmed alias relations are listed separately; other potential overlaps still require review."
+}

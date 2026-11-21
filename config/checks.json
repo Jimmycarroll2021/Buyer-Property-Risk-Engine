@@ -1,0 +1,1588 @@
+{
+  "version": "0.1.0",
+  "checks": [
+    {
+      "check_id": "S001",
+      "label": "Address-to-parcel match",
+      "domain": "Identity",
+      "critical": true,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "ID01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Entered address",
+        "Address aliases",
+        "ADDRESS_ID",
+        "BLOCK_KEY",
+        "Parcel geometry"
+      ],
+      "source_ids": [
+        "H01",
+        "H02",
+        "H03",
+        "BUYER"
+      ],
+      "processing_specification": "Normalise address; reconcile address/parcel links and aliases; require unambiguous entity before dependent joins.",
+      "missing_evidence_handling": "Withhold dependent findings; request address/plan confirmation."
+    },
+    {
+      "check_id": "S002",
+      "label": "House and ownership form",
+      "domain": "Identity",
+      "critical": true,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "ID01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Declared dwelling type",
+        "Unit class",
+        "Units-plan reference",
+        "Title/lease documents"
+      ],
+      "source_ids": [
+        "H02",
+        "H03",
+        "H13",
+        "BUYER"
+      ],
+      "processing_specification": "Distinguish detached house, unit-title house and apartment; keep dwelling form separate from legal ownership.",
+      "missing_evidence_handling": "Mark ownership form unresolved; do not assume detached appearance means standalone title."
+    },
+    {
+      "check_id": "S003",
+      "label": "Dwelling footprint attribution",
+      "domain": "Identity",
+      "critical": true,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "ID01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Parcel geometry",
+        "Building plans",
+        "Dated aerial image",
+        "Optional building polygon"
+      ],
+      "source_ids": [
+        "H03",
+        "H05",
+        "H06",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Link the actual dwelling to its parcel; separate sheds, garages, roof outline and habitable footprint.",
+      "missing_evidence_handling": "Use parcel-level screening only and label building-level exposure unknown."
+    },
+    {
+      "check_id": "S004",
+      "label": "Boundary and survey concordance",
+      "domain": "Identity",
+      "critical": true,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "ID01",
+        "GE01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Mapped parcel",
+        "Deposited plan",
+        "Survey evidence",
+        "Coordinate reference systems"
+      ],
+      "source_ids": [
+        "H03",
+        "H13",
+        "BUYER"
+      ],
+      "processing_specification": "Compare mapping with authoritative plans; record positional uncertainty and resolve material mismatches.",
+      "missing_evidence_handling": "Do not give exact boundary-distance conclusions without adequate geometry."
+    },
+    {
+      "check_id": "S005",
+      "label": "Mapped flood-extent intersection",
+      "domain": "Flood and drainage",
+      "critical": true,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "FL01",
+        "FL02"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Confirmed parcel",
+        "Verified footprint if available",
+        "Official flood polygon",
+        "Event/model metadata"
+      ],
+      "source_ids": [
+        "H03",
+        "H07",
+        "BUYER"
+      ],
+      "processing_specification": "Intersect valid geometry under the documented CRS; distinguish positive-area overlap, boundary touch, non-overlap and indeterminate alignment; report parcel and dwelling findings separately.",
+      "missing_evidence_handling": "If model coverage or identity is uncertain, report not assessed rather than no flood risk."
+    },
+    {
+      "check_id": "S006",
+      "label": "Sensitivity to flood-map boundary",
+      "domain": "Flood and drainage",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "GE01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Parcel/building geometry",
+        "Flood extent",
+        "Documented positional uncertainty"
+      ],
+      "source_ids": [
+        "H03",
+        "H07",
+        "BUYER"
+      ],
+      "processing_specification": "Assess whether mapping uncertainty could change the intersection result; use evidence-based tolerances.",
+      "missing_evidence_handling": "Withhold definitive inside/outside conclusion where tolerance is unknown or material."
+    },
+    {
+      "check_id": "S007",
+      "label": "Numerical flood-depth evidence",
+      "domain": "Flood and drainage",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Numerical flood model or specialist report",
+        "Event definition",
+        "Model date",
+        "Ground/floor levels"
+      ],
+      "source_ids": [
+        "H08",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Use validated numerical data or a scoped report; never convert map tile colours into exact depths.",
+      "missing_evidence_handling": "Keep depth unknown until numerical model/report and datum are available."
+    },
+    {
+      "check_id": "S008",
+      "label": "Surface-water and drainage condition",
+      "domain": "Flood and drainage",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Drainage inspection",
+        "Gutter/downpipe condition",
+        "Surface grades",
+        "Past ingress evidence"
+      ],
+      "source_ids": [
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Extract observed drainage defects and scope; distinguish stormwater/overland flow from mapped river flooding.",
+      "missing_evidence_handling": "No riverine map intersection does not clear drainage risk; request inspection."
+    },
+    {
+      "check_id": "S009",
+      "label": "Terrain and low-point context",
+      "domain": "Flood and drainage",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "LiDAR/terrain product",
+        "Capture date",
+        "Resolution",
+        "CRS and vertical datum",
+        "Current earthworks evidence"
+      ],
+      "source_ids": [
+        "H04",
+        "H05",
+        "BUYER"
+      ],
+      "processing_specification": "Derive terrain context at supported resolution; check age and alterations; do not infer water depth.",
+      "missing_evidence_handling": "Mark terrain analysis unavailable or stale; no invented flow path."
+    },
+    {
+      "check_id": "S010",
+      "label": "Finished-floor clearance evidence",
+      "domain": "Flood and drainage",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Surveyed finished-floor level",
+        "Applicable modelled water level",
+        "Matching event and vertical datum"
+      ],
+      "source_ids": [
+        "H08",
+        "H13",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Calculate clearance only where level definitions, datum and event align.",
+      "missing_evidence_handling": "Withhold calculation if either level or datum is missing; ground elevation is insufficient."
+    },
+    {
+      "check_id": "S011",
+      "label": "Official bushfire-prone designation",
+      "domain": "Bushfire",
+      "critical": true,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "FI01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Parcel geometry",
+        "Current bushfire layer",
+        "Hazard category",
+        "Dataset year"
+      ],
+      "source_ids": [
+        "H03",
+        "H09"
+      ],
+      "processing_specification": "Intersect the correct designation layer and retain its category/date; boundary-only or uncertain alignment creates a review gap rather than a definitive designation finding.",
+      "missing_evidence_handling": "Missing layer/coverage is not absence of fire exposure."
+    },
+    {
+      "check_id": "S012",
+      "label": "Site-specific fire resilience evidence",
+      "domain": "Bushfire",
+      "critical": true,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "FI01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Bushfire assessment/BAL report",
+        "Vegetation and slope observations",
+        "Building details",
+        "Access/egress evidence"
+      ],
+      "source_ids": [
+        "H09",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Separate official area designation from site-specific assessment and mitigation evidence.",
+      "missing_evidence_handling": "Do not derive BAL or loss probability from the area map alone."
+    },
+    {
+      "check_id": "S013",
+      "label": "Ground movement and geotechnical concerns",
+      "domain": "Ground and contamination",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Geotechnical report",
+        "Cracking/settlement observations",
+        "Retaining-wall condition",
+        "Relevant site history"
+      ],
+      "source_ids": [
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Extract verified soil/ground findings and their scope; link structural observations without diagnosing from imagery.",
+      "missing_evidence_handling": "Unknown without suitable report; slope or nearby cracks alone do not establish subsidence."
+    },
+    {
+      "check_id": "S014",
+      "label": "Contamination and remediation evidence",
+      "domain": "Ground and contamination",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "LG01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Register match",
+        "Formal contaminated-land search",
+        "Historic uses",
+        "Audit/remediation documents"
+      ],
+      "source_ids": [
+        "H11",
+        "H13",
+        "BUYER"
+      ],
+      "processing_specification": "Reconcile parcel aliases and current/historical records; preserve remediation conditions.",
+      "missing_evidence_handling": "No register match does not clear contamination; request formal search where material."
+    },
+    {
+      "check_id": "S015",
+      "label": "Loose-fill asbestos history and other asbestos evidence",
+      "domain": "Ground and contamination",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Current/historical affected-property records",
+        "Parcel aliases",
+        "Remediation documents",
+        "Asbestos inspection"
+      ],
+      "source_ids": [
+        "H02",
+        "H12",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Match current and historical addresses; retain deregistered history; keep other asbestos assessment separate.",
+      "missing_evidence_handling": "Negative register match does not prove no asbestos or no undiscovered loose fill."
+    },
+    {
+      "check_id": "S016",
+      "label": "Future heat, rainfall and fire-weather context",
+      "domain": "Climate scenarios",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Climate ensemble",
+        "Scenario",
+        "Baseline/horizon",
+        "Grid resolution",
+        "Selected variable"
+      ],
+      "source_ids": [
+        "H10"
+      ],
+      "processing_specification": "Summarise model scenarios and ensemble range at supported geography; align horizon with buyer holding period.",
+      "missing_evidence_handling": "If access/model metadata is missing, keep future quantitative claims unavailable."
+    },
+    {
+      "check_id": "S017",
+      "label": "Title or lease conflict with intended use",
+      "domain": "Legal and planning",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "LG01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Current title/Crown lease",
+        "Permitted use",
+        "Lease conditions",
+        "Buyer renovation/rental intentions"
+      ],
+      "source_ids": [
+        "H13",
+        "BUYER"
+      ],
+      "processing_specification": "Extract restrictions with source pages; compare with explicit intended use; flag for professional interpretation.",
+      "missing_evidence_handling": "No title/lease means legal fit incomplete; do not clear intended use."
+    },
+    {
+      "check_id": "S018",
+      "label": "Easements, encumbrances and access rights",
+      "domain": "Legal and planning",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "LG01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Current title instruments",
+        "Deposited plan",
+        "Easement description/geometry",
+        "Buyer plans"
+      ],
+      "source_ids": [
+        "H13",
+        "BUYER"
+      ],
+      "processing_specification": "Link registered instruments to affected land and intended works without inventing easement geometry.",
+      "missing_evidence_handling": "Unknown scope stays unresolved until instrument/plan review."
+    },
+    {
+      "check_id": "S019",
+      "label": "Current zoning and statutory development controls",
+      "domain": "Legal and planning",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "LG01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Zoning polygon",
+        "Current legal policies",
+        "Applicable overlays",
+        "Effective dates",
+        "Buyer use"
+      ],
+      "source_ids": [
+        "P01",
+        "P03",
+        "H13",
+        "BUYER"
+      ],
+      "processing_specification": "Combine spatial zone with legal provisions; distinguish current entitlement from proposed change.",
+      "missing_evidence_handling": "Map zone alone cannot establish permission; hold conclusion when legal controls are absent."
+    },
+    {
+      "check_id": "S020",
+      "label": "Approval and built-form discrepancies",
+      "domain": "Legal and planning",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Approved plans",
+        "Occupancy/completion evidence",
+        "Current inspection",
+        "Dated imagery",
+        "Declared alterations"
+      ],
+      "source_ids": [
+        "H05",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Compare authorised documents with observed built form; treat discrepancies as verification triggers.",
+      "missing_evidence_handling": "Absence of a retrieved plan is not proof of illegal work; request records."
+    },
+    {
+      "check_id": "S021",
+      "label": "Material structural defects",
+      "domain": "Building condition",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Qualified inspection",
+        "Defect location/severity",
+        "Scope/exclusions",
+        "Engineer findings if required"
+      ],
+      "source_ids": [
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Extract actual findings with page references and inspector qualifications; preserve inaccessible areas.",
+      "missing_evidence_handling": "No inspection or inaccessible component remains not assessed."
+    },
+    {
+      "check_id": "S022",
+      "label": "Moisture, roof and waterproofing defects",
+      "domain": "Building condition",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Inspection observations",
+        "Leak history",
+        "Roof/wet-area condition",
+        "Remediation evidence"
+      ],
+      "source_ids": [
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Separate observed moisture from suspected causes; retain test limits and repair evidence.",
+      "missing_evidence_handling": "Photos alone cannot clear concealed damage; request targeted inspection."
+    },
+    {
+      "check_id": "S023",
+      "label": "Timber pests and termite-management evidence",
+      "domain": "Building condition",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Pest inspection",
+        "Affected areas",
+        "Treatment history",
+        "Inspection exclusions"
+      ],
+      "source_ids": [
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Extract current activity, damage and prevention evidence without treating past treatment as clearance.",
+      "missing_evidence_handling": "Missing/incomplete inspection means pest condition unknown."
+    },
+    {
+      "check_id": "S024",
+      "label": "Immediate repair and maintenance burden",
+      "domain": "Building condition",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Defect reports",
+        "Scoped quotations",
+        "Asset age/service evidence",
+        "Buyer contingency budget"
+      ],
+      "source_ids": [
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Separate urgent repairs from lifecycle maintenance; use documented quotations or labelled estimates and avoid duplicate work items.",
+      "missing_evidence_handling": "Unpriced material defects remain material uncertainty; do not enter zero cost."
+    },
+    {
+      "check_id": "S025",
+      "label": "Available cover and exclusions",
+      "domain": "Insurance",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "IN01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Property-specific written quote",
+        "Declared insured inputs",
+        "Exclusions",
+        "Buyer required cover",
+        "Validity period"
+      ],
+      "source_ids": [
+        "H16",
+        "BUYER"
+      ],
+      "processing_specification": "Compare reviewed policy terms with buyer requirements; distinguish one refusal from market-wide insurability.",
+      "missing_evidence_handling": "Insurability unknown without current suitable evidence; never infer from hazard map alone."
+    },
+    {
+      "check_id": "S026",
+      "label": "Comparable premium and excess burden",
+      "domain": "Insurance",
+      "critical": false,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Written premiums",
+        "Excesses",
+        "Coverage",
+        "Sum insured",
+        "Construction inputs",
+        "Quote date"
+      ],
+      "source_ids": [
+        "H16",
+        "BUYER"
+      ],
+      "processing_specification": "Compare only materially similar cover/input combinations; retain quote validity and unpriced exclusions.",
+      "missing_evidence_handling": "No generic suburb premium substituted for actual quote; show missing cost."
+    },
+    {
+      "check_id": "S027",
+      "label": "Rebuild-cover adequacy",
+      "domain": "Insurance",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "IN01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Policy sum insured",
+        "Independent rebuild estimate",
+        "Demolition/code/site costs",
+        "Temporary accommodation terms"
+      ],
+      "source_ids": [
+        "H16",
+        "BUYER"
+      ],
+      "processing_specification": "Compare like-for-like rebuild scope; keep land value and market price out of rebuild-cost basis.",
+      "missing_evidence_handling": "No rebuild estimate means adequacy unknown; sale price is not a replacement."
+    },
+    {
+      "check_id": "S028",
+      "label": "Common-property defects and disputes",
+      "domain": "Shared ownership",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD01",
+        "BD02"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Units-plan records",
+        "Minutes",
+        "Defect reports",
+        "Proceedings",
+        "Unit liability share"
+      ],
+      "source_ids": [
+        "H15",
+        "BUYER"
+      ],
+      "processing_specification": "Activate for applicable shared-title houses/units; link shared defects to unit exposure without assuming liability amounts.",
+      "missing_evidence_handling": "Missing required scheme records means assessment incomplete, even if detached-house appearance."
+    },
+    {
+      "check_id": "S029",
+      "label": "Owners-corporation funding and special levies",
+      "domain": "Shared ownership",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "BD02"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Accounts",
+        "Fund balances",
+        "Maintenance plan",
+        "Levy notices",
+        "Arrears",
+        "Unit entitlement"
+      ],
+      "source_ids": [
+        "H15",
+        "BUYER"
+      ],
+      "processing_specification": "Compare planned works with funds and documented obligations; distinguish current levy from adequate future funding.",
+      "missing_evidence_handling": "Low levies alone are not positive evidence; unresolved funding stays unknown."
+    },
+    {
+      "check_id": "S030",
+      "label": "Relevant nearby development and status",
+      "domain": "Nearby development",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Application record",
+        "Affected parcels",
+        "Plans/use/height",
+        "Amendments",
+        "Decisions and conditions"
+      ],
+      "source_ids": [
+        "P02",
+        "H03",
+        "BUYER"
+      ],
+      "processing_specification": "Deduplicate application versions; match relevant land and actual proposal scope; separate approved from constructed.",
+      "missing_evidence_handling": "No retrieved DA does not establish no future or exempt development."
+    },
+    {
+      "check_id": "S031",
+      "label": "Potential sunlight, outlook and privacy change",
+      "domain": "Nearby development",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "DV01",
+        "DV02"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Relevant proposed geometry",
+        "Property orientation/windows",
+        "Shadow/privacy plans",
+        "Existing obstructions"
+      ],
+      "source_ids": [
+        "P02",
+        "H04",
+        "H05",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Use verified geometry/modelling where available; flag a relevant northern proposal without inventing lost sunlight hours.",
+      "missing_evidence_handling": "Keep daylight/privacy impact unresolved if geometry, orientation or plan quality is insufficient."
+    },
+    {
+      "check_id": "S032",
+      "label": "Proposed versus effective planning change",
+      "domain": "Nearby development",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Draft/final amendment",
+        "Consultation dates",
+        "Approval/commencement instruments",
+        "Affected site/policy"
+      ],
+      "source_ids": [
+        "P04",
+        "P03"
+      ],
+      "processing_specification": "Link draft and final instruments; distinguish consultation, interim effect, approval and commencement.",
+      "missing_evidence_handling": "Do not apply proposed permissions as current law; unresolved status labelled."
+    },
+    {
+      "check_id": "S033",
+      "label": "Strategic growth and land-release exposure",
+      "domain": "Nearby development",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "District strategy",
+        "Indicative release site/yield/year",
+        "Servicing dependencies",
+        "Program vintages"
+      ],
+      "source_ids": [
+        "P05",
+        "P06"
+      ],
+      "processing_specification": "Identify nearby prospective change; compare annual plans for deferrals and scope revisions.",
+      "missing_evidence_handling": "Unmapped/uncertain proposals remain regional context; no promised delivery."
+    },
+    {
+      "check_id": "S034",
+      "label": "Project delivery evidence and timing",
+      "domain": "Infrastructure",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Project scope",
+        "Funding",
+        "Approvals",
+        "Procurement",
+        "Construction",
+        "Opening ranges",
+        "Dated milestones"
+      ],
+      "source_ids": [
+        "P07"
+      ],
+      "processing_specification": "Maintain parallel lifecycle dimensions; link aliases and superseded notices; detect deferral/cancellation.",
+      "missing_evidence_handling": "Missing milestone evidence remains unknown; announcement is not commitment or completion."
+    },
+    {
+      "check_id": "S035",
+      "label": "Useful accessibility improvement",
+      "domain": "Infrastructure",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "OP01"
+      ],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Verified project milestone",
+        "Stop/access geometry",
+        "Future service assumptions",
+        "Buyer destinations",
+        "Current travel baseline"
+      ],
+      "source_ids": [
+        "P07",
+        "P16",
+        "BUYER"
+      ],
+      "processing_specification": "Compare usable access/travel scenarios using documented assumptions; account for barriers, transfers and horizon.",
+      "missing_evidence_handling": "If routing or service assumptions lack support, describe qualitative potential only."
+    },
+    {
+      "check_id": "S036",
+      "label": "Construction disruption and operating amenity impacts",
+      "domain": "Infrastructure",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Official works schedule",
+        "Closures/access plan",
+        "Environmental/acoustic evidence",
+        "Buyer access requirements"
+      ],
+      "source_ids": [
+        "P07",
+        "P02",
+        "BUYER"
+      ],
+      "processing_specification": "Separate temporary works from ongoing operation; cite relevant plans and evidence scope.",
+      "missing_evidence_handling": "Do not invent noise levels or traffic counts from distance alone."
+    },
+    {
+      "check_id": "S037",
+      "label": "Net comparable development pipeline",
+      "domain": "Housing supply",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Canonical projects/stages",
+        "Dwelling mix",
+        "Gross additions",
+        "Demolitions",
+        "Completion evidence",
+        "Buyer substitution market"
+      ],
+      "source_ids": [
+        "P02",
+        "P06",
+        "P08",
+        "P09",
+        "P12",
+        "BUYER"
+      ],
+      "processing_specification": "Link repeated project records; subtract known removals; report proposed/approved/commenced/completed separately.",
+      "missing_evidence_handling": "Unverified completion remains unverified; no double counting or oversupply declaration."
+    },
+    {
+      "check_id": "S038",
+      "label": "Approvals intensity against dated stock",
+      "domain": "Housing supply",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Small-area approvals",
+        "Dwelling-type categories",
+        "Comparable stock denominator",
+        "Geography vintage"
+      ],
+      "source_ids": [
+        "P08",
+        "P12"
+      ],
+      "processing_specification": "Align boundaries/type/time; use rolling totals and label stock age; do not treat approvals as delivery.",
+      "missing_evidence_handling": "Suppress ratio when denominator/type match is inadequate; show raw contextual counts."
+    },
+    {
+      "check_id": "S039",
+      "label": "Regional construction conversion and delay",
+      "domain": "Housing supply",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Territory commencements/completions",
+        "Uncommenced pipeline",
+        "Duration/abandonment series",
+        "Release vintage"
+      ],
+      "source_ids": [
+        "P09"
+      ],
+      "processing_specification": "Assess regional pipeline progression using actual series definitions and revisions.",
+      "missing_evidence_handling": "No suburb completion estimates fabricated from ACT totals."
+    },
+    {
+      "check_id": "S040",
+      "label": "Evidence for scarcity versus low turnover",
+      "domain": "Housing supply",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Comparable stock",
+        "Zoning constraints",
+        "Future pipeline",
+        "Verified active listings/sales where supplied"
+      ],
+      "source_ids": [
+        "P01",
+        "P03",
+        "P06",
+        "P12",
+        "R03",
+        "BUYER"
+      ],
+      "processing_specification": "Distinguish structural constraints, few listings and low transaction activity; assess nearby substitutes.",
+      "missing_evidence_handling": "Do not declare shortage when current listings, demand or stock coverage is absent."
+    },
+    {
+      "check_id": "S041",
+      "label": "Population and migration trajectory",
+      "domain": "Household demand",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Annual resident population",
+        "Growth components",
+        "Geography/version",
+        "Publication vintage"
+      ],
+      "source_ids": [
+        "P10"
+      ],
+      "processing_specification": "Use consistent boundaries and multi-year change; retain preliminary/revised status and observation age.",
+      "missing_evidence_handling": "Do not present annual lagged population as current-month observation."
+    },
+    {
+      "check_id": "S042",
+      "label": "Household-formation scenario",
+      "domain": "Household demand",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Household projections",
+        "Population scenario",
+        "Household-size assumptions",
+        "Baseline households",
+        "Horizon"
+      ],
+      "source_ids": [
+        "P10",
+        "P11",
+        "P12",
+        "BUYER"
+      ],
+      "processing_specification": "Compare future population divided by assumed household size with baseline; retain scenario source and uncertainty.",
+      "missing_evidence_handling": "Do not downscale regional projections to suburbs without an explicit validated method."
+    },
+    {
+      "check_id": "S043",
+      "label": "Employment resilience and concentration",
+      "domain": "Household demand",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "SALM unemployment",
+        "Current labour-force series",
+        "Census industry mix",
+        "Buyer employment exposure"
+      ],
+      "source_ids": [
+        "P12",
+        "P13",
+        "P14",
+        "BUYER"
+      ],
+      "processing_specification": "Separate modelled local unemployment from observed regional employment; use smoothed/year-on-year context and concentration.",
+      "missing_evidence_handling": "Do not derive employment from SALM or treat local industry mix as individual income certainty."
+    },
+    {
+      "check_id": "S044",
+      "label": "Comparable-sale evidence quality",
+      "domain": "Valuation and liquidity",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Verified transactions",
+        "Sale dates/prices",
+        "Dwelling attributes",
+        "Condition",
+        "Market geography",
+        "Licence scope"
+      ],
+      "source_ids": [
+        "R03",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Select comparable settled sales with explicit exclusions, differences and sample size; verify rights/access first.",
+      "missing_evidence_handling": "Documentation-only API access supplies no prices; missing transactions means valuation unavailable."
+    },
+    {
+      "check_id": "S045",
+      "label": "Purchase-price position against evidence",
+      "domain": "Valuation and liquidity",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Proposed purchase price",
+        "Verified comparables",
+        "Documented adjustments",
+        "Market date",
+        "Condition costs"
+      ],
+      "source_ids": [
+        "R03",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Use a transparent supported comparison range; avoid treating asking price or model estimate as ground truth.",
+      "missing_evidence_handling": "Withhold precise premium/discount if comparables or adjustments are inadequate."
+    },
+    {
+      "check_id": "S046",
+      "label": "Resale liquidity and exit evidence",
+      "domain": "Valuation and liquidity",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Comparable settled sales",
+        "Dated stock",
+        "Verified listing histories if supplied",
+        "Buyer exit horizon"
+      ],
+      "source_ids": [
+        "R03",
+        "P12",
+        "BUYER"
+      ],
+      "processing_specification": "Measure turnover on matching geography/type; use time-on-market only from genuine listing observations.",
+      "missing_evidence_handling": "Sale dates alone do not establish time-on-market; no hidden listing API assumed."
+    },
+    {
+      "check_id": "S047",
+      "label": "Rental income evidence and scope",
+      "domain": "Valuation and liquidity",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Property rent evidence",
+        "Lease/appraisal",
+        "ACT bond aggregates",
+        "Ongoing rental costs",
+        "Vacancy assumptions"
+      ],
+      "source_ids": [
+        "R04",
+        "BUYER"
+      ],
+      "processing_specification": "Keep property evidence separate from regional bond context; calculate net rental scenarios only with declared costs.",
+      "missing_evidence_handling": "ACT aggregates do not prove suburb/property rent or vacancy; missing property evidence stays unknown."
+    },
+    {
+      "check_id": "S048",
+      "label": "Offence-specific crime context",
+      "domain": "Neighbourhood and access",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "CR01"
+      ],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Validated offence counts",
+        "Period",
+        "Definitions",
+        "Population/appropriate denominator",
+        "Reporting caveats"
+      ],
+      "source_ids": [
+        "P15",
+        "P10"
+      ],
+      "processing_specification": "Use multi-period trends, small-count caution and commercial/residential context; preserve revisions.",
+      "missing_evidence_handling": "Stale/missing crime data is unknown, not zero; suppress unstable unsupported rate claims."
+    },
+    {
+      "check_id": "S049",
+      "label": "School eligibility and catchment change",
+      "domain": "Neighbourhood and access",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Exact address",
+        "School level/year",
+        "PEA boundaries/shared-zone guidance",
+        "Buyer requirement"
+      ],
+      "source_ids": [
+        "O01",
+        "BUYER"
+      ],
+      "processing_specification": "Check address and year against official PEA; record shared-zone caveats and announced changes.",
+      "missing_evidence_handling": "Do not infer eligibility from proximity or guarantee preferred school in a shared zone."
+    },
+    {
+      "check_id": "S050",
+      "label": "Existing public transport usefulness",
+      "domain": "Neighbourhood and access",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Current schedule/feed dates",
+        "Stops/routes",
+        "Service frequency/span",
+        "Buyer destinations",
+        "Verified walk route"
+      ],
+      "source_ids": [
+        "P16",
+        "BUYER"
+      ],
+      "processing_specification": "Assess scheduled usefulness for relevant days/times; keep walking-network and reliability evidence separate.",
+      "missing_evidence_handling": "Without approved feed/routing access use dated timetable/manual evidence; no invented travel times."
+    },
+    {
+      "check_id": "S051",
+      "label": "Road-crossing and crash context",
+      "domain": "Neighbourhood and access",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Validated reported crash points",
+        "Periods",
+        "Road/access route context",
+        "Data coverage"
+      ],
+      "source_ids": [
+        "O02",
+        "BUYER"
+      ],
+      "processing_specification": "Aggregate appropriate multi-year observations near actual access routes; flag approximate points and exposure limits.",
+      "missing_evidence_handling": "No crash/traffic exposure data means context incomplete; distance alone cannot quantify risk."
+    },
+    {
+      "check_id": "S052",
+      "label": "Thermal rating and assessment validity",
+      "domain": "Energy and comfort",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Actual EER/NatHERS document",
+        "Method/scale",
+        "Assessor/date",
+        "Building changes",
+        "Buyer comfort requirements"
+      ],
+      "source_ids": [
+        "O04",
+        "H14",
+        "BUYER"
+      ],
+      "processing_specification": "Verify report/method; keep envelope, Whole of Home and actual bills distinct; assess currency.",
+      "missing_evidence_handling": "Listing stars without source remain unverified; no conversion between incompatible scales."
+    },
+    {
+      "check_id": "S053",
+      "label": "Canopy and shade context",
+      "domain": "Energy and comfort",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Canopy report/map",
+        "Survey year",
+        "Geography",
+        "Buyer site observations"
+      ],
+      "source_ids": [
+        "O03",
+        "H05",
+        "BUYER"
+      ],
+      "processing_specification": "Retain actual survey vintage and height definition; distinguish area canopy from property shade.",
+      "missing_evidence_handling": "Do not infer house temperatures, exact shade hours or young-tree absence from regional canopy."
+    },
+    {
+      "check_id": "S054",
+      "label": "Measured noise or air-quality evidence",
+      "domain": "Neighbourhood and access",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V2 optional",
+      "raw_inputs": [
+        "Authorised acoustic/air assessment if supplied",
+        "Measurement location/time",
+        "Methods",
+        "Buyer observations"
+      ],
+      "source_ids": [
+        "BUYER"
+      ],
+      "processing_specification": "Record measured and self-reported evidence separately; preserve sampling limits and source competence.",
+      "missing_evidence_handling": "No verified public noise/air adapter in source set; do not infer levels from traffic, canopy or distance."
+    },
+    {
+      "check_id": "S055",
+      "label": "Macro rates and actual borrowing terms",
+      "domain": "Buyer finance",
+      "critical": false,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "RBA cash target",
+        "RBA housing lending-rate series",
+        "Buyer loan offer",
+        "Fixed/variable periods"
+      ],
+      "source_ids": [
+        "R01",
+        "R02",
+        "BUYER"
+      ],
+      "processing_specification": "Show macro context separately from contractual buyer rate; retain product and fixation dates.",
+      "missing_evidence_handling": "Cash target is not the buyer mortgage rate; no offer means declared scenario only."
+    },
+    {
+      "check_id": "S056",
+      "label": "Baseline monthly affordability",
+      "domain": "Buyer finance",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "FN01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Purchase/deposit/loan",
+        "Actual rate/term",
+        "Net income",
+        "Essential spending",
+        "Ownership costs",
+        "Other debts"
+      ],
+      "source_ids": [
+        "BUYER",
+        "H16"
+      ],
+      "processing_specification": "Calculate appropriate repayment schedule and complete monthly cash flow; keep assumptions visible and avoid counting principal twice.",
+      "missing_evidence_handling": "Incomplete costs/income cannot produce a definitive pass; record missing inputs."
+    },
+    {
+      "check_id": "S057",
+      "label": "Rate-rise cash-flow stress",
+      "domain": "Buyer finance",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "FN02"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Loan structure",
+        "Fixed reset date",
+        "Base cash flow",
+        "Explicit rate-shock scenarios",
+        "Protected cash reserve",
+        "Scenario start and duration in months"
+      ],
+      "source_ids": [
+        "BUYER",
+        "R02"
+      ],
+      "processing_specification": "Apply disclosed stress increments to relevant loan periods over the named duration; calculate monthly cash balances and assess any reserve breach within that horizon.",
+      "missing_evidence_handling": "If loan terms or reserve policy are missing, withhold pass/fail and request values."
+    },
+    {
+      "check_id": "S058",
+      "label": "Income-loss and emergency-buffer stress",
+      "domain": "Buyer finance",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "FN02",
+        "FN03"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Accessible savings",
+        "Protected reserve",
+        "Income interruption scenarios",
+        "Essential costs",
+        "Loan payments"
+      ],
+      "source_ids": [
+        "BUYER"
+      ],
+      "processing_specification": "Simulate declared duration/amount of income loss with accessible cash only; reflect fixed obligations.",
+      "missing_evidence_handling": "Do not assume redraw/credit is available cash without evidence; show incomplete scenario."
+    },
+    {
+      "check_id": "S059",
+      "label": "Full ownership-cost burden",
+      "domain": "Buyer finance",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "FN01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Rates/water",
+        "Insurance",
+        "Maintenance allowance",
+        "Known repairs",
+        "Conditional levies",
+        "Rental expenses if relevant"
+      ],
+      "source_ids": [
+        "BUYER",
+        "H14",
+        "H15",
+        "H16"
+      ],
+      "processing_specification": "Separate recurring, upfront and contingent costs; align timing; exclude duplicate repair/levy entries.",
+      "missing_evidence_handling": "Unquoted material costs remain a range or unresolved gap, never zero."
+    },
+    {
+      "check_id": "S060",
+      "label": "Forced-sale and equity stress",
+      "domain": "Buyer finance",
+      "critical": false,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Purchase/loan balance",
+        "Buyer-declared price-fall scenarios",
+        "Sale costs",
+        "Holding horizon",
+        "Accessible reserve"
+      ],
+      "source_ids": [
+        "BUYER",
+        "R03"
+      ],
+      "processing_specification": "Deferred from V0. A later exit module applies explicit price scenarios, calculates outstanding loan principal at sale from the repayment schedule and deducts sale/exit costs; no forecast probabilities are implied.",
+      "missing_evidence_handling": "Without balance/cost assumptions show incomplete; API documentation alone is not a valuation."
+    },
+    {
+      "check_id": "S061",
+      "label": "Source and observation freshness",
+      "domain": "Evidence quality",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "QL02"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Observation period",
+        "Publication date",
+        "Retrieval time",
+        "Legal effective date",
+        "Expected source cadence"
+      ],
+      "source_ids": [],
+      "processing_specification": "Evaluate freshness against native publication cadence and decision needs; separate old observation from recent retrieval.",
+      "missing_evidence_handling": "Unknown dates become an evidence gap; never label retrieved-today data current automatically."
+    },
+    {
+      "check_id": "S062",
+      "label": "Coverage, scope and contradictions",
+      "domain": "Evidence quality",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [
+        "QL01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Source footprint/coverage",
+        "Inspection scope",
+        "Missing fields",
+        "Competing assertions",
+        "Entity match confidence"
+      ],
+      "source_ids": [],
+      "processing_specification": "Track supported versus uncovered questions; preserve conflicting evidence and superseded versions; review material disagreements.",
+      "missing_evidence_handling": "Do not convert missing values to safe values or average contradictions into certainty."
+    },
+    {
+      "check_id": "S063",
+      "label": "Material change since previous assessment",
+      "domain": "Evidence quality",
+      "critical": false,
+      "required": true,
+      "public_check": true,
+      "rule_ids": [],
+      "phase": "V1 extended",
+      "raw_inputs": [
+        "Prior/current evidence versions",
+        "Document hashes",
+        "Event/effective dates",
+        "Affected property links"
+      ],
+      "source_ids": [],
+      "processing_specification": "Distinguish real-world change, source correction and retrieval change; deduplicate repeated notices.",
+      "missing_evidence_handling": "If previous snapshot/coverage is absent, identify first observation rather than a new event."
+    },
+    {
+      "check_id": "S064",
+      "label": "Declared objectives, horizon and non-negotiables",
+      "domain": "Buyer fit",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "LG01",
+        "IN01"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Owner-occupier/investor intention",
+        "Holding period",
+        "Renovation plans",
+        "Access needs",
+        "Required cover",
+        "Cost/reserve tolerances"
+      ],
+      "source_ids": [
+        "BUYER"
+      ],
+      "processing_specification": "Capture declared requirements and apply relevant modules; keep subjective preferences separate from factual hazards.",
+      "missing_evidence_handling": "Do not assume preferences or tolerances; use visible defaults only as unconfirmed scenario inputs."
+    },
+    {
+      "check_id": "S065",
+      "label": "Purchase funding sufficiency",
+      "domain": "Buyer finance",
+      "critical": true,
+      "required": true,
+      "public_check": false,
+      "rule_ids": [
+        "FN04"
+      ],
+      "phase": "V0 core",
+      "raw_inputs": [
+        "Proposed purchase price",
+        "Confirmed applicable loan funds, conditions and dates",
+        "Cash explicitly allocated to purchase",
+        "Acquisition costs",
+        "Committed immediate works",
+        "Cash allocated separately to reserves"
+      ],
+      "source_ids": [
+        "BUYER",
+        "H14"
+      ],
+      "processing_specification": "Sum price, known acquisition costs and committed immediate works; subtract confirmed applicable loan and purchase cash. Preserve separate reserve allocation and unconfirmed funding conditions.",
+      "missing_evidence_handling": "Missing costs or unconfirmed funds prevent a fully funded conclusion; create a funding-evidence gap."
+    }
+  ]
+}

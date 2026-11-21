@@ -1,0 +1,3599 @@
+{
+  "as_of": "2026-11-21T00:00:00Z",
+  "assessment_id": "assessment:66f69a2d7232e24484b42eccfaba39bd100d4ce6ebf8ef80e37f61d68c306431",
+  "assessment_mode": "buyer_assessment",
+  "case_id": "demo-house",
+  "check_results": [
+    {
+      "check_id": "S001",
+      "complete": true,
+      "confidence": "Medium",
+      "critical": true,
+      "details": {},
+      "domain": "Identity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Address-to-parcel match",
+      "priority": 0,
+      "public_check": true,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "ID01"
+      ],
+      "snapshot_ids": [],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S002",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Identity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "House and ownership form",
+      "next_action": "Mark ownership form unresolved; do not assume detached appearance means standalone title.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "ID01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S003",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Identity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Dwelling footprint attribution",
+      "next_action": "Use parcel-level screening only and label building-level exposure unknown.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "ID01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S004",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Identity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Boundary and survey concordance",
+      "next_action": "Do not give exact boundary-distance conclusions without adequate geometry.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "GE01",
+        "ID01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S005",
+      "complete": true,
+      "confidence": "High",
+      "critical": true,
+      "details": {
+        "observations": []
+      },
+      "domain": "Flood and drainage",
+      "evidence_ids": [
+        "demo-S005-flood"
+      ],
+      "failures": [],
+      "label": "Mapped flood-extent intersection",
+      "priority": 3,
+      "public_check": true,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "FL01",
+        "FL02"
+      ],
+      "snapshot_ids": [
+        "sha256:088cf45bb24895cbb055c77752039bbe33883c870404301554da1e64c421c497"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S006",
+      "complete": false,
+      "confidence": "High",
+      "critical": false,
+      "details": {
+        "observations": [
+          {
+            "crs": "EPSG:7855",
+            "distance_m": 0.0,
+            "hazard_crs": "EPSG:7855",
+            "method": "polygon_overlay_with_explicit_coverage_and_uncertainty",
+            "metric_crs": "EPSG:7855",
+            "overlap_area_m2": 0.0,
+            "overlap_fraction": 0.0,
+            "positional_uncertainty_m": 0.5,
+            "reason": "BOUNDARY_AMBIGUITY",
+            "relation": "BOUNDARY_TOUCH",
+            "state": "NOT_ASSESSED",
+            "subject_area_m2": 400.0,
+            "subject_scope": "parcel"
+          }
+        ]
+      },
+      "domain": "Flood and drainage",
+      "evidence_ids": [
+        "demo-S006-flood-boundary"
+      ],
+      "failures": [
+        {
+          "detail": null,
+          "observation_id": "demo-S006-flood-boundary",
+          "reason": "BOUNDARY_AMBIGUITY"
+        }
+      ],
+      "label": "Sensitivity to flood-map boundary",
+      "next_action": "Withhold definitive inside/outside conclusion where tolerance is unknown or material.",
+      "priority": null,
+      "public_check": true,
+      "reason": "BOUNDARY_AMBIGUITY",
+      "required": true,
+      "rule_ids": [
+        "GE01"
+      ],
+      "snapshot_ids": [
+        "sha256:85ac8730a75506e4d3fa0afce75ec69a3efa9ecd6ce7f1b15ac04613d72d671c"
+      ],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S007",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Numerical flood-depth evidence",
+      "next_action": "Keep depth unknown until numerical model/report and datum are available.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S008",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Surface-water and drainage condition",
+      "next_action": "No riverine map intersection does not clear drainage risk; request inspection.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S009",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Terrain and low-point context",
+      "next_action": "Mark terrain analysis unavailable or stale; no invented flow path.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S010",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Finished-floor clearance evidence",
+      "next_action": "Withhold calculation if either level or datum is missing; ground elevation is insufficient.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S011",
+      "complete": true,
+      "confidence": "High",
+      "critical": true,
+      "details": {
+        "observations": []
+      },
+      "domain": "Bushfire",
+      "evidence_ids": [
+        "demo-S011-bushfire"
+      ],
+      "failures": [],
+      "label": "Official bushfire-prone designation",
+      "priority": 0,
+      "public_check": true,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "FI01"
+      ],
+      "snapshot_ids": [
+        "sha256:0ddda64925721d7a2ec2a6b573600c7e7524acf3f0ca371b7d09a6122f9d68e0"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S012",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Bushfire",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Site-specific fire resilience evidence",
+      "next_action": "Do not derive BAL or loss probability from the area map alone.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "FI01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S013",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Ground and contamination",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Ground movement and geotechnical concerns",
+      "next_action": "Unknown without suitable report; slope or nearby cracks alone do not establish subsidence.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S014",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Ground and contamination",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Contamination and remediation evidence",
+      "next_action": "No register match does not clear contamination; request formal search where material.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "LG01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S015",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Ground and contamination",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Loose-fill asbestos history and other asbestos evidence",
+      "next_action": "Negative register match does not prove no asbestos or no undiscovered loose fill.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S016",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Climate scenarios",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Future heat, rainfall and fire-weather context",
+      "next_action": "If access/model metadata is missing, keep future quantitative claims unavailable.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S017",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Title or lease conflict with intended use",
+      "next_action": "No title/lease means legal fit incomplete; do not clear intended use.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "LG01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S018",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Easements, encumbrances and access rights",
+      "next_action": "Unknown scope stays unresolved until instrument/plan review.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "LG01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S019",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Current zoning and statutory development controls",
+      "next_action": "Map zone alone cannot establish permission; hold conclusion when legal controls are absent.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "LG01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S020",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Approval and built-form discrepancies",
+      "next_action": "Absence of a retrieved plan is not proof of illegal work; request records.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S021",
+      "complete": false,
+      "confidence": "High",
+      "critical": true,
+      "details": {
+        "observations": []
+      },
+      "domain": "Building condition",
+      "evidence_ids": [
+        "demo-S021-inspection"
+      ],
+      "failures": [],
+      "label": "Material structural defects",
+      "next_action": "No inspection or inaccessible component remains not assessed.",
+      "priority": 3,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "BD01"
+      ],
+      "snapshot_ids": [
+        "sha256:4bb4f30237efc5010f6f02062627157a83bee46d12f5e65292343232d38b2144"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S022",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Building condition",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Moisture, roof and waterproofing defects",
+      "next_action": "Photos alone cannot clear concealed damage; request targeted inspection.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S023",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Building condition",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Timber pests and termite-management evidence",
+      "next_action": "Missing/incomplete inspection means pest condition unknown.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S024",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Building condition",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Immediate repair and maintenance burden",
+      "next_action": "Unpriced material defects remain material uncertainty; do not enter zero cost.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S025",
+      "complete": true,
+      "confidence": "High",
+      "critical": true,
+      "details": {
+        "observations": []
+      },
+      "domain": "Insurance",
+      "evidence_ids": [
+        "demo-S025-insurance"
+      ],
+      "failures": [],
+      "label": "Available cover and exclusions",
+      "priority": 3,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "IN01"
+      ],
+      "snapshot_ids": [
+        "sha256:ebe30528214bf82a2db9ff7a1938e84cfbd361484a49351f5ccee8fab6b7d924"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S026",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Insurance",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Comparable premium and excess burden",
+      "next_action": "No generic suburb premium substituted for actual quote; show missing cost.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S027",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Insurance",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Rebuild-cover adequacy",
+      "next_action": "No rebuild estimate means adequacy unknown; sale price is not a replacement.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "IN01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S028",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Shared ownership",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Common-property defects and disputes",
+      "next_action": "Missing required scheme records means assessment incomplete, even if detached-house appearance.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD01",
+        "BD02"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S029",
+      "complete": false,
+      "confidence": "Low",
+      "critical": true,
+      "details": {},
+      "domain": "Shared ownership",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Owners-corporation funding and special levies",
+      "next_action": "Low levies alone are not positive evidence; unresolved funding stays unknown.",
+      "priority": null,
+      "public_check": false,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "BD02"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S030",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Relevant nearby development and status",
+      "next_action": "No retrieved DA does not establish no future or exempt development.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S031",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Potential sunlight, outlook and privacy change",
+      "next_action": "Keep daylight/privacy impact unresolved if geometry, orientation or plan quality is insufficient.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "DV01",
+        "DV02"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S032",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Proposed versus effective planning change",
+      "next_action": "Do not apply proposed permissions as current law; unresolved status labelled.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S033",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Strategic growth and land-release exposure",
+      "next_action": "Unmapped/uncertain proposals remain regional context; no promised delivery.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S034",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Infrastructure",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Project delivery evidence and timing",
+      "next_action": "Missing milestone evidence remains unknown; announcement is not commitment or completion.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S035",
+      "complete": true,
+      "confidence": "High",
+      "critical": false,
+      "details": {
+        "projects": [
+          {
+            "actual_completion": null,
+            "cancelled": false,
+            "expected_completion": "2029-12-01T00:00:00Z",
+            "included_in_future_supply": true,
+            "milestones": [
+              {
+                "date": "2026-01-01T00:00:00Z",
+                "kind": "announced",
+                "published_at": "2026-01-01T00:00:00Z",
+                "source_id": "synthetic-transport"
+              },
+              {
+                "date": "2026-09-01T00:00:00Z",
+                "kind": "approved",
+                "published_at": "2026-09-01T00:00:00Z",
+                "source_id": "synthetic-transport"
+              }
+            ],
+            "net_dwellings": null,
+            "project_id": "synthetic-rail-project",
+            "scope": "Milestones are independently evidenced; approval does not imply funding or construction"
+          }
+        ]
+      },
+      "domain": "Infrastructure",
+      "evidence_ids": [
+        "demo-S035-transport"
+      ],
+      "failures": [],
+      "label": "Useful accessibility improvement",
+      "priority": null,
+      "public_check": true,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "OP01"
+      ],
+      "snapshot_ids": [
+        "sha256:0ade01b56315f941258e8d58600706c257ce43b41585a5ce9bd8cee2d0c5b63f"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S036",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Infrastructure",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Construction disruption and operating amenity impacts",
+      "next_action": "Do not invent noise levels or traffic counts from distance alone.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S037",
+      "complete": true,
+      "confidence": "High",
+      "critical": false,
+      "details": {
+        "projects": [
+          {
+            "actual_completion": null,
+            "cancelled": false,
+            "expected_completion": "2028-06-01T00:00:00Z",
+            "included_in_future_supply": true,
+            "milestones": [
+              {
+                "date": "2026-05-01T00:00:00Z",
+                "kind": "approved",
+                "published_at": "2026-05-01T00:00:00Z",
+                "source_id": "synthetic-supply"
+              }
+            ],
+            "net_dwellings": 60,
+            "project_id": "synthetic-apartment-project",
+            "scope": "Milestones are independently evidenced; approval does not imply funding or construction"
+          }
+        ]
+      },
+      "domain": "Housing supply",
+      "evidence_ids": [
+        "demo-S037-supply"
+      ],
+      "failures": [],
+      "label": "Net comparable development pipeline",
+      "priority": 2,
+      "public_check": true,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "snapshot_ids": [
+        "sha256:9735e410bdb2463a103be00f09e0c8cdbcc50007690c7468f1ccb745b08f6074"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S038",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Housing supply",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Approvals intensity against dated stock",
+      "next_action": "Suppress ratio when denominator/type match is inadequate; show raw contextual counts.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S039",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Housing supply",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Regional construction conversion and delay",
+      "next_action": "No suburb completion estimates fabricated from ACT totals.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S040",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Housing supply",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Evidence for scarcity versus low turnover",
+      "next_action": "Do not declare shortage when current listings, demand or stock coverage is absent.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "SP01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S041",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Household demand",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Population and migration trajectory",
+      "next_action": "Do not present annual lagged population as current-month observation.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S042",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Household demand",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Household-formation scenario",
+      "next_action": "Do not downscale regional projections to suburbs without an explicit validated method.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S043",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Household demand",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Employment resilience and concentration",
+      "next_action": "Do not derive employment from SALM or treat local industry mix as individual income certainty.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S044",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Comparable-sale evidence quality",
+      "next_action": "Documentation-only API access supplies no prices; missing transactions means valuation unavailable.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S045",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Purchase-price position against evidence",
+      "next_action": "Withhold precise premium/discount if comparables or adjustments are inadequate.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S046",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Resale liquidity and exit evidence",
+      "next_action": "Sale dates alone do not establish time-on-market; no hidden listing API assumed.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S047",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Rental income evidence and scope",
+      "next_action": "ACT aggregates do not prove suburb/property rent or vacancy; missing property evidence stays unknown.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S048",
+      "complete": true,
+      "confidence": "High",
+      "critical": false,
+      "details": {
+        "observations": []
+      },
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [
+        "demo-S048-crime"
+      ],
+      "failures": [],
+      "label": "Offence-specific crime context",
+      "priority": 1,
+      "public_check": true,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "CR01"
+      ],
+      "snapshot_ids": [
+        "sha256:d73077cbaecb804a84babb472d75527fc9ab44bf1a644b665dd44691406fd0c9"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S049",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "School eligibility and catchment change",
+      "next_action": "Do not infer eligibility from proximity or guarantee preferred school in a shared zone.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S050",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Existing public transport usefulness",
+      "next_action": "Without approved feed/routing access use dated timetable/manual evidence; no invented travel times.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S051",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Road-crossing and crash context",
+      "next_action": "No crash/traffic exposure data means context incomplete; distance alone cannot quantify risk.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S052",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Energy and comfort",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Thermal rating and assessment validity",
+      "next_action": "Listing stars without source remain unverified; no conversion between incompatible scales.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S053",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Energy and comfort",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Canopy and shade context",
+      "next_action": "Do not infer house temperatures, exact shade hours or young-tree absence from regional canopy.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S054",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Measured noise or air-quality evidence",
+      "next_action": "No verified public noise/air adapter in source set; do not infer levels from traffic, canopy or distance.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S055",
+      "complete": true,
+      "confidence": "High",
+      "critical": false,
+      "details": {
+        "observations": []
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [
+        "demo-S055-rates"
+      ],
+      "failures": [],
+      "label": "Macro rates and actual borrowing terms",
+      "priority": 1,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [
+        "sha256:e181c40c476b8d83bd14c3764a076908a7a0be16dc188cdea8731fbaf84c3d75"
+      ],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S056",
+      "complete": true,
+      "confidence": "Medium",
+      "critical": true,
+      "details": {},
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Baseline monthly affordability",
+      "priority": 0,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "FN01"
+      ],
+      "snapshot_ids": [],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S057",
+      "complete": true,
+      "confidence": "Medium",
+      "critical": true,
+      "details": {},
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Rate-rise cash-flow stress",
+      "priority": 3,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "FN02"
+      ],
+      "snapshot_ids": [],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S058",
+      "complete": true,
+      "confidence": "Medium",
+      "critical": true,
+      "details": {},
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Income-loss and emergency-buffer stress",
+      "priority": 3,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "FN02",
+        "FN03"
+      ],
+      "snapshot_ids": [],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S059",
+      "complete": true,
+      "confidence": "Medium",
+      "critical": true,
+      "details": {},
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Full ownership-cost burden",
+      "priority": 0,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "FN01"
+      ],
+      "snapshot_ids": [],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S060",
+      "complete": false,
+      "confidence": "Medium",
+      "critical": false,
+      "details": {},
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "failures": [
+        {
+          "detail": null,
+          "missing_inputs": [],
+          "reason": "NOT_REQUESTED",
+          "rule_id": "CONDITIONAL_EXIT"
+        }
+      ],
+      "label": "Forced-sale and equity stress",
+      "next_action": "Without balance/cost assumptions show incomplete; API documentation alone is not a valuation.",
+      "priority": null,
+      "public_check": false,
+      "reason": "NOT_REQUESTED",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S061",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Evidence quality",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Source and observation freshness",
+      "next_action": "Unknown dates become an evidence gap; never label retrieved-today data current automatically.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "QL02"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S062",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Evidence quality",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Coverage, scope and contradictions",
+      "next_action": "Do not convert missing values to safe values or average contradictions into certainty.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [
+        "QL01"
+      ],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S063",
+      "complete": false,
+      "confidence": "Low",
+      "critical": false,
+      "details": {},
+      "domain": "Evidence quality",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Material change since previous assessment",
+      "next_action": "If previous snapshot/coverage is absent, identify first observation rather than a new event.",
+      "priority": null,
+      "public_check": true,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "rule_ids": [],
+      "snapshot_ids": [],
+      "state": "NOT_ASSESSED"
+    },
+    {
+      "check_id": "S064",
+      "complete": true,
+      "confidence": "Medium",
+      "critical": true,
+      "details": {},
+      "domain": "Buyer fit",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Declared objectives, horizon and non-negotiables",
+      "priority": 0,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "IN01",
+        "LG01"
+      ],
+      "snapshot_ids": [],
+      "state": "ASSESSED"
+    },
+    {
+      "check_id": "S065",
+      "complete": true,
+      "confidence": "Medium",
+      "critical": true,
+      "details": {},
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "failures": [],
+      "label": "Purchase funding sufficiency",
+      "priority": 0,
+      "public_check": false,
+      "reason": null,
+      "required": true,
+      "rule_ids": [
+        "FN04"
+      ],
+      "snapshot_ids": [],
+      "state": "ASSESSED"
+    }
+  ],
+  "coverage": {
+    "assessed": 14,
+    "complete": false,
+    "critical_gaps": [
+      "S002",
+      "S003",
+      "S004",
+      "S008",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S017",
+      "S018",
+      "S019",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S027",
+      "S028",
+      "S029"
+    ],
+    "full_due_diligence": {
+      "assessed": 14,
+      "complete": false,
+      "critical_gaps": [
+        "S002",
+        "S003",
+        "S004",
+        "S008",
+        "S012",
+        "S013",
+        "S014",
+        "S015",
+        "S017",
+        "S018",
+        "S019",
+        "S021",
+        "S022",
+        "S023",
+        "S024",
+        "S027",
+        "S028",
+        "S029"
+      ],
+      "not_applicable": 0,
+      "not_assessed": 51,
+      "percentage": 21.54,
+      "ratio": 0.215385,
+      "reason": null,
+      "required": 65,
+      "required_applicable": 65,
+      "unresolved_checks": [
+        "S002",
+        "S003",
+        "S004",
+        "S006",
+        "S007",
+        "S008",
+        "S009",
+        "S010",
+        "S012",
+        "S013",
+        "S014",
+        "S015",
+        "S016",
+        "S017",
+        "S018",
+        "S019",
+        "S020",
+        "S021",
+        "S022",
+        "S023",
+        "S024",
+        "S026",
+        "S027",
+        "S028",
+        "S029",
+        "S030",
+        "S031",
+        "S032",
+        "S033",
+        "S034",
+        "S036",
+        "S038",
+        "S039",
+        "S040",
+        "S041",
+        "S042",
+        "S043",
+        "S044",
+        "S045",
+        "S046",
+        "S047",
+        "S049",
+        "S050",
+        "S051",
+        "S052",
+        "S053",
+        "S054",
+        "S060",
+        "S061",
+        "S062",
+        "S063"
+      ]
+    },
+    "not_applicable": 0,
+    "not_assessed": 51,
+    "percentage": 21.54,
+    "public_screen": {
+      "assessed": 6,
+      "complete": false,
+      "critical_gaps": [
+        "S002",
+        "S003",
+        "S004",
+        "S012"
+      ],
+      "not_applicable": 0,
+      "not_assessed": 35,
+      "percentage": 14.63,
+      "ratio": 0.146341,
+      "reason": null,
+      "required": 41,
+      "required_applicable": 41,
+      "unresolved_checks": [
+        "S002",
+        "S003",
+        "S004",
+        "S006",
+        "S007",
+        "S009",
+        "S010",
+        "S012",
+        "S016",
+        "S020",
+        "S030",
+        "S031",
+        "S032",
+        "S033",
+        "S034",
+        "S036",
+        "S038",
+        "S039",
+        "S040",
+        "S041",
+        "S042",
+        "S043",
+        "S044",
+        "S045",
+        "S046",
+        "S047",
+        "S049",
+        "S050",
+        "S051",
+        "S052",
+        "S053",
+        "S054",
+        "S061",
+        "S062",
+        "S063"
+      ]
+    },
+    "ratio": 0.215385,
+    "reason": null,
+    "required": 65,
+    "required_applicable": 65,
+    "unresolved_checks": [
+      "S002",
+      "S003",
+      "S004",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029",
+      "S030",
+      "S031",
+      "S032",
+      "S033",
+      "S034",
+      "S036",
+      "S038",
+      "S039",
+      "S040",
+      "S041",
+      "S042",
+      "S043",
+      "S044",
+      "S045",
+      "S046",
+      "S047",
+      "S049",
+      "S050",
+      "S051",
+      "S052",
+      "S053",
+      "S054",
+      "S060",
+      "S061",
+      "S062",
+      "S063"
+    ]
+  },
+  "domains": [
+    {
+      "confidence": "High",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [
+          "S021",
+          "S022",
+          "S023",
+          "S024"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 4,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 4,
+        "required_applicable": 4,
+        "unresolved_checks": [
+          "S021",
+          "S022",
+          "S023",
+          "S024"
+        ]
+      },
+      "domain": "Building condition",
+      "gap_priority": 3,
+      "independent_factor_count": 1,
+      "priority": 3
+    },
+    {
+      "confidence": "High",
+      "coverage": {
+        "assessed": 1,
+        "complete": false,
+        "critical_gaps": [
+          "S012"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 1,
+        "percentage": 50.0,
+        "ratio": 0.5,
+        "reason": null,
+        "required": 2,
+        "required_applicable": 2,
+        "unresolved_checks": [
+          "S012"
+        ]
+      },
+      "domain": "Bushfire",
+      "gap_priority": 3,
+      "independent_factor_count": 1,
+      "priority": 0
+    },
+    {
+      "confidence": "Medium",
+      "coverage": {
+        "assessed": 6,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 1,
+        "percentage": 85.71,
+        "ratio": 0.857143,
+        "reason": null,
+        "required": 7,
+        "required_applicable": 7,
+        "unresolved_checks": [
+          "S060"
+        ]
+      },
+      "domain": "Buyer finance",
+      "gap_priority": 2,
+      "independent_factor_count": 6,
+      "priority": 3
+    },
+    {
+      "confidence": "Medium",
+      "coverage": {
+        "assessed": 1,
+        "complete": true,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 0,
+        "percentage": 100.0,
+        "ratio": 1.0,
+        "reason": null,
+        "required": 1,
+        "required_applicable": 1,
+        "unresolved_checks": []
+      },
+      "domain": "Buyer fit",
+      "gap_priority": null,
+      "independent_factor_count": 1,
+      "priority": 0
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 1,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 1,
+        "required_applicable": 1,
+        "unresolved_checks": [
+          "S016"
+        ]
+      },
+      "domain": "Climate scenarios",
+      "gap_priority": 2,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 2,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 2,
+        "required_applicable": 2,
+        "unresolved_checks": [
+          "S052",
+          "S053"
+        ]
+      },
+      "domain": "Energy and comfort",
+      "gap_priority": 2,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 3,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 3,
+        "required_applicable": 3,
+        "unresolved_checks": [
+          "S061",
+          "S062",
+          "S063"
+        ]
+      },
+      "domain": "Evidence quality",
+      "gap_priority": 2,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "High",
+      "coverage": {
+        "assessed": 1,
+        "complete": false,
+        "critical_gaps": [
+          "S008"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 5,
+        "percentage": 16.67,
+        "ratio": 0.166667,
+        "reason": null,
+        "required": 6,
+        "required_applicable": 6,
+        "unresolved_checks": [
+          "S006",
+          "S007",
+          "S008",
+          "S009",
+          "S010"
+        ]
+      },
+      "domain": "Flood and drainage",
+      "gap_priority": 3,
+      "independent_factor_count": 1,
+      "priority": 3
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [
+          "S013",
+          "S014",
+          "S015"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 3,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 3,
+        "required_applicable": 3,
+        "unresolved_checks": [
+          "S013",
+          "S014",
+          "S015"
+        ]
+      },
+      "domain": "Ground and contamination",
+      "gap_priority": 3,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 3,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 3,
+        "required_applicable": 3,
+        "unresolved_checks": [
+          "S041",
+          "S042",
+          "S043"
+        ]
+      },
+      "domain": "Household demand",
+      "gap_priority": 2,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "High",
+      "coverage": {
+        "assessed": 1,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 3,
+        "percentage": 25.0,
+        "ratio": 0.25,
+        "reason": null,
+        "required": 4,
+        "required_applicable": 4,
+        "unresolved_checks": [
+          "S038",
+          "S039",
+          "S040"
+        ]
+      },
+      "domain": "Housing supply",
+      "gap_priority": 2,
+      "independent_factor_count": 1,
+      "priority": 2
+    },
+    {
+      "confidence": "Medium",
+      "coverage": {
+        "assessed": 1,
+        "complete": false,
+        "critical_gaps": [
+          "S002",
+          "S003",
+          "S004"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 3,
+        "percentage": 25.0,
+        "ratio": 0.25,
+        "reason": null,
+        "required": 4,
+        "required_applicable": 4,
+        "unresolved_checks": [
+          "S002",
+          "S003",
+          "S004"
+        ]
+      },
+      "domain": "Identity",
+      "gap_priority": 3,
+      "independent_factor_count": 1,
+      "priority": 0
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 1,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 2,
+        "percentage": 33.33,
+        "ratio": 0.333333,
+        "reason": null,
+        "required": 3,
+        "required_applicable": 3,
+        "unresolved_checks": [
+          "S034",
+          "S036"
+        ]
+      },
+      "domain": "Infrastructure",
+      "gap_priority": 2,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "High",
+      "coverage": {
+        "assessed": 1,
+        "complete": false,
+        "critical_gaps": [
+          "S027"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 2,
+        "percentage": 33.33,
+        "ratio": 0.333333,
+        "reason": null,
+        "required": 3,
+        "required_applicable": 3,
+        "unresolved_checks": [
+          "S026",
+          "S027"
+        ]
+      },
+      "domain": "Insurance",
+      "gap_priority": 3,
+      "independent_factor_count": 1,
+      "priority": 3
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [
+          "S017",
+          "S018",
+          "S019"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 4,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 4,
+        "required_applicable": 4,
+        "unresolved_checks": [
+          "S017",
+          "S018",
+          "S019",
+          "S020"
+        ]
+      },
+      "domain": "Legal and planning",
+      "gap_priority": 3,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 4,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 4,
+        "required_applicable": 4,
+        "unresolved_checks": [
+          "S030",
+          "S031",
+          "S032",
+          "S033"
+        ]
+      },
+      "domain": "Nearby development",
+      "gap_priority": 2,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "High",
+      "coverage": {
+        "assessed": 1,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 4,
+        "percentage": 20.0,
+        "ratio": 0.2,
+        "reason": null,
+        "required": 5,
+        "required_applicable": 5,
+        "unresolved_checks": [
+          "S049",
+          "S050",
+          "S051",
+          "S054"
+        ]
+      },
+      "domain": "Neighbourhood and access",
+      "gap_priority": 2,
+      "independent_factor_count": 1,
+      "priority": 1
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [
+          "S028",
+          "S029"
+        ],
+        "not_applicable": 0,
+        "not_assessed": 2,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 2,
+        "required_applicable": 2,
+        "unresolved_checks": [
+          "S028",
+          "S029"
+        ]
+      },
+      "domain": "Shared ownership",
+      "gap_priority": 3,
+      "independent_factor_count": 0,
+      "priority": null
+    },
+    {
+      "confidence": "Low",
+      "coverage": {
+        "assessed": 0,
+        "complete": false,
+        "critical_gaps": [],
+        "not_applicable": 0,
+        "not_assessed": 4,
+        "percentage": 0.0,
+        "ratio": 0.0,
+        "reason": null,
+        "required": 4,
+        "required_applicable": 4,
+        "unresolved_checks": [
+          "S044",
+          "S045",
+          "S046",
+          "S047"
+        ]
+      },
+      "domain": "Valuation and liquidity",
+      "gap_priority": 2,
+      "independent_factor_count": 0,
+      "priority": null
+    }
+  ],
+  "engine_version": "0.1.0",
+  "excluded_observations": [],
+  "financial_scenarios": {
+    "baseline": {
+      "income_monthly": "11000.00",
+      "living_monthly": "4800.00",
+      "monthly_surplus": "983.24",
+      "mortgage_payment": "4316.76",
+      "other_debt_monthly": "0.00",
+      "priority": 0,
+      "property_costs_monthly": "900.00",
+      "rental": {
+        "rent_gross": "0.00",
+        "rent_management": "0.00",
+        "rent_net": "0.00",
+        "rent_vacancy": "0.00"
+      },
+      "scope": "Initial monthly cash flow; reset and shock periods are reported in their dated schedules.",
+      "state": "ASSESSED"
+    },
+    "buffer": {
+      "cash_after_settlement": "45000.00",
+      "priority": 0,
+      "protected_reserve": "15000.00",
+      "shortfall": "0.00",
+      "state": "ASSESSED"
+    },
+    "exit": {
+      "detail": null,
+      "missing_inputs": [],
+      "priority": null,
+      "reason": "NOT_REQUESTED",
+      "state": "NOT_ASSESSED"
+    },
+    "limitations": [
+      "Conditional calculations under supplied inputs; no loan approval or forecast of shock occurrence."
+    ],
+    "model": "equal_month_nominal_rate_principal_and_interest",
+    "precision_policy": "Decimal precision 40; no intermediate payment or interest rounding; display HALF_UP to cents",
+    "repayment": {
+      "annual_rate_decimal": "0.06",
+      "monthly_payment": "4316.76",
+      "principal": "720000.00",
+      "priority": 0,
+      "rate_resets": [],
+      "repayment_type": "principal_and_interest",
+      "state": "ASSESSED",
+      "term_months": 360
+    },
+    "scenarios": [
+      {
+        "assumptions": {
+          "income_factor": "0.70",
+          "property_cost_factor": "1.0",
+          "rate_delta_bps": 200,
+          "rent_factor": "1"
+        },
+        "claim": "Conditional scenario; not a prediction that the shock will occur.",
+        "continuous_equivalent_months_to_reserve": "9.14",
+        "duration_months": 12,
+        "ending_cash": "5602.74",
+        "first_breach_month": 10,
+        "initial_cash": "45000.00",
+        "minimum_cash": "5602.74",
+        "monthly_schedule": [
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "41716.90",
+            "loan_balance": "719516.90",
+            "month": 1,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "45000.00"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "38433.79",
+            "loan_balance": "719030.57",
+            "month": 2,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "41716.90"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "35150.69",
+            "loan_balance": "718541.00",
+            "month": 3,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "38433.79"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "31867.58",
+            "loan_balance": "718048.17",
+            "month": 4,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "35150.69"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "28584.48",
+            "loan_balance": "717552.05",
+            "month": 5,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "31867.58"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "25301.37",
+            "loan_balance": "717052.63",
+            "month": 6,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "28584.48"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "22018.27",
+            "loan_balance": "716549.87",
+            "month": 7,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "25301.37"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "18735.16",
+            "loan_balance": "716043.77",
+            "month": 8,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "22018.27"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "15452.06",
+            "loan_balance": "715534.29",
+            "month": 9,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "18735.16"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": true,
+            "closing_cash": "12168.95",
+            "loan_balance": "715021.41",
+            "month": 10,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "15452.06"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": true,
+            "closing_cash": "8885.85",
+            "loan_balance": "714505.12",
+            "month": 11,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "12168.95"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": true,
+            "closing_cash": "5602.74",
+            "loan_balance": "713985.38",
+            "month": 12,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "8885.85"
+          }
+        ],
+        "priority": 3,
+        "protected_reserve": "15000.00",
+        "required_review": true,
+        "reserve_breached": true,
+        "scenario_id": "combined_12m",
+        "state": "ASSESSED",
+        "surplus_target_breached": false
+      },
+      {
+        "assumptions": {
+          "income_factor": "0.70",
+          "property_cost_factor": "1.0",
+          "rate_delta_bps": 200,
+          "rent_factor": "1"
+        },
+        "claim": "Conditional scenario; not a prediction that the shock will occur.",
+        "continuous_equivalent_months_to_reserve": "9.14",
+        "duration_months": 6,
+        "ending_cash": "25301.37",
+        "first_breach_month": null,
+        "initial_cash": "45000.00",
+        "minimum_cash": "25301.37",
+        "monthly_schedule": [
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "41716.90",
+            "loan_balance": "719516.90",
+            "month": 1,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "45000.00"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "38433.79",
+            "loan_balance": "719030.57",
+            "month": 2,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "41716.90"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "35150.69",
+            "loan_balance": "718541.00",
+            "month": 3,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "38433.79"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "31867.58",
+            "loan_balance": "718048.17",
+            "month": 4,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "35150.69"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "28584.48",
+            "loan_balance": "717552.05",
+            "month": 5,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "31867.58"
+          },
+          {
+            "annual_rate_decimal": "0.08",
+            "below_protected_reserve": false,
+            "closing_cash": "25301.37",
+            "loan_balance": "717052.63",
+            "month": 6,
+            "monthly_surplus": "-3283.10",
+            "mortgage_payment": "5283.10",
+            "opening_cash": "28584.48"
+          }
+        ],
+        "priority": 0,
+        "protected_reserve": "15000.00",
+        "required_review": true,
+        "reserve_breached": false,
+        "scenario_id": "combined_6m",
+        "state": "ASSESSED",
+        "surplus_target_breached": false
+      }
+    ],
+    "settlement": {
+      "allocated_funds": "935000.00",
+      "basis": "Submitted funding configuration; confirmed means the submitter has verified its stated availability.",
+      "funding_gap": "0.00",
+      "input_amounts": {
+        "acquisition_costs": "25000.00",
+        "cash_allocated": "215000.00",
+        "immediate_works": "10000.00",
+        "loan_funds": "720000.00",
+        "purchase_price": "900000.00"
+      },
+      "priority": 0,
+      "reason": null,
+      "required_funds": "935000.00",
+      "state": "ASSESSED"
+    },
+    "tax_treatment": "before_personal_income_tax"
+  },
+  "findings": [
+    {
+      "check_id": "S005",
+      "confidence": "High",
+      "details": {
+        "crs": "EPSG:7855",
+        "distance_m": 0.0,
+        "hazard_crs": "EPSG:7855",
+        "method": "polygon_overlay_with_explicit_coverage_and_uncertainty",
+        "metric_crs": "EPSG:7855",
+        "overlap_area_m2": 100.0,
+        "overlap_fraction": 0.25,
+        "positional_uncertainty_m": 0.0,
+        "reason": null,
+        "relation": "POSITIVE_OVERLAP",
+        "scope": "Mapped extent overlap only; no depth, frequency, damage or loss conclusion",
+        "state": "ASSESSED",
+        "subject_area_m2": 400.0,
+        "subject_scope": "parcel"
+      },
+      "domain": "Flood and drainage",
+      "evidence_ids": [
+        "demo-S005-flood"
+      ],
+      "factor_id": "riverine_flood",
+      "finding_id": "finding:a3671f4f82a1b9bd1bb73469",
+      "method": "deterministic_rule",
+      "priority": 3,
+      "rule_id": "FL01",
+      "snapshot_ids": [
+        "sha256:088cf45bb24895cbb055c77752039bbe33883c870404301554da1e64c421c497"
+      ],
+      "summary": "Mapped extent overlaps the assessed polygon"
+    },
+    {
+      "check_id": "S021",
+      "confidence": "High",
+      "details": {
+        "evidence_kind": "inspection",
+        "modelled": false,
+        "requirement_id": null,
+        "reviewed": true,
+        "scope": "Submitted structured review"
+      },
+      "domain": "Building condition",
+      "evidence_ids": [
+        "demo-S021-inspection"
+      ],
+      "factor_id": "BD01",
+      "finding_id": "finding:0991158175d4e248cd3c757a",
+      "method": "reviewed_structured_fact",
+      "priority": 3,
+      "rule_id": "BD01",
+      "snapshot_ids": [
+        "sha256:4bb4f30237efc5010f6f02062627157a83bee46d12f5e65292343232d38b2144"
+      ],
+      "summary": "Synthetic inspection reports a structural concern requiring an engineer and repair quote."
+    },
+    {
+      "check_id": "S025",
+      "confidence": "High",
+      "details": {
+        "evidence_kind": "insurance",
+        "modelled": false,
+        "requirement_id": null,
+        "reviewed": true,
+        "scope": "Submitted structured review"
+      },
+      "domain": "Insurance",
+      "evidence_ids": [
+        "demo-S025-insurance"
+      ],
+      "factor_id": "IN01",
+      "finding_id": "finding:9c04e2fce5e5bc8854fe2a64",
+      "method": "reviewed_structured_fact",
+      "priority": 3,
+      "rule_id": "IN01",
+      "snapshot_ids": [
+        "sha256:ebe30528214bf82a2db9ff7a1938e84cfbd361484a49351f5ccee8fab6b7d924"
+      ],
+      "summary": "Synthetic insurance quote excludes a material flood mechanism; cover needs review."
+    },
+    {
+      "check_id": "S057",
+      "confidence": "Medium",
+      "details": {
+        "assumptions": {
+          "income_factor": "0.70",
+          "property_cost_factor": "1.0",
+          "rate_delta_bps": 200,
+          "rent_factor": "1"
+        },
+        "claim": "Conditional scenario; not a prediction that the shock will occur.",
+        "continuous_equivalent_months_to_reserve": "9.14",
+        "duration_months": 12,
+        "ending_cash": "5602.74",
+        "first_breach_month": 10,
+        "initial_cash": "45000.00",
+        "minimum_cash": "5602.74",
+        "protected_reserve": "15000.00",
+        "required_review": true,
+        "reserve_breached": true,
+        "scenario_id": "combined_12m",
+        "surplus_target_breached": false
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "cash_flow:combined_12m",
+      "finding_id": "finding:6cec3cf3613931cc5706646e",
+      "method": "conditional_financial_calculation",
+      "priority": 3,
+      "rule_id": "FN02",
+      "snapshot_ids": [],
+      "summary": "Conditional stress: combined_12m"
+    },
+    {
+      "check_id": "S058",
+      "confidence": "Medium",
+      "details": {
+        "assumptions": {
+          "income_factor": "0.70",
+          "property_cost_factor": "1.0",
+          "rate_delta_bps": 200,
+          "rent_factor": "1"
+        },
+        "claim": "Conditional scenario; not a prediction that the shock will occur.",
+        "continuous_equivalent_months_to_reserve": "9.14",
+        "duration_months": 12,
+        "ending_cash": "5602.74",
+        "first_breach_month": 10,
+        "initial_cash": "45000.00",
+        "minimum_cash": "5602.74",
+        "protected_reserve": "15000.00",
+        "required_review": true,
+        "reserve_breached": true,
+        "scenario_id": "combined_12m",
+        "surplus_target_breached": false
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "cash_flow:combined_12m",
+      "finding_id": "finding:c69fe05e6132db2b7ee71ccf",
+      "method": "conditional_financial_calculation",
+      "priority": 3,
+      "rule_id": "FN02",
+      "snapshot_ids": [],
+      "summary": "Income stress: combined_12m"
+    },
+    {
+      "check_id": "S037",
+      "confidence": "High",
+      "details": {
+        "net_dwellings": 60,
+        "scope": "Signed unweighted future net stock change in declared comparable scope; cancelled and completed projects excluded; no completion probability or price forecast",
+        "unique_projects": 1
+      },
+      "domain": "Housing supply",
+      "evidence_ids": [
+        "demo-S037-supply"
+      ],
+      "factor_id": "competing_supply",
+      "finding_id": "finding:f682b57b4b13445c1d7a7767",
+      "method": "deterministic_rule",
+      "priority": 2,
+      "rule_id": "SP01",
+      "snapshot_ids": [
+        "sha256:9735e410bdb2463a103be00f09e0c8cdbcc50007690c7468f1ccb745b08f6074"
+      ],
+      "summary": "Canonical competing dwelling pipeline"
+    },
+    {
+      "check_id": "S048",
+      "confidence": "High",
+      "details": {
+        "area_id": "synthetic-area",
+        "boundary_version": "synthetic-v1",
+        "count": "120",
+        "definition": "Recorded property offences, synthetic fixture",
+        "denominator": "10000",
+        "period_end": "2026-01-01T00:00:00Z",
+        "period_start": "2025-01-01T00:00:00Z",
+        "rate": "12.00",
+        "rate_base": "1000",
+        "scope": "Recorded events in an area; not the probability of victimisation at this dwelling"
+      },
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [
+        "demo-S048-crime"
+      ],
+      "factor_id": "crime_context",
+      "finding_id": "finding:b8fcbf55636bea805e58fc7e",
+      "method": "deterministic_rule",
+      "priority": 1,
+      "rule_id": "CR01",
+      "snapshot_ids": [
+        "sha256:d73077cbaecb804a84babb472d75527fc9ab44bf1a644b665dd44691406fd0c9"
+      ],
+      "summary": "Area-level recorded crime context"
+    },
+    {
+      "check_id": "S055",
+      "confidence": "High",
+      "details": {
+        "definition": "Synthetic borrower loan interest rate; not a current RBA cash rate.",
+        "measure": "6.00",
+        "modelled": false,
+        "scope": "Evidence context; no property-value or event-probability model",
+        "unit": "percent_per_year"
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [
+        "demo-S055-rates"
+      ],
+      "factor_id": "CONTEXT",
+      "finding_id": "finding:1f350cd415de98e3c1e340cd",
+      "method": "structured_context",
+      "priority": 1,
+      "rule_id": "CONTEXT",
+      "snapshot_ids": [
+        "sha256:e181c40c476b8d83bd14c3764a076908a7a0be16dc188cdea8731fbaf84c3d75"
+      ],
+      "summary": "The loan uses the buyer's entered rate; macro policy-rate context is separate."
+    },
+    {
+      "check_id": "S001",
+      "confidence": "Medium",
+      "details": {
+        "basis": "Case assertion; authoritative ownership and unit facts are separate checks",
+        "property_id": "synthetic-property-001"
+      },
+      "domain": "Identity",
+      "evidence_ids": [],
+      "factor_id": "ID01",
+      "finding_id": "finding:33aa4e29e09d4bd9f6985635",
+      "method": "case_input",
+      "priority": 0,
+      "rule_id": "ID01",
+      "snapshot_ids": [],
+      "summary": "Property selection explicitly confirmed in the case"
+    },
+    {
+      "check_id": "S011",
+      "confidence": "High",
+      "details": {
+        "crs": "EPSG:7855",
+        "distance_m": 113.137085,
+        "hazard_crs": "EPSG:7855",
+        "method": "polygon_overlay_with_explicit_coverage_and_uncertainty",
+        "metric_crs": "EPSG:7855",
+        "overlap_area_m2": 0.0,
+        "overlap_fraction": 0.0,
+        "positional_uncertainty_m": 1.0,
+        "reason": null,
+        "relation": "NO_OVERLAP",
+        "scope": "No overlap for this mapped mechanism and source version",
+        "state": "ASSESSED",
+        "subject_area_m2": 400.0,
+        "subject_scope": "parcel"
+      },
+      "domain": "Bushfire",
+      "evidence_ids": [
+        "demo-S011-bushfire"
+      ],
+      "factor_id": "bushfire",
+      "finding_id": "finding:4fa5e45c75bf9c23685f370e",
+      "method": "deterministic_rule",
+      "priority": 0,
+      "rule_id": "FI01",
+      "snapshot_ids": [
+        "sha256:0ddda64925721d7a2ec2a6b573600c7e7524acf3f0ca371b7d09a6122f9d68e0"
+      ],
+      "summary": "No overlap in the stated mapped mechanism and covered area"
+    },
+    {
+      "check_id": "S056",
+      "confidence": "Medium",
+      "details": {
+        "income_monthly": "11000.00",
+        "living_monthly": "4800.00",
+        "monthly_surplus": "983.24",
+        "mortgage_payment": "4316.76",
+        "other_debt_monthly": "0.00",
+        "property_costs_monthly": "900.00",
+        "rental": {
+          "rent_gross": "0.00",
+          "rent_management": "0.00",
+          "rent_net": "0.00",
+          "rent_vacancy": "0.00"
+        },
+        "scope": "Initial monthly cash flow; reset and shock periods are reported in their dated schedules."
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "cash_flow:baseline",
+      "finding_id": "finding:5405d6ef6e924a4e2b655731",
+      "method": "conditional_financial_calculation",
+      "priority": 0,
+      "rule_id": "FN01",
+      "snapshot_ids": [],
+      "summary": "Baseline monthly cash flow"
+    },
+    {
+      "check_id": "S057",
+      "confidence": "Medium",
+      "details": {
+        "assumptions": {
+          "income_factor": "0.70",
+          "property_cost_factor": "1.0",
+          "rate_delta_bps": 200,
+          "rent_factor": "1"
+        },
+        "claim": "Conditional scenario; not a prediction that the shock will occur.",
+        "continuous_equivalent_months_to_reserve": "9.14",
+        "duration_months": 6,
+        "ending_cash": "25301.37",
+        "first_breach_month": null,
+        "initial_cash": "45000.00",
+        "minimum_cash": "25301.37",
+        "protected_reserve": "15000.00",
+        "required_review": true,
+        "reserve_breached": false,
+        "scenario_id": "combined_6m",
+        "surplus_target_breached": false
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "cash_flow:combined_6m",
+      "finding_id": "finding:8bae05103fad95b269516a4a",
+      "method": "conditional_financial_calculation",
+      "priority": 0,
+      "rule_id": "FN02",
+      "snapshot_ids": [],
+      "summary": "Conditional stress: combined_6m"
+    },
+    {
+      "check_id": "S058",
+      "confidence": "Medium",
+      "details": {
+        "assumptions": {
+          "income_factor": "0.70",
+          "property_cost_factor": "1.0",
+          "rate_delta_bps": 200,
+          "rent_factor": "1"
+        },
+        "claim": "Conditional scenario; not a prediction that the shock will occur.",
+        "continuous_equivalent_months_to_reserve": "9.14",
+        "duration_months": 6,
+        "ending_cash": "25301.37",
+        "first_breach_month": null,
+        "initial_cash": "45000.00",
+        "minimum_cash": "25301.37",
+        "protected_reserve": "15000.00",
+        "required_review": true,
+        "reserve_breached": false,
+        "scenario_id": "combined_6m",
+        "surplus_target_breached": false
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "cash_flow:combined_6m",
+      "finding_id": "finding:c5ada6ee7b351612d074b004",
+      "method": "conditional_financial_calculation",
+      "priority": 0,
+      "rule_id": "FN02",
+      "snapshot_ids": [],
+      "summary": "Income stress: combined_6m"
+    },
+    {
+      "check_id": "S058",
+      "confidence": "Medium",
+      "details": {
+        "cash_after_settlement": "45000.00",
+        "protected_reserve": "15000.00",
+        "shortfall": "0.00"
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "FN03",
+      "finding_id": "finding:0122e3c3e4ac69b45e19cc04",
+      "method": "conditional_financial_calculation",
+      "priority": 0,
+      "rule_id": "FN03",
+      "snapshot_ids": [],
+      "summary": "Post-settlement reserve sufficiency"
+    },
+    {
+      "check_id": "S059",
+      "confidence": "Medium",
+      "details": {
+        "income_monthly": "11000.00",
+        "living_monthly": "4800.00",
+        "monthly_surplus": "983.24",
+        "mortgage_payment": "4316.76",
+        "other_debt_monthly": "0.00",
+        "property_costs_monthly": "900.00",
+        "rental": {
+          "rent_gross": "0.00",
+          "rent_management": "0.00",
+          "rent_net": "0.00",
+          "rent_vacancy": "0.00"
+        },
+        "scope": "Initial monthly cash flow; reset and shock periods are reported in their dated schedules."
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "cash_flow:baseline",
+      "finding_id": "finding:9ac7c27711616243bfd40590",
+      "method": "conditional_financial_calculation",
+      "priority": 0,
+      "rule_id": "FN01",
+      "snapshot_ids": [],
+      "summary": "Baseline monthly cash flow"
+    },
+    {
+      "check_id": "S064",
+      "confidence": "Medium",
+      "details": {
+        "requirement_ids": [
+          "reserve"
+        ],
+        "scope": "Compatibility must be established by the relevant legal, cover, physical or finance rule"
+      },
+      "domain": "Buyer fit",
+      "evidence_ids": [],
+      "factor_id": "BUYER_BRIEF",
+      "finding_id": "finding:5f3f203d204027288b2904ec",
+      "method": "case_input",
+      "priority": 0,
+      "rule_id": "BUYER_BRIEF",
+      "snapshot_ids": [],
+      "summary": "Buyer requirements and essential conditions recorded"
+    },
+    {
+      "check_id": "S065",
+      "confidence": "Medium",
+      "details": {
+        "allocated_funds": "935000.00",
+        "basis": "Submitted funding configuration; confirmed means the submitter has verified its stated availability.",
+        "funding_gap": "0.00",
+        "input_amounts": {
+          "acquisition_costs": "25000.00",
+          "cash_allocated": "215000.00",
+          "immediate_works": "10000.00",
+          "loan_funds": "720000.00",
+          "purchase_price": "900000.00"
+        },
+        "reason": null,
+        "required_funds": "935000.00"
+      },
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "factor_id": "FN04",
+      "finding_id": "finding:ef018a1a203f4bba9fd5fcbf",
+      "method": "conditional_financial_calculation",
+      "priority": 0,
+      "rule_id": "FN04",
+      "snapshot_ids": [],
+      "summary": "Settlement funding sufficiency"
+    }
+  ],
+  "gap_priority": 3,
+  "gaps": [
+    {
+      "check_id": "S002",
+      "critical": true,
+      "domain": "Identity",
+      "evidence_ids": [],
+      "next_action": "Mark ownership form unresolved; do not assume detached appearance means standalone title.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "House and ownership form: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S003",
+      "critical": true,
+      "domain": "Identity",
+      "evidence_ids": [],
+      "next_action": "Use parcel-level screening only and label building-level exposure unknown.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Dwelling footprint attribution: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S004",
+      "critical": true,
+      "domain": "Identity",
+      "evidence_ids": [],
+      "next_action": "Do not give exact boundary-distance conclusions without adequate geometry.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Boundary and survey concordance: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S008",
+      "critical": true,
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "next_action": "No riverine map intersection does not clear drainage risk; request inspection.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Surface-water and drainage condition: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S012",
+      "critical": true,
+      "domain": "Bushfire",
+      "evidence_ids": [],
+      "next_action": "Do not derive BAL or loss probability from the area map alone.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Site-specific fire resilience evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S013",
+      "critical": true,
+      "domain": "Ground and contamination",
+      "evidence_ids": [],
+      "next_action": "Unknown without suitable report; slope or nearby cracks alone do not establish subsidence.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Ground movement and geotechnical concerns: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S014",
+      "critical": true,
+      "domain": "Ground and contamination",
+      "evidence_ids": [],
+      "next_action": "No register match does not clear contamination; request formal search where material.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Contamination and remediation evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S015",
+      "critical": true,
+      "domain": "Ground and contamination",
+      "evidence_ids": [],
+      "next_action": "Negative register match does not prove no asbestos or no undiscovered loose fill.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Loose-fill asbestos history and other asbestos evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S017",
+      "critical": true,
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "next_action": "No title/lease means legal fit incomplete; do not clear intended use.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Title or lease conflict with intended use: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S018",
+      "critical": true,
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "next_action": "Unknown scope stays unresolved until instrument/plan review.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Easements, encumbrances and access rights: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S019",
+      "critical": true,
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "next_action": "Map zone alone cannot establish permission; hold conclusion when legal controls are absent.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Current zoning and statutory development controls: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S022",
+      "critical": true,
+      "domain": "Building condition",
+      "evidence_ids": [],
+      "next_action": "Photos alone cannot clear concealed damage; request targeted inspection.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Moisture, roof and waterproofing defects: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S023",
+      "critical": true,
+      "domain": "Building condition",
+      "evidence_ids": [],
+      "next_action": "Missing/incomplete inspection means pest condition unknown.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Timber pests and termite-management evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S024",
+      "critical": true,
+      "domain": "Building condition",
+      "evidence_ids": [],
+      "next_action": "Unpriced material defects remain material uncertainty; do not enter zero cost.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Immediate repair and maintenance burden: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S027",
+      "critical": true,
+      "domain": "Insurance",
+      "evidence_ids": [],
+      "next_action": "No rebuild estimate means adequacy unknown; sale price is not a replacement.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Rebuild-cover adequacy: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S028",
+      "critical": true,
+      "domain": "Shared ownership",
+      "evidence_ids": [],
+      "next_action": "Missing required scheme records means assessment incomplete, even if detached-house appearance.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Common-property defects and disputes: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S029",
+      "critical": true,
+      "domain": "Shared ownership",
+      "evidence_ids": [],
+      "next_action": "Low levies alone are not positive evidence; unresolved funding stays unknown.",
+      "priority": 3,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Owners-corporation funding and special levies: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S006",
+      "critical": false,
+      "domain": "Flood and drainage",
+      "evidence_ids": [
+        "demo-S006-flood-boundary"
+      ],
+      "next_action": "Withhold definitive inside/outside conclusion where tolerance is unknown or material.",
+      "priority": 2,
+      "reason": "BOUNDARY_AMBIGUITY",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Sensitivity to flood-map boundary: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S007",
+      "critical": false,
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "next_action": "Keep depth unknown until numerical model/report and datum are available.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Numerical flood-depth evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S009",
+      "critical": false,
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "next_action": "Mark terrain analysis unavailable or stale; no invented flow path.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Terrain and low-point context: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S010",
+      "critical": false,
+      "domain": "Flood and drainage",
+      "evidence_ids": [],
+      "next_action": "Withhold calculation if either level or datum is missing; ground elevation is insufficient.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Finished-floor clearance evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S016",
+      "critical": false,
+      "domain": "Climate scenarios",
+      "evidence_ids": [],
+      "next_action": "If access/model metadata is missing, keep future quantitative claims unavailable.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Future heat, rainfall and fire-weather context: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S020",
+      "critical": false,
+      "domain": "Legal and planning",
+      "evidence_ids": [],
+      "next_action": "Absence of a retrieved plan is not proof of illegal work; request records.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Approval and built-form discrepancies: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S021",
+      "critical": true,
+      "domain": "Building condition",
+      "evidence_ids": [
+        "demo-S021-inspection"
+      ],
+      "next_action": "No inspection or inaccessible component remains not assessed.",
+      "priority": 2,
+      "reason": "REPAIR_COST_UNKNOWN",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "The observed defect has no reviewed repair-cost evidence"
+    },
+    {
+      "check_id": "S026",
+      "critical": false,
+      "domain": "Insurance",
+      "evidence_ids": [],
+      "next_action": "No generic suburb premium substituted for actual quote; show missing cost.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Comparable premium and excess burden: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S030",
+      "critical": false,
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "next_action": "No retrieved DA does not establish no future or exempt development.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Relevant nearby development and status: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S031",
+      "critical": false,
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "next_action": "Keep daylight/privacy impact unresolved if geometry, orientation or plan quality is insufficient.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Potential sunlight, outlook and privacy change: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S032",
+      "critical": false,
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "next_action": "Do not apply proposed permissions as current law; unresolved status labelled.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Proposed versus effective planning change: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S033",
+      "critical": false,
+      "domain": "Nearby development",
+      "evidence_ids": [],
+      "next_action": "Unmapped/uncertain proposals remain regional context; no promised delivery.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Strategic growth and land-release exposure: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S034",
+      "critical": false,
+      "domain": "Infrastructure",
+      "evidence_ids": [],
+      "next_action": "Missing milestone evidence remains unknown; announcement is not commitment or completion.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Project delivery evidence and timing: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S036",
+      "critical": false,
+      "domain": "Infrastructure",
+      "evidence_ids": [],
+      "next_action": "Do not invent noise levels or traffic counts from distance alone.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Construction disruption and operating amenity impacts: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S038",
+      "critical": false,
+      "domain": "Housing supply",
+      "evidence_ids": [],
+      "next_action": "Suppress ratio when denominator/type match is inadequate; show raw contextual counts.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Approvals intensity against dated stock: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S039",
+      "critical": false,
+      "domain": "Housing supply",
+      "evidence_ids": [],
+      "next_action": "No suburb completion estimates fabricated from ACT totals.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Regional construction conversion and delay: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S040",
+      "critical": false,
+      "domain": "Housing supply",
+      "evidence_ids": [],
+      "next_action": "Do not declare shortage when current listings, demand or stock coverage is absent.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Evidence for scarcity versus low turnover: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S041",
+      "critical": false,
+      "domain": "Household demand",
+      "evidence_ids": [],
+      "next_action": "Do not present annual lagged population as current-month observation.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Population and migration trajectory: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S042",
+      "critical": false,
+      "domain": "Household demand",
+      "evidence_ids": [],
+      "next_action": "Do not downscale regional projections to suburbs without an explicit validated method.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Household-formation scenario: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S043",
+      "critical": false,
+      "domain": "Household demand",
+      "evidence_ids": [],
+      "next_action": "Do not derive employment from SALM or treat local industry mix as individual income certainty.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Employment resilience and concentration: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S044",
+      "critical": false,
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "next_action": "Documentation-only API access supplies no prices; missing transactions means valuation unavailable.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Comparable-sale evidence quality: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S045",
+      "critical": false,
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "next_action": "Withhold precise premium/discount if comparables or adjustments are inadequate.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Purchase-price position against evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S046",
+      "critical": false,
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "next_action": "Sale dates alone do not establish time-on-market; no hidden listing API assumed.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Resale liquidity and exit evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S047",
+      "critical": false,
+      "domain": "Valuation and liquidity",
+      "evidence_ids": [],
+      "next_action": "ACT aggregates do not prove suburb/property rent or vacancy; missing property evidence stays unknown.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Rental income evidence and scope: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S049",
+      "critical": false,
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "next_action": "Do not infer eligibility from proximity or guarantee preferred school in a shared zone.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "School eligibility and catchment change: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S050",
+      "critical": false,
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "next_action": "Without approved feed/routing access use dated timetable/manual evidence; no invented travel times.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Existing public transport usefulness: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S051",
+      "critical": false,
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "next_action": "No crash/traffic exposure data means context incomplete; distance alone cannot quantify risk.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Road-crossing and crash context: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S052",
+      "critical": false,
+      "domain": "Energy and comfort",
+      "evidence_ids": [],
+      "next_action": "Listing stars without source remain unverified; no conversion between incompatible scales.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Thermal rating and assessment validity: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S053",
+      "critical": false,
+      "domain": "Energy and comfort",
+      "evidence_ids": [],
+      "next_action": "Do not infer house temperatures, exact shade hours or young-tree absence from regional canopy.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Canopy and shade context: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S054",
+      "critical": false,
+      "domain": "Neighbourhood and access",
+      "evidence_ids": [],
+      "next_action": "No verified public noise/air adapter in source set; do not infer levels from traffic, canopy or distance.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Measured noise or air-quality evidence: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S060",
+      "critical": false,
+      "domain": "Buyer finance",
+      "evidence_ids": [],
+      "next_action": "Without balance/cost assumptions show incomplete; API documentation alone is not a valuation.",
+      "priority": 2,
+      "reason": "NOT_REQUESTED",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Forced-sale and equity stress: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S061",
+      "critical": false,
+      "domain": "Evidence quality",
+      "evidence_ids": [],
+      "next_action": "Unknown dates become an evidence gap; never label retrieved-today data current automatically.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Source and observation freshness: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S062",
+      "critical": false,
+      "domain": "Evidence quality",
+      "evidence_ids": [],
+      "next_action": "Do not convert missing values to safe values or average contradictions into certainty.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Coverage, scope and contradictions: evidence does not support a completed assessment"
+    },
+    {
+      "check_id": "S063",
+      "critical": false,
+      "domain": "Evidence quality",
+      "evidence_ids": [],
+      "next_action": "If previous snapshot/coverage is absent, identify first observation rather than a new event.",
+      "priority": 2,
+      "reason": "MISSING_REQUIRED_EVIDENCE",
+      "required": true,
+      "substantive_priority": null,
+      "summary": "Material change since previous assessment: evidence does not support a completed assessment"
+    }
+  ],
+  "input_hash": "sha256:4e5d40f2785262b30b6b4dd2d518390dd861e926edd618189f1398f3a6256404",
+  "input_observation_ids": [
+    "demo-S005-flood",
+    "demo-S011-bushfire",
+    "demo-S021-inspection",
+    "demo-S025-insurance",
+    "demo-S035-transport",
+    "demo-S037-supply",
+    "demo-S048-crime",
+    "demo-S055-rates"
+  ],
+  "input_snapshot_ids": [
+    "sha256:088cf45bb24895cbb055c77752039bbe33883c870404301554da1e64c421c497",
+    "sha256:0ade01b56315f941258e8d58600706c257ce43b41585a5ce9bd8cee2d0c5b63f",
+    "sha256:0ddda64925721d7a2ec2a6b573600c7e7524acf3f0ca371b7d09a6122f9d68e0",
+    "sha256:4bb4f30237efc5010f6f02062627157a83bee46d12f5e65292343232d38b2144",
+    "sha256:9735e410bdb2463a103be00f09e0c8cdbcc50007690c7468f1ccb745b08f6074",
+    "sha256:d73077cbaecb804a84babb472d75527fc9ab44bf1a644b665dd44691406fd0c9",
+    "sha256:e181c40c476b8d83bd14c3764a076908a7a0be16dc188cdea8731fbaf84c3d75",
+    "sha256:ebe30528214bf82a2db9ff7a1938e84cfbd361484a49351f5ccee8fab6b7d924"
+  ],
+  "limitations": [
+    "Priorities 0–4 describe actions under versioned rules; they are not calibrated probabilities, loss estimates or a property valuation.",
+    "Public screening cannot complete private inspections, legal advice, insurance quotations or buyer funding checks.",
+    "Unimplemented signal models remain structured reviewed context or NOT_ASSESSED; the manifest contains the full required scope.",
+    "Opportunities and correlated evidence do not subtract from adverse findings or multiply confidence.",
+    "Case finances are explicit input assumptions; historical verification requires a dated received_at and pinned supporting evidence.",
+    "Geometry describes the stated parcel or footprint and mapped mechanism; it does not establish floor-level loss or insurance availability.",
+    "FULL_PINNED_INPUTS identifies reproducible supplied inputs, not independent verification that every upstream raw file is retained."
+  ],
+  "manifest_hash": "sha256:31b5020c0530664dea502568a1d1127f6b3b80acf7b96feb4f6af80120a806be",
+  "opportunities": [
+    {
+      "available_from": "2029-12-01T00:00:00Z",
+      "benefit": "A proposed station could shorten the reviewed journey to the buyer's workplace.",
+      "check_id": "S035",
+      "conditional": true,
+      "confidence": "High",
+      "dependencies": [
+        "Funded construction and opening",
+        "Verified walk access"
+      ],
+      "evidence_ids": [
+        "demo-S035-transport"
+      ],
+      "milestones": [
+        {
+          "date": "2026-01-01T00:00:00Z",
+          "kind": "announced",
+          "published_at": "2026-01-01T00:00:00Z",
+          "source_id": "synthetic-transport"
+        },
+        {
+          "date": "2026-09-01T00:00:00Z",
+          "kind": "approved",
+          "published_at": "2026-09-01T00:00:00Z",
+          "source_id": "synthetic-transport"
+        }
+      ],
+      "opportunity_id": "opportunity:8b479a23ee4f8b67e42df9e9",
+      "price_uplift": null,
+      "priority": null,
+      "project_id": "synthetic-rail-project",
+      "rule_id": "OP01",
+      "scope": "Supported potential benefit; does not offset adverse findings or forecast a price change",
+      "snapshot_ids": [
+        "sha256:0ade01b56315f941258e8d58600706c257ce43b41585a5ce9bd8cee2d0c5b63f"
+      ]
+    }
+  ],
+  "priority": 3,
+  "property_id": "synthetic-property-001",
+  "replay_level": "FULL_PINNED_INPUTS",
+  "review_state": {
+    "review_records_supplied": 0,
+    "waivers_change_evidence_coverage": false
+  },
+  "rule_version": "0.1.0",
+  "runtime_versions": {
+    "geos": "3.13.1",
+    "proj": "9.5.1",
+    "pyproj": "3.7.2",
+    "python": "3.12.14",
+    "shapely": "2.1.2"
+  },
+  "status": "INCOMPLETE"
+}

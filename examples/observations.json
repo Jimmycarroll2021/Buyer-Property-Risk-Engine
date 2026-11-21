@@ -1,0 +1,516 @@
+[
+  {
+    "observation_id": "demo-S005-flood",
+    "check_id": "S005",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-flood",
+    "snapshot_id": "sha256:088cf45bb24895cbb055c77752039bbe33883c870404301554da1e64c421c497",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "official_record",
+    "confidence": "High",
+    "visibility_scope": "public",
+    "owner_tenant_id": null,
+    "case_scope_id": null,
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "spatial",
+      "subject_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              690000,
+              6080000
+            ],
+            [
+              690020,
+              6080000
+            ],
+            [
+              690020,
+              6080020
+            ],
+            [
+              690000,
+              6080020
+            ],
+            [
+              690000,
+              6080000
+            ]
+          ]
+        ]
+      },
+      "hazard_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              690010,
+              6080010
+            ],
+            [
+              690040,
+              6080010
+            ],
+            [
+              690040,
+              6080040
+            ],
+            [
+              690010,
+              6080040
+            ],
+            [
+              690010,
+              6080010
+            ]
+          ]
+        ]
+      },
+      "crs": "EPSG:7855",
+      "positional_uncertainty_m": 0,
+      "mechanism": "riverine_flood"
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S006-flood-boundary",
+    "check_id": "S006",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-flood-boundary",
+    "snapshot_id": "sha256:85ac8730a75506e4d3fa0afce75ec69a3efa9ecd6ce7f1b15ac04613d72d671c",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "official_record",
+    "confidence": "High",
+    "visibility_scope": "public",
+    "owner_tenant_id": null,
+    "case_scope_id": null,
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "spatial",
+      "subject_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              690000,
+              6080000
+            ],
+            [
+              690020,
+              6080000
+            ],
+            [
+              690020,
+              6080020
+            ],
+            [
+              690000,
+              6080020
+            ],
+            [
+              690000,
+              6080000
+            ]
+          ]
+        ]
+      },
+      "hazard_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              690020,
+              6080000
+            ],
+            [
+              690040,
+              6080000
+            ],
+            [
+              690040,
+              6080020
+            ],
+            [
+              690020,
+              6080020
+            ],
+            [
+              690020,
+              6080000
+            ]
+          ]
+        ]
+      },
+      "crs": "EPSG:7855",
+      "positional_uncertainty_m": 0.5,
+      "mechanism": "flood_boundary"
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S011-bushfire",
+    "check_id": "S011",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-bushfire",
+    "snapshot_id": "sha256:0ddda64925721d7a2ec2a6b573600c7e7524acf3f0ca371b7d09a6122f9d68e0",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "official_record",
+    "confidence": "High",
+    "visibility_scope": "public",
+    "owner_tenant_id": null,
+    "case_scope_id": null,
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "spatial",
+      "subject_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              690000,
+              6080000
+            ],
+            [
+              690020,
+              6080000
+            ],
+            [
+              690020,
+              6080020
+            ],
+            [
+              690000,
+              6080020
+            ],
+            [
+              690000,
+              6080000
+            ]
+          ]
+        ]
+      },
+      "hazard_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              690100,
+              6080100
+            ],
+            [
+              690200,
+              6080100
+            ],
+            [
+              690200,
+              6080200
+            ],
+            [
+              690100,
+              6080200
+            ],
+            [
+              690100,
+              6080100
+            ]
+          ]
+        ]
+      },
+      "crs": "EPSG:7855",
+      "positional_uncertainty_m": 1,
+      "mechanism": "bushfire"
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S021-inspection",
+    "check_id": "S021",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-inspection",
+    "snapshot_id": "sha256:4bb4f30237efc5010f6f02062627157a83bee46d12f5e65292343232d38b2144",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "reviewed_document",
+    "confidence": "High",
+    "visibility_scope": "private",
+    "owner_tenant_id": "demo",
+    "case_scope_id": "demo-house",
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "inspection",
+      "reviewed": true,
+      "material_defect": true,
+      "cost_known": false,
+      "statement": "Synthetic inspection reports a structural concern requiring an engineer and repair quote."
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S025-insurance",
+    "check_id": "S025",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-insurance",
+    "snapshot_id": "sha256:ebe30528214bf82a2db9ff7a1938e84cfbd361484a49351f5ccee8fab6b7d924",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "reviewed_document",
+    "confidence": "High",
+    "visibility_scope": "private",
+    "owner_tenant_id": "demo",
+    "case_scope_id": "demo-house",
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "insurance",
+      "reviewed": true,
+      "conflict": false,
+      "material_exclusion": true,
+      "statement": "Synthetic insurance quote excludes a material flood mechanism; cover needs review."
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S035-transport",
+    "check_id": "S035",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-transport",
+    "snapshot_id": "sha256:0ade01b56315f941258e8d58600706c257ce43b41585a5ce9bd8cee2d0c5b63f",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "official_record",
+    "confidence": "High",
+    "visibility_scope": "public",
+    "owner_tenant_id": null,
+    "case_scope_id": null,
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "opportunity",
+      "project_id": "synthetic-rail-project",
+      "benefit": "A proposed station could shorten the reviewed journey to the buyer's workplace.",
+      "benefit_supported": true,
+      "timing_known": true,
+      "expected_completion": "2029-12-01T00:00:00Z",
+      "dependencies": [
+        "Funded construction and opening",
+        "Verified walk access"
+      ],
+      "milestones": [
+        {
+          "kind": "announced",
+          "date": "2026-01-01T00:00:00Z",
+          "published_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "kind": "approved",
+          "date": "2026-09-01T00:00:00Z",
+          "published_at": "2026-09-01T00:00:00Z"
+        }
+      ]
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S037-supply",
+    "check_id": "S037",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-supply",
+    "snapshot_id": "sha256:9735e410bdb2463a103be00f09e0c8cdbcc50007690c7468f1ccb745b08f6074",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "official_record",
+    "confidence": "High",
+    "visibility_scope": "public",
+    "owner_tenant_id": null,
+    "case_scope_id": null,
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "project",
+      "project_id": "synthetic-apartment-project",
+      "net_dwellings": 60,
+      "scope_comparable": true,
+      "declared_net_dwellings_threshold": 50,
+      "expected_completion": "2028-06-01T00:00:00Z",
+      "milestones": [
+        {
+          "kind": "approved",
+          "date": "2026-05-01T00:00:00Z",
+          "published_at": "2026-05-01T00:00:00Z"
+        }
+      ]
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S048-crime",
+    "check_id": "S048",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-crime",
+    "snapshot_id": "sha256:d73077cbaecb804a84babb472d75527fc9ab44bf1a644b665dd44691406fd0c9",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "official_record",
+    "confidence": "High",
+    "visibility_scope": "public",
+    "owner_tenant_id": null,
+    "case_scope_id": null,
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "context",
+      "summary": "Synthetic area-level property-offence measure",
+      "count": 120,
+      "denominator": 10000,
+      "rate_base": 1000,
+      "period_start": "2025-01-01T00:00:00Z",
+      "period_end": "2026-01-01T00:00:00Z",
+      "area_id": "synthetic-area",
+      "boundary_version": "synthetic-v1",
+      "definition": "Recorded property offences, synthetic fixture",
+      "comparable": true
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  },
+  {
+    "observation_id": "demo-S055-rates",
+    "check_id": "S055",
+    "property_id": "synthetic-property-001",
+    "source_id": "synthetic-rates",
+    "snapshot_id": "sha256:e181c40c476b8d83bd14c3764a076908a7a0be16dc188cdea8731fbaf84c3d75",
+    "published_at": "2026-10-01T00:00:00Z",
+    "received_at": "2026-10-02T00:00:00Z",
+    "evidence_basis": "reviewed_document",
+    "confidence": "High",
+    "visibility_scope": "private",
+    "owner_tenant_id": "demo",
+    "case_scope_id": "demo-house",
+    "rights": {
+      "process": true,
+      "retain_raw": true,
+      "display_raw": true,
+      "display_derived": true
+    },
+    "quality": {
+      "retrieval_status": "SUCCESS",
+      "coverage_status": "COVERED",
+      "complete": true,
+      "current": true,
+      "identity_match": true
+    },
+    "payload": {
+      "kind": "context",
+      "summary": "The loan uses the buyer's entered rate; macro policy-rate context is separate.",
+      "measure": "6.00",
+      "unit": "percent_per_year",
+      "definition": "Synthetic borrower loan interest rate; not a current RBA cash rate."
+    },
+    "demonstration": true,
+    "source_note": "Invented demonstration evidence; not an actual government record."
+  }
+]

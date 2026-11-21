@@ -1,0 +1,26 @@
+digraph evidence {
+ graph [rankdir=TB,bgcolor="#f7f9fc",pad="0.45",nodesep="0.45",ranksep="0.5",fontname="DejaVu Sans",label="PROPERTY RISK ENGINE\nData relationships, repeatability and access",labelloc=t,fontsize=24];
+ node [shape=box,style="rounded,filled",fillcolor=white,color="#b9c6d8",fontname="DejaVu Sans",fontsize=11,margin="0.18,0.12"];
+ edge [color="#566d88",arrowsize=.7,fontname="DejaVu Sans",fontsize=9];
+ source [label="Source contract\nSource ID, aliases, endpoint\nSchema, rights, expected scope",fillcolor="#deebfc"];
+ snapshot [label="Source snapshot\nHash, query, source/retrieval dates\nCompleteness and failure status"];
+ obs [label="Observation\nSource snapshot + subject + period\nTyped payload + quality + rights"];
+ property [label="Property identity\nAddress, unit, parcel and building\nJurisdiction and geometry versions"];
+ case [label="Buyer case version\nTenant + property + assessment date\nFinances + requirements + intended use",fillcolor="#fff4df"];
+ check [label="Required-check manifest\n65 declared signals\nApplicability and criticality policy",fillcolor="#e0f0ed"];
+ assessment [label="Assessment version\nCase version + observation IDs/hashes\nRule version + engine version\nDeterministic result hash",fillcolor="#dce4f8"];
+ result [label="Check results\nASSESSED / NOT_ASSESSED / NOT_APPLICABLE\nFinding priority and gap priority\nConfidence, evidence and next action"];
+ review [label="Review action\nAccepted concern / waiver / resolution note\nActor, reason and timestamp\nDoes not rewrite the original result",fillcolor="#fff4df"];
+ audit [label="Audit and source health\nAccess, changes, failures and job events\nNo source failure becomes a clean result"];
+ private [label="ACCESS INVARIANT\nPrivate inputs constrain derived outputs.\nTenant/case authorisation applies independently to\nobservations, assessments, reports and downloads.",shape=note,fillcolor="#fff4df",fontsize=10];
+ determinism [label="REPEATABILITY INVARIANT\nSame case + evidence + as-of + code/rules = same result.\nLater source updates cannot enter an older assessment.\nMissing/conflicting evidence remains visible.",shape=note,fillcolor="#e0f0ed",fontsize=10];
+ source->snapshot;snapshot->obs;property->obs;property->case;
+ obs->assessment;case->assessment;check->assessment;
+ assessment->result;assessment->review;review->audit;snapshot->audit;
+ case->private [style=dashed];assessment->determinism [style=dashed];
+ {rank=same;source;property;}
+ {rank=same;obs;case;check;}
+ {rank=same;result;review;}
+ {rank=same;private;determinism;}
+}
+

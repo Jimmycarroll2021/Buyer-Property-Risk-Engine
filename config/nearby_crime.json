@@ -1,0 +1,1380 @@
+{
+  "attribution": "ACT Policing, ACT Crime Statistics. Derived from the ACT Open Data workbook under CC BY 4.0.",
+  "source_url": "https://www.data.act.gov.au/Justice-Safety-and-Emergency/ACT-Crime-Statistics/2egm-dieb",
+  "asset_url": "https://www.data.act.gov.au/api/views/2egm-dieb/files/13e57c74-edc3-44e9-8c88-93938ea4cc4d?download=true&filename=Website_Qtrly_Jun25.xlsx",
+  "asset_sha256": "0302bade00e4158f7cad1413412c167eea9d6b13b6a4eaf02ed7dac40af011df",
+  "snapshot_at": "2025-07-07",
+  "published_at": "2025-07-08",
+  "published_unix_seconds": 1751934390,
+  "period_ends": [
+    "2024-06-30",
+    "2025-06-30"
+  ],
+  "method": "Sum four complete published quarters per financial year, July to June, for each named suburb and offence row. Excludes district totals and infringements.",
+  "areas": {
+    "ACTON": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        9,
+        15
+      ]
+    },
+    "AINSLIE": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        15,
+        13
+      ],
+      "Motor vehicle theft": [
+        9,
+        11
+      ]
+    },
+    "AMAROO": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        5,
+        6
+      ],
+      "Motor vehicle theft": [
+        7,
+        8
+      ]
+    },
+    "ARANDA": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        7,
+        3
+      ],
+      "Motor vehicle theft": [
+        7,
+        4
+      ]
+    },
+    "BANKS": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        5,
+        4
+      ],
+      "Motor vehicle theft": [
+        3,
+        3
+      ]
+    },
+    "BARTON": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        1,
+        0
+      ],
+      "Motor vehicle theft": [
+        6,
+        2
+      ]
+    },
+    "BEARD": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        3,
+        1
+      ]
+    },
+    "BELCONNEN": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        19,
+        20
+      ],
+      "Motor vehicle theft": [
+        60,
+        28
+      ]
+    },
+    "BLACK MOUNTAIN": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        0
+      ]
+    },
+    "BONNER": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        4,
+        3
+      ],
+      "Motor vehicle theft": [
+        10,
+        8
+      ]
+    },
+    "BONYTHON": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        9,
+        1
+      ],
+      "Motor vehicle theft": [
+        12,
+        6
+      ]
+    },
+    "BRADDON": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        20,
+        27
+      ],
+      "Motor vehicle theft": [
+        34,
+        32
+      ]
+    },
+    "BRUCE": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        12,
+        10
+      ],
+      "Motor vehicle theft": [
+        19,
+        18
+      ]
+    },
+    "CALWELL": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        6,
+        6
+      ],
+      "Motor vehicle theft": [
+        7,
+        9
+      ]
+    },
+    "CAMPBELL": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        7,
+        11
+      ],
+      "Motor vehicle theft": [
+        1,
+        8
+      ]
+    },
+    "CAPITAL HILL": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        1
+      ]
+    },
+    "CASEY": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        11,
+        5
+      ],
+      "Motor vehicle theft": [
+        11,
+        10
+      ]
+    },
+    "CHAPMAN": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        7,
+        0
+      ],
+      "Motor vehicle theft": [
+        3,
+        4
+      ]
+    },
+    "CHARNWOOD": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        12,
+        3
+      ],
+      "Motor vehicle theft": [
+        8,
+        3
+      ]
+    },
+    "CHIFLEY": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        6,
+        2
+      ],
+      "Motor vehicle theft": [
+        7,
+        4
+      ]
+    },
+    "CHISHOLM": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        9,
+        4
+      ],
+      "Motor vehicle theft": [
+        17,
+        14
+      ]
+    },
+    "CITY": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        6,
+        7
+      ],
+      "Motor vehicle theft": [
+        43,
+        30
+      ]
+    },
+    "CONDER": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        7,
+        3
+      ],
+      "Motor vehicle theft": [
+        8,
+        10
+      ]
+    },
+    "COOK": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        10,
+        2
+      ],
+      "Motor vehicle theft": [
+        3,
+        2
+      ]
+    },
+    "COOMBS": {
+      "district": "Molonglo District",
+      "Burglary dwellings": [
+        13,
+        8
+      ],
+      "Motor vehicle theft": [
+        17,
+        7
+      ]
+    },
+    "CRACE": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        8,
+        13
+      ],
+      "Motor vehicle theft": [
+        6,
+        15
+      ]
+    },
+    "CURTIN": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        10,
+        2
+      ],
+      "Motor vehicle theft": [
+        14,
+        9
+      ]
+    },
+    "DEAKIN": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        5,
+        7
+      ],
+      "Motor vehicle theft": [
+        12,
+        15
+      ]
+    },
+    "DENMAN PROSPECT": {
+      "district": "Molonglo District",
+      "Burglary dwellings": [
+        9,
+        11
+      ],
+      "Motor vehicle theft": [
+        7,
+        5
+      ]
+    },
+    "DICKSON": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        12,
+        14
+      ],
+      "Motor vehicle theft": [
+        12,
+        22
+      ]
+    },
+    "DOWNER": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        32,
+        9
+      ],
+      "Motor vehicle theft": [
+        10,
+        7
+      ]
+    },
+    "DUFFY": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        12,
+        4
+      ],
+      "Motor vehicle theft": [
+        4,
+        11
+      ]
+    },
+    "DUNLOP": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        10,
+        4
+      ],
+      "Motor vehicle theft": [
+        4,
+        3
+      ]
+    },
+    "DUNTROON": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        0
+      ]
+    },
+    "EVATT": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        9,
+        14
+      ],
+      "Motor vehicle theft": [
+        6,
+        7
+      ]
+    },
+    "FADDEN": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        4,
+        3
+      ],
+      "Motor vehicle theft": [
+        7,
+        5
+      ]
+    },
+    "FARRER": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        5,
+        1
+      ],
+      "Motor vehicle theft": [
+        6,
+        1
+      ]
+    },
+    "FISHER": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        4,
+        6
+      ],
+      "Motor vehicle theft": [
+        2,
+        5
+      ]
+    },
+    "FLOREY": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        9,
+        8
+      ],
+      "Motor vehicle theft": [
+        7,
+        11
+      ]
+    },
+    "FLYNN": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        11,
+        2
+      ],
+      "Motor vehicle theft": [
+        6,
+        3
+      ]
+    },
+    "FORDE": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        8,
+        10
+      ],
+      "Motor vehicle theft": [
+        6,
+        9
+      ]
+    },
+    "FORREST": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        1,
+        4
+      ],
+      "Motor vehicle theft": [
+        7,
+        2
+      ]
+    },
+    "FRANKLIN": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        13,
+        14
+      ],
+      "Motor vehicle theft": [
+        8,
+        13
+      ]
+    },
+    "FRASER": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        0,
+        2
+      ],
+      "Motor vehicle theft": [
+        3,
+        0
+      ]
+    },
+    "FYSHWICK": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        1,
+        4
+      ],
+      "Motor vehicle theft": [
+        46,
+        25
+      ]
+    },
+    "GARRAN": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        7,
+        4
+      ],
+      "Motor vehicle theft": [
+        14,
+        5
+      ]
+    },
+    "GILMORE": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        2,
+        1
+      ],
+      "Motor vehicle theft": [
+        9,
+        4
+      ]
+    },
+    "GIRALANG": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        1,
+        9
+      ],
+      "Motor vehicle theft": [
+        4,
+        9
+      ]
+    },
+    "GORDON": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        12,
+        7
+      ],
+      "Motor vehicle theft": [
+        7,
+        7
+      ]
+    },
+    "GOWRIE": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        1,
+        3
+      ],
+      "Motor vehicle theft": [
+        3,
+        5
+      ]
+    },
+    "GREENWAY": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        7,
+        10
+      ],
+      "Motor vehicle theft": [
+        17,
+        21
+      ]
+    },
+    "GRIFFITH": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        17,
+        13
+      ],
+      "Motor vehicle theft": [
+        14,
+        16
+      ]
+    },
+    "GUNGAHLIN": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        21,
+        15
+      ],
+      "Motor vehicle theft": [
+        30,
+        27
+      ]
+    },
+    "HACKETT": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        7,
+        3
+      ],
+      "Motor vehicle theft": [
+        6,
+        3
+      ]
+    },
+    "HALL": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        0,
+        2
+      ],
+      "Motor vehicle theft": [
+        1,
+        3
+      ]
+    },
+    "HARMAN": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        0
+      ]
+    },
+    "HARRISON": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        11,
+        12
+      ],
+      "Motor vehicle theft": [
+        9,
+        4
+      ]
+    },
+    "HAWKER": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        9,
+        8
+      ],
+      "Motor vehicle theft": [
+        10,
+        10
+      ]
+    },
+    "HIGGINS": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        5,
+        9
+      ],
+      "Motor vehicle theft": [
+        2,
+        8
+      ]
+    },
+    "HOLDER": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        4,
+        2
+      ],
+      "Motor vehicle theft": [
+        4,
+        4
+      ]
+    },
+    "HOLT": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        9,
+        8
+      ],
+      "Motor vehicle theft": [
+        9,
+        8
+      ]
+    },
+    "HUGHES": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        7,
+        3
+      ],
+      "Motor vehicle theft": [
+        5,
+        0
+      ]
+    },
+    "HUME": {
+      "district": "Other",
+      "Burglary dwellings": [
+        1,
+        1
+      ],
+      "Motor vehicle theft": [
+        13,
+        8
+      ]
+    },
+    "ISAACS": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        4,
+        1
+      ],
+      "Motor vehicle theft": [
+        2,
+        2
+      ]
+    },
+    "ISABELLA PLAINS": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        6,
+        1
+      ],
+      "Motor vehicle theft": [
+        13,
+        1
+      ]
+    },
+    "JACKA": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        1
+      ]
+    },
+    "KALEEN": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        15,
+        9
+      ],
+      "Motor vehicle theft": [
+        14,
+        6
+      ]
+    },
+    "KAMBAH": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        13,
+        16
+      ],
+      "Motor vehicle theft": [
+        23,
+        25
+      ]
+    },
+    "KENNY": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        2
+      ]
+    },
+    "KINGSTON": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        12,
+        6
+      ],
+      "Motor vehicle theft": [
+        29,
+        20
+      ]
+    },
+    "KINLYSIDE": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        0
+      ]
+    },
+    "LATHAM": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        3,
+        4
+      ],
+      "Motor vehicle theft": [
+        5,
+        5
+      ]
+    },
+    "LAWSON": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        4,
+        2
+      ],
+      "Motor vehicle theft": [
+        3,
+        5
+      ]
+    },
+    "LYNEHAM": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        27,
+        19
+      ],
+      "Motor vehicle theft": [
+        17,
+        16
+      ]
+    },
+    "LYONS": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        9,
+        2
+      ],
+      "Motor vehicle theft": [
+        4,
+        4
+      ]
+    },
+    "MACARTHUR": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        6,
+        3
+      ],
+      "Motor vehicle theft": [
+        3,
+        5
+      ]
+    },
+    "MACGREGOR": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        8,
+        10
+      ],
+      "Motor vehicle theft": [
+        4,
+        13
+      ]
+    },
+    "MACQUARIE": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        15,
+        6
+      ],
+      "Motor vehicle theft": [
+        11,
+        10
+      ]
+    },
+    "MAJURA": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        3,
+        2
+      ]
+    },
+    "MAWSON": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        13,
+        3
+      ],
+      "Motor vehicle theft": [
+        9,
+        1
+      ]
+    },
+    "MCKELLAR": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        10,
+        4
+      ],
+      "Motor vehicle theft": [
+        2,
+        9
+      ]
+    },
+    "MELBA": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        10,
+        4
+      ],
+      "Motor vehicle theft": [
+        5,
+        5
+      ]
+    },
+    "MITCHELL": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        1,
+        0
+      ],
+      "Motor vehicle theft": [
+        13,
+        7
+      ]
+    },
+    "MOLONGLO": {
+      "district": "Molonglo District",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        0
+      ]
+    },
+    "MONASH": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        11,
+        3
+      ],
+      "Motor vehicle theft": [
+        8,
+        12
+      ]
+    },
+    "MONCRIEFF": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        7,
+        13
+      ],
+      "Motor vehicle theft": [
+        4,
+        2
+      ]
+    },
+    "NARRABUNDAH": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        26,
+        13
+      ],
+      "Motor vehicle theft": [
+        26,
+        11
+      ]
+    },
+    "NGUNNAWAL": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        14,
+        14
+      ],
+      "Motor vehicle theft": [
+        11,
+        9
+      ]
+    },
+    "NICHOLLS": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        10,
+        9
+      ],
+      "Motor vehicle theft": [
+        10,
+        12
+      ]
+    },
+    "O'CONNOR": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        9,
+        9
+      ],
+      "Motor vehicle theft": [
+        4,
+        12
+      ]
+    },
+    "O'MALLEY": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        3,
+        0
+      ],
+      "Motor vehicle theft": [
+        1,
+        1
+      ]
+    },
+    "OAKS ESTATE": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        1,
+        0
+      ],
+      "Motor vehicle theft": [
+        4,
+        2
+      ]
+    },
+    "OXLEY": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        1,
+        4
+      ],
+      "Motor vehicle theft": [
+        0,
+        2
+      ]
+    },
+    "PAGE": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        10,
+        4
+      ],
+      "Motor vehicle theft": [
+        11,
+        8
+      ]
+    },
+    "PALMERSTON": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        7,
+        11
+      ],
+      "Motor vehicle theft": [
+        3,
+        3
+      ]
+    },
+    "PARKES": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        4,
+        5
+      ]
+    },
+    "PEARCE": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        4,
+        3
+      ],
+      "Motor vehicle theft": [
+        4,
+        2
+      ]
+    },
+    "PHILLIP": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        15,
+        13
+      ],
+      "Motor vehicle theft": [
+        39,
+        21
+      ]
+    },
+    "PIALLIGO": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        6,
+        4
+      ]
+    },
+    "RED HILL": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        11,
+        16
+      ],
+      "Motor vehicle theft": [
+        12,
+        9
+      ]
+    },
+    "REID": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        20,
+        8
+      ],
+      "Motor vehicle theft": [
+        9,
+        5
+      ]
+    },
+    "RICHARDSON": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        2,
+        7
+      ],
+      "Motor vehicle theft": [
+        3,
+        4
+      ]
+    },
+    "RIVETT": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        6,
+        2
+      ],
+      "Motor vehicle theft": [
+        9,
+        4
+      ]
+    },
+    "RUSSELL": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        1,
+        0
+      ],
+      "Motor vehicle theft": [
+        5,
+        1
+      ]
+    },
+    "SCULLIN": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        5,
+        7
+      ],
+      "Motor vehicle theft": [
+        5,
+        7
+      ]
+    },
+    "SPENCE": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        13,
+        10
+      ],
+      "Motor vehicle theft": [
+        7,
+        9
+      ]
+    },
+    "STIRLING": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        6,
+        2
+      ],
+      "Motor vehicle theft": [
+        1,
+        0
+      ]
+    },
+    "STROMLO": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        3,
+        2
+      ]
+    },
+    "SYMONSTON": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        3,
+        0
+      ],
+      "Motor vehicle theft": [
+        2,
+        0
+      ]
+    },
+    "TAYLOR": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        11,
+        8
+      ],
+      "Motor vehicle theft": [
+        8,
+        7
+      ]
+    },
+    "THARWA": {
+      "district": "Other",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        1
+      ]
+    },
+    "THEODORE": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        4,
+        1
+      ],
+      "Motor vehicle theft": [
+        7,
+        6
+      ]
+    },
+    "THROSBY": {
+      "district": "Gungahlin",
+      "Burglary dwellings": [
+        6,
+        7
+      ],
+      "Motor vehicle theft": [
+        1,
+        5
+      ]
+    },
+    "TORRENS": {
+      "district": "Woden",
+      "Burglary dwellings": [
+        5,
+        1
+      ],
+      "Motor vehicle theft": [
+        0,
+        0
+      ]
+    },
+    "TURNER": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        22,
+        24
+      ],
+      "Motor vehicle theft": [
+        13,
+        17
+      ]
+    },
+    "URIARRA": {
+      "district": "Other",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        0,
+        0
+      ]
+    },
+    "WANNIASSA": {
+      "district": "Tuggeranong",
+      "Burglary dwellings": [
+        12,
+        11
+      ],
+      "Motor vehicle theft": [
+        13,
+        12
+      ]
+    },
+    "WARAMANGA": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        4,
+        1
+      ],
+      "Motor vehicle theft": [
+        3,
+        1
+      ]
+    },
+    "WATSON": {
+      "district": "Inner North",
+      "Burglary dwellings": [
+        18,
+        13
+      ],
+      "Motor vehicle theft": [
+        9,
+        15
+      ]
+    },
+    "WEETANGERA": {
+      "district": "Belconnen",
+      "Burglary dwellings": [
+        9,
+        11
+      ],
+      "Motor vehicle theft": [
+        2,
+        4
+      ]
+    },
+    "WESTON": {
+      "district": "Weston Creek",
+      "Burglary dwellings": [
+        9,
+        7
+      ],
+      "Motor vehicle theft": [
+        3,
+        7
+      ]
+    },
+    "WILLIAMSDALE": {
+      "district": "Other",
+      "Burglary dwellings": [
+        0,
+        0
+      ],
+      "Motor vehicle theft": [
+        1,
+        0
+      ]
+    },
+    "WRIGHT": {
+      "district": "Molonglo District",
+      "Burglary dwellings": [
+        12,
+        4
+      ],
+      "Motor vehicle theft": [
+        12,
+        9
+      ]
+    },
+    "YARRALUMLA": {
+      "district": "Inner South",
+      "Burglary dwellings": [
+        8,
+        4
+      ],
+      "Motor vehicle theft": [
+        5,
+        8
+      ]
+    }
+  }
+}

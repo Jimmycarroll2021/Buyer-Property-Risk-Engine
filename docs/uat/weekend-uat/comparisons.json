@@ -1,0 +1,3718 @@
+{
+  "checks": 464,
+  "failures": 0,
+  "rows": [
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 700000.0,
+      "expected": 700000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 300000.0,
+      "expected": 300000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 20000.0,
+      "expected": 20000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 440000.0,
+      "expected": 440000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 5000.0,
+      "expected": 5000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "storm B",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "storm C",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "principal",
+      "passed": true,
+      "actual": "400000.00",
+      "expected": 400000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "120000.00",
+      "expected": 120000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "payment",
+      "passed": true,
+      "actual": "2398.20",
+      "expected": 2398.20210061
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "6178.20",
+      "expected": 6178.20210061
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "6721.80",
+      "expected": 6721.79789939
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "126894.43",
+      "expected": 126894.42589737
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "192577.70",
+      "expected": 192577.70358947
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "15000.00",
+      "expected": 15000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "2796.86",
+      "expected": 2796.85803421
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "7298.14",
+      "expected": 7298.14196579
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "6576.86",
+      "expected": 6576.85803421
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.30356229",
+      "expected": 0.30356229175807353
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "378.20",
+      "expected": 378.20210061
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "6200.00",
+      "expected": 6200
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "320000.00",
+      "expected": 320000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "364.88427689",
+      "expected": 364.88427689
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "389872.94",
+      "expected": 389872.94200036
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "630000.00",
+      "expected": 630000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "19250.00",
+      "expected": 19250.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "220877.06",
+      "expected": 220877.05799964
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "276323.15",
+      "expected": 276323.14958534
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "497200.21",
+      "expected": 497200.20758498
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.22527941",
+      "expected": 0.22527941
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": "1100000.00",
+      "expected": 1100000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "baseline",
+      "label": "visible ceiling",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "edits captured purchase_price",
+      "passed": true,
+      "actual": 740000.0,
+      "expected": 740000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "edits captured cash_before_settlement",
+      "passed": true,
+      "actual": 310000.0,
+      "expected": 310000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "edits captured first_year_works",
+      "passed": true,
+      "actual": 40000.0,
+      "expected": 40000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 740000.0,
+      "expected": 740000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 300000.0,
+      "expected": 300000
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 21000.0,
+      "expected": 21000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 310000.0,
+      "expected": 310000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 40000.0,
+      "expected": 40000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "storm A",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "storm B",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "storm C",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "principal",
+      "passed": true,
+      "actual": "440000.00",
+      "expected": 440000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "-11000.00",
+      "expected": -11000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "payment",
+      "passed": true,
+      "actual": "2638.02",
+      "expected": 2638.02231067
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "6418.02",
+      "expected": 6418.02231067
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "6481.98",
+      "expected": 6481.97768933
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "-39944.63",
+      "expected": -39944.6315129
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "23221.47",
+      "expected": 23221.47394841
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "50000.00",
+      "expected": 50000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "3076.54",
+      "expected": 3076.54383763
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "7018.46",
+      "expected": 7018.45616237
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "6856.54",
+      "expected": 6856.54383763
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.27592297",
+      "expected": 0.275922969627048
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "618.02",
+      "expected": 618.02231067
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "6200.00",
+      "expected": 6200
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "352000.00",
+      "expected": 352000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "11.32645194",
+      "expected": 11.32645194
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "428860.24",
+      "expected": 428860.23620039
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "666000.00",
+      "expected": 666000.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "20150.00",
+      "expected": 20150.0
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "216989.76",
+      "expected": 216989.76379961
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "104567.46",
+      "expected": 104567.46454387
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "321557.23",
+      "expected": 321557.22834348
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.33551689",
+      "expected": 0.33551689
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "edited",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "original snapshot restored, all fields",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "new assessment identifier",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "same case",
+      "passed": true,
+      "actual": "weekend-903f8866-225f-4b52-aa42-457f64ebe32f",
+      "expected": "weekend-903f8866-225f-4b52-aa42-457f64ebe32f"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "initial version",
+      "passed": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "revised version",
+      "passed": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "exact replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "replay identity",
+      "passed": true,
+      "actual": "assessment:2bf11bef2f9090cb19aea19400e45f818dbf2c4693213da3ab94ac7ff49715f9",
+      "expected": "assessment:2bf11bef2f9090cb19aea19400e45f818dbf2c4693213da3ab94ac7ff49715f9"
+    },
+    {
+      "case": "ngunnawal-townhouse",
+      "stage": "versions",
+      "label": "hash equality",
+      "passed": true,
+      "actual": "sha256:ec626522220550d84b6d6623e90f5bc9ad452f05c136d016640ab1ae19b54b5b",
+      "expected": "sha256:ec626522220550d84b6d6623e90f5bc9ad452f05c136d016640ab1ae19b54b5b"
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 760000.0,
+      "expected": 760000
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 235000.0,
+      "expected": 235000
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 21500.0,
+      "expected": 21500
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 340000.0,
+      "expected": 340000
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 8000.0,
+      "expected": 8000
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "storm B",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "storm C",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "principal",
+      "passed": true,
+      "actual": "525000.00",
+      "expected": 525000
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "83500.00",
+      "expected": 83500
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "payment",
+      "passed": true,
+      "actual": "3147.64",
+      "expected": 3147.64025705
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "7067.64",
+      "expected": 7067.64025705
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "5132.36",
+      "expected": 5132.35974295
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "86443.37",
+      "expected": 86443.37149029
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "140273.49",
+      "expected": 140273.48596117
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "15000.00",
+      "expected": 15000
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "3670.88",
+      "expected": 3670.8761699
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "5981.12",
+      "expected": 5981.1238301
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "7590.88",
+      "expected": 7590.8761699
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.22094640",
+      "expected": 0.22094639814755765
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "1417.64",
+      "expected": 1417.64025705
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "6200.00",
+      "expected": 6200
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "420000.00",
+      "expected": 420000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "67.71816723",
+      "expected": 67.71816723
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "511708.24",
+      "expected": 511708.23637547
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "684000.00",
+      "expected": 684000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "20600.00",
+      "expected": 20600.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "151691.76",
+      "expected": 151691.76362453
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "198676.63",
+      "expected": 198676.63383075
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "350368.40",
+      "expected": 350368.39745529
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.30825952",
+      "expected": 0.30825952
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": "950000.00",
+      "expected": 950000
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "baseline",
+      "label": "visible ceiling",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "edits captured purchase_price",
+      "passed": true,
+      "actual": 740000.0,
+      "expected": 740000
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "edits captured cash_before_settlement",
+      "passed": true,
+      "actual": 342000.0,
+      "expected": 342000
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "edits captured first_year_works",
+      "passed": true,
+      "actual": 6500.0,
+      "expected": 6500
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 740000.0,
+      "expected": 740000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 235000.0,
+      "expected": 235000
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 21000.0,
+      "expected": 21000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 342000.0,
+      "expected": 342000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 6500.0,
+      "expected": 6500.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "storm B",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "storm C",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "principal",
+      "passed": true,
+      "actual": "505000.00",
+      "expected": 505000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "86000.00",
+      "expected": 86000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "payment",
+      "passed": true,
+      "actual": "3027.73",
+      "expected": 3027.73015202
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "6947.73",
+      "expected": 6947.73015202
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "5252.27",
+      "expected": 5252.26984798
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "89362.90",
+      "expected": 89362.90019543
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "144451.60",
+      "expected": 144451.6007817
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "15000.00",
+      "expected": 15000
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "3531.03",
+      "expected": 3531.03326819
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "6120.97",
+      "expected": 6120.96673181
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "7451.03",
+      "expected": 7451.03326819
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.22977067",
+      "expected": 0.22977067489562186
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "1297.73",
+      "expected": 1297.73015202
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "6200.00",
+      "expected": 6200
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "404000.00",
+      "expected": 404000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "75.90175804",
+      "expected": 75.90175804
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "492214.59",
+      "expected": 492214.58927545
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "666000.00",
+      "expected": 666000.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "20150.00",
+      "expected": 20150.0
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "153635.41",
+      "expected": 153635.41072455
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "205554.48",
+      "expected": 205554.47635149
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "359189.89",
+      "expected": 359189.88707604
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.29931166",
+      "expected": 0.29931166
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": "950000.00",
+      "expected": 950000
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "edited",
+      "label": "visible ceiling",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "original snapshot restored, all fields",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "new assessment identifier",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "same case",
+      "passed": true,
+      "actual": "weekend-392a8697-fc8c-449a-ac54-b327283cbd20",
+      "expected": "weekend-392a8697-fc8c-449a-ac54-b327283cbd20"
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "initial version",
+      "passed": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "revised version",
+      "passed": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "exact replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "replay identity",
+      "passed": true,
+      "actual": "assessment:d5092827fb83eeb169e8500c743a0abe4088efa11249d5780696b8c20eeaed76",
+      "expected": "assessment:d5092827fb83eeb169e8500c743a0abe4088efa11249d5780696b8c20eeaed76"
+    },
+    {
+      "case": "weston-family",
+      "stage": "versions",
+      "label": "hash equality",
+      "passed": true,
+      "actual": "sha256:3da465bbf357a61717ce9f008d82cb53533603b01bf650c3075fb219f1dc32f7",
+      "expected": "sha256:3da465bbf357a61717ce9f008d82cb53533603b01bf650c3075fb219f1dc32f7"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 620000.0,
+      "expected": 620000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 124000.0,
+      "expected": 124000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 18000.0,
+      "expected": 18000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 184000.0,
+      "expected": 184000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 55000.0,
+      "expected": 55000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "storm A",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "storm B",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "storm C",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "principal",
+      "passed": true,
+      "actual": "496000.00",
+      "expected": 496000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "42000.00",
+      "expected": 42000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "payment",
+      "passed": true,
+      "actual": "2973.77",
+      "expected": 2973.77060476
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "6423.77",
+      "expected": 6423.77060476
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "5176.23",
+      "expected": 5176.22939524
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "-8600.31",
+      "expected": -8600.31188727
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "45848.75",
+      "expected": 45848.75245094
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "68750.00",
+      "expected": 68750.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "3468.10",
+      "expected": 3468.10396242
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "6049.90",
+      "expected": 6049.89603758
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "6918.10",
+      "expected": 6918.10396242
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.23080565",
+      "expected": 0.23080565456348665
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "1073.77",
+      "expected": 1073.77060476
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "5700.00",
+      "expected": 5700
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "396800.00",
+      "expected": 396800.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "43.77098776",
+      "expected": 43.77098776
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "483442.45",
+      "expected": 483442.44808044
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "558000.00",
+      "expected": 558000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "17450.00",
+      "expected": 17450.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "57107.55",
+      "expected": 57107.55191956
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "111229.51",
+      "expected": 111229.50548582
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "168337.06",
+      "expected": 168337.05740537
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.46137200",
+      "expected": 0.461372
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": "580000.00",
+      "expected": 580000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "next unsafe grid price",
+      "passed": true,
+      "actual": "585000.00",
+      "expected": 585000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "baseline",
+      "label": "visible ceiling",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "edits captured purchase_price",
+      "passed": true,
+      "actual": 550000.0,
+      "expected": 550000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "edits captured cash_before_settlement",
+      "passed": true,
+      "actual": 210000.0,
+      "expected": 210000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "edits captured first_year_works",
+      "passed": true,
+      "actual": 48000.0,
+      "expected": 48000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 550000.0,
+      "expected": 550000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 110000.0,
+      "expected": 110000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 16250.0,
+      "expected": 16250.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 210000.0,
+      "expected": 210000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 48000.0,
+      "expected": 48000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "storm B",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "storm C",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "principal",
+      "passed": true,
+      "actual": "440000.00",
+      "expected": 440000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "83750.00",
+      "expected": 83750.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "payment",
+      "passed": true,
+      "actual": "2638.02",
+      "expected": 2638.02231067
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "6088.02",
+      "expected": 6088.02231067
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "5511.98",
+      "expected": 5511.97768933
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "43074.37",
+      "expected": 43074.3684871
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "101047.47",
+      "expected": 101047.47394841
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "60000.00",
+      "expected": 60000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "3076.54",
+      "expected": 3076.54383763
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "6441.46",
+      "expected": 6441.45616237
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "6526.54",
+      "expected": 6526.54383763
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.26033971",
+      "expected": 0.26033970916239957
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "738.02",
+      "expected": 738.02231067
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "5700.00",
+      "expected": 5700
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "352000.00",
+      "expected": 352000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "120.25381715",
+      "expected": 120.25381715
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "428860.24",
+      "expected": 428860.23620039
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "495000.00",
+      "expected": 495000.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "15875.00",
+      "expected": 15875.0
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "50264.76",
+      "expected": 50264.76379961
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "168037.46",
+      "expected": 168037.46454387
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "218302.23",
+      "expected": 218302.22834348
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.36183446",
+      "expected": 0.36183446
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": "720000.00",
+      "expected": 720000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "next unsafe grid price",
+      "passed": true,
+      "actual": "725000.00",
+      "expected": 725000
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "edited",
+      "label": "visible ceiling",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "original snapshot restored, all fields",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "new assessment identifier",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "same case",
+      "passed": true,
+      "actual": "weekend-5f5b244a-40fe-4b18-aefe-a219993b6351",
+      "expected": "weekend-5f5b244a-40fe-4b18-aefe-a219993b6351"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "initial version",
+      "passed": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "revised version",
+      "passed": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "exact replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "replay identity",
+      "passed": true,
+      "actual": "assessment:4bca9e1568c7a3e60f638835451da1c403888f4d16e5986d5d3cc3121408c402",
+      "expected": "assessment:4bca9e1568c7a3e60f638835451da1c403888f4d16e5986d5d3cc3121408c402"
+    },
+    {
+      "case": "kambah-repairs",
+      "stage": "versions",
+      "label": "hash equality",
+      "passed": true,
+      "actual": "sha256:d5f814b785ce50d5ab892dc1e654f12a5d3d3ce8f3572fc51af422dd2946354f",
+      "expected": "sha256:d5f814b785ce50d5ab892dc1e654f12a5d3d3ce8f3572fc51af422dd2946354f"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 600000.0,
+      "expected": 600000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 60000.0,
+      "expected": 60000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 17500.0,
+      "expected": 17500
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 8100.0,
+      "expected": 8100
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 97500.0,
+      "expected": 97500
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 4000.0,
+      "expected": 4000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "storm B",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "storm C",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "principal",
+      "passed": true,
+      "actual": "548100.00",
+      "expected": 548100
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "20000.00",
+      "expected": 20000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "payment",
+      "passed": true,
+      "actual": "3286.14",
+      "expected": 3286.13642836
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "6036.14",
+      "expected": 6036.13642836
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "2563.86",
+      "expected": 2563.86357164
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "14274.82",
+      "expected": 14274.81583587
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "42099.26",
+      "expected": 42099.26334347
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "15000.00",
+      "expected": 15000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "3832.39",
+      "expected": 3832.39472138
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "3091.61",
+      "expected": 3091.60527862
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "6582.39",
+      "expected": 6582.39472138
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.15044669",
+      "expected": 0.15044668728539576
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "6286.14",
+      "expected": 6286.13642836
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "0.00",
+      "expected": 0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "438480.00",
+      "expected": 438480.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "3.18160451",
+      "expected": 3.18160451
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "534223.40",
+      "expected": 534223.39877599
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "510000.00",
+      "expected": 510000.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "16250.00",
+      "expected": 16250.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "-40473.40",
+      "expected": -40473.39877599
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "77532.73",
+      "expected": 77532.72571931
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "37059.33",
+      "expected": 37059.32694332
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "1.20998358",
+      "expected": 1.20998358
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "red",
+      "expected": "red"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "baseline",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "edits captured purchase_price",
+      "passed": true,
+      "actual": 450000.0,
+      "expected": 450000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "edits captured cash_before_settlement",
+      "passed": true,
+      "actual": 160000.0,
+      "expected": 160000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "edits captured first_year_works",
+      "passed": true,
+      "actual": 9000.0,
+      "expected": 9000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 450000.0,
+      "expected": 450000.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 45000.0,
+      "expected": 45000.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 13750.0,
+      "expected": 13750.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 6075.0,
+      "expected": 6075.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 160000.0,
+      "expected": 160000.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 9000.0,
+      "expected": 9000.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "storm B",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "storm C",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "principal",
+      "passed": true,
+      "actual": "411075.00",
+      "expected": 411075.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "101250.00",
+      "expected": 101250.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "payment",
+      "passed": true,
+      "actual": "2464.60",
+      "expected": 2464.60232127
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "5214.60",
+      "expected": 5214.60232127
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "3385.40",
+      "expected": 3385.39767873
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "98399.11",
+      "expected": 98399.1118769
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "134846.45",
+      "expected": 134846.4475076
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "15000.00",
+      "expected": 15000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "2874.30",
+      "expected": 2874.29604103
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "4049.70",
+      "expected": 4049.70395897
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "5624.30",
+      "expected": 5624.29604103
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.20239028",
+      "expected": 0.20239027715665656
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "5464.60",
+      "expected": 5464.60232127
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "0.00",
+      "expected": 0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "328860.00",
+      "expected": 328860.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "18.52833821",
+      "expected": 18.52833821
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "400667.55",
+      "expected": 400667.54908199
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "382500.00",
+      "expected": 382500.0
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "13062.50",
+      "expected": 13062.5
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "-31230.05",
+      "expected": -31230.04908199
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "173499.54",
+      "expected": 173499.54428948
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "142269.50",
+      "expected": 142269.49520749
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.56237531",
+      "expected": 0.56237531
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": "610000.00",
+      "expected": 610000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "next unsafe grid price",
+      "passed": true,
+      "actual": "615000.00",
+      "expected": 615000
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "amber",
+      "expected": "amber"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "edited",
+      "label": "visible ceiling",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "original snapshot restored, all fields",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "new assessment identifier",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "same case",
+      "passed": true,
+      "actual": "weekend-16e1e71a-807c-4503-acf5-e7b0fd01f554",
+      "expected": "weekend-16e1e71a-807c-4503-acf5-e7b0fd01f554"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "initial version",
+      "passed": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "revised version",
+      "passed": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "exact replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "replay identity",
+      "passed": true,
+      "actual": "assessment:7df82ea87dbcc7547b7e9bb62bbed4a81daf1bdb18b6501622d2ac72c815dff9",
+      "expected": "assessment:7df82ea87dbcc7547b7e9bb62bbed4a81daf1bdb18b6501622d2ac72c815dff9"
+    },
+    {
+      "case": "belconnen-single",
+      "stage": "versions",
+      "label": "hash equality",
+      "passed": true,
+      "actual": "sha256:a6624b731eb4b93c48478fcc1c28da20add49640764d14fbe6ccba80ff9d4d06",
+      "expected": "sha256:a6624b731eb4b93c48478fcc1c28da20add49640764d14fbe6ccba80ff9d4d06"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 640000.0,
+      "expected": 640000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 280000.0,
+      "expected": 280000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 18500.0,
+      "expected": 18500
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 400000.0,
+      "expected": 400000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 10000.0,
+      "expected": 10000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "storm B",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "storm C",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "principal",
+      "passed": true,
+      "actual": "360000.00",
+      "expected": 360000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "101500.00",
+      "expected": 101500
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "payment",
+      "passed": true,
+      "actual": "2158.38",
+      "expected": 2158.38189055
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "5468.38",
+      "expected": 5468.38189055
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "5431.62",
+      "expected": 5431.61810945
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "104049.48",
+      "expected": 104049.48330763
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "156697.93",
+      "expected": 156697.93323052
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "15000.00",
+      "expected": 15000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "2517.17",
+      "expected": 2517.17223079
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "5849.83",
+      "expected": 5849.82776921
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "5827.17",
+      "expected": 5827.17223079
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.27959658",
+      "expected": 0.27959658353187006
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "318.38",
+      "expected": 318.38189055
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "5500.00",
+      "expected": 5500
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "288000.00",
+      "expected": 288000.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "328.22218569",
+      "expected": 328.22218569
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "350885.65",
+      "expected": 350885.64780032
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "576000.00",
+      "expected": 576000.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "17900.00",
+      "expected": 17900.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "207214.35",
+      "expected": 207214.35219968
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "221858.83",
+      "expected": 221858.8346268
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "429073.19",
+      "expected": 429073.18682648
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.22821412",
+      "expected": 0.22821412
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "baseline",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "edits captured purchase_price",
+      "passed": true,
+      "actual": 635000.0,
+      "expected": 635000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "edits captured cash_before_settlement",
+      "passed": true,
+      "actual": 411000.0,
+      "expected": 411000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "edits captured first_year_works",
+      "passed": true,
+      "actual": 7000.0,
+      "expected": 7000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "input purchase_price",
+      "passed": true,
+      "actual": 635000.0,
+      "expected": 635000.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "input deposit",
+      "passed": true,
+      "actual": 280000.0,
+      "expected": 280000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "input acquisition_costs",
+      "passed": true,
+      "actual": 18375.0,
+      "expected": 18375.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "input capitalized_lmi",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "input cash_before_settlement",
+      "passed": true,
+      "actual": 411000.0,
+      "expected": 411000.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "input first_year_works",
+      "passed": true,
+      "actual": 7000.0,
+      "expected": 7000.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "veto aggregate",
+      "passed": true,
+      "actual": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "storm A",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "storm B",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "storm C",
+      "passed": true,
+      "actual": "green",
+      "expected": "green"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "combined decision",
+      "passed": true,
+      "actual": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "principal",
+      "passed": true,
+      "actual": "355000.00",
+      "expected": 355000.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "cash_after_settlement",
+      "passed": true,
+      "actual": "112625.00",
+      "expected": 112625.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "payment",
+      "passed": true,
+      "actual": "2128.40",
+      "expected": 2128.40436429
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "lean_burn",
+      "passed": true,
+      "actual": "5438.40",
+      "expected": 5438.40436429
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "normal_surplus",
+      "passed": true,
+      "actual": "5461.60",
+      "expected": 5461.59563571
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "cash_month3",
+      "passed": true,
+      "actual": "115279.37",
+      "expected": 115279.36548391
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "cash_month12",
+      "passed": true,
+      "actual": "168242.46",
+      "expected": 168242.46193565
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "works_month3",
+      "passed": true,
+      "actual": "15000.00",
+      "expected": 15000
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "stressed_payment",
+      "passed": true,
+      "actual": "2482.21",
+      "expected": 2482.21150536
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "lean_surplus",
+      "passed": true,
+      "actual": "5884.79",
+      "expected": 5884.78849464
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "stressed_lean_burn",
+      "passed": true,
+      "actual": "5792.21",
+      "expected": 5792.21150536
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "break_even_rate_decimal",
+      "passed": true,
+      "actual": "0.28354233",
+      "expected": 0.28354232591251494
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "monthly_gap",
+      "passed": true,
+      "actual": "288.40",
+      "expected": 288.40436429
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "remaining_income",
+      "passed": true,
+      "actual": "5500.00",
+      "expected": 5500
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "required_event_cover",
+      "passed": true,
+      "actual": "284000.00",
+      "expected": 284000.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "runway_months",
+      "passed": true,
+      "actual": "400.91279577",
+      "expected": 400.91279577
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "balance_month24",
+      "passed": true,
+      "actual": "346012.24",
+      "expected": 346012.23602532
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "sale_price",
+      "passed": true,
+      "actual": "571500.00",
+      "expected": 571500.0
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "selling_costs",
+      "passed": true,
+      "actual": "17787.50",
+      "expected": 17787.5
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "net_sale_equity",
+      "passed": true,
+      "actual": "207700.26",
+      "expected": 207700.26397468
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "cash_month24",
+      "passed": true,
+      "actual": "236703.30",
+      "expected": 236703.29525699
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "cash_after_sale",
+      "passed": true,
+      "actual": "444403.56",
+      "expected": 444403.55923167
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "wealth_loss_fraction",
+      "passed": true,
+      "actual": "0.22061980",
+      "expected": 0.2206198
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "highest acceptable grid bid",
+      "passed": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "visible decision",
+      "passed": true,
+      "actual": "unresolved",
+      "expected": "unresolved"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "visible day2",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "visible c3",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "visible c12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "edited",
+      "label": "visible equity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "original snapshot restored, all fields",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "new assessment identifier",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "same case",
+      "passed": true,
+      "actual": "weekend-0ca2e51d-80bb-44ab-b3bb-871acc0a07b3",
+      "expected": "weekend-0ca2e51d-80bb-44ab-b3bb-871acc0a07b3"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "initial version",
+      "passed": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "revised version",
+      "passed": true,
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "exact replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "replay identity",
+      "passed": true,
+      "actual": "assessment:70439bd76df25b773d7f486424040449408d33190018201bce12ded5e2f3b9b2",
+      "expected": "assessment:70439bd76df25b773d7f486424040449408d33190018201bce12ded5e2f3b9b2"
+    },
+    {
+      "case": "braddon-downsizers",
+      "stage": "versions",
+      "label": "hash equality",
+      "passed": true,
+      "actual": "sha256:c25d1a0c1daebf108be7ac1f8ad4b5ace2234dfdc8cefd538d8cb2da2082718d",
+      "expected": "sha256:c25d1a0c1daebf108be7ac1f8ad4b5ace2234dfdc8cefd538d8cb2da2082718d"
+    }
+  ]
+}

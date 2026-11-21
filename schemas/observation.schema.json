@@ -1,0 +1,1680 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:property-risk-engine:observation:0.1.0",
+  "title": "Property risk observation input",
+  "description": "One normalised immutable property/check observation with source, knowledge dates, permissions and a supported structured payload. Private HTTP uploads may omit tenant, case and receipt fields that the service derives; this schema describes the stored, scope-bound engine envelope. Shape validation is not evidence validation; failed quality flags remain valid records but cannot support an assessed finding.",
+  "$comment": "Documentation and optional client validation only. These files are not automatically applied by the HTTP service. Engine/storage validation and semantic eligibility gates remain authoritative. Property/tenant/case matching, as-of eligibility, source meaning, quality truth, rights, geometry topology/CRS, payload-to-rule suitability, reviewer attestation and supersession conflicts require semantic validation. Missing decision fields can be deliberately represented as unknown and produce NOT_ASSESSED.",
+  "type": "object",
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "check_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "property_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "published_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+    },
+    "effective_from": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+    },
+    "effective_to": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+    },
+    "received_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+    },
+    "evidence_basis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "enum": [
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "visibility_scope": {
+      "enum": [
+        "public",
+        "private"
+      ]
+    },
+    "owner_tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "case_scope_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "origin_visibility_scope": {
+      "enum": [
+        "public",
+        "private",
+        null
+      ]
+    },
+    "rights": {
+      "type": "object",
+      "properties": {
+        "process": {
+          "type": "boolean"
+        },
+        "display_raw": {
+          "type": "boolean"
+        },
+        "display_derived": {
+          "type": "boolean"
+        },
+        "retain_raw": {
+          "type": "boolean"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "process",
+        "display_raw",
+        "display_derived",
+        "retain_raw"
+      ],
+      "description": "Independent permissions. Processing or derived-display false blocks a report finding; raw-display false does not."
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "retrieval_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coverage_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "complete": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "current": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "identity_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "schema_valid": {
+          "type": "boolean"
+        },
+        "units_valid": {
+          "type": "boolean"
+        },
+        "conflict": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "retrieval_status",
+        "coverage_status",
+        "complete",
+        "current",
+        "identity_match"
+      ],
+      "description": "Eligibility requires SUCCESS, COVERED and true complete/current/identity_match. Other statuses or unknown flags preserve a gap; HTTP success alone is insufficient."
+    },
+    "payload": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/spatial"
+        },
+        {
+          "$ref": "#/$defs/vertical_clearance"
+        },
+        {
+          "$ref": "#/$defs/inspection"
+        },
+        {
+          "$ref": "#/$defs/document"
+        },
+        {
+          "$ref": "#/$defs/restriction"
+        },
+        {
+          "$ref": "#/$defs/insurance"
+        },
+        {
+          "$ref": "#/$defs/unit_register"
+        },
+        {
+          "$ref": "#/$defs/reviewed_fact"
+        },
+        {
+          "$ref": "#/$defs/project"
+        },
+        {
+          "$ref": "#/$defs/opportunity"
+        },
+        {
+          "$ref": "#/$defs/context"
+        }
+      ]
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "supersession_reviewed": {
+      "type": "boolean"
+    },
+    "demonstration": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "observation_id",
+    "check_id",
+    "property_id",
+    "source_id",
+    "snapshot_id",
+    "evidence_basis",
+    "confidence",
+    "visibility_scope",
+    "rights",
+    "quality",
+    "payload"
+  ],
+  "$defs": {
+    "spatial": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "spatial"
+        },
+        "subject_geometry": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "Polygon",
+                "MultiPolygon"
+              ]
+            },
+            "coordinates": {
+              "type": "array"
+            },
+            "geometries": {
+              "type": "array",
+              "maxItems": 0
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "type"
+          ],
+          "description": "GeoJSON polygon geometry. GeometryCollection is permitted only as an explicitly empty hazard extent. Topology, finite coordinates and CRS are checked by the engine.",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "Polygon",
+                      "MultiPolygon"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "coordinates"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "GeometryCollection"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "geometries"
+                ]
+              }
+            }
+          ]
+        },
+        "hazard_geometry": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "Polygon",
+                "MultiPolygon",
+                "GeometryCollection"
+              ]
+            },
+            "coordinates": {
+              "type": "array"
+            },
+            "geometries": {
+              "type": "array",
+              "maxItems": 0
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "type"
+          ],
+          "description": "GeoJSON polygon geometry. GeometryCollection is permitted only as an explicitly empty hazard extent. Topology, finite coordinates and CRS are checked by the engine.",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "Polygon",
+                      "MultiPolygon"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "coordinates"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "GeometryCollection"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "geometries"
+                ]
+              }
+            }
+          ]
+        },
+        "crs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hazard_crs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_crs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coverage_geometry": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "Polygon",
+                "MultiPolygon"
+              ]
+            },
+            "coordinates": {
+              "type": "array"
+            },
+            "geometries": {
+              "type": "array",
+              "maxItems": 0
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "type"
+          ],
+          "description": "GeoJSON polygon geometry. GeometryCollection is permitted only as an explicitly empty hazard extent. Topology, finite coordinates and CRS are checked by the engine.",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "Polygon",
+                      "MultiPolygon"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "coordinates"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "GeometryCollection"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "geometries"
+                ]
+              }
+            }
+          ]
+        },
+        "coverage_crs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "positional_uncertainty_m": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "subject_scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mechanism": {
+          "type": "string",
+          "minLength": 1
+        },
+        "factor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolution_reviewed": {
+          "type": "boolean"
+        },
+        "resolution_source_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consequence_resolved": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "subject_geometry",
+        "hazard_geometry",
+        "crs",
+        "positional_uncertainty_m"
+      ]
+    },
+    "vertical_clearance": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "vertical_clearance"
+        },
+        "floor_height": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "flood_height": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "floor_datum": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "flood_datum": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "unit": {
+          "const": "m"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ]
+    },
+    "inspection": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "inspection"
+        },
+        "reviewed": {
+          "type": "boolean"
+        },
+        "extraction_reviewed": {
+          "type": "boolean"
+        },
+        "scope_complete": {
+          "type": "boolean"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "conflict": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "factor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "fact_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "material_defect": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "minor_issue": {
+          "type": "boolean"
+        },
+        "cost_known": {
+          "type": "boolean"
+        },
+        "repair_cost": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "cost_source_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ]
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "document"
+        },
+        "reviewed": {
+          "type": "boolean"
+        },
+        "extraction_reviewed": {
+          "type": "boolean"
+        },
+        "scope_complete": {
+          "type": "boolean"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "conflict": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "factor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "fact_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "liability_amount": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "material_liability_unresolved": {
+          "type": "boolean"
+        },
+        "no_material_liability": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ]
+    },
+    "restriction": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "restriction"
+        },
+        "reviewed": {
+          "type": "boolean"
+        },
+        "extraction_reviewed": {
+          "type": "boolean"
+        },
+        "scope_complete": {
+          "type": "boolean"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "conflict": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "factor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "fact_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "material_question": {
+          "type": "boolean"
+        },
+        "nonessential_constraint": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ]
+    },
+    "insurance": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "insurance"
+        },
+        "reviewed": {
+          "type": "boolean"
+        },
+        "extraction_reviewed": {
+          "type": "boolean"
+        },
+        "scope_complete": {
+          "type": "boolean"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "conflict": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "factor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "fact_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "material_exclusion": {
+          "type": "boolean"
+        },
+        "material_question": {
+          "type": "boolean"
+        },
+        "nonessential_constraint": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ]
+    },
+    "unit_register": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "unit_register"
+        },
+        "records": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "records"
+      ]
+    },
+    "reviewed_fact": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "reviewed_fact"
+        },
+        "reviewed": {
+          "type": "boolean"
+        },
+        "extraction_reviewed": {
+          "type": "boolean"
+        },
+        "scope_complete": {
+          "type": "boolean"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "conflict": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "factor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "fact_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "issue_present": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "material": {
+          "type": "boolean"
+        },
+        "minor": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ]
+    },
+    "project": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "project"
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "date": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                ],
+                "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+              },
+              "published_at": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                ],
+                "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "kind",
+              "date"
+            ]
+          }
+        },
+        "impacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string"
+              },
+              "supported": {
+                "type": "boolean"
+              },
+              "material": {
+                "type": "boolean"
+              },
+              "requirement_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "measured_value": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+              },
+              "threshold": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+              },
+              "method": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "threshold_direction": {
+                "enum": [
+                  "above",
+                  "below"
+                ]
+              },
+              "current_condition": {
+                "type": "boolean"
+              },
+              "factor_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "expected_completion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+        },
+        "net_dwellings": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "scope_comparable": {
+          "type": "boolean"
+        },
+        "declared_net_dwellings_threshold": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "benefit": {
+          "type": "string"
+        },
+        "benefit_supported": {
+          "type": "boolean"
+        },
+        "timing_known": {
+          "type": "boolean"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "project_id"
+      ]
+    },
+    "opportunity": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "opportunity"
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "date": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                ],
+                "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+              },
+              "published_at": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                ],
+                "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "kind",
+              "date"
+            ]
+          }
+        },
+        "impacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string"
+              },
+              "supported": {
+                "type": "boolean"
+              },
+              "material": {
+                "type": "boolean"
+              },
+              "requirement_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "measured_value": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+              },
+              "threshold": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+              },
+              "method": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "threshold_direction": {
+                "enum": [
+                  "above",
+                  "below"
+                ]
+              },
+              "current_condition": {
+                "type": "boolean"
+              },
+              "factor_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "expected_completion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+        },
+        "net_dwellings": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "scope_comparable": {
+          "type": "boolean"
+        },
+        "declared_net_dwellings_threshold": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "benefit": {
+          "type": "string"
+        },
+        "benefit_supported": {
+          "type": "boolean"
+        },
+        "timing_known": {
+          "type": "boolean"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "project_id"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "context"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "measure": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "definition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "threshold_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "threshold_direction": {
+          "enum": [
+            "above",
+            "below"
+          ]
+        },
+        "comparable": {
+          "type": "boolean"
+        },
+        "factor_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "fact_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "count": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "rate_base": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "declared_rate_threshold": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "period_start": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+        },
+        "period_end": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+        },
+        "area_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "boundary_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "reference_period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "kind"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "visibility_scope": {
+            "const": "public"
+          }
+        },
+        "required": [
+          "visibility_scope"
+        ]
+      },
+      "then": {
+        "required": [
+          "published_at"
+        ],
+        "properties": {
+          "published_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ],
+            "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+          },
+          "owner_tenant_id": {
+            "type": "null"
+          },
+          "case_scope_id": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "visibility_scope": {
+            "const": "private"
+          }
+        },
+        "required": [
+          "visibility_scope"
+        ]
+      },
+      "then": {
+        "required": [
+          "owner_tenant_id",
+          "case_scope_id",
+          "received_at"
+        ],
+        "properties": {
+          "owner_tenant_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "case_scope_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "received_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              }
+            ],
+            "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1149 @@
+{
+  "notice": "All sources, measurements, records and reviews in this pack are synthetic. A reviewed flag represents the fictional scenario state. No real authority, inspector, underwriter or buyer supplied or reviewed these records.",
+  "published_at": "2026-11-20T09:00:00Z",
+  "received_at": "2026-11-20T12:00:00Z",
+  "sources": {
+    "conveyance": "Fictional conveyancing and title file",
+    "mapping": "Fictional register of maps, survey plans and terrain grids",
+    "inspection": "Fictional building and pest inspection with quote Q-17",
+    "engineering": "Fictional site, thermal and acoustic engineering reports",
+    "area": "Fictional district population, crime, construction and climate tables",
+    "cover": "Fictional policy wording and quote comparison",
+    "strata": "Fictional owners corporation works and levy schedule",
+    "planning": "Fictional planning applications, milestones and impact studies",
+    "market": "Fictional settled sales and lease register",
+    "services": "Fictional service timetables, school intake and road records",
+    "household": "Fictional household budget and loan offer",
+    "audit": "Fictional review and dated change register"
+  },
+  "records": [
+    {
+      "check": "S001",
+      "source": "conveyance",
+      "excerpt": "The site index and registered plan both link Unit 7, Paperbark Court to lot 7 on parent plan SYN-PLAN-8. The former name, Plot G, resolves to the same outlined lot.",
+      "payload": {
+        "kind": "reviewed_fact",
+        "reviewed": true,
+        "issue_present": false,
+        "scope_complete": true,
+        "statement": "The site index and registered plan both link Unit 7, Paperbark Court to lot 7 on parent plan SYN-PLAN-8. The former name, Plot G, resolves to the same outlined lot."
+      }
+    },
+    {
+      "check": "S002",
+      "source": "conveyance",
+      "excerpt": "Plan sheet 2 identifies a two-storey attached townhouse on unit title. Lot 7 has private living areas and shares the access lane and stormwater pipes with nine other owners.",
+      "payload": {
+        "kind": "reviewed_fact",
+        "reviewed": true,
+        "issue_present": false,
+        "scope_complete": true,
+        "statement": "Plan sheet 2 identifies a two-storey attached townhouse on unit title. Lot 7 has private living areas and shares the access lane and stormwater pipes with nine other owners."
+      }
+    },
+    {
+      "check": "S003",
+      "source": "mapping",
+      "excerpt": "Plan sheet 3 matches the 15 m by 10 m habitable footprint to lot 7. The detached carport and the other nine dwellings are excluded.",
+      "payload": {
+        "kind": "reviewed_fact",
+        "reviewed": true,
+        "issue_present": false,
+        "scope_complete": true,
+        "statement": "Plan sheet 3 matches the 15 m by 10 m habitable footprint to lot 7. The detached carport and the other nine dwellings are excluded."
+      }
+    },
+    {
+      "check": "S004",
+      "source": "mapping",
+      "excerpt": "Survey sheet 4 reconciles all four parent parcel corners with the title plan within 0.20 m; the combined mapping tolerance is 0.50 m. No survey discrepancy exceeds that tolerance.",
+      "payload": {
+        "kind": "reviewed_fact",
+        "reviewed": true,
+        "issue_present": false,
+        "scope_complete": true,
+        "statement": "Survey sheet 4 reconciles all four parent parcel corners with the title plan within 0.20 m; the combined mapping tolerance is 0.50 m. No survey discrepancy exceeds that tolerance."
+      }
+    },
+    {
+      "check": "S005",
+      "source": "mapping",
+      "excerpt": "The fictional 1% annual-exceedance river extent clips the shared low corner of the parent parcel. Flood mapping sheet 5 specifies a horizontal tolerance of 0.50 m.",
+      "payload": {
+        "kind": "spatial",
+        "crs": "EPSG:7855",
+        "subject_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691000,
+                6081000
+              ],
+              [
+                691080,
+                6081000
+              ],
+              [
+                691080,
+                6081060
+              ],
+              [
+                691000,
+                6081060
+              ],
+              [
+                691000,
+                6081000
+              ]
+            ]
+          ]
+        },
+        "hazard_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691065,
+                6080995
+              ],
+              [
+                691110,
+                6080995
+              ],
+              [
+                691110,
+                6081030
+              ],
+              [
+                691065,
+                6081030
+              ],
+              [
+                691065,
+                6080995
+              ]
+            ]
+          ]
+        },
+        "coverage_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                690800,
+                6080800
+              ],
+              [
+                691500,
+                6080800
+              ],
+              [
+                691500,
+                6081500
+              ],
+              [
+                690800,
+                6081500
+              ],
+              [
+                690800,
+                6080800
+              ]
+            ]
+          ]
+        },
+        "positional_uncertainty_m": 0.5,
+        "subject_scope": "parent parcel",
+        "mechanism": "riverine_flood"
+      }
+    },
+    {
+      "check": "S005",
+      "source": "mapping",
+      "excerpt": "The same event extent is east of the dwelling footprint. Overlay the dwelling separately from the shared parcel.",
+      "payload": {
+        "kind": "spatial",
+        "crs": "EPSG:7855",
+        "subject_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691020,
+                6081015
+              ],
+              [
+                691035,
+                6081015
+              ],
+              [
+                691035,
+                6081025
+              ],
+              [
+                691020,
+                6081025
+              ],
+              [
+                691020,
+                6081015
+              ]
+            ]
+          ]
+        },
+        "hazard_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691065,
+                6080995
+              ],
+              [
+                691110,
+                6080995
+              ],
+              [
+                691110,
+                6081030
+              ],
+              [
+                691065,
+                6081030
+              ],
+              [
+                691065,
+                6080995
+              ]
+            ]
+          ]
+        },
+        "coverage_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                690800,
+                6080800
+              ],
+              [
+                691500,
+                6080800
+              ],
+              [
+                691500,
+                6081500
+              ],
+              [
+                690800,
+                6081500
+              ],
+              [
+                690800,
+                6080800
+              ]
+            ]
+          ]
+        },
+        "positional_uncertainty_m": 0.5,
+        "subject_scope": "lot 7 dwelling footprint",
+        "mechanism": "riverine_flood"
+      }
+    },
+    {
+      "check": "S006",
+      "source": "mapping",
+      "excerpt": "The nearest mapped extent is 30 m east of the footprint. Compare that separation with the 0.50 m tolerance for the same 1% event.",
+      "payload": {
+        "kind": "spatial",
+        "crs": "EPSG:7855",
+        "subject_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691020,
+                6081015
+              ],
+              [
+                691035,
+                6081015
+              ],
+              [
+                691035,
+                6081025
+              ],
+              [
+                691020,
+                6081025
+              ],
+              [
+                691020,
+                6081015
+              ]
+            ]
+          ]
+        },
+        "hazard_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691065,
+                6080995
+              ],
+              [
+                691110,
+                6080995
+              ],
+              [
+                691110,
+                6081030
+              ],
+              [
+                691065,
+                6081030
+              ],
+              [
+                691065,
+                6080995
+              ]
+            ]
+          ]
+        },
+        "coverage_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                690800,
+                6080800
+              ],
+              [
+                691500,
+                6080800
+              ],
+              [
+                691500,
+                6081500
+              ],
+              [
+                690800,
+                6081500
+              ],
+              [
+                690800,
+                6080800
+              ]
+            ]
+          ]
+        },
+        "positional_uncertainty_m": 0.5,
+        "subject_scope": "lot 7 dwelling footprint",
+        "mechanism": "riverine_flood"
+      }
+    },
+    {
+      "check": "S007",
+      "source": "engineering",
+      "excerpt": "The 1% event model reports 0.18 m above ground at the surveyed shared-lane low point. The model grid is 2 m. The value applies to that cell only.",
+      "payload": {
+        "kind": "context",
+        "summary": "The 1% event model reports 0.18 m above ground at the surveyed shared-lane low point. The model grid is 2 m. The value applies to that cell only.",
+        "measure": 0.18,
+        "unit": "m",
+        "definition": "Event-specific water depth at the low point, model revision 2."
+      }
+    },
+    {
+      "check": "S008",
+      "source": "inspection",
+      "excerpt": "Runoff during the hose test drained to the common grated inlet. A cracked leaf grate needs replacement; no indoor ponding was observed during the test.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": false,
+        "statement": "Runoff during the hose test drained to the common grated inlet. A cracked leaf grate needs replacement; no indoor ponding was observed during the test.",
+        "minor_issue": true
+      }
+    },
+    {
+      "check": "S009",
+      "source": "mapping",
+      "excerpt": "The 2026 terrain transect falls 0.60 m over 30 m from the entry towards the shared swale. No ground works postdate the survey.",
+      "payload": {
+        "kind": "context",
+        "summary": "The 2026 terrain transect falls 0.60 m over 30 m from the entry towards the shared swale. No ground works postdate the survey.",
+        "measure": 2,
+        "unit": "percent grade",
+        "definition": "Elevation drop divided by transect length times 100."
+      }
+    },
+    {
+      "check": "S010",
+      "source": "engineering",
+      "excerpt": "The surveyed habitable floor is 583.40 m AHD and the modelled 1% water surface at the reference cross-section is 582.80 m AHD in this exercise.",
+      "payload": {
+        "kind": "vertical_clearance",
+        "floor_height": 583.4,
+        "flood_height": 582.8,
+        "floor_datum": "AHD",
+        "flood_datum": "AHD",
+        "unit": "m"
+      }
+    },
+    {
+      "check": "S011",
+      "source": "mapping",
+      "excerpt": "The November fictional designation polygon begins northeast of the parent parcel; the assessment sheet covers the whole parcel and its uncertainty buffer.",
+      "payload": {
+        "kind": "spatial",
+        "crs": "EPSG:7855",
+        "subject_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691000,
+                6081000
+              ],
+              [
+                691080,
+                6081000
+              ],
+              [
+                691080,
+                6081060
+              ],
+              [
+                691000,
+                6081060
+              ],
+              [
+                691000,
+                6081000
+              ]
+            ]
+          ]
+        },
+        "hazard_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                691200,
+                6081150
+              ],
+              [
+                691450,
+                6081150
+              ],
+              [
+                691450,
+                6081400
+              ],
+              [
+                691200,
+                6081400
+              ],
+              [
+                691200,
+                6081150
+              ]
+            ]
+          ]
+        },
+        "coverage_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                690800,
+                6080800
+              ],
+              [
+                691500,
+                6080800
+              ],
+              [
+                691500,
+                6081500
+              ],
+              [
+                690800,
+                6081500
+              ],
+              [
+                690800,
+                6080800
+              ]
+            ]
+          ]
+        },
+        "positional_uncertainty_m": 0.5,
+        "subject_scope": "parent parcel",
+        "mechanism": "bushfire"
+      }
+    },
+    {
+      "check": "S012",
+      "source": "engineering",
+      "excerpt": "The site fire schedule records screened vents, metal gutter guards and a maintained 10 m managed garden on the inspected sides. This describes observed features under the exercise scenario.",
+      "payload": {
+        "kind": "reviewed_fact",
+        "reviewed": true,
+        "issue_present": false,
+        "scope_complete": true,
+        "statement": "The site fire schedule records screened vents, metal gutter guards and a maintained 10 m managed garden on the inspected sides. This describes observed features under the exercise scenario."
+      }
+    },
+    {
+      "check": "S013",
+      "source": "inspection",
+      "excerpt": "Two fictional bore logs to 3 m describe stiff clay; the engineer records no movement exceeding the 3 mm survey tolerance in the six-month wall-marker readings.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": false,
+        "statement": "Two fictional bore logs to 3 m describe stiff clay; the engineer records no movement exceeding the 3 mm survey tolerance in the six-month wall-marker readings."
+      }
+    },
+    {
+      "check": "S014",
+      "source": "conveyance",
+      "excerpt": "The historic depot alias and current title both match the simulated site register. Closure record RC-8 permits residential use with capped common fill; digging through the cap requires a soil plan.",
+      "payload": {
+        "kind": "restriction",
+        "reviewed": true,
+        "scope_complete": true,
+        "conflict": false,
+        "statement": "The historic depot alias and current title both match the simulated site register. Closure record RC-8 permits residential use with capped common fill; digging through the cap requires a soil plan.",
+        "nonessential_constraint": true
+      }
+    },
+    {
+      "check": "S015",
+      "source": "inspection",
+      "excerpt": "The two historic aliases and current address have no entry in the fictional loose-fill register. The simulated intrusive refurbishment survey separately sampled the eaves and lining, with no asbestos detected in those samples.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": false,
+        "statement": "The two historic aliases and current address have no entry in the fictional loose-fill register. The simulated intrusive refurbishment survey separately sampled the eaves and lining, with no asbestos detected in those samples."
+      }
+    },
+    {
+      "check": "S016",
+      "source": "area",
+      "excerpt": "Across three fictional climate runs the district records 3 to 6 additional days above 35 C per year in 2027–2031 versus 2016–2025. This is district-level scenario context for the five-year hold.",
+      "payload": {
+        "kind": "context",
+        "summary": "Across three fictional climate runs the district records 3 to 6 additional days above 35 C per year in 2027–2031 versus 2016–2025. This is district-level scenario context for the five-year hold."
+      }
+    },
+    {
+      "check": "S017",
+      "source": "conveyance",
+      "excerpt": "Clause 6 permits principal-residence occupancy throughout the five-year hold. Commercial accommodation is excluded; the household has no short-stay plans.",
+      "payload": {
+        "kind": "restriction",
+        "reviewed": true,
+        "scope_complete": true,
+        "conflict": false,
+        "statement": "Clause 6 permits principal-residence occupancy throughout the five-year hold. Commercial accommodation is excluded; the household has no short-stay plans.",
+        "requirement_id": "owner-occupy"
+      }
+    },
+    {
+      "check": "S018",
+      "source": "conveyance",
+      "excerpt": "Instrument E-2 preserves shared vehicle access over the west lane. Its surveyed corridor misses the footprint; gates across the lane require written consent.",
+      "payload": {
+        "kind": "restriction",
+        "reviewed": true,
+        "scope_complete": true,
+        "conflict": false,
+        "statement": "Instrument E-2 preserves shared vehicle access over the west lane. Its surveyed corridor misses the footprint; gates across the lane require written consent.",
+        "nonessential_constraint": true
+      }
+    },
+    {
+      "check": "S019",
+      "source": "conveyance",
+      "excerpt": "The fictional residential code in force on 1 November 2026 permits the existing townhouse and requires consent for another storey. Plan D3 is still under consultation.",
+      "payload": {
+        "kind": "restriction",
+        "reviewed": true,
+        "scope_complete": true,
+        "conflict": false,
+        "statement": "The fictional residential code in force on 1 November 2026 permits the existing townhouse and requires consent for another storey. Plan D3 is still under consultation."
+      }
+    },
+    {
+      "check": "S020",
+      "source": "conveyance",
+      "excerpt": "The occupancy schedule lists two storeys, the carport and the paved entry. The inspection drawing matches the approved dimensions within the survey tolerance.",
+      "payload": {
+        "kind": "reviewed_fact",
+        "reviewed": true,
+        "issue_present": false,
+        "scope_complete": true,
+        "statement": "The occupancy schedule lists two storeys, the carport and the paved entry. The inspection drawing matches the approved dimensions within the survey tolerance."
+      }
+    },
+    {
+      "check": "S021",
+      "source": "inspection",
+      "excerpt": "A fictional structural inspection found a failed bearing under the entry landing. Quote Q-17 prices the specified support repair at $7,000 and includes the site visit.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": true,
+        "statement": "A fictional structural inspection found a failed bearing under the entry landing. Quote Q-17 prices the specified support repair at $7,000 and includes the site visit.",
+        "cost_known": true,
+        "repair_cost": "7000",
+        "cost_source_ref": "synthetic-paperbark-inspection/Q-17",
+        "factor_id": "entry-landing-repair"
+      }
+    },
+    {
+      "check": "S022",
+      "source": "inspection",
+      "excerpt": "Roof-space and wet-room access was available. The dry-weather inspection found no active leak, and wet-room readings remained within the meter reference band; seasonal water ingress was outside the test.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": false,
+        "statement": "Roof-space and wet-room access was available. The dry-weather inspection found no active leak, and wet-room readings remained within the meter reference band; seasonal water ingress was outside the test."
+      }
+    },
+    {
+      "check": "S023",
+      "source": "inspection",
+      "excerpt": "The timber-pest inspection covered the subfloor, perimeter and attic. No live activity or visible damage was found. The perimeter treatment log schedules the next inspection in November 2027.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": false,
+        "statement": "The timber-pest inspection covered the subfloor, perimeter and attic. No live activity or visible damage was found. The perimeter treatment log schedules the next inspection in November 2027."
+      }
+    },
+    {
+      "check": "S024",
+      "source": "inspection",
+      "excerpt": "The entry landing repair is the only immediate capital item: Q-17 totals $7,000. The household has included it once at settlement. The planned 2029 repaint is deferred maintenance.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": true,
+        "statement": "The entry landing repair is the only immediate capital item: Q-17 totals $7,000. The household has included it once at settlement. The planned 2029 repaint is deferred maintenance.",
+        "cost_known": true,
+        "repair_cost": "7000",
+        "cost_source_ref": "synthetic-paperbark-inspection/Q-17",
+        "factor_id": "entry-landing-repair"
+      }
+    },
+    {
+      "check": "S025",
+      "source": "cover",
+      "excerpt": "Quote A covers the dwelling share under the body policy but excludes river flooding to paving in the shared lane. The limitation applies to this quoted policy.",
+      "payload": {
+        "kind": "insurance",
+        "reviewed": true,
+        "scope_complete": true,
+        "conflict": false,
+        "statement": "Quote A covers the dwelling share under the body policy but excludes river flooding to paving in the shared lane. The limitation applies to this quoted policy.",
+        "material_exclusion": true
+      }
+    },
+    {
+      "check": "S026",
+      "source": "cover",
+      "excerpt": "Two fictional quotes valid to 30 November matched the dwelling scope, excess of $1,500 and exclusions. Annual premiums were $1,440 and $1,620. The annual difference is $180.",
+      "payload": {
+        "kind": "context",
+        "summary": "Two fictional quotes valid to 30 November matched the dwelling scope, excess of $1,500 and exclusions. Annual premiums were $1,440 and $1,620. The annual difference is $180.",
+        "measure": 180,
+        "unit": "AUD per year",
+        "definition": "Quote B annual premium less quote A on the matched scope."
+      }
+    },
+    {
+      "check": "S027",
+      "source": "cover",
+      "excerpt": "The body policy provides $4.5m for the ten dwellings and shared structures, compared with a $4.3m rebuild schedule including demolition and fees. Both exclude land and escalation after expiry.",
+      "payload": {
+        "kind": "insurance",
+        "reviewed": true,
+        "scope_complete": true,
+        "conflict": false,
+        "statement": "The body policy provides $4.5m for the ten dwellings and shared structures, compared with a $4.3m rebuild schedule including demolition and fees. Both exclude land and escalation after expiry."
+      }
+    },
+    {
+      "check": "S028",
+      "source": "inspection",
+      "excerpt": "The shared-property inspection found no structural defect or open dispute in the November register. The shared grate is a minor maintenance item already on the common works list.",
+      "payload": {
+        "kind": "inspection",
+        "reviewed": true,
+        "scope_complete": true,
+        "material_defect": false,
+        "statement": "The shared-property inspection found no structural defect or open dispute in the November register. The shared grate is a minor maintenance item already on the common works list.",
+        "minor_issue": true
+      }
+    },
+    {
+      "check": "S029",
+      "source": "strata",
+      "excerpt": "The signed exercise levy schedule allocates $2,400 to Unit 7 for driveway resurfacing, payable in twelve instalments of $200. The buyer budget includes those instalments in the $800 monthly property cost.",
+      "payload": {
+        "kind": "document",
+        "reviewed": true,
+        "scope_complete": true,
+        "liability_amount": "2400",
+        "statement": "The fictional owners corporation has approved a $2,400 driveway levy for Unit 7, payable monthly over twelve months."
+      }
+    },
+    {
+      "check": "S030",
+      "source": "planning",
+      "excerpt": "Mill Lane application P-11 revision 3 supersedes revisions 1 and 2. Its 32 townhouses replace two dwellings on the northern site 95 m away. Works commenced 2 October.",
+      "payload": {
+        "kind": "context",
+        "summary": "Mill Lane application P-11 revision 3 supersedes revisions 1 and 2. Its 32 townhouses replace two dwellings on the northern site 95 m away. Works commenced 2 October."
+      }
+    },
+    {
+      "check": "S031",
+      "source": "planning",
+      "excerpt": "The verified exercise shadow geometry for Mill Lane reduces June-solstice living-room direct sun from 3.5 hours to 2.5. The buyer prefers at least 3 hours.",
+      "payload": {
+        "kind": "project",
+        "project_id": "synthetic-mill-lane",
+        "milestones": [
+          {
+            "kind": "approved",
+            "date": "2026-06-12"
+          },
+          {
+            "kind": "commenced",
+            "date": "2026-10-02"
+          }
+        ],
+        "impacts": [
+          {
+            "supported": true,
+            "description": "Modelled direct winter sunlight falls below the buyer preference.",
+            "measured_value": "2.5",
+            "threshold": "3",
+            "threshold_direction": "below",
+            "method": "Synthetic June-solstice shadow model, revision 3",
+            "unit": "hours"
+          }
+        ]
+      }
+    },
+    {
+      "check": "S032",
+      "source": "planning",
+      "excerpt": "Draft D3 would increase the northern site height limit from two storeys to three. Consultation ends 30 November. No commencement or interim amendment has taken effect.",
+      "payload": {
+        "kind": "context",
+        "summary": "Draft D3 would increase the northern site height limit from two storeys to three. Consultation ends 30 November. No commencement or interim amendment has taken effect."
+      }
+    },
+    {
+      "check": "S033",
+      "source": "planning",
+      "excerpt": "The October 2026 fictional annual land programme carries the 20-home Orchard stage from 2027 into 2028. Existing dwellings removed: zero. No construction milestone is recorded.",
+      "payload": {
+        "kind": "project",
+        "project_id": "synthetic-orchard-stage",
+        "net_dwellings": 20,
+        "scope_comparable": true,
+        "expected_completion": "2028-12-01",
+        "milestones": [
+          {
+            "kind": "announced",
+            "date": "2025-10-01"
+          },
+          {
+            "kind": "revised_completion",
+            "date": "2028-12-01"
+          }
+        ]
+      }
+    },
+    {
+      "check": "S034",
+      "source": "planning",
+      "excerpt": "The project file distinguishes approval on 12 June, construction commencement on 2 October and an expected August 2028 finish. No completion certificate is present.",
+      "payload": {
+        "kind": "project",
+        "project_id": "synthetic-mill-lane",
+        "milestones": [
+          {
+            "kind": "approved",
+            "date": "2026-06-12"
+          },
+          {
+            "kind": "commenced",
+            "date": "2026-10-02"
+          }
+        ],
+        "expected_completion": "2028-08-31"
+      }
+    },
+    {
+      "check": "S035",
+      "source": "planning",
+      "excerpt": "A funded south-gate path is scheduled to open in June 2027. Its 350 m level alignment replaces a 650 m detour to the bus stop. Opening is conditional on the pedestrian crossing being commissioned.",
+      "payload": {
+        "kind": "opportunity",
+        "project_id": "synthetic-south-gate-path",
+        "benefit": "The scheduled south-gate path would shorten the walk to the bus stop by 300 m.",
+        "benefit_supported": true,
+        "timing_known": true,
+        "expected_completion": "2027-06-30",
+        "dependencies": [
+          "Crossing commissioned",
+          "Path open to public"
+        ],
+        "milestones": [
+          {
+            "kind": "funded",
+            "date": "2026-09-15"
+          }
+        ]
+      }
+    },
+    {
+      "check": "S036",
+      "source": "planning",
+      "excerpt": "The works plan permits weekday deliveries from 07:00 to 15:00 on the north road for four months. After occupation the operating plan directs resident access through the east road.",
+      "payload": {
+        "kind": "context",
+        "summary": "The works plan permits weekday deliveries from 07:00 to 15:00 on the north road for four months. After occupation the operating plan directs resident access through the east road."
+      }
+    },
+    {
+      "check": "S037",
+      "source": "planning",
+      "excerpt": "The local competing-market file contains one like-for-like townhouse project inside 500 m: 32 new dwellings minus 2 demolitions. The Orchard land release lies outside that catchment.",
+      "payload": {
+        "kind": "project",
+        "project_id": "synthetic-mill-lane",
+        "net_dwellings": 30,
+        "scope_comparable": true,
+        "declared_net_dwellings_threshold": 25,
+        "expected_completion": "2028-08-31",
+        "milestones": [
+          {
+            "kind": "approved",
+            "date": "2026-06-12"
+          },
+          {
+            "kind": "commenced",
+            "date": "2026-10-02"
+          }
+        ]
+      }
+    },
+    {
+      "check": "S038",
+      "source": "area",
+      "excerpt": "The four quarters ending September 2026 record 12, 9, 11 and 8 townhouse approvals. Against 1,000 townhouses at September 2025 in the same district, 40 approvals equal 4% of opening stock.",
+      "payload": {
+        "kind": "context",
+        "summary": "The four quarters ending September 2026 record 12, 9, 11 and 8 townhouse approvals. Against 1,000 townhouses at September 2025 in the same district, 40 approvals equal 4% of opening stock.",
+        "measure": 4,
+        "unit": "percent",
+        "definition": "Rolling four-quarter approvals divided by opening townhouse stock; completion is a separate measure."
+      }
+    },
+    {
+      "check": "S039",
+      "source": "area",
+      "excerpt": "The September 2024 regional approval cohort contained 100 townhouses. By September 2026, 70 had commenced and 50 had completed. Completed dwellings had a median approval-to-completion time of 19 months.",
+      "payload": {
+        "kind": "context",
+        "summary": "The September 2024 regional approval cohort contained 100 townhouses. By September 2026, 70 had commenced and 50 had completed. Completed dwellings had a median approval-to-completion time of 19 months.",
+        "measure": 50,
+        "unit": "percent of cohort",
+        "definition": "Completed within two years divided by original dwellings approved in the same region and cohort."
+      }
+    },
+    {
+      "check": "S040",
+      "source": "area",
+      "excerpt": "Three townhouses are currently listed in the pocket and nine in the same-price substitute district. Eighteen of 300 pocket townhouses sold in the last year. Low current listings alone do not establish physical scarcity.",
+      "payload": {
+        "kind": "context",
+        "summary": "Three townhouses are currently listed in the pocket and nine in the same-price substitute district. Eighteen of 300 pocket townhouses sold in the last year. Low current listings alone do not establish physical scarcity.",
+        "measure": 6,
+        "unit": "percent annual turnover",
+        "definition": "Settled sales over twelve months divided by the fixed townhouse stock."
+      }
+    },
+    {
+      "check": "S041",
+      "source": "area",
+      "excerpt": "The fictional boundary remained fixed: 3,800 residents in 2023, 3,900 in 2024 and 4,000 in 2025. The 2025 change consists of 80 net movers and 20 natural increase; the latest estimate is provisional.",
+      "payload": {
+        "kind": "context",
+        "summary": "The fictional boundary remained fixed: 3,800 residents in 2023, 3,900 in 2024 and 4,000 in 2025. The 2025 change consists of 80 net movers and 20 natural increase; the latest estimate is provisional.",
+        "measure": 100,
+        "unit": "residents",
+        "definition": "2025 annual population change on unchanged boundaries."
+      }
+    },
+    {
+      "check": "S042",
+      "source": "area",
+      "excerpt": "At 4,000 residents and 2.5 persons per household, the baseline is 1,600 households. The five-year scenario of 4,320 residents and 2.4 persons gives 1,800, an increase of 200. The assumed household size is conditional.",
+      "payload": {
+        "kind": "context",
+        "summary": "At 4,000 residents and 2.5 persons per household, the baseline is 1,600 households. The five-year scenario of 4,320 residents and 2.4 persons gives 1,800, an increase of 200. The assumed household size is conditional.",
+        "measure": 200,
+        "unit": "households",
+        "definition": "Five-year scenario population divided by assumed household size less baseline households.",
+        "reference_period": "2025 to 2030",
+        "inputs": {
+          "baseline_population": 4000,
+          "baseline_household_size": 2.5,
+          "scenario_population": 4320,
+          "scenario_household_size": 2.4
+        }
+      }
+    },
+    {
+      "check": "S043",
+      "source": "area",
+      "excerpt": "The fictional labour survey counts 900 health-sector jobs among 3,000 district jobs. Regional four-quarter average unemployment is 4.5%, up from 4.2% a year earlier. It does not determine individual job security.",
+      "payload": {
+        "kind": "context",
+        "summary": "The fictional labour survey counts 900 health-sector jobs among 3,000 district jobs. Regional four-quarter average unemployment is 4.5%, up from 4.2% a year earlier. It does not determine individual job security.",
+        "measure": 30,
+        "unit": "percent of jobs",
+        "definition": "District health-sector jobs divided by all district jobs."
+      }
+    },
+    {
+      "check": "S044",
+      "source": "market",
+      "excerpt": "Three two-bedroom townhouses in the same unit-title precinct settled within six months at $785,000, $800,000 and $815,000. All have one car space. A detached sale and an uncompleted listing were excluded.",
+      "payload": {
+        "kind": "context",
+        "summary": "Three two-bedroom townhouses in the same unit-title precinct settled within six months at $785,000, $800,000 and $815,000. All have one car space. A detached sale and an uncompleted listing were excluded.",
+        "measure": 3,
+        "unit": "settled sales",
+        "definition": "Matched, arm-length fictional transactions in the six months before the decision date."
+      }
+    },
+    {
+      "check": "S045",
+      "source": "market",
+      "excerpt": "The $800,000 proposed price equals the $800,000 median of the three comparable sales. The observed $785,000–$815,000 range is descriptive and unadjusted for fit-out differences.",
+      "payload": {
+        "kind": "context",
+        "summary": "The $800,000 proposed price equals the $800,000 median of the three comparable sales. The observed $785,000–$815,000 range is descriptive and unadjusted for fit-out differences.",
+        "measure": 0,
+        "unit": "AUD",
+        "definition": "Proposed purchase price minus median confirmed comparable sale.",
+        "inputs": {
+          "purchase_price": 800000,
+          "comparable_sales": [
+            785000,
+            800000,
+            815000
+          ]
+        }
+      }
+    },
+    {
+      "check": "S046",
+      "source": "market",
+      "excerpt": "Eighteen settled sales out of 300 townhouses in the pocket give 6% annual turnover. Matched listing histories give a median of 44 days to accepted offer across 12 of the 18; the six unmatched histories are excluded from timing.",
+      "payload": {
+        "kind": "context",
+        "summary": "Eighteen settled sales out of 300 townhouses in the pocket give 6% annual turnover. Matched listing histories give a median of 44 days to accepted offer across 12 of the 18; the six unmatched histories are excluded from timing.",
+        "measure": 44,
+        "unit": "days",
+        "definition": "Median time to accepted offer for 12 matched local townhouse listings."
+      }
+    },
+    {
+      "check": "S047",
+      "source": "market",
+      "excerpt": "Two leased comparable homes record $570 and $590 per week before costs. The buyer plans owner occupancy, has no signed tenancy and budgets zero rent; the comparable rents do not fund this purchase.",
+      "payload": {
+        "kind": "context",
+        "summary": "Two leased comparable homes record $570 and $590 per week before costs. The buyer plans owner occupancy, has no signed tenancy and budgets zero rent; the comparable rents do not fund this purchase.",
+        "measure": 580,
+        "unit": "AUD per week",
+        "definition": "Midpoint of two fictional weekly rents before costs; excluded from owner-occupier cash flow."
+      }
+    },
+    {
+      "check": "S048",
+      "source": "area",
+      "excerpt": "Twenty recorded residential burglaries in the district in 2025, versus 16 in 2024. For 2025 the district had 4,000 residents, or 5 events per 1,000. Small numbers and a stable reporting boundary limit comparisons.",
+      "payload": {
+        "kind": "context",
+        "summary": "Synthetic district residential burglary series",
+        "count": 20,
+        "denominator": 4000,
+        "rate_base": 1000,
+        "period_start": "2025-01-01",
+        "period_end": "2026-01-01",
+        "area_id": "synthetic-paperbark-district",
+        "boundary_version": "exercise-boundary-1",
+        "definition": "Recorded residential burglaries, exercise reporting code RB-1",
+        "comparable": true
+      }
+    },
+    {
+      "check": "S049",
+      "source": "services",
+      "excerpt": "The fictional 2027 intake register assigns lot 7 to East Primary and lists no shared zone at this address. The published 2028 draft would move the boundary two streets east and is unconfirmed.",
+      "payload": {
+        "kind": "context",
+        "summary": "The fictional 2027 intake register assigns lot 7 to East Primary and lists no shared zone at this address. The published 2028 draft would move the boundary two streets east and is unconfirmed."
+      }
+    },
+    {
+      "check": "S050",
+      "source": "services",
+      "excerpt": "For an 08:30 weekday campus start, walk 8 minutes from 07:45, wait 7 minutes for the 08:00 bus, ride 18 minutes and walk 5 minutes. Scheduled arrival is 08:23, seven minutes early. Reliability is unmeasured.",
+      "payload": {
+        "kind": "context",
+        "summary": "For an 08:30 weekday campus start, walk 8 minutes from 07:45, wait 7 minutes for the 08:00 bus, ride 18 minutes and walk 5 minutes. Scheduled arrival is 08:23, seven minutes early. Reliability is unmeasured.",
+        "measure": 38,
+        "unit": "minutes",
+        "definition": "Weekday door-to-door scheduled travel time including both walks and wait.",
+        "inputs": {
+          "first_walk": 8,
+          "wait": 7,
+          "ride": 18,
+          "last_walk": 5,
+          "departure": "07:45",
+          "required_arrival": "08:30"
+        }
+      }
+    },
+    {
+      "check": "S051",
+      "source": "services",
+      "excerpt": "Two injury crashes were recorded at the north-road crossing from 2023 through 2025, both approximate positions within the 50 m search radius. Exposure counts are absent; this is an event count.",
+      "payload": {
+        "kind": "context",
+        "summary": "Two injury crashes were recorded at the north-road crossing from 2023 through 2025, both approximate positions within the 50 m search radius. Exposure counts are absent; this is an event count.",
+        "measure": 2,
+        "unit": "recorded injury crashes",
+        "definition": "Three-year count at the nominated access crossing."
+      }
+    },
+    {
+      "check": "S052",
+      "source": "engineering",
+      "excerpt": "Certificate E-7 dated August 2026 rates the existing townhouse envelope at 6.1 stars using the surveyed floor plan. Its scope excludes appliances, bills and the proposed neighbour.",
+      "payload": {
+        "kind": "context",
+        "summary": "Certificate E-7 dated August 2026 rates the existing townhouse envelope at 6.1 stars using the surveyed floor plan. Its scope excludes appliances, bills and the proposed neighbour.",
+        "measure": 6.1,
+        "unit": "envelope stars",
+        "definition": "Simulated thermal assessment of the dwelling envelope, current plan revision."
+      }
+    },
+    {
+      "check": "S053",
+      "source": "mapping",
+      "excerpt": "The 2025 survey measures 22% tree cover above 3 m across the district. A separate site shade drawing shows the living-room west window shaded after 15:00 in midsummer.",
+      "payload": {
+        "kind": "context",
+        "summary": "The 2025 survey measures 22% tree cover above 3 m across the district. A separate site shade drawing shows the living-room west window shaded after 15:00 in midsummer.",
+        "measure": 22,
+        "unit": "percent area",
+        "definition": "District canopy above 3 m on the dated survey grid."
+      }
+    },
+    {
+      "check": "S054",
+      "source": "engineering",
+      "excerpt": "A calibrated exercise meter measured 53 dBA LAeq at the living-room façade from 07:00 to 08:00 on 16 November. The one-hour sample excludes nights and weekends.",
+      "payload": {
+        "kind": "context",
+        "summary": "A calibrated exercise meter measured 53 dBA LAeq at the living-room façade from 07:00 to 08:00 on 16 November. The one-hour sample excludes nights and weekends.",
+        "measure": 53,
+        "unit": "dBA LAeq",
+        "definition": "A-weighted equivalent continuous sound level for the stated one-hour sample."
+      }
+    },
+    {
+      "check": "S055",
+      "source": "household",
+      "excerpt": "The fictional signed offer has a 6.00% variable annual rate, principal-and-interest, 360 months. A separate invented policy-rate series is 3.50%. The loan calculations use 6.00%.",
+      "payload": {
+        "kind": "context",
+        "summary": "The fictional signed offer has a 6.00% variable annual rate, principal-and-interest, 360 months. A separate invented policy-rate series is 3.50%. The loan calculations use 6.00%.",
+        "measure": 6,
+        "unit": "percent per year",
+        "definition": "Contractual variable annual borrowing rate on the household offer."
+      }
+    },
+    {
+      "check": "S061",
+      "source": "audit",
+      "excerpt": "The exercise source register distinguishes observation vintage from issue date: 2025 canopy is the latest annual layer; the 2026-11-16 noise sample falls within the 30-day noise brief. Live quotes expire 2026-11-30. The reviewed register cut-off is 2026-11-20.",
+      "payload": {
+        "kind": "context",
+        "summary": "The exercise source register distinguishes observation vintage from issue date: 2025 canopy is the latest annual layer; the 2026-11-16 noise sample falls within the 30-day noise brief. Live quotes expire 2026-11-30. The reviewed register cut-off is 2026-11-20."
+      }
+    },
+    {
+      "check": "S062",
+      "source": "audit",
+      "excerpt": "The cross-check register links regional statistics to the fictional district, private documents to lot 7 and common works to plan SYN-PLAN-8. The original P-11 unit count of 34 is superseded by revision 3 at 32, including the two replacement dwellings. This resolves the input disagreement.",
+      "payload": {
+        "kind": "context",
+        "summary": "The cross-check register links regional statistics to the fictional district, private documents to lot 7 and common works to plan SYN-PLAN-8. The original P-11 unit count of 34 is superseded by revision 3 at 32, including the two replacement dwellings. This resolves the input disagreement."
+      }
+    },
+    {
+      "check": "S063",
+      "source": "audit",
+      "excerpt": "The 1 September register listed the Mill Lane project as approved and unstarted. The 20 November register includes the 2 October commencement notice. The proposal quantity remains 32 in both versions. This trigger is a real-world event within the fiction, separate from retrieval dates.",
+      "payload": {
+        "kind": "context",
+        "summary": "The 1 September register listed the Mill Lane project as approved and unstarted. The 20 November register includes the 2 October commencement notice. The proposal quantity remains 32 in both versions. This trigger is a real-world event within the fiction, separate from retrieval dates.",
+        "measure": 1,
+        "unit": "new project milestone",
+        "definition": "Comparison of dated simulation registers for the same project and scope.",
+        "inputs": {
+          "earlier": {
+            "date": "2026-09-01",
+            "project_id": "synthetic-mill-lane",
+            "stage": "approved",
+            "dwellings": 32
+          },
+          "later": {
+            "date": "2026-11-20",
+            "project_id": "synthetic-mill-lane",
+            "stage": "commenced",
+            "event_date": "2026-10-02",
+            "dwellings": 32
+          }
+        }
+      }
+    }
+  ]
+}

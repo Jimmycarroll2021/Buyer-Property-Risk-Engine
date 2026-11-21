@@ -1,0 +1,43 @@
+# Moderator scoring key · Weekend buyer worksheet
+
+Keep this file with the moderator. Give each agent only the instructions for its household. Collect the agent’s own decision, wording and evidence before comparing it with the key. All amounts are AUD. These are fictional household decisions.
+
+## Five decisions to look for
+
+| Household | Original offer and decision | What should change the buyer’s action? | Original offer grid |
+|---|---|---|---|
+| Mira and Dan · Ngunnawal | **$700,000 · Green.** All checks pass. | Shortlist and confirm the figures. They retain $120,000 at settlement and have $220,877.06 net equity in the two-year forced sale. | **Tested up to $1,100,000.** Higher prices are untested. |
+| Sam and Asha · Weston | **$760,000 · Amber.** The largest-income-loss check is amber. | Verify disability cover or lower the offer. Total and permanent disability cover of $405,000 leaves a $15,000 gap against $420,000 required. | **Tested up to $950,000.** Amber offers qualify. |
+| Lee and Owen · Kambah | **$620,000 · Red.** The urgent-works reserve and the combined rate, insurance and works shock fail. | Obtain a firm works quote and reprice. $42,000 at settlement less $38,000 urgent works leaves $4,000 against $6,423.77 required. | **$580,000 qualifies. $585,000 fails.** |
+| Jules · Belconnen | **$600,000 · Red.** Loss of income and the forced sale both fail. | Test a smaller loan or more cash. $20,000 covers 3.18 of six months at a $6,286.14 monthly shortfall. At the 15% sale-price fall, net equity is −$40,473.40. Cash after the sale is still positive at $37,059.33. | **No offer passes** on the $400,000–$690,000 grid. |
+| Ruth and Mo · Braddon | **$640,000 · Unresolved.** All three household storms are green. Structural safety awaits clearance. | Seek an engineer’s written finding on the wall movement before making a decision. $101,500 retained at settlement cannot answer the structural question. | **Offer ceiling unknown** across $520,000–$820,000. |
+
+## What each edit should reveal
+
+The three input amounts below follow the form order **Proposed offer / Cash before settlement / Other first-year works**. Treat individually changed controls as one-variable tests. Compare a new result only after **Test this offer**.
+
+1. **Ngunnawal.** Start at $700,000 / $440,000 / $5,000. Clear just the works field. The result becomes **Unresolved**, and the ceiling becomes unknown because the works estimate is missing. Enter $740,000 / $310,000 / $40,000. The result becomes **Red**. A fixed $300,000 deposit plus $21,000 in acquisition costs leaves a settlement shortfall of $11,000. No tested offer qualifies with these inputs.
+2. **Weston.** Start at $760,000 / $340,000 / $8,000. Change only the offer to $740,000. The result becomes **Green**. The fixed $235,000 deposit leaves a $505,000 loan. Required cover falls to $404,000, which $405,000 covers with $1,000 to spare. Cash after settlement is $84,000. Enter $740,000 / $342,000 / $6,500. It stays **Green**, with $86,000 after settlement. The price change already closed the protection gap. The grid still reports **Tested up to $950,000**.
+3. **Kambah.** Start at $620,000 / $184,000 / $55,000. At an offer of $580,000 alone the verdict is **Amber** and month-three cash under the combined shock is $1,070.93. At $585,000 alone it is **Red** when month-three cash falls to −$137.97, even though the urgent-works reserve check passes at that price. Enter $550,000 / $210,000 / $48,000. The result is **Amber**, with $83,750 after settlement and an amber forced-sale check. Urgent works remain $38,000. The revised grid qualifies $720,000 and fails $725,000. Record whether the buyer can reconcile the example’s phrase “within $55,000 of total first-year works” with the editable field “Other first-year works” and its separate-urgent-works instruction.
+4. **Belconnen.** Start at $600,000 / $97,500 / $4,000. Change only **Would this property be difficult to sell?** from Yes to No. The assumed fall changes from 15% to 10%, giving a $540,000 sale price and −$11,223.40 equity. The original offer stays **Red**. The income runway remains 3.18 months and the forced-sale loss still exceeds 75% of initial liquid cash. The revised grid has a qualifying $485,000 and a failing $490,000. Restore Yes and enter $450,000 / $160,000 / $9,000. The result is **Amber**. The income-loss check turns green. Forced-sale equity is −$31,230.05, while household cash after sale is positive $142,269.50. Now $610,000 qualifies and $615,000 fails.
+5. **Braddon.** Start at $640,000 / $400,000 / $10,000 with **Has structural safety been cleared?** set to Unknown. Enter $635,000 / $411,000 / $7,000 and leave the check Unknown. The result stays **Unresolved** even with $112,625 after settlement. Restore all three original amounts. Setting structural clearance to Yes gives **Green**, tested up to $820,000. Setting it to No gives **Red**, with no qualifying offer. These conditional edits simulate an engineer’s answer. The original household still needs the actual finding.
+
+## Scoring the returned runs
+
+Score each dimension **2** for a correct, evidenced answer, **1** for a partly correct or weakly evidenced answer and **0** for a demonstrated failure. Use **U** for a step that could not be observed. An inaccessible worksheet or missing evidence contributes no pass and stays visible as a coverage gap. Accept displayed rounding, equivalent plain English and sound alternative actions. Judge the buyer’s explanation of the pivotal numbers. Reciting the complete key is unnecessary.
+
+| Dimension | What earns 2 |
+|---|---|
+| Original decision | Identifies this household’s baseline verdict, binding check, numeric or missing-evidence reason, and a sensible next action. |
+| Changes and causality | Completes the assigned edits with the intended inputs. Uses a before/after figure or visible state to explain what changed and what still binds. |
+| Offer limit | Interprets the relevant range or adjacent bids correctly. Green and amber both qualify. A passing top grid price leaves higher prices untested. A grid of red offers gives “No offer passes in this range”. Missing decisive evidence can give “Offer ceiling unknown”. |
+| Using the worksheet and recording evidence | Works from the assigned household, tests each new input set and supplies a screenshot or exact visible result heading and labels with values for each run. Records unobserved values and any blocked step. Saving, replay and export are outside these shared-preview trials. |
+| Understanding and friction | Gives a plain-language buying decision and identifies the control, wording or step that helped or confused them, with a concrete consequence. An observed smooth journey with specific evidence can earn full credit. |
+
+Report scores out of 10 only when all five dimensions were observable. For partial trials, show the per-dimension scores and the unobserved step. Retain exact UI wording with values or a screenshot reference supporting each material discrepancy. If the screen and key disagree, preserve both plus exact inputs and recheck that case before attributing an error to the participant. If the screen is correct but its wording predictably led to an unsafe conclusion, record a comprehension issue.
+
+**Severity and disposition.** Critical means the worksheet or its interpretation could support an unsafe offer, for example treating unknown structure as cleared or displaying the wrong household’s figures. Major means a decision-critical step is blocked or a range or cash figure is materially misunderstood. Minor means recoverable friction with a correct final decision. Record clean runs as pass, observed issues as findings with severity, and unobserved outcomes as unverified. Escalate critical and major findings individually even if other dimensions score well.
+
+Return five short rows, one per assigned household. Each row should carry the baseline and changed decision, the participant’s action, five dimension marks, worst observed severity, and the evidence location. Follow with the single change most likely to improve a buyer’s decision, if the observations support one. Keep any counts specific to these five agent trials.
+
+The saved baseline and three-amount revisions can be checked against the prior [UAT report](../weekend-uat/REPORT.md), [browser receipts](../weekend-uat/browser-receipts.json) and [independent arithmetic](../weekend-uat/oracle.py). The Weston and Kambah price-only probes and the Belconnen resale-only probe also agree with the local worksheet calculation. Those comparisons establish expected model behaviour. Score the new agent runs from their own observations.

@@ -1,0 +1,88 @@
+.buyer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+}
+.signal-group {
+  min-width: 0;
+  border-top: 2px solid var(--teal);
+}
+.signal-group h4 {
+  margin: 12px 0 6px;
+  font-size: 17px;
+}
+.signal-group article {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.signal-group h5 {
+  margin: 5px 0;
+  font-size: 15px;
+}
+.signal-group p, .signal-group a {
+  margin: 6px 0;
+  font-size: 14px;
+}
+.signal-group .muted { font-size: 12px; }
+.signal-group a, .location-line a { color: var(--teal); }
+.signal-group, .location-line { overflow-wrap: anywhere; }
+#buyer-finance-editor { margin: 20px 0; }
+#buyer-finance-editor p { margin: 10px 0; }
+#finance-fields { gap: 4px 20px; }
+.address-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.address-grid label { margin: 0; }
+.address-grid input { margin-top: 5px; }
+#address-matches button { margin: 0 8px 8px 0; white-space: normal; }
+#location-tools > summary { font-size: 16px; }
+#location-tools > p { margin: 12px 0; }
+@media (max-width: 760px) {
+  .buyer-grid, .address-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.purchase-decision {
+  border-top: 4px solid var(--teal);
+  padding: clamp(20px, 3vw, 36px);
+  overflow-wrap: anywhere;
+}
+.purchase-decision[data-state="blocked"] { border-top-color: var(--red); }
+.purchase-decision[data-state="review"], .purchase-decision[data-state="incomplete"] { border-top-color: var(--amber); }
+#decision-title { font-size: clamp(24px, 3.5vw, 38px); letter-spacing: -.035em; line-height: 1.14; margin: 6px 0 12px; }
+#decision-summary { max-width: 78ch; margin-bottom: 8px; }
+#decision-action:not(:empty) { padding: 15px 18px; margin: 18px 0 24px; background: var(--light); border-radius: 6px; }
+#decision-action h4, #decision-action p { margin: 0; }
+#decision-action h4 { color: var(--teal); font-size: 13px; margin-bottom: 3px; }
+.decision-lists { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px 32px; }
+.decision-group { border-top: 1px solid var(--line); }
+.decision-group h4 { margin: 12px 0; font-size: 17px; }
+.decision-group ol, .decision-context ul { margin: 0; padding-left: 23px; }
+.decision-group li, .decision-context li { margin: 0 0 14px; }
+.decision-group h5, .decision-context h5 { margin: 4px 0; font-size: 15px; }
+.decision-lists p { margin: 4px 0; font-size: 14px; }
+.decision-lists details { color: var(--muted); font-size: 13px; }
+.decision-lists details ul { padding-left: 20px; }
+.decision-lists details li { margin: 4px 0; }
+.decision-lists .item-action { font-weight: 550; }
+.decision-context { border-top: 1px solid var(--line); padding-top: 12px; grid-column: 1 / -1; }
+@media (max-width: 760px) {
+  .decision-lists { grid-template-columns: minmax(0, 1fr); }
+}
+
+#assessment-title { margin: 0; font-size: clamp(22px, 3vw, 30px); line-height: 1.25; }
+
+.decision-planning { grid-column: 1 / -1; }
+
+#preview-examples:not([hidden]) { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 6px; }
+#preview-examples a { color: var(--teal); font-size: 13px; }
+#check-register table { min-width: 800px; }
+#check-register tbody th { min-width: 140px; }
+#checks small { display: block; color: var(--muted); }
+#checks p { margin: 0 0 6px; }
+#checks td { overflow-wrap: anywhere; vertical-align: top; }
+#checks td:nth-child(3), #checks td:nth-child(4) { width: 29%; }
+#checks details { font-size: 12px; }

@@ -1,0 +1,938 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:property-risk-engine:case:0.1.0",
+  "title": "Property risk case input",
+  "description": "A tenant-scoped buyer case. Missing financial values are valid unknowns and must not be replaced with zero. Additional metadata is preserved in the input hash but does not imply a supported calculation.",
+  "$comment": "Documentation and optional client validation only. These files are not automatically applied by the HTTP service. Engine/storage validation and semantic eligibility gates remain authoritative. Requirement/scenario ID uniqueness, chronological eligibility, supported loan forms, rate units, cash reconciliation and mutually exclusive cost representations require semantic engine validation.",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "property_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "as_of": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+    },
+    "assessment_mode": {
+      "type": "string",
+      "description": "A display/workflow mode. public_screen does not remove private due-diligence checks."
+    },
+    "property": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "property_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "ownership_form": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "identity_confirmed": {
+          "type": "boolean"
+        },
+        "ambiguous": {
+          "type": "boolean"
+        },
+        "unit_required": {
+          "type": "boolean"
+        },
+        "unit_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "parcel_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "parcel_geometry": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "Polygon",
+                "MultiPolygon"
+              ]
+            },
+            "coordinates": {
+              "type": "array"
+            },
+            "geometries": {
+              "type": "array",
+              "maxItems": 0
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "type"
+          ],
+          "description": "GeoJSON polygon geometry. GeometryCollection is permitted only as an explicitly empty hazard extent. Topology, finite coordinates and CRS are checked by the engine.",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "Polygon",
+                      "MultiPolygon"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "coordinates"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "GeometryCollection"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "geometries"
+                ]
+              }
+            }
+          ]
+        },
+        "footprint_geometry": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "Polygon",
+                "MultiPolygon"
+              ]
+            },
+            "coordinates": {
+              "type": "array"
+            },
+            "geometries": {
+              "type": "array",
+              "maxItems": 0
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "type"
+          ],
+          "description": "GeoJSON polygon geometry. GeometryCollection is permitted only as an explicitly empty hazard extent. Topology, finite coordinates and CRS are checked by the engine.",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "Polygon",
+                      "MultiPolygon"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "coordinates"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "GeometryCollection"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "geometries"
+                ]
+              }
+            }
+          ]
+        },
+        "crs": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "buyer_preferences": {
+      "type": "object",
+      "properties": {
+        "planned_works": {"type": "string"},
+        "priorities": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "buyer_protection": {"$ref": "#/$defs/buyerProtection"},
+    "preoffer": {
+      "type": "object",
+      "description": "Buyer-entered pre-offer terms in Australian dollars. Household figures can be omitted.",
+      "properties": {
+        "lost_income_monthly": {"$ref": "#/$defs/nonnegativeAmount"},
+        "extra_expense_monthly": {"$ref": "#/$defs/nonnegativeAmount"},
+        "repair_cost": {"$ref": "#/$defs/nonnegativeAmount"},
+        "repair_overrun_pct": {"$ref": "#/$defs/nonnegativeAmount"},
+        "rate_rise_bps": {"$ref": "#/$defs/nonnegativeAmount"},
+        "sale_price_3y": {"$ref": "#/$defs/nonnegativeAmount"},
+        "sale_price_5y": {"$ref": "#/$defs/nonnegativeAmount"},
+        "selling_cost_fixed": {"$ref": "#/$defs/nonnegativeAmount"},
+        "selling_cost_pct": {"anyOf": [{"type": "number", "minimum": 0, "exclusiveMaximum": 100}, {"type": "string", "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"}, {"type": "null"}]},
+        "loss_months": {"type": ["integer", "null"], "minimum": 0, "maximum": 1200},
+        "repair_month": {"type": ["integer", "null"], "minimum": 1, "maximum": 1200},
+        "underwriting": {"$ref": "#/$defs/underwriting"},
+        "offer_price": {"$ref": "#/$defs/positivePrice"},
+        "alternative_offer_price": {"$ref": "#/$defs/positivePrice"},
+        "price_basis": {"enum": ["asking", "proposed_offer"]},
+        "intended_use": {"const": "owner_occupier"},
+        "finance": {"type": "object"},
+        "horizon_months": {"type": "integer", "minimum": 1, "maximum": 1200},
+        "levy_month": {"type": "integer", "minimum": 1, "maximum": 1200},
+        "comparable_sales": {
+          "type": "array",
+          "maxItems": 200,
+          "items": {
+            "type": "object",
+            "required": ["permission_confirmed"],
+            "properties": {
+              "permission_confirmed": {"const": true},
+              "source_id": {"type": "string", "pattern": "^[A-Za-z0-9_.:-]{1,160}$"},
+              "settled_on": {"type": "string"},
+              "known_at": {"type": "string"},
+              "price": {"$ref": "#/$defs/positivePrice"}
+            }
+          }
+        }
+      }
+    },
+    "finance": {
+      "type": "object",
+      "properties": {
+        "principal": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "annual_rate_decimal": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "annual_rate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "income_monthly": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "living_monthly": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "other_debt_monthly": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "property_costs_monthly": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "property_costs_annual": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "cash_after_settlement": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "protected_reserve": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "purchase_price": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "loan_funds": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "cash_allocated": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "acquisition_costs": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "immediate_works": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "total_liquid_cash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "gross_rent_monthly": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "vacancy_fraction": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "management_fraction": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "minimum_buffer_months": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "revert_rate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "offset_balance": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+        },
+        "term_months": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 1200
+        },
+        "rate_unit": {
+          "enum": [
+            "decimal",
+            "percent",
+            "per_cent",
+            "%",
+            null
+          ]
+        },
+        "repayment_type": {
+          "type": "string",
+          "description": "Only principal_and_interest is implemented. Other declared structures produce NOT_ASSESSED."
+        },
+        "intended_use": {
+          "type": "string"
+        },
+        "funding_confirmed": {
+          "type": "boolean"
+        },
+        "property_costs_include_management": {
+          "type": "boolean"
+        },
+        "rent_is_net": {
+          "type": "boolean"
+        },
+        "rate_schedule": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start_month": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1200
+              },
+              "annual_rate_decimal": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "start_month",
+              "annual_rate_decimal"
+            ]
+          }
+        },
+        "fixed_expiry_months": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1200
+        },
+        "no_drawdown_requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "buffer_requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "received_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "ISO date, or timezone-aware timestamp. A date is midnight UTC. Enable format checking in a client validator."
+        },
+        "exit": {
+          "type": "object",
+          "properties": {
+            "sale_month": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1200
+            },
+            "sale_price": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+            },
+            "selling_costs": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+            },
+            "tax_treatment": {
+              "enum": [
+                "before_personal_tax",
+                "explicit_tax"
+              ]
+            },
+            "tax_costs": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+            }
+          },
+          "additionalProperties": true,
+          "description": "Conditional sale proceeds, not a sale-price forecast. Incomplete inputs remain unassessed."
+        },
+        "loan_splits": {
+          "type": "array",
+          "description": "Not implemented; a non-empty value causes the loan calculation to be unassessed."
+        }
+      },
+      "additionalProperties": true
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "essential": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "requirement_id",
+          "essential"
+        ]
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scenario_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "duration_months": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1200
+          },
+          "rate_delta_bps": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+          },
+          "income_factor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+          },
+          "property_cost_factor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+          },
+          "rent_factor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+          },
+          "minimum_monthly_surplus": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Finite decimal value; decimal strings preserve intended precision. Non-negativity and specialised bounds are checked by the engine."
+          },
+          "required_review": {
+            "type": "boolean"
+          },
+          "requirement_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "start_month": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Only zero is implemented. To model later stress, restate the cash and loan starting position."
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "scenario_id",
+          "duration_months"
+        ]
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "description": "Review/waiver metadata never turns missing evidence into completed coverage."
+    },
+    "demonstration": {
+      "type": "boolean"
+    },
+    "input_note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "nonnegativeAmount": {"anyOf": [{"type": "number", "minimum": 0, "maximum": 1000000000000000}, {"type": "string", "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?$"}, {"type": "null"}]},
+    "underwritingRecord": {"type": "object", "required": ["known_at", "permission_confirmed"], "anyOf": [{"required": ["source_url"]}, {"required": ["source_ref"]}], "properties": {"known_at": {"type": "string", "minLength": 1}, "permission_confirmed": {"const": true}, "source_id": {"type": "string", "pattern": "^[A-Za-z0-9_.:-]{1,160}$"}, "source_ref": {"type": "string", "minLength": 1}, "source_url": {"type": "string", "minLength": 1}}},
+    "underwritingGroup": {"oneOf": [{"$ref": "#/$defs/underwritingRecord"}, {"type": "array", "maxItems": 200, "items": {"$ref": "#/$defs/underwritingRecord"}}]},
+    "underwriting": {"type": "object", "additionalProperties": false, "properties": {"repair_quotes": {"$ref": "#/$defs/underwritingGroup"}, "inspection_leads": {"$ref": "#/$defs/underwritingGroup"}, "listing_periods": {"$ref": "#/$defs/underwritingGroup"}, "guide_history": {"$ref": "#/$defs/underwritingGroup"}, "market_dom": {"$ref": "#/$defs/underwritingGroup"}, "market_inventory": {"$ref": "#/$defs/underwritingGroup"}, "strata": {"$ref": "#/$defs/underwritingGroup"}, "approved_layout": {"$ref": "#/$defs/underwritingGroup"}, "registered_restrictions": {"$ref": "#/$defs/underwritingGroup"}, "insurance_quote": {"$ref": "#/$defs/underwritingGroup"}, "road": {"$ref": "#/$defs/underwritingGroup"}, "layout": {"$ref": "#/$defs/underwritingGroup"}, "competing_stock": {"$ref": "#/$defs/underwritingGroup"}}},
+    "buyerProtection": {"type": "object", "additionalProperties": false, "properties": {"property": {"type": "object", "additionalProperties": false, "properties": {"scope": {"enum": ["owner", "strata", null]}, "written_confirmed": {"type": ["boolean", "null"]}, "annual_premium": {"$ref": "#/$defs/nonnegativeAmount"}, "excess": {"$ref": "#/$defs/nonnegativeAmount"}, "sum_insured": {"$ref": "#/$defs/nonnegativeAmount"}, "rebuild_cost": {"$ref": "#/$defs/nonnegativeAmount"}}}, "illness": {"type": "object", "additionalProperties": false, "properties": {"policy_confirmed": {"type": ["boolean", "null"]}, "waiting_days": {"type": ["integer", "null"], "minimum": 0, "maximum": 3650}, "net_benefit_monthly": {"$ref": "#/$defs/nonnegativeAmount"}, "lost_income_monthly": {"$ref": "#/$defs/nonnegativeAmount"}}}, "career": {"type": "object", "additionalProperties": false, "properties": {"goal_monthly": {"$ref": "#/$defs/nonnegativeAmount"}, "lost_income_monthly": {"$ref": "#/$defs/nonnegativeAmount"}, "duration_months": {"type": ["integer", "null"], "minimum": 0, "maximum": 1200}}}, "disability": {"type": "object", "additionalProperties": false, "properties": {"policy_confirmed": {"type": ["boolean", "null"]}, "benefit": {"$ref": "#/$defs/nonnegativeAmount"}, "remaining_income_monthly": {"$ref": "#/$defs/nonnegativeAmount"}, "ongoing_costs_monthly": {"$ref": "#/$defs/nonnegativeAmount"}, "one_off_costs": {"$ref": "#/$defs/nonnegativeAmount"}, "horizon_months": {"type": ["integer", "null"], "minimum": 0, "maximum": 1200}, "payout_delay_months": {"type": ["integer", "null"], "minimum": 0, "maximum": 1200}}}, "death": {"type": "object", "additionalProperties": false, "properties": {"policy_confirmed": {"type": ["boolean", "null"]}, "benefit": {"$ref": "#/$defs/nonnegativeAmount"}, "remaining_income_monthly": {"$ref": "#/$defs/nonnegativeAmount"}, "ongoing_costs_monthly": {"$ref": "#/$defs/nonnegativeAmount"}, "one_off_costs": {"$ref": "#/$defs/nonnegativeAmount"}, "horizon_months": {"type": ["integer", "null"], "minimum": 0, "maximum": 1200}, "payout_delay_months": {"type": ["integer", "null"], "minimum": 0, "maximum": 1200}}}}},
+    "positivePrice": {
+      "anyOf": [{"type": "number", "exclusiveMinimum": 0}, {"type": "string", "minLength": 1}],
+      "description": "Positive finite AUD amount or decimal string."
+    }
+  },
+  "required": [
+    "case_id",
+    "property_id",
+    "as_of"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "finance"
+        ],
+        "properties": {
+          "finance": {
+            "minProperties": 1
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "owner_tenant_id"
+        ],
+        "properties": {
+          "owner_tenant_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

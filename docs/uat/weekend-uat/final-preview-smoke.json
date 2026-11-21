@@ -1,0 +1,18 @@
+{
+  "url": "http://127.0.0.1:8142/weekend?example=ngunnawal-townhouse",
+  "options": [
+    "Mira and Dan · Ngunnawal",
+    "Sam and Asha · Weston",
+    "Lee and Owen · Kambah",
+    "Jules · Belconnen",
+    "Ruth and Mo · Braddon"
+  ],
+  "state": "Green",
+  "bid": "Tested up to $1,100,000",
+  "link": [
+    [
+      "Weekend buyer stress test",
+      "http://127.0.0.1:8142/weekend"
+    ]
+  ]
+}
