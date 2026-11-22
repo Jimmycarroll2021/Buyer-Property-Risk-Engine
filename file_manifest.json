@@ -1,5 +1,5 @@
 {
-  "release": "repository-initial-import-2026-11-22",
+  "release": "buyer-feedback-repair-2026-11-22",
   "scope": "Curated source, public reference/example data, portable public replay fixtures and historical fictional UAT evidence. Excludes all private runtime state and credentials. This manifest excludes itself.",
   "files": [
     {
@@ -294,43 +294,53 @@
     },
     {
       "path": "docs/uat/agent-uat-pack/01-ngunnawal.md",
-      "bytes": 3307,
-      "sha256": "18fb24aea03bff7ce16e579ac8fd3e0c4aa8ad606c2b34859c2a57a86e06fc60"
+      "bytes": 3378,
+      "sha256": "195edf18ee616b9c7beb0e23a34efa5f499b12f62c548e21679cd21a99b6f2cc"
     },
     {
       "path": "docs/uat/agent-uat-pack/02-weston.md",
-      "bytes": 3258,
-      "sha256": "560d6e17a79a7efd7644c0c55d3f88cba5d28f39e60b72bdd356651b7616d586"
+      "bytes": 3304,
+      "sha256": "877093e8ccc0d421cda5c13eb2acca1e97a447ae2ff67b4e7b842da9821281c8"
     },
     {
       "path": "docs/uat/agent-uat-pack/03-kambah.md",
-      "bytes": 3521,
-      "sha256": "68201012e8af0bbb7b6822c6d134452faa2089381391a20ab309422513d65999"
+      "bytes": 3571,
+      "sha256": "e90cd40a15626690fe8de6b322422f5af26e192dcf20342e8207b57e5a9cf0a3"
     },
     {
       "path": "docs/uat/agent-uat-pack/04-belconnen.md",
-      "bytes": 3385,
-      "sha256": "180ca5e5afe09b129f329a742005732cb0a0729c1d141216a9fb9f0ec2ba95b3"
+      "bytes": 3431,
+      "sha256": "daa2b7d86ac49f3f3e92aba0dc31eca33413caa98d3af0d538a86dee9e655330"
     },
     {
       "path": "docs/uat/agent-uat-pack/05-braddon.md",
-      "bytes": 3386,
-      "sha256": "5047cd6701267e4f8c63150c6facec736c6e43f1b03d37424873997b161d6eff"
+      "bytes": 3432,
+      "sha256": "ec8e7c40c2943216de97dbd545331ce47350e096c68e4bf1f53219d9df75aaef"
     },
     {
       "path": "docs/uat/agent-uat-pack/BUYER_BRIEFS.zip",
-      "bytes": 8863,
-      "sha256": "d42d283dff136eadbef5c15d6f36e8688e6ce1c38dddeb86daf33916e6cbd9f4"
+      "bytes": 8920,
+      "sha256": "bfbe083726507e22579470e253d5393d327bdc1ae793cef38d1e2d8212b1d833"
     },
     {
       "path": "docs/uat/agent-uat-pack/BUYER_TASKS.md",
       "bytes": 3297,
-      "sha256": "5618667d24f94bdc2bbe358ab70489dd03d85136b6e23ee194a29efd248130e1"
+      "sha256": "a54cbee3e8d24478f3001b902613055ee8e08ab7c69ac6c79128892e130ba8a5"
     },
     {
       "path": "docs/uat/agent-uat-pack/SCORING_KEY.md",
-      "bytes": 8734,
-      "sha256": "508732c1e4ec02d44215745cb090c9e57a6107b2df3d57431fe90f64e0fc0e84"
+      "bytes": 8782,
+      "sha256": "982ef32148a557762d5bf33ba79c85be9a6b6005e626c729e0d19cf9ff1337a4"
+    },
+    {
+      "path": "docs/uat/feedback/2026-11-22-first-three.md",
+      "bytes": 3620,
+      "sha256": "9bb9398789a73a9d82f73ede52e2f83e4a1e55326a3978b9fee65f6fa33b244c"
+    },
+    {
+      "path": "docs/uat/feedback/2026-11-22-repair-evidence.md",
+      "bytes": 2684,
+      "sha256": "14832a5e6303d44e29fc12d611b2ffa3e46b62e75cf5a31b9001809116249921"
     },
     {
       "path": "docs/uat/publication/REGRESSION.md",
@@ -603,6 +613,11 @@
       "sha256": "cc0de445f9293484b4b9efd7e37c29a2380fe6ead82470a0af62498667a1f3c2"
     },
     {
+      "path": "scripts/weekend_feedback_browser.cjs",
+      "bytes": 8153,
+      "sha256": "c07f7f8c40ddd35cc9153b83f6bba5d0fe16af8b8dd2d94203643ab23d6f0a1c"
+    },
+    {
       "path": "src/riskengine/__init__.py",
       "bytes": 618,
       "sha256": "e49acc814914142d6de089f76b4dfe99e5f592704b7bfa8342af133103aff63a"
@@ -764,8 +779,8 @@
     },
     {
       "path": "src/riskengine/reporting.py",
-      "bytes": 50479,
-      "sha256": "a5cd3ff9e5a0572dc4f526113f8f41b3837444a1aebb82e51ff8f57ec65a1b0a"
+      "bytes": 51697,
+      "sha256": "3d3fcea6248b7b6553cdefbefd19714e23ef261b3e69a24d634bfd04a6933cda"
     },
     {
       "path": "src/riskengine/spatial.py",
@@ -784,8 +799,8 @@
     },
     {
       "path": "src/riskengine/weekend_study.py",
-      "bytes": 5550,
-      "sha256": "10fc19aae278263336191a613ad68f0825a86a9de6c2a79d10019890ed5d8803"
+      "bytes": 7179,
+      "sha256": "4becc3c665750ecda15e064db6fd20d4e677054e55d4138fddb7c5fdd7395c1c"
     },
     {
       "path": "start-windows.cmd",
@@ -816,6 +831,11 @@
       "path": "tests/fixtures/jardine_public_replay/public-observations.json",
       "bytes": 8678,
       "sha256": "d613baa67c5263809be30736048527889fd491334b8f6d5b9c3eb038ef85002b"
+    },
+    {
+      "path": "tests/fixtures/weekend_v1_hashes.json",
+      "bytes": 875,
+      "sha256": "71344d3f78b28106822799868b0c4bcbcb91d86a8f1e3e713567366580ae8437"
     },
     {
       "path": "tests/test_api_reporting.py",
@@ -953,6 +973,11 @@
       "sha256": "0a6f0c4fb9e9276b495bcce2d7d886e75aebf59ee01777083dd8fa02bb93ddbd"
     },
     {
+      "path": "tests/test_weekend_feedback.py",
+      "bytes": 3684,
+      "sha256": "2be2652e0b2d33563d0030aa8a720adf460eb3f2ec21e73a97c1d2514e1226e2"
+    },
+    {
       "path": "tests/test_weekend_workflow.py",
       "bytes": 4539,
       "sha256": "4068246bc55cc21465226586df436f106101d242330908808969031108204df4"
@@ -1034,13 +1059,13 @@
     },
     {
       "path": "web/weekend.html",
-      "bytes": 3729,
-      "sha256": "c888e4cafd6ce5ee3ccd5dc22850f12e87bf3a6a6839e45ad2f51495df1bdf24"
+      "bytes": 3913,
+      "sha256": "77fab9662de2df3cb3f816e87b3211988cda11e6de24428f8ea081c2f8cae140"
     },
     {
       "path": "web/weekend.js",
-      "bytes": 20649,
-      "sha256": "2154e8304736d50d3159d5a63cdf889b81279f943e966d412004e78393748b8b"
+      "bytes": 23013,
+      "sha256": "96c7e5f7b85221429002912df93ba554ffdb581bf3c9db2f98549d9408e2b9d0"
     }
   ]
 }

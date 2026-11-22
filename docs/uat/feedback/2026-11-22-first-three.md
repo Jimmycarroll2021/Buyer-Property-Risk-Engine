@@ -1,0 +1,18 @@
+# External buyer feedback, first three briefs — 22 November 2026
+
+Source: Jimmy supplied reports from the same external tester who ran Ngunnawal, Weston and Kambah. This record paraphrases those reports and the reported visible figures; no screenshots were supplied. These are three persona trials by one tester, not three independent participants. Belconnen and Braddon have no returned external feedback yet. Historical internal UAT remains separate evidence.
+
+| Brief / run | Reported inputs and result | Buyer comprehension / friction | Disposition |
+|---|---|---|---|
+| Ngunnawal original | AUD 700,000 offer / AUD 440,000 cash / AUD 5,000 works; Green | Range maximum wording could be taken as a safe maximum; the endpoint is only the highest grid offer tested. | Explain endpoint and Green/Amber eligibility at the result. |
+| Ngunnawal missing quote | Works cleared; Unresolved | Unknown-cost explanation appears far below the edited control. | Inline unknown message, never infer zero. |
+| Ngunnawal revised funding | AUD 740,000 / AUD 310,000 / AUD 40,000; Red; settlement cash minus AUD 11,000 | Bid-limit explanation showed minus AUD 7,500 available against AUD 11,157.30 required without naming the different grid offer; appeared inconsistent with the main result. | Label the exact grid price and metric context. |
+| Weston original | AUD 760,000 / AUD 340,000 / AUD 8,000; Amber; disability cover AUD 405,000; shortfall AUD 15,000 | Headline “B · The largest income stops” obscured that the actual weak spot was disability cover, despite acceptable temporary-income runway. | Put specific protection shortfall and next action in the headline explanation. |
+| Weston lower offer | Offer only reduced to AUD 740,000; gap becomes zero | Tester could understand reduced debt improves coverage without changing the policy; offer grid still includes Amber. | Preserve math; clarify the model's eligibility differs from buyer preference. |
+| Weston final | AUD 740,000 / AUD 342,000 / AUD 6,500; Green | No further specific defect reported beyond meaning of passing/maximum. | Preserve figures. |
+| Kambah original and price probes | AUD 620,000 / AUD 184,000 / AUD 55,000; Red; original qualifying grid offer AUD 580,000, next Red AUD 585,000 | “Other first-year works” plus “Keep urgent works separate” suggested the editable amount excludes urgent works; model actually uses a total. | Rename consistently and identify the urgent subset inline. |
+| Kambah revised | AUD 550,000 / AUD 210,000 / AUD 48,000; Amber; A Green with month-three cash AUD 43,074.37; C LVR 86.64%, loss 36.18%; grid AUD 720,000 then Red AUD 725,000 | Tester interpreted AUD 48,000 as additional to urgent AUD 38,000. Model means AUD 48,000 total including AUD 38,000 urgent, leaving AUD 10,000 non-urgent. | Preserve numerical inputs and calculation; reject new totals below urgent subset with field guidance. |
+
+The tester also observed one household-picker failure and a result that appeared stale after clicking Test. These observations alone do not establish their technical cause. Reproduce loading/error paths and prevent asynchronous results from claiming to represent changed inputs. A later correction attributed apparent blank AUD 0 rows to the tester's page reader; this is not retained as a product defect.
+
+No new scores are assigned from paraphrased reports. No screenshots or independent real-household usability evidence are claimed. The revised briefs and worksheet use version 2 wording; port 8143 is a separate candidate preview so existing port 8142 trials can finish against their original surface.

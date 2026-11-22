@@ -439,6 +439,9 @@ def _weekend_report(result):
     weekend = result["weekend"]
     model, capture, ceiling = weekend["result"], weekend["capture"], weekend["ceiling"]
     example = capture["example"]
+    def cash(value):
+        number = _number(value)
+        return "Unknown" if number is None else f"AUD {number:,.2f}"
     title = example["property"]["label"]
     names = {"V1": "Insurance, approvals and structure", "V2": "Two months of cash after settlement",
              "V3": "One month of cash after urgent works", "V4": "Income covers lean spending",
@@ -448,6 +451,14 @@ def _weekend_report(result):
                "V4": "Reconcile monthly income and essential expenses.", "A": "Quote the works and test a lower offer.",
                "B": "Confirm job-loss entitlements, income-protection waiting periods and policy benefits.",
                "C": "Recheck selling costs, the stressed price and the cash needed before sale."}
+    protection = model["storms"]["B"]
+    gaps = [(label, protection.get(key)) for key, label in
+            (("tpd_cover_gap", "Disability cover shortfall"), ("death_cover_gap", "Death cover shortfall"),
+             ("illness_wait_gap", "Illness waiting-period cash shortfall"))
+            if (_number(protection.get(key)) or 0) > 0]
+    if gaps:
+        names["B"] += ": " + "; ".join(f"{label} {cash(value)}" for label, value in gaps)
+        actions["B"] = "Confirm the specific shortfall with the insurer and test a lower offer or sufficient cover."
     rows = []
     next_actions = [weekend["price_issue"]] if weekend.get("price_issue") else []
     for code, row in {**model["vetoes"], **model["storms"]}.items():
@@ -456,7 +467,7 @@ def _weekend_report(result):
         if code in model["assumptions"]:
             rows.append(f'<p>{_e(model["assumptions"][code])}</p>')
         if code.startswith("V") and code != "V1":
-            rows.append(f'<p>Available {_money(row["available"])} ? Required {_money(row["required"])}</p>')
+            rows.append(f'<p>Available {cash(row["available"])} ? Required {cash(row["required"])}</p>')
         if row["status"] != "green":
             next_actions.append(actions[code])
             rows.append(f'<p>{_e(actions[code])}</p>')
@@ -464,27 +475,27 @@ def _weekend_report(result):
             rows.append(f'<p>Unknown inputs: {_e(", ".join(key.replace("_", " ") for key in row["missing_inputs"]))}</p>')
         rows.append(_brief_values(values))
         if row.get("monthly_cash"):
-            balances = [f'Month {month}: {_money(value)}' for month, value in enumerate(row["monthly_cash"])]
+            balances = [f'Month {month}: {cash(value)}' for month, value in enumerate(row["monthly_cash"])]
             rows.append(_details("Monthly cash balances", balances))
         rows.append('</article>')
     baseline = model["baseline"]
-    metrics = _metric("Offer tested", _money(weekend["profile"].get("purchase_price")), "Illustrative offer")
-    metrics += _metric("Cash after settlement", _money(baseline["cash_after_settlement"]), "After deposit and acquisition costs")
-    metrics += _metric("Normal monthly surplus", _money(baseline["normal_surplus"]), "After household costs and mortgage")
+    metrics = _metric("Offer tested", cash(weekend["profile"].get("purchase_price")), "Illustrative offer")
+    metrics += _metric("Cash after settlement", cash(baseline["cash_after_settlement"]), "After deposit and acquisition costs")
+    metrics += _metric("Normal monthly surplus", cash(baseline["normal_surplus"]), "After household costs and mortgage")
     proof = {"model": model["rule_version"], "worksheet": weekend["version"], "input_hash": weekend["input_hash"],
              "bid_policy_version": weekend.get("bid_policy_version"), "bid_policy_hash": weekend.get("bid_policy_hash"),
              "assessment_id": result["assessment_id"], "case_version": result.get("case_version", "Unknown")}
-    bid_heading = {"qualified": "Highest passing offer", "range_ceiling": "Highest offer tested",
+    bid_heading = {"qualified": "Highest tested offer avoiding red (includes Amber)", "range_ceiling": "Tested range endpoint (includes Amber)",
                    "unknown": "Offer ceiling unknown", "no_qualifying_bid": "No qualifying offer in this range"}[ceiling["status"]]
     if ceiling.get("highest_passing_price") is not None:
-        bid_heading += " ? " + _money(ceiling["highest_passing_price"])
+        bid_heading += " ? " + cash(ceiling["highest_passing_price"])
     return f"""<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{_e(title)} | Weekend buyer worksheet</title><style>{STYLE}</style></head><body><main>
 <header><p>First-home buyer ? Fictional weekend worksheet</p><h1>{_e(title)}</h1><p>{_e(example["name"])} ? {_e(example["as_of"])} ? Saved version {_e(result.get("case_version", "Unknown"))}</p></header>
 <section class="section"><h2>{_e(_words(model["verdict"]))} household result</h2><p>{_e(example["description"])}</p><div class="metric-grid">{metrics}</div></section>
-<section class="section"><h2>{_e(bid_heading)}</h2><p>{_e(ceiling["binding_reason"])}</p><p>Next failing offer: {_money(ceiling["next_failing_price"]) if ceiling["next_failing_price"] is not None else "None established"}</p>{_brief_values(ceiling.get("grid"))}</section>
+<section class="section"><h2>{_e(bid_heading)}</h2><p>Green and Amber both qualify. Amber retains a weak spot; this is not a safe-offer recommendation. Higher offers outside the tested grid are untested.</p><p>{_e(ceiling["binding_reason"])}</p><p>Next failing offer: {cash(ceiling["next_failing_price"]) if ceiling["next_failing_price"] is not None else "None established"}. Binding figures refer to the identified grid offer, not necessarily the offer tested above.</p>{_brief_values(ceiling.get("grid"))}</section>
 <section class="section"><h2>What to confirm before offering</h2>{_brief_values(next_actions or ["Confirm the modelled figures and property evidence in writing."])}</section>
 <section class="section"><h2>Veto checks and three household storms</h2>{''.join(rows)}</section>
-<section class="section"><h2>Inputs and bid policy</h2><p>All example figures and property conditions are fictional. Edits are assumptions unless a source reference is supplied. Unknown inputs are unassessed.</p>{_brief_values(weekend["profile"])}<h3>Price adjustments</h3>{_brief_values(example["bid_policy"])}{_brief_values(ceiling["assumptions"])}<h3>Edited inputs and source references</h3>{_brief_values(capture["changes"])}{_brief_values(capture["source_notes"])}</section>
+<section class="section"><h2>Inputs and bid policy</h2><p>All example figures and property conditions are fictional. Edits are assumptions unless a source reference is supplied. Unknown inputs are unassessed.</p><p>Total first-year works, including urgent works: {cash(weekend["profile"].get("first_year_works"))}. Urgent works subset: {cash(weekend["profile"].get("urgent_works"))}. Include urgent works in the total once; blank means unknown, never zero.</p>{_brief_values(weekend["profile"])}<h3>Price adjustments</h3>{_brief_values(example["bid_policy"])}{_brief_values(ceiling["assumptions"])}<h3>Edited inputs and source references</h3>{_brief_values(capture["changes"])}{_brief_values(capture["source_notes"])}</section>
 <footer>{_brief_values(proof)}{_details("Full saved assessment", result)}</footer></main></body></html>"""
 
 

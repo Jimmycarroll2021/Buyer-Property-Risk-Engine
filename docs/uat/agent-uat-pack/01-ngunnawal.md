@@ -6,15 +6,15 @@ Saturday morning. You rent together and like a three-bedroom townhouse close eno
 
 ### Run this in a browser
 
-Open the [weekend worksheet](http://127.0.0.1:8142/weekend) in a fresh tab on the computer running the sample preview, or use the sample URL supplied by your coordinator. A remote agent's `127.0.0.1` points to its own machine. If the worksheet or household picker fails to load, return the URL, visible message and blocked step. Use only this brief and the rendered buyer interface, including its expandable sections. Leave source files, APIs, previous reports, answer keys and other agents' results closed.
+Open the [weekend worksheet](http://127.0.0.1:8143/weekend) in a fresh tab on the computer running the sample preview, or use the sample URL supplied by your coordinator. A remote agent's `127.0.0.1` points to its own machine. If the worksheet or household picker fails to load, return the URL, visible message and blocked step. Use only this brief and the rendered buyer interface, including its expandable sections. Leave source files, APIs, previous reports, answer keys and other agents' results closed.
 
 Select the named household under **Choose a fictional household**. Work in your own tab with fictional inputs. Use **Test this offer** after each edit and check the displayed **Tested offer** before taking evidence. On the shared preview, finish by closing your tab. Leave **Save assessment** and **Saved worksheets** alone. Record evidence in your own reply or agent-specific files. All money amounts are Australian dollars.
 
 ### Make the decision as Mira and Dan
 
-1. **Saturday's inspection.** Test the starting offer of $700,000, cash before settlement of $440,000 and other first-year works of $5,000. Find what cash you keep at settlement and how the household holds up if the largest income stops. What does the top of the tested offer range tell you about bidding beyond it?
-2. **The quote is withdrawn.** Clear only **Other first-year works (A$)**, leave it empty, and test again. What can you conclude now? Quote the missing input or message you see. Explain how you would treat a withdrawn quote in your buying decision.
-3. **A different funding plan.** Enter $740,000 for the offer, $310,000 for cash before settlement and $40,000 for other first-year works. Test it. Read the cash deposit, acquisition costs and remaining settlement cash. Can you actually get to settlement on this plan? Use those figures to tell Dan whether you'd keep negotiating and what you would confirm first.
+1. **Saturday's inspection.** Test the starting offer of $700,000, cash before settlement of $440,000 and total first-year works including urgent works of $5,000. Find what cash you keep at settlement and how the household holds up if the largest income stops. What does the top of the tested offer range tell you about bidding beyond it?
+2. **The quote is withdrawn.** Clear only **Total first-year works, including urgent works (AUD)**, leave it empty, and test again. What can you conclude now? Quote the missing input or message you see. Explain how you would treat a withdrawn quote in your buying decision.
+3. **A different funding plan.** Enter $740,000 for the offer, $310,000 for cash before settlement and $40,000 for total first-year works including urgent works. Test it. Read the cash deposit, acquisition costs and remaining settlement cash. Can you actually get to settlement on this plan? Use those figures to tell Dan whether you'd keep negotiating and what you would confirm first.
 
 ### Return to the coordinator
 

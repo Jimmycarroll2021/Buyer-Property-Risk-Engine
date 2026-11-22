@@ -12,8 +12,8 @@
 <div class="inputs">
 <label for="purchase_price">Proposed offer (A$)</label><input type="number" min=".01" max="1000000000" step=".01" id="purchase_price" inputmode="decimal">
 <label for="cash_before_settlement">Cash before settlement (A$)</label><input type="number" min="0" max="1000000000" step=".01" id="cash_before_settlement" inputmode="decimal">
-<label for="first_year_works">Other first-year works (A$)</label><input type="number" min="0" max="1000000000" step=".01" id="first_year_works" inputmode="decimal">
-<small>Keep urgent works separate. A blank amount means unknown.</small></div>
+<label for="first_year_works">Total first-year works, including urgent works (AUD)</label><input type="number" min="0" max="1000000000" step=".01" id="first_year_works" inputmode="decimal" aria-describedby="works-help works-status">
+<small id="works-help">Include urgent works in this total once. The urgent amount is a subset used for the immediate cash check.</small><small id="works-status" aria-live="polite"></small></div>
 <details id="evidence-inputs"><summary>Adjust property checks</summary><div id="evidence-fields"></div></details>
 <button class="primary" id="calculate">Test this offer</button><button type="button" class="secondary" id="reset">Restore example inputs</button>
 </fieldset></form>

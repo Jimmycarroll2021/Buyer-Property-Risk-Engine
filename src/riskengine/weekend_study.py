@@ -6,7 +6,8 @@ from .engine import canonical_hash
 from .paths import project_root
 from .storage import Conflict, StoreError
 
-STUDY_VERSION = "weekend-buyer/1"
+STUDY_VERSION = "weekend-buyer/2"
+LEGACY_STUDY_VERSION = "weekend-buyer/1"
 BID_POLICY_VERSION = "storm-bid-grid/1"
 WHAT_IF_FIELDS = {"purchase_price", "cash_before_settlement", "first_year_works"}
 EVIDENCE_FIELDS = {"insurable", "primary_works_approved", "structural_clear", "illiquid"}
@@ -42,6 +43,11 @@ def capture(example, changes, evidence_notes=None):
         except (InvalidOperation, ValueError):
             raise StoreError(f"Enter a valid Australian dollar amount for {key.replace('_', ' ')}") from None
         cleaned[key] = format(amount, ".2f")
+    profile = {**example["profile"], **cleaned}
+    total, urgent = profile.get("first_year_works"), profile.get("urgent_works")
+    if total is not None and urgent is not None and Decimal(str(total)) < Decimal(str(urgent)):
+        raise StoreError("Total first-year works must include urgent works. "
+                         f"Enter at least AUD {Decimal(str(urgent)):,.2f}, or leave the total blank if unknown.")
     notes = evidence_notes or {}
     if not isinstance(notes, dict) or set(notes) - EVIDENCE_FIELDS or any(
             not isinstance(note, str) or not note.strip() or len(note) > 240 for note in notes.values()):
@@ -56,7 +62,7 @@ def evaluate_study(study):
     from .finance import FinanceInputError
     from .buyer_storm_bid import profile_at_price, solve_storm_bid
 
-    if study.get("version") != STUDY_VERSION:
+    if study.get("version") not in (LEGACY_STUDY_VERSION, STUDY_VERSION):
         raise Conflict("This weekend assessment model is unavailable for replay")
     example = study["example"]
     seed = deepcopy(example["profile"])
@@ -75,7 +81,23 @@ def evaluate_study(study):
                    "capitalized_lmi": None, "principal": None, "cash_after_settlement": None}
     result = evaluate_storms(profile)
     ceiling = solve_storm_bid(seed, policy)
-    return {"version": STUDY_VERSION, "bid_policy_version": BID_POLICY_VERSION,
+    if study["version"] == STUDY_VERSION:
+        # Presentation changes are pinned to v2; v1 calculations and text replay exactly.
+        import re
+        from decimal import Decimal
+        def readable_reason(text):
+            return re.sub(r"A\$(-?\d+(?:\.\d+)?)", lambda m: f"AUD {Decimal(m[1]):,.2f}", text)
+        for key in ("candidate", "next_candidate", "first_unresolved"):
+            if ceiling.get(key):
+                ceiling[key]["reason"] = readable_reason(ceiling[key]["reason"])
+        ceiling["binding_reason"] = readable_reason(ceiling["binding_reason"])
+        if ceiling.get("next_candidate"):
+            next_offer = ceiling["next_candidate"]
+            ceiling["binding_reason"] = (f"At tested offer AUD {Decimal(next_offer['price']):,.2f} "
+                                         f"({next_offer['verdict']}): {ceiling['binding_reason']}")
+        result["assumptions"]["A"] += " First-year works means the total including urgent works; urgent works are a subset, not an added bill."
+        result["assumptions"]["C"] += " First-year works means the total including urgent works."
+    return {"version": study["version"], "bid_policy_version": BID_POLICY_VERSION,
             "bid_policy_hash": canonical_hash(policy), "capture": study, "profile": profile,
             "price_issue": price_issue, "result": result, "ceiling": ceiling, "input_hash": canonical_hash(study)}
 

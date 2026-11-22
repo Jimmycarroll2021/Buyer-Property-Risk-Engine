@@ -2,12 +2,12 @@
 const el = id => document.getElementById(id);
 const amountFields = ["purchase_price", "cash_before_settlement", "first_year_works"];
 const evidenceLabels = {insurable:"Can the home be insured?", primary_works_approved:"Are the main building works approved?", structural_clear:"Has structural safety been cleared?", illiquid:"Would this property be difficult to sell?"};
-const state = {examples:[], example:null, sample:true, saved:null, worksheet:null, version:0, busy:false, current:null, dirty:false};
+const state = {examples:[], example:null, sample:true, saved:null, worksheet:null, version:0, busy:false, current:null, dirty:false, revision:0};
 const labels = {
   purchase_price:"Proposed offer", deposit:"Cash deposit", acquisition_costs:"Duty and acquisition costs",
   capitalized_lmi:"Lenders mortgage insurance added to loan", cash_before_settlement:"Liquid cash before settlement",
   annual_rate_decimal:"Annual mortgage rate", term_months:"Loan term", urgent_works:"Urgent works",
-  first_year_works:"Other first-year works", earner_incomes_monthly:"Monthly take-home income by earner",
+  first_year_works:"Total first-year works, including urgent works", earner_incomes_monthly:"Monthly take-home income by earner",
   normal_living_monthly:"Normal monthly living costs", lean_living_monthly:"Lean monthly living costs",
   locked_commitments_monthly:"Other locked monthly commitments in an income loss", property_costs_monthly:"Monthly property costs including insurance",
   insurance_annual:"Annual home insurance premium", loss_duration_months:"Assumed time out of work",
@@ -29,7 +29,7 @@ const rules = {
 const verdictWords = {green:"Green", amber:"Amber", red:"Red", unresolved:"Unresolved"};
 const verdictHead = {green:"The household clears all three storms.", amber:"The offer leaves a weak spot.", red:"This offer fails a household check.", unresolved:"The result needs more evidence."};
 const unknown = "Unknown";
-const usd = new Intl.NumberFormat("en-AU",{style:"currency",currency:"AUD",minimumFractionDigits:0,maximumFractionDigits:2});
+const usd = new Intl.NumberFormat("en-AU",{style:"currency",currency:"AUD",currencyDisplay:"code",minimumFractionDigits:2,maximumFractionDigits:2});
 const cash = n => n == null ? unknown : usd.format(Number(n));
 const pct = n => n == null ? unknown : (Number(n)*100).toLocaleString("en-AU",{maximumFractionDigits:2})+"%";
 const months = n => n == null ? unknown : Number(n).toLocaleString("en-AU",{maximumFractionDigits:1})+" months";
@@ -62,6 +62,7 @@ const basePath=id=>"/v1/assessments/"+encodeURIComponent(id);
 function notice(text="",error=false){el("notice").textContent=text;el("notice").className=error?"error":"";}
 function controls(){
   el("inputs").disabled=state.busy || !state.example;
+  el("calculate").textContent=state.busy?"Testing / loading…":"Test this offer";
   const valid=state.current && !state.dirty && !state.busy;
   el("save").disabled=!valid;
   for(const key of ["download","replay","print"])el(key).disabled=!valid || !state.saved;
@@ -73,11 +74,13 @@ async function run(work){
   finally{state.busy=false;controls();}
 }
 function fill(example,changes={},notes={}){
+  state.revision++;
   state.example=example;
   const p={...example.profile,...changes};
   el("example").value=example.id;
   el("description").textContent=example.description;
   for(const k of amountFields)el(k).value=p[k] ?? "";
+  worksGuidance();
   const fields=el("evidence-fields");fields.replaceChildren();
   for(const [key,title] of Object.entries(evidenceLabels)){
     const l=node("label",title);l.htmlFor=key;
@@ -90,6 +93,19 @@ function fill(example,changes={},notes={}){
     }
   }
   el("privacy").textContent=state.sample?"Use fictional figures here. To record personal evidence, open start-windows.cmd on your computer.":"You are working in your private local workspace. An edited check without a source reference is an assumption.";
+}
+function worksGuidance(){
+  const input=el("first_year_works"), urgent=Number(state.example.profile.urgent_works);
+  const missing=input.value==="", invalid=!missing && Number(input.value)<urgent;
+  input.setCustomValidity(invalid?"Enter a total including at least "+cash(urgent)+" of urgent works, or leave blank if unknown.":"");
+  input.setAttribute("aria-invalid",String(invalid));
+  el("works-status").textContent=missing?"Works cost unknown. Blank does not mean zero; the works checks and offer limit may be unresolved.":invalid?input.validationMessage:"Includes "+cash(urgent)+" urgent works. Remaining non-urgent works: "+cash(Number(input.value)-urgent)+".";
+}
+function checkExplanation(key,row){
+  if(key!=="B")return rules[key][0]+". "+rules[key][1];
+  const gaps=[["tpd_cover_gap","Disability cover shortfall","Confirm the disability benefit with the insurer or test a lower offer."],["death_cover_gap","Death cover shortfall","Confirm the death benefit with the insurer or test a lower offer."],["illness_wait_gap","Illness waiting-period cash shortfall","Confirm accessible cash and the policy waiting period."]];
+  const reasons=gaps.filter(([field])=>Number(row[field])>0).map(([field,label,action])=>label+" "+cash(row[field])+". "+action);
+  return reasons.length?reasons.join(" "):rules.B[0]+". "+rules.B[1];
 }
 function request(){
   const changes={}, source_notes={};
@@ -148,6 +164,7 @@ function checkRows(result){
   for(const [key,r] of Object.entries({...result.vetoes,...result.storms})){
     const heading=rules[key];const card=node("article",null,"check-row"), header=node("header");
     header.append(node("h3",key+" · "+heading[0]),tag(r.status));card.append(header);
+    if(key==="B" && r.status!=="green")card.append(node("p",checkExplanation(key,r)));
     if(key==="V1")card.append(stats(Object.entries(r.flags).map(([k,val])=>[readable(k),val==null?unknown:val?"Yes":"No"])));
     else if(key.startsWith("V"))card.append(stats([["Available",cash(r.available)],["Required",cash(r.required)]]));
     else{
@@ -160,9 +177,10 @@ function checkRows(result){
   }
 }
 function showBid(c,p){
-  const heading={qualified:"Highest passing offer: "+cash(c.highest_passing_price),range_ceiling:"Tested up to "+cash(c.highest_passing_price),no_qualifying_bid:"No offer passes in this range",unknown:"Offer ceiling unknown"};
+  const heading={qualified:"Highest tested offer avoiding red (includes Amber): "+cash(c.highest_passing_price),range_ceiling:"Tested range endpoint (includes Amber): "+cash(c.highest_passing_price),no_qualifying_bid:"No offer avoids red in this range",unknown:"Offer ceiling unknown"};
   el("bid-head").textContent=heading[c.status] || heading.unknown;
-  el("bid-detail").textContent=c.status==="qualified"?"The next offer at "+cash(c.next_failing_price)+" fails.":c.status==="range_ceiling"?"The top of this test range passes. A higher offer has not been tested.":c.status==="unknown"?"The available evidence cannot establish a highest passing offer.":"The model found a red result at every tested price in the search range.";
+  const qualification=" Green and Amber both qualify for this search. Amber retains a weak spot; this is not a safe-offer recommendation.";
+  el("bid-detail").textContent=(c.status==="qualified"?"The next tested offer at "+cash(c.next_failing_price)+" is Red. These binding figures belong to that offer, not the offer above.":c.status==="range_ceiling"?"This is the highest price on the tested grid. Higher offers are untested; it is not an established maximum.":c.status==="unknown"?"The available evidence cannot establish a highest qualifying offer.":"The model found a red result at every tested price in the search range.")+qualification;
   const reason=el("bid-reason");reason.replaceChildren(node("p",c.binding_reason));
   if(c.first_unresolved)reason.append(node("p","Unresolved offer at "+cash(c.first_unresolved.price)+". "+c.first_unresolved.reason));
   const grid=el("grid");grid.replaceChildren();
@@ -179,7 +197,7 @@ function render(study){
   const t=result.verdict,combined={...result.vetoes,...result.storms},first=Object.entries(combined).find(([,v])=>v.status===t);
   el("property").textContent=x.name+" · "+(x.property.label || x.property)+" · "+x.as_of;
   el("verdict-card").dataset.tone=t;el("status-pill").replaceChildren(tag(t));el("verdict").textContent=verdictHead[t];
-  el("action").textContent=t==="green"?"The modelled cash buffers hold at this offer. Confirm the deposit, settlement costs and property evidence before deciding.":first?first[0]+" · "+rules[first[0]][0]+". "+rules[first[0]][1]:"Confirm the missing figures before making an offer.";
+  el("action").textContent=t==="green"?"The modelled cash buffers hold at this offer. Confirm the deposit, settlement costs and property evidence before deciding.":first?first[0]+" · "+checkExplanation(first[0],first[1]):"Confirm the missing figures before making an offer.";
   const metrics=el("metrics");metrics.replaceChildren();
   for(const [lbl,value] of [["Tested offer",profile.purchase_price],["Cash after settlement",result.baseline.cash_after_settlement],["Normal monthly surplus",result.baseline.normal_surplus]]){
     const d=node("div");d.append(node("small",lbl),node("strong",cash(value)));metrics.append(d);
@@ -196,7 +214,12 @@ function render(study){
   a.append(node("p",result.assumptions.cash),node("p",result.assumptions.living),node("p",result.assumptions.loan),node("small","Model "+result.rule_version+" · Worksheet "+study.version+" · "+study.input_hash));
 }
 async function preview(){
-  const study=await api("/v1/weekend/preview",request());render(study);
+  const revision=state.revision, payload=request();
+  el("outcome").hidden=true;state.current=null;
+  notice("Testing "+state.example.name+" at "+cash(el("purchase_price").value===""?null:el("purchase_price").value)+". Waiting for the current inputs…");
+  const study=await api("/v1/weekend/preview",payload);
+  if(revision!==state.revision){notice("Inputs changed while testing. Test this offer again for the current inputs.");return;}
+  render(study);
   if(state.saved){
     const same=study.input_hash===state.saved.weekend.input_hash;
     if(!same){state.dirty=false;el("save-info").textContent="Changed inputs. Save a new version to export or replay this result.";}
@@ -224,6 +247,7 @@ async function reopen(id){
 el("worksheet").addEventListener("submit",event=>{event.preventDefault();run(preview).finally(savedControls);});
 el("worksheet").addEventListener("input",event=>{
   if(event.target.id==="example")return;
+  state.revision++;worksGuidance();
   state.dirty=true;notice("Inputs changed. Test this offer to update the result.");el("outcome").hidden=true;controls();
 });
 el("example").addEventListener("change",()=>run(async()=>{
