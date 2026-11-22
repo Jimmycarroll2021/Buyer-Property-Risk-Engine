@@ -1,0 +1,625 @@
+[
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "ngunnawal-townhouse",
+        "name": "Mira and Dan",
+        "description": "Saturday 21 November 2026. A fictional two-income couple are comparing a three-bedroom Ngunnawal townhouse with staying in their rental. They have saved a large deposit and want to keep enough cash for one earner to stop work. All figures and property conditions are illustrative.",
+        "as_of": "2026-11-21",
+        "illustrative": true,
+        "property": {
+          "label": "Ngunnawal three-bedroom townhouse",
+          "suburb": "Ngunnawal",
+          "jurisdiction": "ACT",
+          "property_type": "townhouse"
+        },
+        "profile": {
+          "purchase_price": 700000,
+          "deposit": 300000,
+          "acquisition_costs": 20000,
+          "capitalized_lmi": 0,
+          "cash_before_settlement": 440000,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 2000,
+          "first_year_works": 5000,
+          "earner_incomes_monthly": [
+            7700,
+            6200
+          ],
+          "normal_living_monthly": 4200,
+          "lean_living_monthly": 3200,
+          "locked_commitments_monthly": 400,
+          "property_costs_monthly": 580,
+          "insurance_annual": 1500,
+          "loss_duration_months": 6,
+          "redundancy_available": 15000,
+          "leave_available": 3000,
+          "ip_wait_months": 2,
+          "death_cover": 500000,
+          "tpd_cover": 480000,
+          "illiquid": false,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": true
+        },
+        "bid_policy": {
+          "min_price": 600000,
+          "max_price": 1100000,
+          "increment": 10000,
+          "deposit": {
+            "mode": "fixed_cash",
+            "value": 300000
+          },
+          "costs": [
+            {
+              "up_to_price": 1100000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0
+              }
+            }
+          ]
+        }
+      },
+      "changes": {},
+      "source_notes": {}
+    },
+    "result_hash": "sha256:feb0d0fb0883d4fe040e927bbb438bb14df6ad59fb6a8e14177d1ca7573019a7"
+  },
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "ngunnawal-townhouse",
+        "name": "Mira and Dan",
+        "description": "Saturday 21 November 2026. A fictional two-income couple are comparing a three-bedroom Ngunnawal townhouse with staying in their rental. They have saved a large deposit and want to keep enough cash for one earner to stop work. All figures and property conditions are illustrative.",
+        "as_of": "2026-11-21",
+        "illustrative": true,
+        "property": {
+          "label": "Ngunnawal three-bedroom townhouse",
+          "suburb": "Ngunnawal",
+          "jurisdiction": "ACT",
+          "property_type": "townhouse"
+        },
+        "profile": {
+          "purchase_price": 700000,
+          "deposit": 300000,
+          "acquisition_costs": 20000,
+          "capitalized_lmi": 0,
+          "cash_before_settlement": 440000,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 2000,
+          "first_year_works": 5000,
+          "earner_incomes_monthly": [
+            7700,
+            6200
+          ],
+          "normal_living_monthly": 4200,
+          "lean_living_monthly": 3200,
+          "locked_commitments_monthly": 400,
+          "property_costs_monthly": 580,
+          "insurance_annual": 1500,
+          "loss_duration_months": 6,
+          "redundancy_available": 15000,
+          "leave_available": 3000,
+          "ip_wait_months": 2,
+          "death_cover": 500000,
+          "tpd_cover": 480000,
+          "illiquid": false,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": true
+        },
+        "bid_policy": {
+          "min_price": 600000,
+          "max_price": 1100000,
+          "increment": 10000,
+          "deposit": {
+            "mode": "fixed_cash",
+            "value": 300000
+          },
+          "costs": [
+            {
+              "up_to_price": 1100000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0
+              }
+            }
+          ]
+        }
+      },
+      "changes": {
+        "purchase_price": "740000.00",
+        "cash_before_settlement": "310000.00",
+        "first_year_works": "40000.00"
+      },
+      "source_notes": {}
+    },
+    "result_hash": "sha256:1a88df2f8f8ba2d0a11d0a450d9d2b99ccf4b2767dd3cecf5bd48d924a4191c3"
+  },
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "weston-family",
+        "name": "Sam and Asha",
+        "description": "Saturday 21 November 2026. A fictional couple with one child are weighing a three-bedroom Weston house. Childcare and other commitments continue if an earner stops work. Asha wants to know whether a smaller offer would close the household's disability-cover gap. All figures and property conditions are illustrative.",
+        "as_of": "2026-11-21",
+        "illustrative": true,
+        "property": {
+          "label": "Weston three-bedroom house",
+          "suburb": "Weston",
+          "jurisdiction": "ACT",
+          "property_type": "house"
+        },
+        "profile": {
+          "purchase_price": 760000,
+          "deposit": 235000,
+          "acquisition_costs": 21500,
+          "capitalized_lmi": 0,
+          "cash_before_settlement": 340000,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 1200,
+          "first_year_works": 8000,
+          "earner_incomes_monthly": [
+            7400,
+            6200
+          ],
+          "normal_living_monthly": 4600,
+          "lean_living_monthly": 3200,
+          "locked_commitments_monthly": 550,
+          "property_costs_monthly": 720,
+          "insurance_annual": 1680,
+          "loss_duration_months": 4,
+          "redundancy_available": 8000,
+          "leave_available": 4500,
+          "ip_wait_months": 2,
+          "death_cover": 550000,
+          "tpd_cover": 405000,
+          "illiquid": false,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": true
+        },
+        "bid_policy": {
+          "min_price": 650000,
+          "max_price": 950000,
+          "increment": 5000,
+          "deposit": {
+            "mode": "fixed_cash",
+            "value": 235000
+          },
+          "costs": [
+            {
+              "up_to_price": 950000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0
+              }
+            }
+          ]
+        }
+      },
+      "changes": {},
+      "source_notes": {}
+    },
+    "result_hash": "sha256:9333c303b63adfaf0615d4e9181ed15f083921a5447d7f9b9b7036e4fa5559c0"
+  },
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "kambah-repairs",
+        "name": "Lee and Owen",
+        "description": "Saturday 21 November 2026. A fictional household is considering an older detached house in Kambah. The scenario assumes $38,000 for urgent switchboard and roof work within $55,000 of total first-year works. They have two salaries but a fixed cash pool. All costs and property conditions are illustrative.",
+        "as_of": "2026-11-21",
+        "illustrative": true,
+        "property": {
+          "label": "Older Kambah detached house",
+          "suburb": "Kambah",
+          "jurisdiction": "ACT",
+          "property_type": "house"
+        },
+        "profile": {
+          "purchase_price": 620000,
+          "deposit": 124000,
+          "acquisition_costs": 18000,
+          "capitalized_lmi": 0,
+          "cash_before_settlement": 184000,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 38000,
+          "first_year_works": 55000,
+          "earner_incomes_monthly": [
+            7300,
+            5700
+          ],
+          "normal_living_monthly": 4200,
+          "lean_living_monthly": 2800,
+          "locked_commitments_monthly": 350,
+          "property_costs_monthly": 650,
+          "insurance_annual": 1920,
+          "loss_duration_months": 4,
+          "redundancy_available": 0,
+          "leave_available": 5000,
+          "ip_wait_months": 2,
+          "death_cover": 520000,
+          "tpd_cover": 510000,
+          "illiquid": false,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": true
+        },
+        "bid_policy": {
+          "min_price": 420000,
+          "max_price": 750000,
+          "increment": 5000,
+          "deposit": {
+            "mode": "ratio",
+            "value": 0.2
+          },
+          "costs": [
+            {
+              "up_to_price": 750000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0
+              }
+            }
+          ]
+        }
+      },
+      "changes": {},
+      "source_notes": {}
+    },
+    "result_hash": "sha256:a483f262b1cdb03c5bd452019042b13a8e0f94c8605de75d353b8cbe1b5e023d"
+  },
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "belconnen-single",
+        "name": "Jules",
+        "description": "Sunday 22 November 2026. A fictional solo contractor is considering a one-bedroom Belconnen apartment with a 10% deposit and capitalised lender's mortgage insurance. There is no second income or termination payment in the scenario. All figures and the assumed slow resale are illustrative.",
+        "as_of": "2026-11-22",
+        "illustrative": true,
+        "property": {
+          "label": "Belconnen one-bedroom apartment",
+          "suburb": "Belconnen",
+          "jurisdiction": "ACT",
+          "property_type": "unit"
+        },
+        "profile": {
+          "purchase_price": 600000,
+          "deposit": 60000,
+          "acquisition_costs": 17500,
+          "capitalized_lmi": 8100,
+          "cash_before_settlement": 97500,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 1600,
+          "first_year_works": 4000,
+          "earner_incomes_monthly": [
+            9700
+          ],
+          "normal_living_monthly": 3200,
+          "lean_living_monthly": 2100,
+          "locked_commitments_monthly": 250,
+          "property_costs_monthly": 650,
+          "insurance_annual": 1560,
+          "loss_duration_months": 6,
+          "redundancy_available": 0,
+          "leave_available": 0,
+          "ip_wait_months": 3,
+          "death_cover": 450000,
+          "tpd_cover": 450000,
+          "illiquid": true,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": true
+        },
+        "bid_policy": {
+          "min_price": 400000,
+          "max_price": 690000,
+          "increment": 5000,
+          "deposit": {
+            "mode": "ratio",
+            "value": 0.1
+          },
+          "costs": [
+            {
+              "up_to_price": 690000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0.015
+              }
+            }
+          ]
+        }
+      },
+      "changes": {},
+      "source_notes": {}
+    },
+    "result_hash": "sha256:55440d3ee09ff8cf2242695dbb1bf5a69076e059bc39260f37205b9716af23f6"
+  },
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "braddon-downsizers",
+        "name": "Ruth and Mo",
+        "description": "Sunday 22 November 2026. Two fictional downsizers can fund a level-entry Braddon unit. A question about movement along a wall remains open until an engineer assesses it. The household, building, inspection question and all figures are illustrative.",
+        "as_of": "2026-11-22",
+        "illustrative": true,
+        "property": {
+          "label": "Level-entry Braddon unit",
+          "suburb": "Braddon",
+          "jurisdiction": "ACT",
+          "property_type": "unit"
+        },
+        "profile": {
+          "purchase_price": 640000,
+          "deposit": 280000,
+          "acquisition_costs": 18500,
+          "capitalized_lmi": 0,
+          "cash_before_settlement": 400000,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 1800,
+          "first_year_works": 10000,
+          "earner_incomes_monthly": [
+            6200,
+            5500
+          ],
+          "normal_living_monthly": 3400,
+          "lean_living_monthly": 2600,
+          "locked_commitments_monthly": 350,
+          "property_costs_monthly": 710,
+          "insurance_annual": 1380,
+          "loss_duration_months": 3,
+          "redundancy_available": 0,
+          "leave_available": 3000,
+          "ip_wait_months": 1,
+          "death_cover": 460000,
+          "tpd_cover": 450000,
+          "illiquid": false,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": null
+        },
+        "bid_policy": {
+          "min_price": 520000,
+          "max_price": 820000,
+          "increment": 5000,
+          "deposit": {
+            "mode": "fixed_cash",
+            "value": 280000
+          },
+          "costs": [
+            {
+              "up_to_price": 820000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0
+              }
+            }
+          ]
+        }
+      },
+      "changes": {},
+      "source_notes": {}
+    },
+    "result_hash": "sha256:b12467c332ca1e683ac607d4a896247b9896857486479f94bc88a2f329a8cb96"
+  },
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "braddon-downsizers",
+        "name": "Ruth and Mo",
+        "description": "Sunday 22 November 2026. Two fictional downsizers can fund a level-entry Braddon unit. A question about movement along a wall remains open until an engineer assesses it. The household, building, inspection question and all figures are illustrative.",
+        "as_of": "2026-11-22",
+        "illustrative": true,
+        "property": {
+          "label": "Level-entry Braddon unit",
+          "suburb": "Braddon",
+          "jurisdiction": "ACT",
+          "property_type": "unit"
+        },
+        "profile": {
+          "purchase_price": 640000,
+          "deposit": 280000,
+          "acquisition_costs": 18500,
+          "capitalized_lmi": 0,
+          "cash_before_settlement": 400000,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 1800,
+          "first_year_works": 10000,
+          "earner_incomes_monthly": [
+            6200,
+            5500
+          ],
+          "normal_living_monthly": 3400,
+          "lean_living_monthly": 2600,
+          "locked_commitments_monthly": 350,
+          "property_costs_monthly": 710,
+          "insurance_annual": 1380,
+          "loss_duration_months": 3,
+          "redundancy_available": 0,
+          "leave_available": 3000,
+          "ip_wait_months": 1,
+          "death_cover": 460000,
+          "tpd_cover": 450000,
+          "illiquid": false,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": null
+        },
+        "bid_policy": {
+          "min_price": 520000,
+          "max_price": 820000,
+          "increment": 5000,
+          "deposit": {
+            "mode": "fixed_cash",
+            "value": 280000
+          },
+          "costs": [
+            {
+              "up_to_price": 820000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0
+              }
+            }
+          ]
+        }
+      },
+      "changes": {
+        "structural_clear": false
+      },
+      "source_notes": {}
+    },
+    "result_hash": "sha256:4ddc96fe3b2ebabe9c17b329437a6ea8ba871bfc0cf0b1573396c1e823102f1b"
+  },
+  {
+    "capture": {
+      "version": "weekend-buyer/3",
+      "example": {
+        "id": "braddon-downsizers",
+        "name": "Ruth and Mo",
+        "description": "Sunday 22 November 2026. Two fictional downsizers can fund a level-entry Braddon unit. A question about movement along a wall remains open until an engineer assesses it. The household, building, inspection question and all figures are illustrative.",
+        "as_of": "2026-11-22",
+        "illustrative": true,
+        "property": {
+          "label": "Level-entry Braddon unit",
+          "suburb": "Braddon",
+          "jurisdiction": "ACT",
+          "property_type": "unit"
+        },
+        "profile": {
+          "purchase_price": 640000,
+          "deposit": 280000,
+          "acquisition_costs": 18500,
+          "capitalized_lmi": 0,
+          "cash_before_settlement": 400000,
+          "annual_rate_decimal": 0.06,
+          "term_months": 360,
+          "urgent_works": 1800,
+          "first_year_works": 10000,
+          "earner_incomes_monthly": [
+            6200,
+            5500
+          ],
+          "normal_living_monthly": 3400,
+          "lean_living_monthly": 2600,
+          "locked_commitments_monthly": 350,
+          "property_costs_monthly": 710,
+          "insurance_annual": 1380,
+          "loss_duration_months": 3,
+          "redundancy_available": 0,
+          "leave_available": 3000,
+          "ip_wait_months": 1,
+          "death_cover": 460000,
+          "tpd_cover": 450000,
+          "illiquid": false,
+          "insurable": true,
+          "primary_works_approved": true,
+          "structural_clear": null
+        },
+        "bid_policy": {
+          "min_price": 520000,
+          "max_price": 820000,
+          "increment": 5000,
+          "deposit": {
+            "mode": "fixed_cash",
+            "value": 280000
+          },
+          "costs": [
+            {
+              "up_to_price": 820000,
+              "duty": {
+                "fixed": 0,
+                "price_ratio": 0.025
+              },
+              "acquisition": {
+                "fixed": 2500,
+                "price_ratio": 0
+              },
+              "lmi": {
+                "fixed": 0,
+                "loan_ratio": 0
+              }
+            }
+          ]
+        }
+      },
+      "changes": {
+        "structural_clear": true
+      },
+      "source_notes": {}
+    },
+    "result_hash": "sha256:d7083121c2e385a8eb8ea6d7564c40bc96e988504d6c02236b42eaed806ae544"
+  }
+]

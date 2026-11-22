@@ -6,7 +6,7 @@ You like an older detached house and have $184,000 in liquid cash. A preliminary
 
 ### Run this in a browser
 
-Open the [weekend worksheet](http://127.0.0.1:8145/weekend) in a fresh tab on the computer running the sample preview, or use the sample URL supplied by your coordinator. A remote agent's `127.0.0.1` points to its own machine. If the worksheet or household picker fails to load, return the URL, visible message and blocked step. Use only this brief and the rendered buyer interface, including its expandable sections. Leave source files, APIs, previous reports, answer keys and other agents' results closed.
+Open the [weekend worksheet](http://127.0.0.1:8147/weekend) in a fresh tab on the computer running the sample preview, or use the sample URL supplied by your coordinator. A remote agent's `127.0.0.1` points to its own machine. If the worksheet or household picker fails to load, return the URL, visible message and blocked step. Use only this brief and the rendered buyer interface, including its expandable sections. Leave source files, APIs, previous reports, answer keys and other agents' results closed.
 
 Select the named household under **Choose a fictional household**. Work in your own tab with fictional inputs. Use **Test this offer** after each edit and check the displayed **Tested offer** before taking evidence. On the shared preview, finish by closing your tab. Leave **Save assessment** and **Saved worksheets** alone. Record evidence in your own reply or agent-specific files. All money amounts are Australian dollars.
 

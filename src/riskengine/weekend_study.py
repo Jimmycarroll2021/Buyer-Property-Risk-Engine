@@ -6,7 +6,8 @@ from .engine import canonical_hash
 from .paths import project_root
 from .storage import Conflict, StoreError
 
-STUDY_VERSION = "weekend-buyer/3"
+STUDY_VERSION = "weekend-buyer/4"
+EXPLANATION_STUDY_VERSION = "weekend-buyer/3"
 PREVIOUS_STUDY_VERSION = "weekend-buyer/2"
 LEGACY_STUDY_VERSION = "weekend-buyer/1"
 BID_POLICY_VERSION = "storm-bid-grid/1"
@@ -63,7 +64,7 @@ def evaluate_study(study):
     from .finance import FinanceInputError
     from .buyer_storm_bid import profile_at_price, solve_storm_bid
 
-    if study.get("version") not in (LEGACY_STUDY_VERSION, PREVIOUS_STUDY_VERSION, STUDY_VERSION):
+    if study.get("version") not in (LEGACY_STUDY_VERSION, PREVIOUS_STUDY_VERSION, EXPLANATION_STUDY_VERSION, STUDY_VERSION):
         raise Conflict("This weekend assessment model is unavailable for replay")
     example = study["example"]
     seed = deepcopy(example["profile"])
@@ -82,7 +83,7 @@ def evaluate_study(study):
                    "capitalized_lmi": None, "principal": None, "cash_after_settlement": None}
     result = evaluate_storms(profile)
     ceiling = solve_storm_bid(seed, policy)
-    if study["version"] in (PREVIOUS_STUDY_VERSION, STUDY_VERSION):
+    if study["version"] in (PREVIOUS_STUDY_VERSION, EXPLANATION_STUDY_VERSION, STUDY_VERSION):
         # Presentation changes are pinned to v2; v1 calculations and text replay exactly.
         import re
         from decimal import Decimal
@@ -92,13 +93,13 @@ def evaluate_study(study):
             if ceiling.get(key):
                 ceiling[key]["reason"] = readable_reason(ceiling[key]["reason"])
         ceiling["binding_reason"] = readable_reason(ceiling["binding_reason"])
-        if ceiling.get("next_candidate"):
+        if ceiling.get("next_candidate") and study["version"] != STUDY_VERSION:
             next_offer = ceiling["next_candidate"]
             ceiling["binding_reason"] = (f"At tested offer AUD {Decimal(next_offer['price']):,.2f} "
                                          f"({next_offer['verdict']}): {ceiling['binding_reason']}")
         result["assumptions"]["A"] += " First-year works means the total including urgent works; urgent works are a subset, not an added bill."
         result["assumptions"]["C"] += " First-year works means the total including urgent works."
-    if study["version"] == STUDY_VERSION:
+    if study["version"] in (EXPLANATION_STUDY_VERSION, STUDY_VERSION):
         result["assumptions"]["V1"] = (
             "Yes records clearance for that property check; No is a failed check and makes V1 red at every price. "
             "Unknown leaves that check unresolved unless another known failure already makes V1 red. "
@@ -110,6 +111,27 @@ def evaluate_study(study):
             "Cash after sale equals cash immediately before sale plus net sale equity. "
             "Net sale equity already subtracts selling costs and the mortgage balance. "
             "When equity is negative, cash after sale already funds that shortfall; do not subtract it again.")
+    if study["version"] == STUDY_VERSION:
+        entered = f"AUD {Decimal(str(target)):,.2f}" if target is not None else "an unknown amount"
+        reason = ceiling["binding_reason"]
+        if ceiling.get("intrinsic_veto"):
+            context = "In the bid search, the failed property check applies at every price; no search-grid offer qualifies."
+        elif ceiling["status"] == "unknown" and ceiling.get("first_unresolved"):
+            source = ceiling["first_unresolved"]
+            context = (f"In the bid search, search-grid offer AUD {Decimal(source['price']):,.2f} "
+                       f"({source['verdict']}) is unresolved, so a highest qualifying offer cannot be established.")
+        elif ceiling["status"] == "qualified" and ceiling.get("next_candidate"):
+            source = ceiling["next_candidate"]
+            context = (f"In the bid search, search-grid offer AUD {Decimal(source['price']):,.2f} "
+                       f"({source['verdict']}) is the next higher grid offer above the highest qualifying grid offer.")
+        elif ceiling["status"] == "no_qualifying_bid" and ceiling.get("next_candidate"):
+            source = ceiling["next_candidate"]
+            context = (f"In the bid search, search-grid offer AUD {Decimal(source['price']):,.2f} "
+                       f"({source['verdict']}) is the lowest offer on the grid; no search-grid offer qualifies.")
+        else:
+            context = "In the bid search, the following explanation describes the search range and its evidence."
+        ceiling["binding_reason"] = (f"{context} Your entered offer is {entered}; "
+                                     f"its result and cash figures are shown separately above. {reason}")
     return {"version": study["version"], "bid_policy_version": BID_POLICY_VERSION,
             "bid_policy_hash": canonical_hash(policy), "capture": study, "profile": profile,
             "price_issue": price_issue, "result": result, "ceiling": ceiling, "input_hash": canonical_hash(study)}

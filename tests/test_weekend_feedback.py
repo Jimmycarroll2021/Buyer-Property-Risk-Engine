@@ -35,6 +35,10 @@ def test_distinct_grid_offer_is_named_without_changing_main_cash():
     assert revised["result"]["baseline"]["cash_after_settlement"] == "-11000.00"
     reason = revised["ceiling"]["binding_reason"]
     assert "AUD 600,000.00 (red)" in reason
+    assert "In the bid search, search-grid offer" in reason
+    assert "lowest offer on the grid; no search-grid offer qualifies" in reason
+    assert "Your entered offer is AUD 740,000.00" in reason
+    assert "next higher" not in reason
     assert "AUD -7,500.00 available" in reason
     assert "AUD 11,157.30 required" in reason
     missing = study("ngunnawal", first_year_works=None)
@@ -81,11 +85,37 @@ def test_five_full_v2_results_replay_exactly_after_explanation_revision():
         assert canonical_hash(evaluate_study(previous)) == receipt["legacy_result_hash"]
 
 
+def test_v3_results_and_changed_offer_property_states_replay_exactly():
+    expected = json.loads((Path(__file__).parent / "fixtures/weekend_v3_hashes.json").read_text())
+    for receipt in expected:
+        assert canonical_hash(evaluate_study(receipt["capture"])) == receipt["result_hash"]
+
+
+def test_search_reason_names_actual_unknown_and_next_higher_sources():
+    kambah = study("kambah")
+    reason = kambah["ceiling"]["binding_reason"]
+    assert "search-grid offer AUD 585,000.00 (red)" in reason
+    assert "next higher grid offer above the highest qualifying grid offer" in reason
+    assert "Your entered offer is AUD 620,000.00" in reason
+    braddon = study("braddon")
+    assert braddon["ceiling"]["next_candidate"]["price"] == "520000.00"
+    assert braddon["ceiling"]["first_unresolved"]["price"] == "820000.00"
+    reason = braddon["ceiling"]["binding_reason"]
+    assert "search-grid offer AUD 820,000.00 (unresolved)" in reason
+    assert "Your entered offer is AUD 640,000.00" in reason
+    assert "520,000" not in reason and "next higher" not in reason
+    no = study("braddon", structural_clear=False)["ceiling"]
+    assert no["next_candidate"] is None
+    assert "failed property check applies at every price" in no["binding_reason"]
+    assert "search-grid offer AUD" not in no["binding_reason"]
+    assert "Your entered offer is AUD 640,000.00" in no["binding_reason"]
+
+
 def test_belconnen_cash_after_sale_already_funds_negative_equity():
     from decimal import Decimal
     original = study("belconnen")
     c = original["result"]["storms"]["C"]
-    assert original["version"] == "weekend-buyer/3"
+    assert original["version"] == "weekend-buyer/4"
     assert c["net_sale_equity"] == "-40473.40"
     assert c["cash_after_sale"] == "37059.33"
     assert abs(Decimal(c["cash_month24"]) + Decimal(c["net_sale_equity"]) - Decimal(c["cash_after_sale"])) <= Decimal(".01")
