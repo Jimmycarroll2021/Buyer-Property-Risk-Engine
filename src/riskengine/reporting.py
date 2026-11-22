@@ -466,6 +466,10 @@ def _weekend_report(result):
         rows.append(f'<article class="evidence-card"><h3>{code} ? {names[code]}</h3><p><strong>{_e(_words(row["status"]))}</strong></p>')
         if code in model["assumptions"]:
             rows.append(f'<p>{_e(model["assumptions"][code])}</p>')
+        if code == "C":
+            rows.append(f'<p>Cash immediately before sale: {cash(row.get("cash_month24"))}. '
+                        f'Net sale equity: {cash(row.get("net_sale_equity"))}. '
+                        f'Cash after sale: {cash(row.get("cash_after_sale"))}.</p>')
         if code.startswith("V") and code != "V1":
             rows.append(f'<p>Available {cash(row["available"])} ? Required {cash(row["required"])}</p>')
         if row["status"] != "green":
@@ -489,6 +493,8 @@ def _weekend_report(result):
                    "unknown": "Offer ceiling unknown", "no_qualifying_bid": "No qualifying offer in this range"}[ceiling["status"]]
     if ceiling.get("highest_passing_price") is not None:
         bid_heading += " ? " + cash(ceiling["highest_passing_price"])
+    if ceiling["status"] == "range_ceiling":
+        bid_heading = "Search stopped at " + cash(ceiling["highest_passing_price"]) + "; higher offers untested"
     return f"""<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{_e(title)} | Weekend buyer worksheet</title><style>{STYLE}</style></head><body><main>
 <header><p>First-home buyer ? Fictional weekend worksheet</p><h1>{_e(title)}</h1><p>{_e(example["name"])} ? {_e(example["as_of"])} ? Saved version {_e(result.get("case_version", "Unknown"))}</p></header>
 <section class="section"><h2>{_e(_words(model["verdict"]))} household result</h2><p>{_e(example["description"])}</p><div class="metric-grid">{metrics}</div></section>

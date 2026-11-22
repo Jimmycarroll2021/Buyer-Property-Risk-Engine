@@ -87,6 +87,8 @@ function fill(example,changes={},notes={}){
     const s=node("select");s.id=key;
     for(const [v,t] of [["","Unknown"],["true","Yes"],["false","No"]]){const opt=node("option",t);opt.value=v;s.append(opt);}
     s.value=p[key]==null?"":String(p[key]);fields.append(l,s);
+    const hint=node("small",key==="illiquid"?"Stress assumption: Yes uses a 15% sale-price fall; No uses 10%; Unknown leaves the sale stress unresolved. These are declared scenarios, not sourced market predictions.":"Yes records clearance; No fails this property check at every price; Unknown means the evidence is still missing. Editing an answer alone does not supply evidence.");
+    hint.id=key+"-help";s.setAttribute("aria-describedby",hint.id);fields.append(hint);
     if(!state.sample){
       const lab=node("label","Source reference (optional)");lab.htmlFor="src-"+key;
       const ref=node("input");ref.id="src-"+key;ref.maxLength=240;ref.placeholder="e.g. inspection report and date";ref.value=notes[key] || "";fields.append(lab,ref);
@@ -158,14 +160,17 @@ function checkRows(result){
        ...moneyValues(B,[["Remaining monthly income","remaining_income"],["Monthly shortfall","monthly_gap"],["Cash plus confirmed job-loss payments","job_loss_cash"]]),
        ["Runway",B.runway_state==="self_funding"?"Remaining income covers the budget":months(B.runway_months)],
        ...moneyValues(B,[["Cash short during illness waiting period","illness_wait_gap"],["Death cover shortfall","death_cover_gap"],["Disability cover shortfall","tpd_cover_gap"]])],
-    C:[["Sale-price fall",pct(C.dip_decimal)],...moneyValues(C,[["Sale price","sale_price"],["Selling costs","selling_costs"],["Mortgage balance at sale","balance_month24"],["Net sale equity","net_sale_equity"],["Lowest cash before sale","minimum_presale_cash"],["Cash after sale","cash_after_sale"]]),
+    C:[["Sale-price fall",pct(C.dip_decimal)],...moneyValues(C,[["Sale price","sale_price"],["Selling costs","selling_costs"],["Mortgage balance at sale","balance_month24"],["Net sale equity","net_sale_equity"],["Lowest cash before sale","minimum_presale_cash"],["Cash immediately before sale","cash_month24"],["Cash after sale","cash_after_sale"]]),
        ["First cash shortfall before sale",C.first_presale_shortfall_month!=null?(C.first_presale_shortfall_month===0?"At settlement":"Month "+C.first_presale_shortfall_month):Array.isArray(C.monthly_cash)?"None through month 24":unknown],["Loan-to-value at sale",pct(C.lvr_decimal)],["Wealth loss / initial liquid cash",pct(C.wealth_loss_fraction)]]
   };
   for(const [key,r] of Object.entries({...result.vetoes,...result.storms})){
     const heading=rules[key];const card=node("article",null,"check-row"), header=node("header");
     header.append(node("h3",key+" · "+heading[0]),tag(r.status));card.append(header);
     if(key==="B" && r.status!=="green")card.append(node("p",checkExplanation(key,r)));
-    if(key==="V1")card.append(stats(Object.entries(r.flags).map(([k,val])=>[readable(k),val==null?unknown:val?"Yes":"No"])));
+    if(key==="V1"){
+      if(result.assumptions.V1)card.append(node("p",result.assumptions.V1));
+      card.append(stats(Object.entries(r.flags).map(([k,val])=>[readable(k),val==null?unknown:val?"Yes":"No"])));
+    }
     else if(key.startsWith("V"))card.append(stats([["Available",cash(r.available)],["Required",cash(r.required)]]));
     else{
       card.append(node("p",result.assumptions[key]),stats(amounts[key]));
@@ -177,7 +182,7 @@ function checkRows(result){
   }
 }
 function showBid(c,p){
-  const heading={qualified:"Highest tested offer avoiding red (includes Amber): "+cash(c.highest_passing_price),range_ceiling:"Tested range endpoint (includes Amber): "+cash(c.highest_passing_price),no_qualifying_bid:"No offer avoids red in this range",unknown:"Offer ceiling unknown"};
+  const heading={qualified:"Highest tested offer avoiding red (includes Amber): "+cash(c.highest_passing_price),range_ceiling:"Search stopped at "+cash(c.highest_passing_price)+"; higher offers untested",no_qualifying_bid:"No offer avoids red in this range",unknown:"Offer ceiling unknown"};
   el("bid-head").textContent=heading[c.status] || heading.unknown;
   const qualification=" Green and Amber both qualify for this search. Amber retains a weak spot; this is not a safe-offer recommendation.";
   el("bid-detail").textContent=(c.status==="qualified"?"The next tested offer at "+cash(c.next_failing_price)+" is Red. These binding figures belong to that offer, not the offer above.":c.status==="range_ceiling"?"This is the highest price on the tested grid. Higher offers are untested; it is not an established maximum.":c.status==="unknown"?"The available evidence cannot establish a highest qualifying offer.":"The model found a red result at every tested price in the search range.")+qualification;

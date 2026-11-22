@@ -1,6 +1,6 @@
 # External buyer feedback, first three briefs — 22 November 2026
 
-Source: Jimmy supplied reports from the same external tester who ran Ngunnawal, Weston and Kambah. This record paraphrases those reports and the reported visible figures; no screenshots were supplied. These are three persona trials by one tester, not three independent participants. Belconnen and Braddon have no returned external feedback yet. Historical internal UAT remains separate evidence.
+Source: Jimmy supplied reports from the same external tester who ran Ngunnawal, Weston and Kambah. This record paraphrases those reports and the reported visible figures; no screenshots were supplied. These are three persona trials by one tester, not three independent participants. At the time of this first-three record, Belconnen and Braddon had no returned external feedback. Their later reports are preserved in [the last-two record](2026-11-22-last-two.md). Historical internal UAT remains separate evidence.
 
 | Brief / run | Reported inputs and result | Buyer comprehension / friction | Disposition |
 |---|---|---|---|

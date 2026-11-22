@@ -6,7 +6,8 @@ from .engine import canonical_hash
 from .paths import project_root
 from .storage import Conflict, StoreError
 
-STUDY_VERSION = "weekend-buyer/2"
+STUDY_VERSION = "weekend-buyer/3"
+PREVIOUS_STUDY_VERSION = "weekend-buyer/2"
 LEGACY_STUDY_VERSION = "weekend-buyer/1"
 BID_POLICY_VERSION = "storm-bid-grid/1"
 WHAT_IF_FIELDS = {"purchase_price", "cash_before_settlement", "first_year_works"}
@@ -62,7 +63,7 @@ def evaluate_study(study):
     from .finance import FinanceInputError
     from .buyer_storm_bid import profile_at_price, solve_storm_bid
 
-    if study.get("version") not in (LEGACY_STUDY_VERSION, STUDY_VERSION):
+    if study.get("version") not in (LEGACY_STUDY_VERSION, PREVIOUS_STUDY_VERSION, STUDY_VERSION):
         raise Conflict("This weekend assessment model is unavailable for replay")
     example = study["example"]
     seed = deepcopy(example["profile"])
@@ -81,7 +82,7 @@ def evaluate_study(study):
                    "capitalized_lmi": None, "principal": None, "cash_after_settlement": None}
     result = evaluate_storms(profile)
     ceiling = solve_storm_bid(seed, policy)
-    if study["version"] == STUDY_VERSION:
+    if study["version"] in (PREVIOUS_STUDY_VERSION, STUDY_VERSION):
         # Presentation changes are pinned to v2; v1 calculations and text replay exactly.
         import re
         from decimal import Decimal
@@ -97,6 +98,18 @@ def evaluate_study(study):
                                          f"({next_offer['verdict']}): {ceiling['binding_reason']}")
         result["assumptions"]["A"] += " First-year works means the total including urgent works; urgent works are a subset, not an added bill."
         result["assumptions"]["C"] += " First-year works means the total including urgent works."
+    if study["version"] == STUDY_VERSION:
+        result["assumptions"]["V1"] = (
+            "Yes records clearance for that property check; No is a failed check and makes V1 red at every price. "
+            "Unknown leaves that check unresolved unless another known failure already makes V1 red. "
+            "Cash and income calculations can be known while a property check is unresolved. "
+            "Changing the offer cannot supply missing property evidence. An edited answer is an assumption unless supported by a recorded source.")
+        result["assumptions"]["C"] += (
+            " Difficult-to-sell Yes selects a declared 15% stress fall; No selects 10%; Unknown leaves the sale-price stress unresolved. "
+            "These are worksheet stress assumptions, not sourced market predictions. "
+            "Cash after sale equals cash immediately before sale plus net sale equity. "
+            "Net sale equity already subtracts selling costs and the mortgage balance. "
+            "When equity is negative, cash after sale already funds that shortfall; do not subtract it again.")
     return {"version": study["version"], "bid_policy_version": BID_POLICY_VERSION,
             "bid_policy_hash": canonical_hash(policy), "capture": study, "profile": profile,
             "price_issue": price_issue, "result": result, "ceiling": ceiling, "input_hash": canonical_hash(study)}

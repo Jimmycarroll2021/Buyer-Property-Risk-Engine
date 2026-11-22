@@ -1,0 +1,22 @@
+[
+  {
+    "example": "ngunnawal-townhouse",
+    "legacy_result_hash": "sha256:6d98095dd50c8e97322f8e8ddb26ea41ea7637cb9bc2aeb0e2cd6c096725caf7"
+  },
+  {
+    "example": "weston-family",
+    "legacy_result_hash": "sha256:e3b5a15c7ca7e1bd9f420c2da2b60c237458d7e01e3a29bad199456da3b0eaba"
+  },
+  {
+    "example": "kambah-repairs",
+    "legacy_result_hash": "sha256:d1451a3af96a4b4ecaab7136066baf35c8971c0c18dda843299442bb1a19b84a"
+  },
+  {
+    "example": "belconnen-single",
+    "legacy_result_hash": "sha256:72fe4426d0ea3d3d9d29d6cc470b5e7a0c693981cac045ed68c157dd623f4a60"
+  },
+  {
+    "example": "braddon-downsizers",
+    "legacy_result_hash": "sha256:7389ea769a2ad0d1b5d3dd2ab1a3f400e510f63bd525fe9556fe3ac1c87e89af"
+  }
+]

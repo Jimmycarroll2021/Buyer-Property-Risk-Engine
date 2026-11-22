@@ -71,3 +71,49 @@ def test_five_full_legacy_results_match_pre_change_candidate_hashes():
         legacy = {"version": "weekend-buyer/1", "example": example, "changes": {}, "source_notes": {}}
         assert example["id"] == receipt["example"]
         assert canonical_hash(evaluate_study(legacy)) == receipt["legacy_result_hash"]
+
+
+def test_five_full_v2_results_replay_exactly_after_explanation_revision():
+    expected = json.loads((Path(__file__).parent / "fixtures/weekend_v2_hashes.json").read_text())
+    for example, receipt in zip(examples(), expected, strict=True):
+        previous = {"version": "weekend-buyer/2", "example": example, "changes": {}, "source_notes": {}}
+        assert example["id"] == receipt["example"]
+        assert canonical_hash(evaluate_study(previous)) == receipt["legacy_result_hash"]
+
+
+def test_belconnen_cash_after_sale_already_funds_negative_equity():
+    from decimal import Decimal
+    original = study("belconnen")
+    c = original["result"]["storms"]["C"]
+    assert original["version"] == "weekend-buyer/3"
+    assert c["net_sale_equity"] == "-40473.40"
+    assert c["cash_after_sale"] == "37059.33"
+    assert abs(Decimal(c["cash_month24"]) + Decimal(c["net_sale_equity"]) - Decimal(c["cash_after_sale"])) <= Decimal(".01")
+    assert "do not subtract it again" in original["result"]["assumptions"]["C"]
+    revised = study("belconnen", purchase_price=450000, cash_before_settlement=160000, first_year_works=9000)
+    assert revised["result"]["verdict"] == "amber"
+    assert revised["result"]["storms"]["C"]["cash_after_sale"] == "142269.50"
+    no = study("belconnen", illiquid=False)
+    assert no["result"]["storms"]["B"] == original["result"]["storms"]["B"]
+    assert Decimal(no["result"]["storms"]["C"]["dip_decimal"]) == Decimal(".10")
+    assert no["result"]["storms"]["C"]["cash_after_sale"] == "66309.33"
+    missing = study("belconnen", illiquid=None)["result"]["storms"]["C"]
+    assert missing["sale_price"] is None and missing["cash_after_sale"] is None
+
+
+def test_braddon_property_unknown_does_not_erase_known_cash():
+    original = study("braddon")
+    assert original["result"]["verdict"] == "unresolved"
+    assert original["result"]["baseline"]["cash_after_settlement"] == "101500.00"
+    assert original["result"]["vetoes"]["V1"]["status"] == "unresolved"
+    revised = study("braddon", purchase_price=635000, cash_before_settlement=411000, first_year_works=7000)
+    assert revised["result"]["verdict"] == "unresolved"
+    assert revised["result"]["baseline"]["cash_after_settlement"] == "112625.00"
+    yes = study("braddon", structural_clear=True)
+    assert yes["result"]["verdict"] == "green"
+    assert yes["ceiling"]["status"] == "range_ceiling"
+    assert yes["ceiling"]["highest_passing_price"] == "820000.00"
+    no = study("braddon", structural_clear=False)
+    assert no["result"]["verdict"] == "red"
+    assert no["ceiling"]["intrinsic_veto"] == "V1"
+    assert no["result"]["baseline"] == original["result"]["baseline"]
